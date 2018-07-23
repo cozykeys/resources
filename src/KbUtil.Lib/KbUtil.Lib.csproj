@@ -16,7 +16,6 @@
     <Folder Include="Deserialization\Internal\Path\" />
     <Folder Include="Models\Geometry\" />
     <Folder Include="Models\Path\" />
-    <Folder Include="PcbGeneration\Internal\Templates\Sections\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -61,6 +60,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="PcbGeneration\Internal\Templates\Sections\nets_section.template.kicad_pcb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PcbGeneration\Internal\Templates\Sections\traces_section.template.kicad_pcb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="PcbGeneration\Internal\Templates\Sections\switches_section.template.kicad_pcb">

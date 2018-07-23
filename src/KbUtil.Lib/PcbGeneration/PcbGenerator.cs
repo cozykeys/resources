@@ -23,13 +23,14 @@
                 RenderControllerSection(),
                 RenderEdgesSection(),
                 RenderSwitchesSection(pcbData),
+                RenderTracesSection(),
                 ")"
             };
 
             var pcbString = string.Join($"{Environment.NewLine}{Environment.NewLine}", pcb);
 
             Directory.CreateDirectory(outputDirectory);
-            File.WriteAllText(Path.Combine(outputDirectory, "output.kicad_pcb"), pcbString);
+            File.WriteAllText(Path.Combine(outputDirectory, "Ergo87.kicad_pcb"), pcbString);
         }
 
 
@@ -70,6 +71,12 @@
             {
                 PcbData = pcbData
             });
+        }
+
+        private static string RenderTracesSection()
+        {
+            var templateRenderer = new TracesSectionTemplateRenderer();
+            return templateRenderer.Render(new TracesSectionTemplateData());
         }
     }
 }
