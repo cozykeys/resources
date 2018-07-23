@@ -5,6 +5,7 @@
         public float X { get; set; }
         public float Y { get; set; }
         public float Rotation { get; set; }
+        public float PadRotation { get; set; }
         public string Label { get; set; }
         public int DiodeNetId { get; set; }
         public string DiodeNetName { get; set; }

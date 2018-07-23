@@ -6,6 +6,7 @@
     using KbUtil.Lib.PcbGeneration.Internal.Renderers.Sections;
     using System;
     using System.Collections.Generic;
+    using System.IO;
 
     public class PcbGenerator
     {
@@ -20,12 +21,15 @@
                 RenderHeaderSection(),
                 RenderNetsSection(pcbData),
                 RenderControllerSection(),
-                //RenderEdgesSection(keyboard),
+                RenderEdgesSection(),
                 RenderSwitchesSection(pcbData),
                 ")"
             };
 
             var pcbString = string.Join($"{Environment.NewLine}{Environment.NewLine}", pcb);
+
+            Directory.CreateDirectory(outputDirectory);
+            File.WriteAllText(Path.Combine(outputDirectory, "output.kicad_pcb"), pcbString);
         }
 
 
@@ -52,7 +56,7 @@
             return templateRenderer.Render(templateData);
         }
 
-        private static string RenderEdgesSection(Keyboard keyboard)
+        private static string RenderEdgesSection()
         {
             var templateData = new EdgesSectionTemplateData();
             var templateRenderer = new EdgesSectionTemplateRenderer();
@@ -67,54 +71,5 @@
                 PcbData = pcbData
             });
         }
-
-        private static IEnumerable<Key> GetKeys(Group group)
-        {
-            var keys = new List<Key>();
-            foreach (var child in group.Children)
-            {
-                if (child is Key)
-                {
-                    keys.Add((Key)child);
-                }
-                else if (child is Group)
-                {
-                    keys.AddRange(GetKeys((Group)child));
-                }
-            }
-            return keys;
-        }
-
-        public static string GetKeyPosition(Key key)
-        {
-            double xRelative = key.XOffset;
-            double yRelative = key.YOffset;
-
-            Element iter = key.Parent;
-            while (!(iter is Layer))
-            {
-                if (iter.Rotation >= 0.00001)
-                {
-                    var xRotated = xRelative * Math.Cos(iter.Rotation) - yRelative * Math.Sin(iter.Rotation);
-                    var yRotated = xRelative * Math.Sin(iter.Rotation) + yRelative * Math.Cos(iter.Rotation);
-
-                    xRelative = iter.XOffset + xRotated;
-                    yRelative = iter.YOffset + yRotated;
-                }
-                else
-                {
-                    xRelative = iter.XOffset + xRelative;
-                    yRelative = iter.YOffset + yRelative;
-                }
-
-                iter = iter.Parent;
-            }
-
-            double xAbsolute = xRelative;
-            double yAbsolute = yRelative;
-
-            return $"({xAbsolute}, {yAbsolute})";
-        }
-
     }
 }

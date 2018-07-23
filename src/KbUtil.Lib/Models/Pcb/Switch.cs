@@ -18,5 +18,11 @@
 
         [JsonProperty("rotation")]
         public float Rotation { get; set; }
+
+        [JsonProperty("diode_position")]
+        public string DiodePosition { get; set; }
+
+        [JsonProperty("diode_adjust")]
+        public float DiodeAdjust { get; set; }
     }
 }

@@ -10,10 +10,11 @@
 
         public string Render(DiodeTemplateData templateData)
             => File.ReadAllText(TemplatePath)
+                .Replace("${label}", templateData.Label)
                 .Replace("${x}", templateData.X.ToString())
                 .Replace("${y}", templateData.Y.ToString())
                 .Replace("${rotation}", templateData.Rotation.ToString())
-                .Replace("${label}", templateData.Label)
+                .Replace("${pad_rotation}", templateData.PadRotation.ToString())
                 .Replace("${diode_net_id}", templateData.DiodeNetId.ToString())
                 .Replace("${diode_net_name}", templateData.DiodeNetName)
                 .Replace("${row_net_id}", templateData.RowNetId.ToString())

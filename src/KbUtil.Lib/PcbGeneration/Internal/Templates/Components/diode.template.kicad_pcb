@@ -55,24 +55,24 @@
             (layers *.Cu *.SilkS *.Mask)
             (net ${row_net_id} ${row_net_name}))
         (pad 2 thru_hole rect
-            (at 3.81 0 -10)
+            (at 3.81 0 ${pad_rotation})
             (size 1.651 1.651)
             (drill 0.9906)
             (layers *.Cu *.SilkS *.Mask)
             (net ${diode_net_id} ${diode_net_name}))
         (pad 99 smd rect
-            (at -1.6637 0 -10)
+            (at -1.6637 0 ${pad_rotation})
             (size 0.8382 0.8382)
             (layers Front F.Paste F.Mask))
         (pad 99 smd rect
-            (at -1.6637 0 -10)
+            (at -1.6637 0 ${pad_rotation})
             (size 0.8382 0.8382)
             (layers Back B.Paste B.Mask))
         (pad 99 smd rect
-            (at 1.6637 0 -10)
+            (at 1.6637 0 ${pad_rotation})
             (size 0.8382 0.8382)
             (layers Front F.Paste F.Mask))
         (pad 99 smd rect
-            (at 1.6637 0 -10)
+            (at 1.6637 0 ${pad_rotation})
             (size 0.8382 0.8382)
             (layers Back B.Paste B.Mask)))

@@ -2,7 +2,7 @@
   "profiles": {
     "KBUtil": {
       "commandName": "Project",
-      "commandLineArgs": "gen-pcb \"c:\\src\\kb\\ergo87\\switches.json.\" \"c:\\src\\ergo87\\output3\""
+      "commandLineArgs": "gen-pcb \"c:\\src\\kb\\ergo87\\switches.json.\" \"c:\\src\\kb\\ergo87\\pcb\""
     }
   }
 }

@@ -31,27 +31,76 @@
                         continue;
                     }
 
+                    var switchLabel = $"SW{i}:{j}";
+                    var switchX = templateData.PcbData.Switches[i][j].X;
+                    var switchY = templateData.PcbData.Switches[i][j].Y;
+                    var switchRotation = 0 - templateData.PcbData.Switches[i][j].Rotation;
+
+                    var diodeLabel = $"D{i}:{j}";
+                    float diodeX;
+                    float diodeY;
+                    float diodeRotation;
+                    if (templateData.PcbData.Switches[i][j].DiodePosition == "left")
+                    {
+                        diodeRotation = switchRotation + 90;
+                        diodeY = switchY;
+                        diodeX = switchX - 9 - templateData.PcbData.Switches[i][j].DiodeAdjust;
+                    }
+                    else if (templateData.PcbData.Switches[i][j].DiodePosition == "right")
+                    {
+                        diodeRotation = switchRotation + 90;
+                        diodeY = switchY;
+                        diodeX = switchX + 9 + templateData.PcbData.Switches[i][j].DiodeAdjust;
+                    }
+                    else if (templateData.PcbData.Switches[i][j].DiodePosition == "top")
+                    {
+                        diodeRotation = switchRotation;
+                        diodeY = switchY - 9 - templateData.PcbData.Switches[i][j].DiodeAdjust;
+                        diodeX = switchX;
+                    }
+                    else if (templateData.PcbData.Switches[i][j].DiodePosition == "bottom")
+                    {
+                        diodeRotation = switchRotation;
+                        diodeY = switchY + 9 + templateData.PcbData.Switches[i][j].DiodeAdjust;
+                        diodeX = switchX;
+                    }
+                    else
+                    {
+                        throw new Exception("Invalid diode position");
+                    }
+
+                    var diodePadRotation = switchRotation;
+
+                    var diodeNetName = $"N-diode-{i}-{j}";
+                    var diodeNetId = templateData.PcbData.NetDictionary[diodeNetName];
+                    var columnNetName = $"N-col-{j}";
+                    var columnNetId = templateData.PcbData.NetDictionary[columnNetName];
+                    var rowNetName = $"N-row-{i}";
+                    var rowNetId = templateData.PcbData.NetDictionary[rowNetName];
+
                     switches.Add(mxFlipRenderer.Render(new MxFlipTemplateData
                     {
-                        X = templateData.PcbData.Switches[i][j].X,
-                        Y = templateData.PcbData.Switches[i][j].Y,
-                        Rotation = templateData.PcbData.Switches[i][j].Rotation,
-                        Label = $"SW{i}:{j}",
-                        DiodeNetId = templateData.PcbData.NetDictionary[$"N-diode-{i}-{j}"],
-                        DiodeNetName = $"N-diode-{i}-{j}",
-                        ColumnNetId = templateData.PcbData.NetDictionary[$"N-col-{j}"],
-                        ColumnNetName = $"N-col-{j}"
+                        Label = switchLabel,
+                        X = switchX,
+                        Y = switchY,
+                        Rotation = switchRotation,
+                        DiodeNetId = diodeNetId,
+                        DiodeNetName = diodeNetName,
+                        ColumnNetId = columnNetId,
+                        ColumnNetName = columnNetName
                     }));
+
                     switches.Add(diodeRenderer.Render(new DiodeTemplateData
                     {
-                        X = templateData.PcbData.Switches[i][j].X + 9,
-                        Y = templateData.PcbData.Switches[i][j].Y,
-                        Rotation = templateData.PcbData.Switches[i][j].Rotation + 90,
-                        Label = $"D{i}:{j}",
-                        DiodeNetId = templateData.PcbData.NetDictionary[$"N-diode-{i}-{j}"],
-                        DiodeNetName = $"N-diode-{i}-{j}",
-                        RowNetId = templateData.PcbData.NetDictionary[$"N-row-{i}"],
-                        RowNetName = $"N-row-{i}"
+                        Label = diodeLabel,
+                        X = diodeX,
+                        Y = diodeY,
+                        Rotation = diodeRotation,
+                        PadRotation = diodePadRotation,
+                        DiodeNetId = diodeNetId,
+                        DiodeNetName = diodeNetName,
+                        RowNetId = rowNetId,
+                        RowNetName = rowNetName
                     }));
                 }
             }
