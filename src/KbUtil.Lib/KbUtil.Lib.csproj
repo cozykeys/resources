@@ -16,6 +16,59 @@
     <Folder Include="Deserialization\Internal\Path\" />
     <Folder Include="Models\Geometry\" />
     <Folder Include="Models\Path\" />
+    <Folder Include="PcbGeneration\Internal\Templates\Sections\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="PcbGeneration\Internal\Templates\Components\add_net.template.kicad_pcb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PcbGeneration\Internal\Templates\Components\diode.template.kicad_pcb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PcbGeneration\Internal\Templates\Components\net.template.kicad_pcb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PcbGeneration\Internal\Templates\Components\mx_flip.template.kicad_pcb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PcbGeneration\Internal\Templates\Components\net_class.template.kicad_pcb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PcbGeneration\Internal\Templates\controller.template.kicad_pcb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PcbGeneration\Internal\Templates\edges.template.kicad_pcb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PcbGeneration\Internal\Templates\header.template.kicad_pcb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PcbGeneration\Internal\Templates\nets.template.kicad_pcb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PcbGeneration\Internal\Templates\Sections\controller_section.template.kicad_pcb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PcbGeneration\Internal\Templates\Sections\edges_section.template.kicad_pcb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PcbGeneration\Internal\Templates\Sections\header_section.template.kicad_pcb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PcbGeneration\Internal\Templates\Sections\nets_section.template.kicad_pcb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PcbGeneration\Internal\Templates\Sections\switches_section.template.kicad_pcb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PcbGeneration\Internal\Templates\switch.template.kicad_pcb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
