@@ -82,14 +82,17 @@
             serviceCollection.AddSingleton<IEnvironmentService, EnvironmentService>();
             serviceCollection.AddSingleton<IApplicationService, ApplicationService>();
             serviceCollection.AddSingleton<IKeyboardDataService, KeyboardDataService>();
+            serviceCollection.AddSingleton<ISwitchDataService, SwitchDataService>();
             serviceCollection.AddSingleton<IFileService, FileService>();
             serviceCollection.AddSingleton<ISvgGenerationService, SvgGenerationService>();
+            serviceCollection.AddSingleton<IPcbGenerationService, PcbGenerationService>();
             return serviceCollection;
         }
 
         private static void CreateCommands(IServiceProvider serviceProvider)
         {
             ActivatorUtilities.CreateInstance<GenerateSvgCommand>(serviceProvider);
+            ActivatorUtilities.CreateInstance<GeneratePcbCommand>(serviceProvider);
         }
     }
 }

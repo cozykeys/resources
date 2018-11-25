@@ -1,0 +1,8 @@
+    (net_class Default "This is the default net class."
+        (clearance 0.254)
+        (trace_width 0.2032)
+        (via_dia 0.889)
+        (via_drill 0.635)
+        (uvia_dia 0.508)
+        (uvia_drill 0.127)
+${add_nets})

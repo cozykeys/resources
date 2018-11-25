@@ -7,6 +7,7 @@
 
     internal class PathWriter : IElementWriter<Path>
     {
+        private static int _switchIndex = 0;
         private static Dictionary<string, string> _pathStyleVisual = new Dictionary<string, string>
         {
             { "fill", "none" },
@@ -44,7 +45,7 @@
 
         public void WriteSubElements(XmlWriter writer, Path path)
         {
-            WritePath(writer, path, _pathStyleVisual);
+            //WritePath(writer, path, _pathStyleVisual);
             WritePath(writer, path, _pathStylePonoko);
         }
 
