@@ -18,7 +18,7 @@
         {
             if(XmlUtilities.TryGetAttribute(vec2Element, "X", out XAttribute xAttribute))
             {
-                vec2.X = xAttribute.ValueAsFloat();
+                vec2.X = xAttribute.ValueAsFloat(vec2);
             }
         }
 
@@ -26,7 +26,7 @@
         {
             if(XmlUtilities.TryGetAttribute(vec2Element, "Y", out XAttribute yAttribute))
             {
-                vec2.Y = yAttribute.ValueAsFloat();
+                vec2.Y = yAttribute.ValueAsFloat(vec2);
             }
         }
     }

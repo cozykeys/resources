@@ -8,6 +8,7 @@ namespace KbUtil.Lib.Models.Path
     [GroupChild]
     public class Path : Element
     {
+        public string Fill { get; set; }
         public IEnumerable<IPathComponent> Components { get; set; }
 
         public string Data => string.Join(" ", Components.Select(component => component.Data));

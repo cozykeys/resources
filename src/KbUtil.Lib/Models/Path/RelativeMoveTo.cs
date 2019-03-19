@@ -1,8 +1,9 @@
 namespace KbUtil.Lib.Models.Path
 {
+    using Keyboard;
     using Geometry;
 
-    public class RelativeMoveTo : IPathComponent
+    public class RelativeMoveTo : Element, IPathComponent
     {
         public Vec2 EndPoint { get; set; }
 

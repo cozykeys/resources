@@ -18,7 +18,10 @@ namespace KbUtil.Lib.Deserialization.Path
         {
             if (XmlUtilities.TryGetSubElement(absoluteQuadraticCurveToElement, "EndPoint", out XElement endPointElement))
             {
-                absoluteQuadraticCurveTo.EndPoint = new Vec2();
+                absoluteQuadraticCurveTo.EndPoint = new Vec2
+                {
+                    Parent = absoluteQuadraticCurveTo
+                };
                 Vec2Deserializer.Default.Deserialize(endPointElement, absoluteQuadraticCurveTo.EndPoint);
             }
         }
@@ -27,7 +30,10 @@ namespace KbUtil.Lib.Deserialization.Path
         {
             if (XmlUtilities.TryGetSubElement(absoluteQuadraticCurveToElement, "ControlPoint", out XElement controlPointElement))
             {
-                absoluteQuadraticCurveTo.ControlPoint = new Vec2();
+                absoluteQuadraticCurveTo.ControlPoint = new Vec2
+                {
+                    Parent = absoluteQuadraticCurveTo
+                };
                 Vec2Deserializer.Default.Deserialize(controlPointElement, absoluteQuadraticCurveTo.ControlPoint);
             }
         }

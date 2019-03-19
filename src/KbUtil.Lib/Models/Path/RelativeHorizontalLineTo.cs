@@ -1,6 +1,8 @@
 namespace KbUtil.Lib.Models.Path
 {
-    public class RelativeHorizontalLineTo : IPathComponent
+    using Keyboard;
+
+    public class RelativeHorizontalLineTo : Element, IPathComponent
     {
         public float X { get; set; }
 

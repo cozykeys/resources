@@ -1,4 +1,7 @@
-﻿namespace KbUtil.Lib.Deserialization.Path
+﻿using KbUtil.Lib.Deserialization.Extensions;
+using KbUtil.Lib.Models.Keyboard;
+
+namespace KbUtil.Lib.Deserialization.Path
 {
     using System;
     using System.Collections.Generic;
@@ -22,6 +25,8 @@
 
         public void Deserialize(XElement pathElement, Path path)
         {
+            DeserializeFill(pathElement, path);
+                
             var componentsElement = (XElement) pathElement
                 .Nodes()
                 .Single(node =>
@@ -31,7 +36,15 @@
             path.Components = componentsElement
                 .Nodes()
                 .Where(node => node.NodeType == XmlNodeType.Element)
-                .Select(componentElement => DeserializeComponent((XElement)componentElement));
+                .Select(componentElement => DeserializeComponent((XElement)componentElement, path));
+        }
+        
+        private static void DeserializeFill(XElement pathElement, Path path)
+        {
+            if(XmlUtilities.TryGetAttribute(pathElement, "Fill", out XAttribute fillAttribute))
+            {
+                path.Fill = fillAttribute.ValueAsString(path);
+            }
         }
 
         private static void InitializeComponentDeserializerMap()
@@ -59,12 +72,13 @@
             _componentTypeMap = pathComponentTypes.ToDictionary(type => type.Name);
         }
 
-        private static IPathComponent DeserializeComponent(XElement componentElement)
+        private static IPathComponent DeserializeComponent(XElement componentElement, Path path)
         {
             string elementName = componentElement.Name.ToString();
 
             Type elementType = _componentTypeMap[elementName];
             var component = (IPathComponent) Activator.CreateInstance(elementType);
+            ((Element)component).Parent = path;
 
             object deserializer = _componentDeserializerMap[$"{elementName}Deserializer"];
             MethodInfo deserializeMethod = deserializer.GetType().GetMethod("Deserialize");

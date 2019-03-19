@@ -1,8 +1,9 @@
 namespace KbUtil.Lib.Models.Path
 {
-    using KbUtil.Lib.Models.Geometry;
+    using Keyboard;
+    using Geometry;
 
-    public class RelativeCubicCurveTo : IPathComponent
+    public class RelativeCubicCurveTo : Element, IPathComponent
     {
         public Vec2 EndPoint { get; set; }
         public Vec2 ControlPointA { get; set; }

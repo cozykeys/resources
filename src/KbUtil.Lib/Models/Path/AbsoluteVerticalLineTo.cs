@@ -1,6 +1,8 @@
 namespace KbUtil.Lib.Models.Path
 {
-    public class AbsoluteVerticalLineTo : IPathComponent
+    using Keyboard;
+
+    public class AbsoluteVerticalLineTo : Element, IPathComponent
     {
         public float Y { get; set; }
 

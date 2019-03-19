@@ -17,7 +17,10 @@ namespace KbUtil.Lib.Deserialization.Path
         {
             if (XmlUtilities.TryGetSubElement(absoluteLineToElement, "EndPoint", out XElement endPointElement))
             {
-                absoluteLineTo.EndPoint = new Vec2();
+                absoluteLineTo.EndPoint = new Vec2
+                {
+                    Parent = absoluteLineTo
+                };
                 Vec2Deserializer.Default.Deserialize(endPointElement, absoluteLineTo.EndPoint);
             }
         }

@@ -1,5 +1,6 @@
 namespace KbUtil.Lib.Deserialization.Path
 {
+    using KbUtil.Lib.Models.Keyboard;
     using System.Xml.Linq;
     using Models.Path;
     using KbUtil.Lib.Deserialization.Internal;
@@ -17,7 +18,10 @@ namespace KbUtil.Lib.Deserialization.Path
         {
             if (XmlUtilities.TryGetSubElement(absoluteMoveToElement, "EndPoint", out XElement endPointElement))
             {
-                absoluteMoveTo.EndPoint = new Vec2();
+                absoluteMoveTo.EndPoint = new Vec2
+                {
+                    Parent = absoluteMoveTo
+                };
                 Vec2Deserializer.Default.Deserialize(endPointElement, absoluteMoveTo.EndPoint);
             }
         }

@@ -1,4 +1,5 @@
-﻿namespace KbUtil.Lib.SvgGeneration.Internal.Path
+﻿// ReSharper disable IdentifierTypo
+namespace KbUtil.Lib.SvgGeneration.Internal.Path
 {
     using System.Xml;
     using KbUtil.Lib.Models.Path;
@@ -7,7 +8,6 @@
 
     internal class PathWriter : IElementWriter<Path>
     {
-        private static int _switchIndex = 0;
         private static Dictionary<string, string> _pathStyleVisual = new Dictionary<string, string>
         {
             { "fill", "none" },
@@ -15,7 +15,7 @@
             { "stroke-width", "0.01" },
         };
 
-        private static Dictionary<string, string> _pathStylePonoko = new Dictionary<string, string>
+        private static readonly Dictionary<string, string> PathStylePonoko = new Dictionary<string, string>
         {
             { "fill", "none" },
             { "stroke", "#0000ff" },
@@ -45,8 +45,15 @@
 
         public void WriteSubElements(XmlWriter writer, Path path)
         {
+            var styleDictionary = PathStylePonoko;
+            
+            if (!string.IsNullOrEmpty(path.Fill))
+            {
+                styleDictionary["fill"] = path.Fill;
+            }
+            
             //WritePath(writer, path, _pathStyleVisual);
-            WritePath(writer, path, _pathStylePonoko);
+            WritePath(writer, path, styleDictionary);
         }
 
         private void WritePath(XmlWriter writer, Path path, Dictionary<string, string> styleDictionary)

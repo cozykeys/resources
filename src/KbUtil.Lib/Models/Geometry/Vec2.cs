@@ -1,6 +1,8 @@
 namespace KbUtil.Lib.Models.Geometry
 {
-    public class Vec2
+    using Keyboard;
+
+    public class Vec2 : Element
     {
         public float X { get; set; }
         public float Y { get; set; }
