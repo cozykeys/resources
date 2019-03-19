@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg4289"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="case_bottom_plate_test.svg">
+  <metadata
+     id="metadata4311">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs4309" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1143"
+     inkscape:window-height="1389"
+     id="namedview4307"
+     showgrid="false"
+     inkscape:zoom="12.31"
+     inkscape:cx="50"
+     inkscape:cy="50"
+     inkscape:window-x="0"
+     inkscape:window-y="49"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg4289" />
+  <path
+     id="CasePerimeter"
+     stroke="black"
+     stroke-width="0.1"
+     fill="none"
+     d="M 023.816 009.750            Q 024.163 007.780 026.163 007.780            L 323.837 007.780            Q 325.837 007.780 326.184 009.750            L 347.529 130.804            Q 347.877 132.774 345.920 133.190            L 246.124 154.402            Q 244.167 154.818 242.198 155.165            L 213.912 160.153            Q 211.942 160.500 209.942 160.500            L 140.058 160.500            Q 138.058 160.500 136.088 160.153            L 107.802 155.165            Q 105.833 154.818 103.876 154.402            L 004.080 133.190            Q 002.123 132.774 002.471 130.804            L 023.816 009.750" />
+  <circle
+     id="TopOuterLeftM2Screw"
+     transform="translate(28.7292881264225,12.03)"
+     r="1.15"
+     stroke="black"
+     stroke-width="0.1"
+     fill="none" />
+  <circle
+     id="TopOuterRightM2Screw"
+     transform="translate(321.270721873577,12.0299999999999)"
+     r="1.15"
+     stroke="black"
+     stroke-width="0.1"
+     fill="none" />
+  <circle
+     id="TopMiddleLeftM2Screw"
+     transform="translate(95.393,12.03)"
+     r="1.15"
+     stroke="black"
+     stroke-width="0.1"
+     fill="none" />
+  <circle
+     id="TopMiddleRightM2Screw"
+     transform="translate(254.6045,12.0299999999999)"
+     r="1.15"
+     stroke="black"
+     stroke-width="0.1"
+     fill="none" />
+  <circle
+     id="TopInnerLeftM2Screw"
+     transform="translate(162.0625,12.03)"
+     r="1.15"
+     stroke="black"
+     stroke-width="0.1"
+     fill="none" />
+  <circle
+     id="TopInnerRightM2Screw"
+     transform="translate(187.9375,12.03)"
+     r="1.15"
+     stroke="black"
+     stroke-width="0.1"
+     fill="none" />
+  <circle
+     id="CenterLeftM2Screw"
+     transform="translate(17.375378745,70.515)"
+     r="1.15"
+     stroke="black"
+     stroke-width="0.1"
+     fill="none" />
+  <circle
+     id="CenterRightM2Screw"
+     transform="translate(332.624631255,70.515)"
+     r="1.15"
+     stroke="black"
+     stroke-width="0.1"
+     fill="none" />
+  <circle
+     id="BottomOuterLeftM2Screw"
+     transform="translate(8.02146936261395,129)"
+     r="1.15"
+     stroke="black"
+     stroke-width="0.1"
+     fill="none" />
+  <circle
+     id="BottomOuterRightM2Screw"
+     transform="translate(341.978540637386,129)"
+     r="1.15"
+     stroke="black"
+     stroke-width="0.1"
+     fill="none" />
+  <circle
+     id="BottomInnerLeftM2Screw"
+     transform="translate(66.643615148327,142.645216098349)"
+     r="1.15"
+     stroke="black"
+     stroke-width="0.1"
+     fill="none" />
+  <circle
+     id="BottomInnerRightM2Screw"
+     transform="translate(283.356394851673,142.645216098349)"
+     r="1.15"
+     stroke="black"
+     stroke-width="0.1"
+     fill="none" />
+  <circle
+     id="BottomMiddleLeftM2Screw"
+     transform="translate(138.4299241846,156.25)"
+     r="1.15"
+     stroke="black"
+     stroke-width="0.1"
+     fill="none" />
+  <circle
+     id="BottomMiddleRightM2Screw"
+     transform="translate(211.570085815399,156.25)"
+     r="1.15"
+     stroke="black"
+     stroke-width="0.1"
+     fill="none" />
+  <circle
+     id="ResetSwitchHole"
+     transform="translate(175,47.78)"
+     r="0.75"
+     stroke="black"
+     stroke-width="0.1"
+     fill="none" />
+</svg>

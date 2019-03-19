@@ -1,0 +1,40 @@
+<svg>
+<path stroke="black" stroke-width="0.1" fill="none" d="M 23.8158183405039,9.74961550562094 Q 24.163114698126,7.78 26.163114698126,7.78 L 323.836895301874,7.77999999999997 Q 325.836895301874,7.77999999999997 326.184191659496,9.74961550562091 L 347.52936014218,130.804080635745 Q 347.876656499802,132.773696141366 345.920361298505,133.189519523803 L 246.123751812902,154.401943745126 Q 244.167456611605,154.817767127563 242.197841105596,155.165063482982 L 213.911528141487,160.152703644581 Q 211.941912635477,160.5 209.941912635477,160.5 L 140.058097364522,160.5 Q 138.058097364522,160.5 136.088481858513,160.152703644581 L 107.802168894404,155.165063482982 Q 105.832553388395,154.817767127563 103.876258187098,154.401943745126 L 4.0796487014954,133.189519523803 Q 2.12335350019816,132.773696141366 2.47064985782027,130.804080635745 L 23.8158183405039,9.74961550562094" />
+
+
+    <!-- Top Outer Left -->
+    <circle transform="translate(28.7292881264225,12.03)" r="1.15" stroke="black" stroke-width="0.1" fill="none" />
+    <!-- Top Outer Right -->
+    <circle transform="translate(321.270721873577,12.0299999999999)" r="1.15" stroke="black" stroke-width="0.1" fill="none" />
+
+    <!-- Top Middle Left -->
+    <circle transform="translate(95.393,12.03)" r="1.15" stroke="black" stroke-width="0.1" fill="none" />
+    <!-- Top Middle Right -->
+    <circle transform="translate(254.6045,12.0299999999999)" r="1.15" stroke="black" stroke-width="0.1" fill="none" />
+
+    <!-- Top Inner Left -->
+    <circle transform="translate(162.0625,12.03)" r="1.15" stroke="black" stroke-width="0.1" fill="none" />
+    <!-- Top Inner Right -->
+    <circle transform="translate(187.9375,12.03)" r="1.15" stroke="black" stroke-width="0.1" fill="none" />
+
+    <!-- Center Left -->
+    <circle transform="translate(17.375378745,70.515)" r="1.15" stroke="black" stroke-width="0.1" fill="none" />
+    <!-- Center Right -->
+    <circle transform="translate(332.624631255,70.515)" r="1.15" stroke="black" stroke-width="0.1" fill="none" />
+
+    <!-- Bottom Outer Left -->
+    <circle transform="translate(8.02146936261395,129)" r="1.15" stroke="black" stroke-width="0.1" fill="none" />
+    <!-- Bottom Outer Right -->
+    <circle transform="translate(341.978540637386,129)" r="1.15" stroke="black" stroke-width="0.1" fill="none" />
+
+    <!-- Bottom Inner Left -->
+    <circle transform="translate(66.643615148327,142.645216098349)" r="1.15" stroke="black" stroke-width="0.1" fill="none" />
+    <!-- Bottom Inner Right -->
+    <circle transform="translate(283.356394851673,142.645216098349)" r="1.15" stroke="black" stroke-width="0.1" fill="none" />
+
+    <!-- Bottom Middle Left -->
+    <circle transform="translate(138.4299241846,156.25)" r="1.15" stroke="black" stroke-width="0.1" fill="none" />
+    <!-- Bottom Middle Right -->
+    <circle transform="translate(211.570085815399,156.25)" r="1.15" stroke="black" stroke-width="0.1" fill="none" />
+
+</svg>
