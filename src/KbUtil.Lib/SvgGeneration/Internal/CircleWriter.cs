@@ -56,7 +56,6 @@
             // Next we write it with a style that is more visually pleasing
             if (GenerationOptions != null && GenerationOptions.EnableVisualSwitchCutouts == true)
             {
-                System.Console.WriteLine("Drawing circle");
                 writer.WriteStartElement("circle");
                 //writer.WriteAttributeString("id", "TODO");
                 writer.WriteAttributeString("r", $"{circle.Size/2}");

@@ -26,6 +26,8 @@ namespace KbUtil.Lib.Deserialization.Path
         public void Deserialize(XElement pathElement, Path path)
         {
             DeserializeFill(pathElement, path);
+            DeserializeStroke(pathElement, path);
+            DeserializeStrokeWidth(pathElement, path);
                 
             var componentsElement = (XElement) pathElement
                 .Nodes()

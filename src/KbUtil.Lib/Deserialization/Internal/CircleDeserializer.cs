@@ -8,40 +8,43 @@
     {
         public static CircleDeserializer Default { get; set; } = new CircleDeserializer();
 
-        public void Deserialize(XElement holeElement, Circle circle)
+        public void Deserialize(XElement circleElement, Circle circle)
         {
-            ElementDeserializer.Default.Deserialize(holeElement, circle);
+            ElementDeserializer.Default.Deserialize(circleElement, circle);
 
-            DeserializeSize(holeElement, circle);
+            DeserializeSize(circleElement, circle);
+            DeserializeFill(circleElement, circle);
+            DeserializeStroke(circleElement, circle);
+            DeserializeStrokeWidth(circleElement, circle);
         }
 
-        private void DeserializeSize(XElement holeElement, Circle circle)
+        private void DeserializeSize(XElement circleElement, Circle circle)
         {
-            if (XmlUtilities.TryGetAttribute(holeElement, "Size", out XAttribute sizeAttribute))
+            if (XmlUtilities.TryGetAttribute(circleElement, "Size", out XAttribute sizeAttribute))
             {
                 circle.Size = sizeAttribute.ValueAsFloat(circle);
             }
         }
 
-        private void DeserializeFill(XElement holeElement, Circle circle)
+        private void DeserializeFill(XElement circleElement, Circle circle)
         {
-            if (XmlUtilities.TryGetAttribute(holeElement, "Fill", out XAttribute sizeAttribute))
+            if (XmlUtilities.TryGetAttribute(circleElement, "Fill", out XAttribute sizeAttribute))
             {
                 circle.Fill = sizeAttribute.ValueAsString(circle);
             }
         }
 
-        private void DeserializeStroke(XElement holeElement, Circle circle)
+        private void DeserializeStroke(XElement circleElement, Circle circle)
         {
-            if (XmlUtilities.TryGetAttribute(holeElement, "Stroke", out XAttribute sizeAttribute))
+            if (XmlUtilities.TryGetAttribute(circleElement, "Stroke", out XAttribute sizeAttribute))
             {
                 circle.Stroke = sizeAttribute.ValueAsString(circle);
             }
         }
 
-        private void DeserializeStrokeWidth(XElement holeElement, Circle circle)
+        private void DeserializeStrokeWidth(XElement circleElement, Circle circle)
         {
-            if (XmlUtilities.TryGetAttribute(holeElement, "StrokeWidth", out XAttribute sizeAttribute))
+            if (XmlUtilities.TryGetAttribute(circleElement, "StrokeWidth", out XAttribute sizeAttribute))
             {
                 circle.StrokeWidth = sizeAttribute.ValueAsString(circle);
             }
