@@ -47,6 +47,22 @@ namespace KbUtil.Lib.Deserialization.Path
             }
         }
 
+        private static void DeserializeStroke(XElement pathElement, Path path)
+        {
+            if(XmlUtilities.TryGetAttribute(pathElement, "Stroke", out XAttribute fillAttribute))
+            {
+                path.Stroke = fillAttribute.ValueAsString(path);
+            }
+        }
+
+        private static void DeserializeStrokeWidth(XElement pathElement, Path path)
+        {
+            if(XmlUtilities.TryGetAttribute(pathElement, "StrokeWidth", out XAttribute fillAttribute))
+            {
+                path.StrokeWidth = fillAttribute.ValueAsString(path);
+            }
+        }
+
         private static void InitializeComponentDeserializerMap()
         {
             Func<Type, bool> isDeserializer = type => type

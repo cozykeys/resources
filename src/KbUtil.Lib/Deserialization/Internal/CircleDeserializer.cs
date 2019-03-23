@@ -22,5 +22,29 @@
                 circle.Size = sizeAttribute.ValueAsFloat(circle);
             }
         }
+
+        private void DeserializeFill(XElement holeElement, Circle circle)
+        {
+            if (XmlUtilities.TryGetAttribute(holeElement, "Fill", out XAttribute sizeAttribute))
+            {
+                circle.Fill = sizeAttribute.ValueAsString(circle);
+            }
+        }
+
+        private void DeserializeStroke(XElement holeElement, Circle circle)
+        {
+            if (XmlUtilities.TryGetAttribute(holeElement, "Stroke", out XAttribute sizeAttribute))
+            {
+                circle.Stroke = sizeAttribute.ValueAsString(circle);
+            }
+        }
+
+        private void DeserializeStrokeWidth(XElement holeElement, Circle circle)
+        {
+            if (XmlUtilities.TryGetAttribute(holeElement, "StrokeWidth", out XAttribute sizeAttribute))
+            {
+                circle.StrokeWidth = sizeAttribute.ValueAsString(circle);
+            }
+        }
     }
 }

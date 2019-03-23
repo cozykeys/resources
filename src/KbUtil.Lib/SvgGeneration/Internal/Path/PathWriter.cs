@@ -22,6 +22,10 @@ namespace KbUtil.Lib.SvgGeneration.Internal.Path
             { "stroke-width", "0.5" },
         };
 
+        private static readonly string DefaultFill = "none";
+        private static readonly string DefaultStroke = "#0000ff";
+        private static readonly string DefaultStrokeWidth = "0.5";
+
         public SvgGenerationOptions GenerationOptions { get; set; }
 
         public void Write(XmlWriter writer, Path path)
@@ -45,13 +49,18 @@ namespace KbUtil.Lib.SvgGeneration.Internal.Path
 
         public void WriteSubElements(XmlWriter writer, Path path)
         {
-            var styleDictionary = PathStylePonoko;
+            var styleDictionary = new Dictionary<string, string>();
             
-            if (!string.IsNullOrEmpty(path.Fill))
-            {
-                styleDictionary["fill"] = path.Fill;
-            }
-            
+            styleDictionary["fill"] = !string.IsNullOrEmpty(path.Fill)
+                ? path.Fill
+                : DefaultFill;
+            styleDictionary["stroke"] = !string.IsNullOrEmpty(path.Stroke)
+                ? path.Stroke
+                : DefaultStroke;
+            styleDictionary["stroke-width"] = !string.IsNullOrEmpty(path.StrokeWidth)
+                ? path.StrokeWidth
+                : DefaultStrokeWidth;
+
             //WritePath(writer, path, _pathStyleVisual);
             WritePath(writer, path, styleDictionary);
         }
