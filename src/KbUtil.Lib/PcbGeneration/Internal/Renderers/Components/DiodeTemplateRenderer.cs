@@ -5,8 +5,8 @@
 
     internal class DiodeTemplateRenderer : IPcbTemplateRenderer<DiodeTemplateData>
     {
-        private const string _relativeTemplatePath =
-            @"PcbGeneration\Internal\Templates\Components\diode.template.kicad_pcb";
+        private static readonly string _relativeTemplatePath =
+            Path.Combine("PcbGeneration", "Internal", "Templates", "Components", "diode.template.kicad_pcb");
 
         public string Render(DiodeTemplateData templateData)
             => File.ReadAllText(TemplatePath)

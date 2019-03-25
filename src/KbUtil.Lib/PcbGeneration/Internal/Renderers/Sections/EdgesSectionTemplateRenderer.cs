@@ -5,8 +5,8 @@
 
     internal class EdgesSectionTemplateRenderer : IPcbTemplateRenderer<EdgesSectionTemplateData>
     {
-        private const string _relativeTemplatePath =
-            @"PcbGeneration\Internal\Templates\Sections\edges_section.template.kicad_pcb";
+        private static readonly string _relativeTemplatePath =
+            Path.Combine("PcbGeneration", "Internal", "Templates", "Sections", "edges_section.template.kicad_pcb");
 
         public string Render(EdgesSectionTemplateData templateData)
         {

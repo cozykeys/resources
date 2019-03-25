@@ -7,8 +7,8 @@
 
     internal class NetClassTemplateRenderer : IPcbTemplateRenderer<NetClassTemplateData>
     {
-        private const string _relativeTemplatePath =
-            @"PcbGeneration\Internal\Templates\Components\net_class.template.kicad_pcb";
+        private static readonly string _relativeTemplatePath =
+            Path.Combine("PcbGeneration", "Internal", "Templates", "Components", "net_class.template.kicad_pcb");
 
         public string Render(NetClassTemplateData templateData)
             => File.ReadAllText(TemplatePath)

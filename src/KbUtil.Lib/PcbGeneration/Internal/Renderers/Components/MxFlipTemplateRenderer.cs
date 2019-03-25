@@ -5,8 +5,8 @@
 
     internal class MxFlipTemplateRenderer : IPcbTemplateRenderer<MxFlipTemplateData>
     {
-        private const string _relativeTemplatePath =
-            @"PcbGeneration\Internal\Templates\Components\mx_flip.template.kicad_pcb";
+        private static readonly string _relativeTemplatePath =
+            Path.Combine("PcbGeneration", "Internal", "Templates", "Components", "mx_flip.template.kicad_pcb");
 
         public string Render(MxFlipTemplateData templateData)
             => File.ReadAllText(TemplatePath)

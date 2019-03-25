@@ -9,8 +9,8 @@
 
     internal class NetsSectionTemplateRenderer : IPcbTemplateRenderer<NetsSectionTemplateData>
     {
-        private const string _relativeTemplatePath =
-            @"PcbGeneration\Internal\Templates\Sections\nets_section.template.kicad_pcb";
+        private static readonly string _relativeTemplatePath =
+            Path.Combine("PcbGeneration", "Internal", "Templates", "Sections", "nets_section.template.kicad_pcb");
 
         public string Render(NetsSectionTemplateData templateData)
             => File.ReadAllText(TemplatePath)

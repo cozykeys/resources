@@ -23,7 +23,7 @@
                 RenderControllerSection(),
                 RenderEdgesSection(),
                 RenderSwitchesSection(pcbData),
-                RenderTracesSection(),
+                //RenderTracesSection(),
                 ")"
             };
 

@@ -5,8 +5,8 @@
 
     internal class TracesSectionTemplateRenderer : IPcbTemplateRenderer<TracesSectionTemplateData>
     {
-        private const string _relativeTemplatePath =
-            @"PcbGeneration\Internal\Templates\Sections\traces_section.template.kicad_pcb";
+        private static readonly string _relativeTemplatePath =
+            Path.Combine("PcbGeneration", "Internal", "Templates", "Sections", "traces_section.template.kicad_pcb");
 
         public string Render(TracesSectionTemplateData templateData)
             => File.ReadAllText(TemplatePath);

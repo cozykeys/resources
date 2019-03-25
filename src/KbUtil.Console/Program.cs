@@ -93,6 +93,7 @@
         {
             ActivatorUtilities.CreateInstance<GenerateSvgCommand>(serviceProvider);
             ActivatorUtilities.CreateInstance<GeneratePcbCommand>(serviceProvider);
+            ActivatorUtilities.CreateInstance<GenerateSwitchDataCommand>(serviceProvider);
         }
     }
 }

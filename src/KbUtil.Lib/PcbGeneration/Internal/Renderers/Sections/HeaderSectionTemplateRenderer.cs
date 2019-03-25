@@ -5,8 +5,8 @@
 
     internal class HeaderSectionTemplateRenderer : IPcbTemplateRenderer<HeaderSectionTemplateData>
     {
-        private const string _relativeTemplatePath =
-            @"PcbGeneration\Internal\Templates\Sections\header_section.template.kicad_pcb";
+        private static readonly string _relativeTemplatePath =
+            Path.Combine("PcbGeneration", "Internal", "Templates", "Sections", "header_section.template.kicad_pcb");
 
         public string Render(HeaderSectionTemplateData templateData)
             => File.ReadAllText(TemplatePath);
