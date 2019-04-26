@@ -103,29 +103,11 @@
             }
 
             int legendIndex = 0;
+            var legendWriter = new LegendWriter { GenerationOptions = GenerationOptions };
             foreach (Legend legend in key.Legends)
             {
-                writer.WriteStartElement("text");
-                writer.WriteAttributeString("id", $"{key.Name}Legend{legendIndex}");
-                writer.WriteAttributeString("text-anchor", "middle");
-
-                float fontSize = legend.FontSize is default(float) ? 4 : legend.FontSize;
-
-                var styleDictionary = new Dictionary<string, string>
-                {
-                    { "fill", !string.IsNullOrWhiteSpace(legend.Color) ? legend.Color : "#000000" },
-                    { "dominant-baseline", "central" },
-                    { "text-anchor", "middle" },
-                    { "font-size", $"{fontSize}px" },
-                    { "font-family", "sans-serif" },
-                    { "font-weight", "normal" },
-                    { "font-style", "normal" },
-                };
-
-                writer.WriteAttributeString("style", styleDictionary.ToCssStyleString());
-                writer.WriteString(legend.Text);
-                writer.WriteEndElement(); // </text>
-
+                legend.Name = $"{key.Name}Legend{legendIndex}";
+                legendWriter.Write(writer, legend);
                 legendIndex++;
             }
         }
