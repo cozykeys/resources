@@ -2,7 +2,7 @@
 
 kbutil_exe="src/KbUtil.Console/bin/Release/netcoreapp2.0/linux-x64/kbutil"
 input="$HOME/src/cozykeys/bloomer/bloomer.xml"
-output="$HOME/src/cozykeys/svgs2"
+output="$HOME/src/cozykeys/svgs4"
 
 open_with="inkscape"
 #open_with="chromium-browser"

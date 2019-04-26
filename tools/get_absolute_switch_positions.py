@@ -65,7 +65,7 @@ def main():
     #test(Vec2(0.0, 0.0), Rotation(radians(-90), Vec2(2.0, 0.0)), Vec2(2.0, 2.0))
 
     bearings = []
-    with open('/home/pewing/src/cozykeys/rotations2.json') as f:
+    with open('/home/pewing/src/cozykeys/svgs3/rotations.json') as f:
         bearings = json.loads(f.read())
 
     svg = svg_header
@@ -106,7 +106,7 @@ def main():
             "diode_position": "right"
         })
 
-    with open('/home/pewing/src/cozykeys/bloomer_rev4_switches2.json', 'w') as f:
+    with open('/home/pewing/src/cozykeys/bloomer_rev4_switches3.json', 'w') as f:
         f.write(json.dumps(switches, indent=4))
 
 

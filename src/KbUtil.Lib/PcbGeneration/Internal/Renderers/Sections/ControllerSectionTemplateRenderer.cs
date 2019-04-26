@@ -6,7 +6,7 @@
     internal class ControllerSectionTemplateRenderer : IPcbTemplateRenderer<ControllerSectionTemplateData>
     {
         private static readonly string _relativeTemplatePath =
-            Path.Combine("PcbGeneration", "Internal", "Templates", "Sections", "controller_section.template.kicad_pcb");
+            Path.Combine("PcbGeneration", "Internal", "Templates", "Sections", "controller_section_itsybitsy.template.kicad_pcb");
 
         public string Render(ControllerSectionTemplateData templateData)
         {

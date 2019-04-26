@@ -30,7 +30,7 @@
             var pcbString = string.Join($"{Environment.NewLine}{Environment.NewLine}", pcb);
 
             Directory.CreateDirectory(outputDirectory);
-            File.WriteAllText(Path.Combine(outputDirectory, "Ergo87.kicad_pcb"), pcbString);
+            File.WriteAllText(Path.Combine(outputDirectory, "bloomer.kicad_pcb"), pcbString);
         }
 
 

@@ -71,6 +71,9 @@
     <None Update="PcbGeneration\Internal\Templates\switch.template.kicad_pcb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="PcbGeneration\Internal\Templates\Sections\controller_section_itsybitsy.template.kicad_pcb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
