@@ -6,6 +6,9 @@ PUBLISH_OPTS=--self-contained --configuration Release
 PROJ_KBUTIL=src/KbUtil.Console/KbUtil.Console.csproj
 PROJ_KBMATH=src/KbMath.Console/KbMath.Console.csproj
 
+SRC_FILES=$(shell find src/ -type f)
+
+.PHONY: all
 all: build
 
 publish:
@@ -14,7 +17,7 @@ publish:
 	dotnet publish --runtime $(RUNTIME_WIN) $(PUBLISH_OPTS) $(PROJ_KBMATH)
 	dotnet publish --runtime $(RUNTIME_LNX) $(PUBLISH_OPTS) $(PROJ_KBMATH)
 
-build:
+build: $(SRC_FILES)
 	dotnet build -c Debug $(SOLUTION)
 	dotnet build -c Release $(SOLUTION)
 

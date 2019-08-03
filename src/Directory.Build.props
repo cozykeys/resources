@@ -1,0 +1,12 @@
+<Project>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>$(MSBuildThisFileDirectory)\..\build\$(MSBuildProjectName)\bin\Release</OutputPath>
+    <IntermediateOutputPath>$(MSBuildThisFileDirectory)\..\build\$(MSBuildProjectName)\obj\Release</IntermediateOutputPath>
+    <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)\..\build\$(MSBuildProjectName)\obj\Release</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>$(MSBuildThisFileDirectory)\..\build\$(MSBuildProjectName)\bin\Debug</OutputPath>
+    <IntermediateOutputPath>$(MSBuildThisFileDirectory)\..\build\$(MSBuildProjectName)\obj\Debug</IntermediateOutputPath>
+    <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)\..\build\$(MSBuildProjectName)\obj\Debug</BaseIntermediateOutputPath>
+  </PropertyGroup>
+</Project>

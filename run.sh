@@ -1,24 +1,16 @@
 #!/usr/bin/env bash
 
-kbutil_exe="src/KbUtil.Console/bin/Release/netcoreapp2.0/linux-x64/kbutil"
-input="$HOME/src/cozykeys/bloomer/bloomer.xml"
-#input="$HOME/src/cozykeys/bloomer/layouts/rev3/default/base.xml"
-#input="$HOME/src/cozykeys/bloomer/layouts/rev3/default/fn.xml"
-#input="$HOME/src/cozykeys/bloomer/layouts/rev3/default/num.xml"
-output="$HOME/src/cozykeys/svgs4"
+repo_root_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+kbutil_dll="$repo_root_dir/build/KbUtil.Console/bin/Release/kbutil.dll"
+goobie_dir="$repo_root_dir/../goobie"
+input="$goobie_dir/goobie.xml"
+output="$goobie_dir/case"
 
 open_with="inkscape"
-#open_with="chromium-browser"
 
-options="--visual-switch-cutouts"
-#options="--visual-switch-cutouts --keycap-overlays --keycap-legends"
+options="--visual-switch-cutouts --keycap-overlays --keycap-legends"
 
-"$kbutil_exe" gen-svg $options "$input" "$output"
+dotnet "$kbutil_dll" gen-svg $options "$input" "$output"
 
-"$open_with" "$output/bloomer_Switch.svg" &
+"$open_with" "$output/goobie_Switch.svg" 
 
-#"$open_with" "$output/bloomer_Num.svg" &
-#"$open_with" "$output/bloomer_Fn.svg" &
-#"$open_with" "$output/bloomer_Base.svg" &
-
-wait
