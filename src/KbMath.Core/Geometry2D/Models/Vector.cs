@@ -21,6 +21,9 @@
             hash = (hash * 7) + Y.GetHashCode();
             return hash;
         }
+        
+        public static Vector operator+(Vector lhs, Vector rhs)
+            => new Vector(lhs.X + rhs.X, lhs.Y + rhs.Y);
 
         public override string ToString()
             => $"Vector: X = {X}, Y = {Y}";
