@@ -85,10 +85,10 @@
                 switch (((Stack) element.Parent).Orientation)
                 {
                     case StackOrientation.Horizontal:
-                        xOffset += GetOffsetInStack((Stack)element.Parent, element);
+                        xOffset += SvgGeneration.Util.GetOffsetInStack((Stack)element.Parent, element);
                         break;
                     case StackOrientation.Vertical:
-                        yOffset += GetOffsetInStack((Stack)element.Parent, element);
+                        yOffset += SvgGeneration.Util.GetOffsetInStack((Stack)element.Parent, element);
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
@@ -108,47 +108,6 @@
             if (transformationStrings.Any())
             {
                 writer.WriteAttributeString("transform", string.Join(" ", transformationStrings));
-            }
-        }
-
-        private static float GetOffsetInStack(Stack stack, Element element)
-        {
-            switch (stack.Orientation)
-            {
-                case StackOrientation.Vertical:
-                    float stackHeight = default;
-                    float dy = float.MaxValue;
-
-                    foreach (Element child in stack.Children)
-                    {
-                        if (child == element)
-                        {
-                            dy = stackHeight + child.Height / 2 + child.Margin;
-                        }
-
-                        stackHeight += child.Height + child.Margin * 2;
-                    }
-
-                    return -(stackHeight / 2 - dy);
-
-                case StackOrientation.Horizontal:
-                    float stackWidth = default;
-                    float dx = float.MaxValue;
-
-                    foreach (Element child in stack.Children)
-                    {
-                        if (child == element)
-                        {
-                            dx = stackWidth + child.Width / 2 + child.Margin;
-                        }
-
-                        stackWidth += child.Width + child.Margin * 2;
-                    }
-
-                    return -(stackWidth / 2 - dx);
-
-                default:
-                    throw new NotSupportedException();
             }
         }
     }

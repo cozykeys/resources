@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\KbMath.Core\KbMath.Core.csproj" />
     <ProjectReference Include="..\KbUtil.Lib\KbUtil.Lib.csproj" />
   </ItemGroup>
 
