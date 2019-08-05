@@ -1,12 +1,12 @@
-﻿namespace KbUtil.Lib.PcbGeneration.Internal
+namespace KbUtil.Lib.PcbGeneration.Internal
 {
     using KbUtil.Lib.PcbGeneration.Internal.Models.Components;
     using System.IO;
 
-    internal class MxFlipTemplateRenderer : IPcbTemplateRenderer<MxTemplateData>
+    internal class MxTemplateRenderer : IPcbTemplateRenderer<MxTemplateData>
     {
         private static readonly string _relativeTemplatePath =
-            Path.Combine("PcbGeneration", "Internal", "Templates", "Components", "mx_flip.template.kicad_pcb");
+            Path.Combine("PcbGeneration", "Internal", "Templates", "Components", "mx.template.kicad_pcb");
 
         public string Render(MxTemplateData templateData)
             => File.ReadAllText(TemplatePath)

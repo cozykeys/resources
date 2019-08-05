@@ -16,7 +16,7 @@ namespace KbUtil.Lib.SvgGeneration
 
             Element child = element;
             var parent = element.Parent;
-            while (parent is Group)
+            while (!(parent is Keyboard))
             {
                 if (parent is Stack stack)
                 {
@@ -95,3 +95,4 @@ namespace KbUtil.Lib.SvgGeneration
         }
     }
 }
+

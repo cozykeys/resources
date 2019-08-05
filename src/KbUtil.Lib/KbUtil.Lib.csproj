@@ -26,6 +26,9 @@
     <None Update="PcbGeneration\Internal\Templates\Components\net.template.kicad_pcb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="PcbGeneration\Internal\Templates\Components\mx.template.kicad_pcb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="PcbGeneration\Internal\Templates\Components\mx_flip.template.kicad_pcb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -50,6 +53,9 @@
     <None Update="PcbGeneration\Internal\Templates\Sections\edges_section.template.kicad_pcb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="PcbGeneration\Internal\Templates\Sections\edges_section_radix.template.kicad_pcb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="PcbGeneration\Internal\Templates\Sections\header_section.template.kicad_pcb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -68,6 +74,13 @@
     <None Update="PcbGeneration\Internal\Templates\Sections\controller_section_itsybitsy.template.kicad_pcb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="PcbGeneration\Internal\Templates\Sections\controller_section_elitec.template.kicad_pcb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KbMath.Core\KbMath.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>

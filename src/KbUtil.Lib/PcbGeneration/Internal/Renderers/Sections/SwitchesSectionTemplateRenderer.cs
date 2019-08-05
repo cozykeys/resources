@@ -19,7 +19,9 @@
         {
             var switches = new List<string>();
 
-            var mxFlipRenderer = new MxFlipTemplateRenderer();
+            // Swap this if the board needs flippable MX switch footprints
+            var mxRenderer = new MxTemplateRenderer();
+            //var mxRenderer = new MxFlipTemplateRenderer();
             var diodeRenderer = new DiodeTemplateRenderer();
 
             for (int i = 0; i < templateData.PcbData.RowCount; ++i)
@@ -78,7 +80,7 @@
                     var rowNetName = $"N-row-{i}";
                     var rowNetId = templateData.PcbData.NetDictionary[rowNetName];
 
-                    switches.Add(mxFlipRenderer.Render(new MxFlipTemplateData
+                    switches.Add(mxRenderer.Render(new MxTemplateData
                     {
                         Label = switchLabel,
                         X = switchX,
