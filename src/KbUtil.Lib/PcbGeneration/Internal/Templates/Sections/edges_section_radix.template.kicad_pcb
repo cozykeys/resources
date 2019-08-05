@@ -1,11 +1,9 @@
-    (gr_line (start 25.668 27.017) (end 324.332 27.017) (angle 90) (layer Edge.Cuts) (width 0.3))
-    (gr_line (start 324.332 27.017) (end 324.332 140.862) (angle 90) (layer Edge.Cuts) (width 0.3))
-    (gr_line (start 324.332 140.862) (end 25.668 140.862) (angle 90) (layer Edge.Cuts) (width 0.3))
-    (gr_line (start 25.668 140.862) (end 25.668 27.017) (angle 90) (layer Edge.Cuts) (width 0.3))
-    
-    
-    (gr_line (start 153.863 144.504) (end 152.863 144.504) (angle 90) (layer Edge.Cuts) (width 0.3))
-    (gr_line (start 153.863 144.504) (end 154.863 144.504) (angle 90) (layer Edge.Cuts) (width 0.3))
-    (gr_line (start 153.863 144.504) (end 153.863 143.504) (angle 90) (layer Edge.Cuts) (width 0.3))
-    (gr_line (start 153.863 144.504) (end 153.863 145.504) (angle 90) (layer Edge.Cuts) (width 0.3))
+
+    (gr_line (start 175 23.37451789667466) (end 311.25215373222005 23.37451789667466) (angle 90) (layer Edge.Cuts) (width 0.3))
+    (gr_line (start 311.25215373222005 23.37451789667466) (end 327.97448210332533 118.21115373222004) (angle 90) (layer Edge.Cuts) (width 0.3))
+    (gr_line (start 327.97448210332533 118.21115373222004) (end 196.13684626777993 144.50448210332533) (angle 90) (layer Edge.Cuts) (width 0.3))
+    (gr_line (start 196.13684626777993 144.50448210332533) (end 153.86315373222004 144.50448210332533) (angle 90) (layer Edge.Cuts) (width 0.3))
+    (gr_line (start 153.86315373222004 144.50448210332533) (end 22.025517896674657 118.21115373222004) (angle 90) (layer Edge.Cuts) (width 0.3))
+    (gr_line (start 22.025517896674657 118.21115373222004) (end 38.747846267779956 23.37451789667466) (angle 90) (layer Edge.Cuts) (width 0.3))
+    (gr_line (start 38.747846267779956 23.37451789667466) (end 175 23.37451789667466) (angle 90) (layer Edge.Cuts) (width 0.3))
 
