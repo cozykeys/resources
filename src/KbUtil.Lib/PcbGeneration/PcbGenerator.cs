@@ -11,7 +11,7 @@
     public class PcbGenerator
     {
 
-        public static void GeneratePcb(List<Switch> switches, string outputDirectory, PcbGenerationOptions options = null)
+        public static void GeneratePcb(List<Switch> switches, string outputPath, PcbGenerationOptions options = null)
         {
             var pcbData = new PcbData(switches);
 
@@ -29,8 +29,7 @@
 
             var pcbString = string.Join($"{Environment.NewLine}{Environment.NewLine}", pcb);
 
-            Directory.CreateDirectory(outputDirectory);
-            File.WriteAllText(Path.Combine(outputDirectory, "bloomer.kicad_pcb"), pcbString);
+            File.WriteAllText(outputPath, pcbString);
         }
 
 

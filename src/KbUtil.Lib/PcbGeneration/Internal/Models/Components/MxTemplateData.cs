@@ -1,6 +1,6 @@
-﻿namespace KbUtil.Lib.PcbGeneration.Internal.Models.Components
+namespace KbUtil.Lib.PcbGeneration.Internal.Models.Components
 {
-    internal class MxFlipTemplateData
+    internal class MxTemplateData
     {
         public float X { get; set; }
         public float Y { get; set; }
