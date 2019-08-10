@@ -2,7 +2,6 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <RuntimeFrameworkVersion>2.0.9</RuntimeFrameworkVersion>
     <AssemblyName>kbutil</AssemblyName>
     <LangVersion>latest</LangVersion>
