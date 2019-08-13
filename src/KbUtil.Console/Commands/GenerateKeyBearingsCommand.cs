@@ -114,6 +114,11 @@ namespace KbUtil.Console.Commands
             {
                 string keyName = string.IsNullOrWhiteSpace(key.Name) ? $"UnnamedKey{i++}" : key.Name;
                 keyGeometry[keyName] = Util.GetAbsoluteBearing(key);
+
+                keyGeometry[keyName].Rotation = (float)Math.Round(keyGeometry[keyName].Rotation, 3);
+                keyGeometry[keyName].Position = new Vector(
+                    Math.Round(keyGeometry[keyName].Position.X, 3),
+                    Math.Round(keyGeometry[keyName].Position.Y, 3));
             }
 
             if (!string.IsNullOrEmpty(DebugSvgPath))

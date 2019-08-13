@@ -3,3 +3,4 @@ output/
 build/
 .idea/
 *.DotSettings.user
+tags
