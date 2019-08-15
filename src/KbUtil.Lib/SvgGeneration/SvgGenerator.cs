@@ -26,7 +26,7 @@
                 using (FileStream stream = File.Open(path, FileMode.Create))
                 using (XmlWriter writer = XmlWriter.Create(stream, settings))
                 {
-                    WriteSvgOpenTag(writer);
+                    WriteSvgOpenTag(writer, (int)layer.Width, (int)layer.Height);
 
                     var layerWriter = new LayerWriter { GenerationOptions = options };
                     layerWriter.Write(writer, layer);
@@ -36,12 +36,15 @@
             }
         }
 
-        private static void WriteSvgOpenTag(XmlWriter writer)
+        private static void WriteSvgOpenTag(XmlWriter writer, int width, int height)
         {
+            width = width > 0 ? width : 500;
+            height = height > 0 ? height : 500;
+
             writer.WriteStartElement("svg", "http://www.w3.org/2000/svg");
-            writer.WriteAttributeString("width", "500mm");
-            writer.WriteAttributeString("height", "500mm");
-            writer.WriteAttributeString("viewBox", "0 0 500 500");
+            writer.WriteAttributeString("width", $"{width}mm");
+            writer.WriteAttributeString("height", $"{height}mm");
+            writer.WriteAttributeString("viewBox", $"0 0 {width} {height}");
         }
 
         private static void WriteSvgCloseTag(XmlWriter writer)
