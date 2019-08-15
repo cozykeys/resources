@@ -57,6 +57,10 @@
                         var holeWriter = new CircleWriter { GenerationOptions = GenerationOptions };
                         holeWriter.Write(writer, (Circle)circle);
                         break;
+                    case var text when child is Text:
+                        var textWriter = new TextWriter { GenerationOptions = GenerationOptions };
+                        textWriter.Write(writer, (Text)text);
+                        break;
                     case var subGroup when child is Group:
                         Write(writer, (Group)subGroup);
                         break;
