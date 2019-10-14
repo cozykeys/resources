@@ -8,6 +8,12 @@
         (fp_line (start 6.35 -6.35) (end 6.35 6.35) (layer Cmts.User) (width 0.381))
         (fp_line (start 6.35 6.35) (end -6.35 6.35) (layer Cmts.User) (width 0.381))
         (fp_line (start -6.35 6.35) (end -6.35 -6.35) (layer Cmts.User) (width 0.381))
+        
+        (fp_line (start -9.05 -9.05) (end 9.05 -9.05) (layer Cmts.User) (width 0.381))
+        (fp_line (start 9.05 -9.05) (end 9.05 9.05) (layer Cmts.User) (width 0.381))
+        (fp_line (start 9.05 9.05) (end -9.05 9.05) (layer Cmts.User) (width 0.381))
+        (fp_line (start -9.05 9.05) (end -9.05 -9.05) (layer Cmts.User) (width 0.381))
+        
         (pad 0 np_thru_hole circle (at 0 0) (size 3.9878 3.9878) (drill 3.9878) (layers *.Cu))
         (pad 0 thru_hole circle (at -5.08 0) (size 1.7018 1.7018) (drill 1.7018) (layers *.Cu))
         (pad 0 thru_hole circle (at 5.08 0) (size 1.7018 1.7018) (drill 1.7018) (layers *.Cu))
