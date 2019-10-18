@@ -1,5 +1,6 @@
 ﻿namespace KbMath.Core.Geometry2D.Extensions
 {
+    using System;
     using KbMath.Core.Common.Extensions;
     using KbMath.Core.Geometry2D.Models;
 
@@ -10,5 +11,8 @@
 
         public static Vector Add(this Vector lhs, Vector rhs)
             => new Vector(lhs.X + rhs.X, lhs.Y + rhs.Y);
+
+        public static Vector Project(this Vector vector, double theta, double magnitude)
+            => new Vector(vector.X + magnitude * Math.Cos(theta), vector.Y + magnitude * Math.Sin(theta));
     }
 }
