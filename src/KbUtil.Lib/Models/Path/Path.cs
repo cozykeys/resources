@@ -9,6 +9,7 @@ namespace KbUtil.Lib.Models.Path
     public class Path : Element
     {
         public string Fill { get; set; }
+        public string FillOpacity { get; set; }
         public string Stroke { get; set; }
         public string StrokeWidth { get; set; }
         public IEnumerable<IPathComponent> Components { get; set; }

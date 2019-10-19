@@ -23,6 +23,7 @@ namespace KbUtil.Lib.SvgGeneration.Internal.Path
         };
 
         private static readonly string DefaultFill = "none";
+        private static readonly string DefaultFillOpacity = "1";
         private static readonly string DefaultStroke = "#0000ff";
         private static readonly string DefaultStrokeWidth = "0.5";
 
@@ -54,6 +55,9 @@ namespace KbUtil.Lib.SvgGeneration.Internal.Path
             styleDictionary["fill"] = !string.IsNullOrEmpty(path.Fill)
                 ? path.Fill
                 : DefaultFill;
+            styleDictionary["fill-opacity"] = !string.IsNullOrEmpty(path.FillOpacity)
+                ? path.FillOpacity
+                : DefaultFillOpacity;
             styleDictionary["stroke"] = !string.IsNullOrEmpty(path.Stroke)
                 ? path.Stroke
                 : DefaultStroke;
