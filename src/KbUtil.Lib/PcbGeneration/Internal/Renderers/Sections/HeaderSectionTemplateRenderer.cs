@@ -5,12 +5,19 @@
 
     internal class HeaderSectionTemplateRenderer : IPcbTemplateRenderer<HeaderSectionTemplateData>
     {
-        private static readonly string _relativeTemplatePath =
-            Path.Combine("PcbGeneration", "Internal", "Templates", "Sections", "header_section.template.kicad_pcb");
+        public string KeyboardName { get; set; }
 
         public string Render(HeaderSectionTemplateData templateData)
-            => File.ReadAllText(TemplatePath);
+        {
+            string templatePath = Path.Combine(
+                Utilities.AssemblyDirectory,
+                "PcbGeneration",
+                "Internal",
+                "Templates",
+                "Sections",
+                "header_section.template.kicad_pcb");
 
-        private string TemplatePath => Path.Combine(Utilities.AssemblyDirectory, _relativeTemplatePath);
+            return File.ReadAllText(templatePath);
+        }
     }
 }

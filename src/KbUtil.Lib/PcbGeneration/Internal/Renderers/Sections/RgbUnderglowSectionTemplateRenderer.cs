@@ -1,13 +1,13 @@
-﻿namespace KbUtil.Lib.PcbGeneration.Internal.Renderers.Sections
+namespace KbUtil.Lib.PcbGeneration.Internal.Renderers.Sections
 {
     using KbUtil.Lib.PcbGeneration.Internal.Models.Sections;
     using System.IO;
 
-    internal class ControllerSectionTemplateRenderer : IPcbTemplateRenderer<ControllerSectionTemplateData>
+    internal class RgbUnderglowSectionTemplateRenderer : IPcbTemplateRenderer<RgbUnderglowSectionTemplateData>
     {
         public string KeyboardName { get; set; }
 
-        public string Render(ControllerSectionTemplateData templateData)
+        public string Render(RgbUnderglowSectionTemplateData templateData)
         {
             string templatePath = Path.Combine(
                 Utilities.AssemblyDirectory,
@@ -15,7 +15,7 @@
                 "Internal",
                 "Templates",
                 "Sections",
-                $"controller_section_{KeyboardName}.template.kicad_pcb");
+                $"rgb_underglow_section_{KeyboardName}.template.kicad_pcb");
 
             return File.ReadAllText(templatePath);
         }

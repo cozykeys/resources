@@ -55,6 +55,9 @@
     <None Update="PcbGeneration\Internal\Templates\Sections\edges_section_radix.template.kicad_pcb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="PcbGeneration\Internal\Templates\Sections\edges_section_raven.template.kicad_pcb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="PcbGeneration\Internal\Templates\Sections\header_section.template.kicad_pcb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -62,6 +65,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="PcbGeneration\Internal\Templates\Sections\traces_section.template.kicad_pcb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PcbGeneration\Internal\Templates\Sections\traces_section_raven.template.kicad_pcb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="PcbGeneration\Internal\Templates\Sections\switches_section.template.kicad_pcb">
@@ -74,6 +80,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="PcbGeneration\Internal\Templates\Sections\controller_section_elitec.template.kicad_pcb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PcbGeneration\Internal\Templates\Sections\controller_section_raven.template.kicad_pcb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PcbGeneration\Internal\Templates\Sections\rgb_underglow_section_raven.template.kicad_pcb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

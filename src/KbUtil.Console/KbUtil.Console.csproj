@@ -1,8 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
-    <RuntimeFrameworkVersion>2.0.9</RuntimeFrameworkVersion>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
     <AssemblyName>kbutil</AssemblyName>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>

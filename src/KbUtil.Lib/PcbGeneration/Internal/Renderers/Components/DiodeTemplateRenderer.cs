@@ -5,6 +5,8 @@
 
     internal class DiodeTemplateRenderer : IPcbTemplateRenderer<DiodeTemplateData>
     {
+        public string KeyboardName { get; set; }
+
         private static readonly string _relativeTemplatePath =
             Path.Combine("PcbGeneration", "Internal", "Templates", "Components", "diode.template.kicad_pcb");
 

@@ -5,6 +5,8 @@ namespace KbUtil.Lib.PcbGeneration.Internal
 
     internal class MxTemplateRenderer : IPcbTemplateRenderer<MxTemplateData>
     {
+        public string KeyboardName { get; set; }
+
         private static readonly string _relativeTemplatePath =
             Path.Combine("PcbGeneration", "Internal", "Templates", "Components", "mx.template.kicad_pcb");
 

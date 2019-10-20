@@ -8,6 +8,8 @@
 
     internal class SwitchesSectionTemplateRenderer : IPcbTemplateRenderer<SwitchesSectionTemplateData>
     {
+        public string KeyboardName { get; set; }
+
         private static readonly string _relativeTemplatePath =
             Path.Combine("PcbGeneration", "Internal", "Templates", "Sections", "switches_section.template.kicad_pcb");
 
@@ -20,9 +22,18 @@
             var switches = new List<string>();
 
             // Swap this if the board needs flippable MX switch footprints
-            var mxRenderer = new MxTemplateRenderer();
-            //var mxRenderer = new MxFlipTemplateRenderer();
-            var diodeRenderer = new DiodeTemplateRenderer();
+            var mxRenderer = new MxTemplateRenderer
+            {
+                KeyboardName = KeyboardName
+            };
+            //var mxRenderer = new MxFlipTemplateRenderer
+            //{
+            //    KeyboardName = KeyboardName
+            //};
+            var diodeRenderer = new DiodeTemplateRenderer
+            {
+                KeyboardName = KeyboardName
+            };
 
             for (int i = 0; i < templateData.PcbData.RowCount; ++i)
             {

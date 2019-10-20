@@ -5,12 +5,19 @@
 
     internal class TracesSectionTemplateRenderer : IPcbTemplateRenderer<TracesSectionTemplateData>
     {
-        private static readonly string _relativeTemplatePath =
-            Path.Combine("PcbGeneration", "Internal", "Templates", "Sections", "traces_section.template.kicad_pcb");
+        public string KeyboardName { get; set; }
 
         public string Render(TracesSectionTemplateData templateData)
-            => File.ReadAllText(TemplatePath);
+        {
+            string templatePath = Path.Combine(
+                Utilities.AssemblyDirectory,
+                "PcbGeneration",
+                "Internal",
+                "Templates",
+                "Sections",
+                $"traces_section_{KeyboardName}.template.kicad_pcb");
 
-        private string TemplatePath => Path.Combine(Utilities.AssemblyDirectory, _relativeTemplatePath);
+            return File.ReadAllText(templatePath);
+        }
     }
 }
