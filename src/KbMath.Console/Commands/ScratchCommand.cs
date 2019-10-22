@@ -19,7 +19,71 @@ namespace KbMath.Console.Commands
                 });
         }
 
-        public int Execute()
+        public void Temp2(double theta, double m)
+        { 
+            double dt = 0.17453292519943295 + 4.71238898038469;
+
+            double t0 = dt - theta;
+            double t1 = dt + theta;
+
+            var vectors = new List<Vector>
+            {
+                Project(205.126, 73.272, t0, m), // r01c07
+                Project(205.126, 73.272, t1, m), // r01c07
+                Project(223.018,  65.04, t0, m), // r01c08
+                Project(223.018,  65.04, t1, m), // r01c08
+                Project(240.737, 55.823, t0, m), // r01c09
+                Project(240.737, 55.823, t1, m), // r01c09
+                Project(260.366, 57.439, t0, m), // r01c10
+                Project(260.366, 57.439, t1, m), // r01c10
+                Project(279.647, 57.085, t0, m), // r01c11
+                Project(279.647, 57.085, t1, m), // r01c11
+                Project(298.408, 53.777, t0, m), // r01c12
+                Project(298.408, 53.777, t1, m), // r01c12
+            };
+
+            for (int i = 0; i < vectors.Count - 1; ++i)
+            {
+                Vector v0 = vectors[i];
+                Vector v1 = vectors[i+1];
+
+                string start = $"(start {v0.X} {v0.Y})";
+                string end = $"(end {v1.X} {v1.Y})";
+                Console.WriteLine($"(segment {start} {end} (width 0.2032) (layer Back) (net 5))");
+            }
+        }
+
+        public void Temp()
+        {
+            // Triangle 1
+            {
+                var dx = 7;
+                var dy = 8.89;
+                var theta = Math.Atan(dx/dy);
+                var m = dx / Math.Sin(theta);
+                Temp2(theta, m);
+            }
+        
+            // Triangle 1
+            {
+                var dx = 7;
+                var dy = 9.525;
+                var theta = Math.Atan(dx/dy);
+                var m = dx / Math.Sin(theta);
+                Temp2(theta, m);
+            }
+
+            // Triangle 1
+            {
+                var dx = 7;
+                var dy = 10.16;
+                var theta = Math.Atan(dx/dy);
+                var m = dx / Math.Sin(theta);
+                Temp2(theta, m);
+            }
+        }
+
+        private void Foo()
         {
             double diameter = 18.1;
             double radius = diameter / 2;
@@ -68,6 +132,12 @@ namespace KbMath.Console.Commands
                     Console.WriteLine($"(segment {start} {end} (width 0.2032) (layer Back) (net 5))");
                 }
             }
+        }
+
+        public int Execute()
+        {
+            Temp();
+            //Foo();
 
             return 0;
         }

@@ -2,6 +2,7 @@
 {
     using KbUtil.Lib.PcbGeneration.Internal.Models.Sections;
     using System.IO;
+    using System.Text.RegularExpressions;
 
     internal class TracesSectionTemplateRenderer : IPcbTemplateRenderer<TracesSectionTemplateData>
     {
@@ -17,7 +18,13 @@
                 "Sections",
                 $"traces_section_{KeyboardName}.template.kicad_pcb");
 
-            return File.ReadAllText(templatePath);
+            string raw = File.ReadAllText(templatePath);
+
+            // TODO: Move this into a Utility class
+            System.Console.WriteLine("Stripping comments");
+            string processed = Regex.Replace(raw, @"/\*.*\*/", "");
+
+            return processed;
         }
     }
 }
