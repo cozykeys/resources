@@ -56,32 +56,24 @@
                     float diodeRotation;
                     if (templateData.PcbData.Switches[i][j].DiodePosition == "left")
                     {
-                        // TODO: Flip this on and fix trace generation. 
                         double d = 8.0;
-                        double theta = ((double)10 + 90).ToRadians();
+                        double theta = (switchRotation + 90).ToRadians();
                         double dx = d * Math.Sin(theta);
                         double dy = d * Math.Cos(theta);
 
                         diodeY = (float)(switchY - dy);
                         diodeX = (float)(switchX - dx);
-
-                        //diodeY = switchY;
-                        //diodeX = switchX - 9 - templateData.PcbData.Switches[i][j].DiodeAdjust;
                         diodeRotation = switchRotation + 90;
                     }
                     else if (templateData.PcbData.Switches[i][j].DiodePosition == "right")
                     {
-                        // TODO: Flip this on and fix trace generation. 
                         double d = 8.0;
-                        double theta = ((double)10 + 90).ToRadians();
+                        double theta = (-switchRotation + 90).ToRadians();
                         double dx = d * Math.Sin(theta);
                         double dy = d * Math.Cos(theta);
 
                         diodeY = (float)(switchY - dy);
                         diodeX = (float)(switchX + dx);
-
-                        //diodeY = switchY;
-                        //diodeX = switchX + 9 + templateData.PcbData.Switches[i][j].DiodeAdjust;
                         diodeRotation = switchRotation + 90;
                     }
                     else if (templateData.PcbData.Switches[i][j].DiodePosition == "top")
