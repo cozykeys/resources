@@ -11,24 +11,6 @@
     {
         public string KeyboardName { get; set; }
 
-        private List<string> _universalNets = new List<string> {
-            "N-5V-0",
-            "N-GND-1",
-            "N-RGB-D0",
-            "N-RGB-D1",
-            "N-RGB-D2",
-            "N-RGB-D3",
-            "N-RGB-D4",
-            "N-RGB-D5",
-            "N-RGB-D6",
-            "N-RGB-D7",
-            "N-RGB-D8",
-            "N-RGB-D9",
-            "N-RGB-D10",
-            "N-RGB-D11",
-            "N-LED-0"
-        };
-
         private static readonly string _relativeTemplatePath =
             Path.Combine("PcbGeneration", "Internal", "Templates", "Sections", "nets_section.template.kicad_pcb");
 
@@ -56,13 +38,6 @@
                 }));
             }
 
-            int i = nets.Count();
-            if (i != 82) throw new Exception($"i = {i}");
-            foreach (var n in _universalNets)
-            {
-                nets.Add(renderer.Render(new NetTemplateData { Id = $"{i++}", Name = n }));
-            }
-
             return string.Join(Environment.NewLine, nets);
         }
 
@@ -72,8 +47,6 @@
                 .OrderBy(net => net.Value)
                 .Select(net => net.Key)
                 .ToList();
-
-            orderedNetNames.AddRange(_universalNets);
 
             var renderer = new NetClassTemplateRenderer
             {

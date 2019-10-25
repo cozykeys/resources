@@ -28,6 +28,9 @@
     <None Update="PcbGeneration\Internal\Templates\Components\mx.template.kicad_pcb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="PcbGeneration\Internal\Templates\Components\mx_raven.template.kicad_pcb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="PcbGeneration\Internal\Templates\Components\mx_flip.template.kicad_pcb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

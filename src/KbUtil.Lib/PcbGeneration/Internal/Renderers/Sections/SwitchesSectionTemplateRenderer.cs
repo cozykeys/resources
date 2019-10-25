@@ -51,6 +51,7 @@
                     var switchRotation = 0 - templateData.PcbData.Switches[i][j].Rotation;
 
                     var diodeLabel = $"D{i}:{j}";
+                    var resistorLabel = $"R{i}:{j}";
                     float diodeX;
                     float diodeY;
                     float diodeRotation;
@@ -101,19 +102,36 @@
                     var columnNetId = templateData.PcbData.NetDictionary[columnNetName];
                     var rowNetName = $"N-row-{i}";
                     var rowNetId = templateData.PcbData.NetDictionary[rowNetName];
+                    var ledNetName = $"N-LED-{i}-{j}";
+                    var ledNetId = templateData.PcbData.NetDictionary[ledNetName];
+                    var mosfetNetName = "N-MOSFET-0";
+                    var mosfetNetId = templateData.PcbData.NetDictionary[mosfetNetName];
+                    var vccNetName = "N-5V-0";
+                    var vccNetId = templateData.PcbData.NetDictionary[vccNetName];
 
                     switches.Add(mxRenderer.Render(new MxTemplateData
                     {
                         Label = switchLabel,
+                        ResistorLabel = resistorLabel,
+                        DiodeLabel = diodeLabel,
                         X = switchX,
                         Y = switchY,
                         Rotation = switchRotation,
                         DiodeNetId = diodeNetId,
                         DiodeNetName = diodeNetName,
+                        LedNetId = ledNetId,
+                        LedNetName = ledNetName,
+                        MosfetNetId = mosfetNetId,
+                        MosfetNetName = mosfetNetName,
+                        VccNetId = vccNetId,
+                        VccNetName = vccNetName,
                         ColumnNetId = columnNetId,
-                        ColumnNetName = columnNetName
+                        ColumnNetName = columnNetName,
+                        RowNetId = rowNetId,
+                        RowNetName = rowNetName
                     }));
 
+                    /*
                     switches.Add(diodeRenderer.Render(new DiodeTemplateData
                     {
                         Label = diodeLabel,
@@ -126,6 +144,7 @@
                         RowNetId = rowNetId,
                         RowNetName = rowNetName
                     }));
+                    */
                 }
             }
 

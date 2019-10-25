@@ -65,6 +65,10 @@
                 { "\"\"", index++ }
             };
 
+            NetDictionary["N-5V-0"] = index++;
+            NetDictionary["N-GND-0"] = index++;
+            NetDictionary["N-MOSFET-0"] = index++;
+
             for (int i = 0; i < RowCount; ++i)
             {
                 NetDictionary[$"N-row-{i}"] = index++;
@@ -85,6 +89,24 @@
                     }
                 }
             }
+
+            for (int i = 0; i < RowCount; ++i)
+            {
+                for (int j = 0; j < ColumnCount; ++j)
+                {
+                    if (Switches[i][j] != null)
+                    {
+                        NetDictionary[$"N-LED-{i}-{j}"] = index++;
+                    }
+                }
+            }
+
+            for (int i = 0; i < 12; ++i)
+            {
+                NetDictionary[$"N-RGB-D{i}"] = index++;
+            }
+
+            NetDictionary["N-LED-PWM"] = index++;
         }
     }
 }
