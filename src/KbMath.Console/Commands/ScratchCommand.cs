@@ -189,10 +189,38 @@ namespace KbMath.Console.Commands
             }
         }
 
+        private static void RowAttachments()
+        {
+
+
+            var s1s = new List<Segment>
+            {
+                new Segment(
+                    new Vector( 237.005981 , 48.483688 ),
+                    new Vector( 227.5052 , 52.189785 ))
+            };
+
+            var s2s = new List<Segment>
+            {
+                new Segment(
+                    new Vector( 229.220627 , 38.509358 ),
+                    new Vector( 231.161 , 49.514 ))
+            };
+
+            for (int i = 0; i < s1s.Count; ++i) 
+            {
+                var l1 = s1s[i].ToLine();
+                var l2 = s2s[i].ToLine();
+                Vector intersection = l1.Intersection(l2);
+                Console.WriteLine($"    v2 = Vec2({Math.Round(intersection.X,3)}, {Math.Round(intersection.Y,3)})");
+            }
+        }
+
         public int Execute()
         {
-            Temp();
+            //Temp();
             //Foo();
+            RowAttachments();
 
             return 0;
         }
