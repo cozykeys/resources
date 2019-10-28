@@ -196,15 +196,15 @@ namespace KbMath.Console.Commands
             var s1s = new List<Segment>
             {
                 new Segment(
-                    new Vector( 237.005981 , 48.483688 ),
-                    new Vector( 227.5052 , 52.189785 ))
+                    new Vector( 194.156161 , 128.07971 ),
+                    new Vector( 193.287921 , 123.155671 ))
             };
 
             var s2s = new List<Segment>
             {
                 new Segment(
-                    new Vector( 229.220627 , 38.509358 ),
-                    new Vector( 231.161 , 49.514 ))
+                    new Vector( 172.085 , 123.825 ),
+                    new Vector( 174.625 , 123.825 ))
             };
 
             for (int i = 0; i < s1s.Count; ++i) 
