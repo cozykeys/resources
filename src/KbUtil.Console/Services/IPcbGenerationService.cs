@@ -6,6 +6,6 @@
 
     internal interface IPcbGenerationService
     {
-        void GeneratePcb(List<Switch> switches, string path, PcbGenerationOptions options = null);
+        void GeneratePcb(string keyboardName, List<Switch> switches, string path, PcbGenerationOptions options = null);
     }
 }

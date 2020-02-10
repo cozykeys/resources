@@ -2,6 +2,8 @@
 {
     internal interface IPcbTemplateRenderer<in T>
     {
+        string KeyboardName { get; set; }
+
         string Render(T templateData);
     }
 }

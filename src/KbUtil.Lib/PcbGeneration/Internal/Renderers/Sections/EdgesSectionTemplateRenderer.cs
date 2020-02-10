@@ -5,16 +5,19 @@
 
     internal class EdgesSectionTemplateRenderer : IPcbTemplateRenderer<EdgesSectionTemplateData>
     {
-        // Change this depending on the keyboard
-        private static readonly string _relativeTemplatePath =
-            //Path.Combine("PcbGeneration", "Internal", "Templates", "Sections", "edges_section.template.kicad_pcb");
-            Path.Combine("PcbGeneration", "Internal", "Templates", "Sections", "edges_section_radix.template.kicad_pcb");
+        public string KeyboardName { get; set; }
 
         public string Render(EdgesSectionTemplateData templateData)
         {
-            return File.ReadAllText(TemplatePath);
-        }
+            string templatePath = Path.Combine(
+                Utilities.AssemblyDirectory,
+                "PcbGeneration",
+                "Internal",
+                "Templates",
+                "Sections",
+                $"edges_section_{KeyboardName}.template.kicad_pcb");
 
-        private string TemplatePath => Path.Combine(Utilities.AssemblyDirectory, _relativeTemplatePath);
+            return File.ReadAllText(templatePath);
+        }
     }
 }

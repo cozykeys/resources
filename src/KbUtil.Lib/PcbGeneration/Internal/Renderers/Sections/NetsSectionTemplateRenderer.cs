@@ -9,6 +9,8 @@
 
     internal class NetsSectionTemplateRenderer : IPcbTemplateRenderer<NetsSectionTemplateData>
     {
+        public string KeyboardName { get; set; }
+
         private static readonly string _relativeTemplatePath =
             Path.Combine("PcbGeneration", "Internal", "Templates", "Sections", "nets_section.template.kicad_pcb");
 
@@ -21,7 +23,10 @@
         {
             var orderedNets = sectionTemplateData.NetDictionary.OrderBy(net => net.Value);
 
-            var renderer = new NetTemplateRenderer();
+            var renderer = new NetTemplateRenderer
+            {
+                KeyboardName = KeyboardName
+            };
 
             var nets = new List<string>();
             foreach (var net in orderedNets)
@@ -43,7 +48,10 @@
                 .Select(net => net.Key)
                 .ToList();
 
-            var renderer = new NetClassTemplateRenderer();
+            var renderer = new NetClassTemplateRenderer
+            {
+                KeyboardName = KeyboardName
+            };
             return renderer.Render(new NetClassTemplateData
             {
                 NetNames = orderedNetNames

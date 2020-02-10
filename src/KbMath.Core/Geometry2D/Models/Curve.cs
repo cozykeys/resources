@@ -1,5 +1,7 @@
 ﻿namespace KbMath.Core.Geometry2D.Models
 {
+    using System;
+
     public class Curve
     {
         public Curve(Vector start, Vector end, Vector control)
@@ -27,6 +29,9 @@
             hash = (hash * 7) + Control.GetHashCode();
             return hash;
         }
+
+        public Curve Round(int digits)
+            => new Curve(Start.Round(digits), End.Round(digits), Control.Round(digits));
 
         public override string ToString()
         {

@@ -87,6 +87,7 @@
             ActivatorUtilities.CreateInstance<DrawSvgPathCommand>(serviceProvider);
             ActivatorUtilities.CreateInstance<DrawSvgHolesCommand>(serviceProvider);
             ActivatorUtilities.CreateInstance<DrawSwitchesCommand>(serviceProvider);
+            ActivatorUtilities.CreateInstance<ScratchCommand>(serviceProvider);
         }
     }
 }

@@ -5,6 +5,8 @@
 
     internal class MxFlipTemplateRenderer : IPcbTemplateRenderer<MxTemplateData>
     {
+        public string KeyboardName { get; set; }
+
         private static readonly string _relativeTemplatePath =
             Path.Combine("PcbGeneration", "Internal", "Templates", "Components", "mx_flip.template.kicad_pcb");
 
