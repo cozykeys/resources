@@ -9,6 +9,7 @@
         private readonly ISwitchDataService _switchDataService;
         private readonly IPcbGenerationService _pcbGenerationService;
 
+        private readonly CommandArgument _keyboardNameArgument;
         private readonly CommandArgument _inputPathArgument;
         private readonly CommandArgument _outputPathArgument;
 
@@ -28,11 +29,14 @@
                     config.OnExecute(() => Execute());
                 });
 
+            _keyboardNameArgument = Command.Argument("<keyboard-name>", "The keyboard name (Used to look up templates).");
             _inputPathArgument = Command.Argument("<input-path>", "The path to the keyboard data file.");
             _outputPathArgument = Command.Argument("<output-path>", "The path to the generated PCB file.");
         }
 
         public CommandLineApplication Command { get; }
+
+        public string KeyboardName => _keyboardNameArgument.Value;
 
         public string InputPath => _inputPathArgument.Value;
 
@@ -44,7 +48,7 @@
 
             var generationOptions = new PcbGenerationOptions();
 
-            _pcbGenerationService.GeneratePcb(switches, OutputPath, generationOptions);
+            _pcbGenerationService.GeneratePcb(KeyboardName, switches, OutputPath, generationOptions);
 
             return 0;
         }

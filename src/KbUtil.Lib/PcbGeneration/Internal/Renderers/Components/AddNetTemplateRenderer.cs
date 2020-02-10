@@ -5,6 +5,8 @@
 
     internal class AddNetTemplateRenderer : IPcbTemplateRenderer<AddNetTemplateData>
     {
+        public string KeyboardName { get; set; }
+
         private static readonly string _relativeTemplatePath =
             Path.Combine("PcbGeneration", "Internal", "Templates", "Components", "add_net.template.kicad_pcb");
 

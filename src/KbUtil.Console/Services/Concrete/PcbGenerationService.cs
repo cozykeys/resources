@@ -7,7 +7,7 @@
 
     internal class PcbGenerationService : IPcbGenerationService
     {
-        public void GeneratePcb(List<Switch> switches, string path, PcbGenerationOptions options = null)
-            => PcbGenerator.GeneratePcb(switches, path, options ?? new PcbGenerationOptions());
+        public void GeneratePcb(string keyboardName, List<Switch> switches, string path, PcbGenerationOptions options = null)
+            => PcbGenerator.GeneratePcb(keyboardName, switches, path, options ?? new PcbGenerationOptions());
     }
 }

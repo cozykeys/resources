@@ -83,8 +83,11 @@ namespace KbMath.Console.Commands
 
             var vertices = GetVertices(InputPath);
 
-            List<Curve> curves = VectorOperations.GenerateCurves(vertices, distance).ToList();
-            
+            List<Curve> curves = VectorOperations
+                .GenerateCurves(vertices, distance)
+                .Select(c => c.Round(3))
+                .ToList();
+
             WriteCurvesToFile(OutputPath, curves);
             
             if (!string.IsNullOrEmpty(DebugSvgPath))

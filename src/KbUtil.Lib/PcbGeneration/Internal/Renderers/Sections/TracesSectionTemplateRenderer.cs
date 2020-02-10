@@ -2,15 +2,29 @@
 {
     using KbUtil.Lib.PcbGeneration.Internal.Models.Sections;
     using System.IO;
+    using System.Text.RegularExpressions;
 
     internal class TracesSectionTemplateRenderer : IPcbTemplateRenderer<TracesSectionTemplateData>
     {
-        private static readonly string _relativeTemplatePath =
-            Path.Combine("PcbGeneration", "Internal", "Templates", "Sections", "traces_section.template.kicad_pcb");
+        public string KeyboardName { get; set; }
 
         public string Render(TracesSectionTemplateData templateData)
-            => File.ReadAllText(TemplatePath);
+        {
+            string templatePath = Path.Combine(
+                Utilities.AssemblyDirectory,
+                "PcbGeneration",
+                "Internal",
+                "Templates",
+                "Sections",
+                $"traces_section_{KeyboardName}.template.kicad_pcb");
 
-        private string TemplatePath => Path.Combine(Utilities.AssemblyDirectory, _relativeTemplatePath);
+            string raw = File.ReadAllText(templatePath);
+
+            // TODO: Move this into a Utility class
+            System.Console.WriteLine("Stripping comments");
+            string processed = Regex.Replace(raw, @"/\*.*\*/", "");
+
+            return processed;
+        }
     }
 }

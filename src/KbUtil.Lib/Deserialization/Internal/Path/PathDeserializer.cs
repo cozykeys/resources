@@ -26,6 +26,7 @@ namespace KbUtil.Lib.Deserialization.Path
         public void Deserialize(XElement pathElement, Path path)
         {
             DeserializeFill(pathElement, path);
+            DeserializeFillOpacity(pathElement, path);
             DeserializeStroke(pathElement, path);
             DeserializeStrokeWidth(pathElement, path);
                 
@@ -46,6 +47,14 @@ namespace KbUtil.Lib.Deserialization.Path
             if(XmlUtilities.TryGetAttribute(pathElement, "Fill", out XAttribute fillAttribute))
             {
                 path.Fill = fillAttribute.ValueAsString(path);
+            }
+        }
+
+        private static void DeserializeFillOpacity(XElement pathElement, Path path)
+        {
+            if(XmlUtilities.TryGetAttribute(pathElement, "FillOpacity", out XAttribute fillOpacityAttribute))
+            {
+                path.FillOpacity = fillOpacityAttribute.ValueAsString(path);
             }
         }
 
