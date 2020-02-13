@@ -131,7 +131,6 @@
                         RowNetName = rowNetName
                     }));
 
-                    /*
                     switches.Add(diodeRenderer.Render(new DiodeTemplateData
                     {
                         Label = diodeLabel,
@@ -144,7 +143,6 @@
                         RowNetId = rowNetId,
                         RowNetName = rowNetName
                     }));
-                    */
                 }
             }
 

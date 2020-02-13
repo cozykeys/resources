@@ -8,8 +8,8 @@ namespace KbUtil.Lib.PcbGeneration.Internal
         public string KeyboardName { get; set; }
 
         private static readonly string _relativeTemplatePath =
-            //Path.Combine("PcbGeneration", "Internal", "Templates", "Components", "mx.template.kicad_pcb");
-            Path.Combine("PcbGeneration", "Internal", "Templates", "Components", "mx_raven.template.kicad_pcb");
+            Path.Combine("PcbGeneration", "Internal", "Templates", "Components", "mx.template.kicad_pcb");
+            //Path.Combine("PcbGeneration", "Internal", "Templates", "Components", "mx_raven.template.kicad_pcb");
 
         public string Render(MxTemplateData templateData)
             => File.ReadAllText(TemplatePath)
