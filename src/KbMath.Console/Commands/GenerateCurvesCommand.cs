@@ -23,6 +23,7 @@ namespace KbMath.Console.Commands
         private readonly CommandArgument _distanceArgument;
         
         private readonly CommandOption _debugSvg;
+        private readonly CommandOption _outputXml;
         
         private static readonly Dictionary<string, string> CurveSvgStyles = new Dictionary<string, string>
         {
@@ -65,6 +66,11 @@ namespace KbMath.Console.Commands
                 "--debug-svg",
                 "TODO",
                 CommandOptionType.SingleValue);
+
+            _outputXml = command.Option(
+                "--output-xml",
+                "TODO",
+                CommandOptionType.SingleValue);
         }
 
         private string InputPath => _inputPathArgument.Value;
@@ -72,6 +78,7 @@ namespace KbMath.Console.Commands
         private string Distance => _distanceArgument.Value;
         
         private string DebugSvgPath => _debugSvg?.Value();
+        private string OutputXmlPath => _outputXml?.Value();
 
         public int Execute()
         {
@@ -100,6 +107,33 @@ namespace KbMath.Console.Commands
                 _svgService.Append(svg, VectorOperations.GetSegments(curvePoints), SegmentSvgStyles);
                 
                 _svgService.WriteToFile(svg, DebugSvgPath);
+            }
+
+            if (!string.IsNullOrEmpty(OutputXmlPath))
+            {
+                List<string> xmlLines = new List<string>();
+
+                for (int i = 0; i < curves.Count; ++i)
+                {
+                    double startX = curves[i].Start.X;
+                    double startY = curves[i].Start.Y;
+                    double endX = curves[i].End.X;
+                    double endY = curves[i].End.Y;
+                    double controlX = curves[i].Control.X;
+                    double controlY = curves[i].Control.Y;
+
+                    if (i == 0)
+                        xmlLines.Add($"<AbsoluteMoveTo> <EndPoint X=\"{startX}\" Y=\"{startY}\" /> </AbsoluteMoveTo>");
+                    else
+                        xmlLines.Add($"<AbsoluteLineTo> <EndPoint X=\"{startX}\" Y=\"{startY}\" /> </AbsoluteLineTo>");
+
+                    xmlLines.Add($"<AbsoluteQuadraticCurveTo> <EndPoint X=\"{endX}\" Y=\"{endY}\" /> <ControlPoint X=\"{controlX}\" Y=\"{controlY}\" /> </AbsoluteQuadraticCurveTo>");
+                }
+                        
+                xmlLines.Add($"<AbsoluteLineTo> <EndPoint X=\"{curves[0].Start.X}\" Y=\"{curves[0].Start.Y}\" /> </AbsoluteLineTo>");
+                
+                string text = string.Join(Environment.NewLine, xmlLines);
+                File.WriteAllText(OutputXmlPath, text);
             }
 
             return 0;

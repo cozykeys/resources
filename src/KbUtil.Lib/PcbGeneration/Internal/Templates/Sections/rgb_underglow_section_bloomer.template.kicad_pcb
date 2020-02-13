@@ -1,0 +1,659 @@
+/* TODO */
+/* TODO  (module WS2812B (layer Back) (tedit 53BEE615) (tstamp 0) */
+/* TODO    (at 223.472 63.892 280) */
+/* TODO    (fp_text reference RGB0 (at 0 4.7 360) (layer B.SilkS) */
+/* TODO      (effects (font (size 1 1) (thickness 0.2)) (justify mirror)) */
+/* TODO    ) */
+/* TODO    (fp_text value VAL** (at 0 -4.8 360) (layer B.SilkS) hide */
+/* TODO      (effects (font (size 1 1) (thickness 0.2)) (justify mirror)) */
+/* TODO    ) */
+/* TODO    (fp_line (start -1 1) (end 0.5 1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 0.5 1) (end 1 0.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 1 0.5) (end 1 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 1 -1) (end -1 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -1 -1) (end -1 1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 1) (end -2.5 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -0.5 -2.5) (end 0.5 -2.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 2.5 1) (end 2.5 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -0.5 2.5) (end 0.5 2.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -2.5) (end 2.5 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -2.5) (end 1.2 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 -2.5) (end -2.1 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 2.5) (end 2.5 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 2.5) (end 1.2 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 2.5) (end -2.1 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 2.7) (end -1.2 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 2.7) (end -1.2 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 1.8) (end -2.1 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 1.8) (end -2.1 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 2.7) (end 1.2 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 2.7) (end 1.2 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 1.8) (end 2.1 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 1.8) (end 2.1 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 -2.7) (end -2.1 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 -1.8) (end -1.2 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -1.8) (end -1.2 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -2.7) (end -2.1 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 -2.7) (end 1.2 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 -1.8) (end 2.1 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -1.8) (end 2.1 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -2.7) (end 1.2 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.5 2.5) (end 2.5 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.49936 -2.49936) (end -2.49936 2.49936) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (pad 1 smd rect (at 1.65 2.4 280) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 2 N-GND-0) */ */
+/* TODO    ) */
+/* TODO    (pad 2 smd rect (at -1.65 2.4 280) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 148 N-RGB-D0) */ */
+/* TODO    ) */
+/* TODO    (pad 3 smd rect (at -1.65 -2.4 280) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 1 N-5V-0) */ */
+/* TODO    ) */
+/* TODO    (pad 4 smd rect (at 1.65 -2.4 280) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 149 N-RGB-D1) */ */
+/* TODO    ) */
+/* TODO  ) */
+/* TODO */
+/* TODO  (module WS2812B (layer Back) (tedit 53BEE615) (tstamp 0) */
+/* TODO    (at 249.083 46.442 280) */
+/* TODO    (fp_text reference RGB1 (at 0 4.7 360) (layer B.SilkS) */
+/* TODO      (effects (font (size 1 1) (thickness 0.2)) (justify mirror)) */
+/* TODO    ) */
+/* TODO    (fp_text value VAL** (at 0 -4.8 360) (layer B.SilkS) hide */
+/* TODO      (effects (font (size 1 1) (thickness 0.2)) (justify mirror)) */
+/* TODO    ) */
+/* TODO    (fp_line (start -1 1) (end 0.5 1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 0.5 1) (end 1 0.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 1 0.5) (end 1 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 1 -1) (end -1 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -1 -1) (end -1 1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 1) (end -2.5 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -0.5 -2.5) (end 0.5 -2.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 2.5 1) (end 2.5 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -0.5 2.5) (end 0.5 2.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -2.5) (end 2.5 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -2.5) (end 1.2 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 -2.5) (end -2.1 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 2.5) (end 2.5 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 2.5) (end 1.2 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 2.5) (end -2.1 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 2.7) (end -1.2 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 2.7) (end -1.2 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 1.8) (end -2.1 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 1.8) (end -2.1 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 2.7) (end 1.2 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 2.7) (end 1.2 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 1.8) (end 2.1 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 1.8) (end 2.1 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 -2.7) (end -2.1 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 -1.8) (end -1.2 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -1.8) (end -1.2 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -2.7) (end -2.1 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 -2.7) (end 1.2 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 -1.8) (end 2.1 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -1.8) (end 2.1 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -2.7) (end 1.2 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.5 2.5) (end 2.5 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.49936 -2.49936) (end -2.49936 2.49936) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (pad 1 smd rect (at 1.65 2.4 280) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 2 N-GND-0) */ */
+/* TODO    ) */
+/* TODO    (pad 2 smd rect (at -1.65 2.4 280) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 149 N-RGB-D1) */ */
+/* TODO    ) */
+/* TODO    (pad 3 smd rect (at -1.65 -2.4 280) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 1 N-5V-0) */ */
+/* TODO    ) */
+/* TODO    (pad 4 smd rect (at 1.65 -2.4 280) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 150 N-RGB-D2) */ */
+/* TODO    ) */
+/* TODO  ) */
+/* TODO */
+/* TODO  (module WS2812B (layer Back) (tedit 53BEE615) (tstamp 0) */
+/* TODO    (at 287.993 47.705 280) */
+/* TODO    (fp_text reference RGB2 (at 0 4.7 360) (layer B.SilkS) */
+/* TODO      (effects (font (size 1 1) (thickness 0.2)) (justify mirror)) */
+/* TODO    ) */
+/* TODO    (fp_text value VAL** (at 0 -4.8 360) (layer B.SilkS) hide */
+/* TODO      (effects (font (size 1 1) (thickness 0.2)) (justify mirror)) */
+/* TODO    ) */
+/* TODO    (fp_line (start -1 1) (end 0.5 1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 0.5 1) (end 1 0.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 1 0.5) (end 1 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 1 -1) (end -1 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -1 -1) (end -1 1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 1) (end -2.5 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -0.5 -2.5) (end 0.5 -2.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 2.5 1) (end 2.5 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -0.5 2.5) (end 0.5 2.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -2.5) (end 2.5 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -2.5) (end 1.2 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 -2.5) (end -2.1 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 2.5) (end 2.5 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 2.5) (end 1.2 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 2.5) (end -2.1 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 2.7) (end -1.2 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 2.7) (end -1.2 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 1.8) (end -2.1 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 1.8) (end -2.1 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 2.7) (end 1.2 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 2.7) (end 1.2 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 1.8) (end 2.1 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 1.8) (end 2.1 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 -2.7) (end -2.1 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 -1.8) (end -1.2 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -1.8) (end -1.2 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -2.7) (end -2.1 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 -2.7) (end 1.2 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 -1.8) (end 2.1 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -1.8) (end 2.1 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -2.7) (end 1.2 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.5 2.5) (end 2.5 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.49936 -2.49936) (end -2.49936 2.49936) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (pad 1 smd rect (at 1.65 2.4 280) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 2 N-GND-0) */ */
+/* TODO    ) */
+/* TODO    (pad 2 smd rect (at -1.65 2.4 280) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 150 N-RGB-D2) */ */
+/* TODO    ) */
+/* TODO    (pad 3 smd rect (at -1.65 -2.4 280) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 1 N-5V-0) */ */
+/* TODO    ) */
+/* TODO    (pad 4 smd rect (at 1.65 -2.4 280) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 151 N-RGB-D3) */ */
+/* TODO    ) */
+/* TODO  ) */
+/* TODO */
+/* TODO  (module WS2812B (layer Back) (tedit 53BEE615) (tstamp 0) */
+/* TODO    (at 297.917 103.987 100) */
+/* TODO    (fp_text reference RGB3 (at 0 4.7 360) (layer B.SilkS) */
+/* TODO      (effects (font (size 1 1) (thickness 0.2)) (justify mirror)) */
+/* TODO    ) */
+/* TODO    (fp_text value VAL** (at 0 -4.8 360) (layer B.SilkS) hide */
+/* TODO      (effects (font (size 1 1) (thickness 0.2)) (justify mirror)) */
+/* TODO    ) */
+/* TODO    (fp_line (start -1 1) (end 0.5 1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 0.5 1) (end 1 0.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 1 0.5) (end 1 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 1 -1) (end -1 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -1 -1) (end -1 1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 1) (end -2.5 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -0.5 -2.5) (end 0.5 -2.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 2.5 1) (end 2.5 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -0.5 2.5) (end 0.5 2.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -2.5) (end 2.5 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -2.5) (end 1.2 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 -2.5) (end -2.1 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 2.5) (end 2.5 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 2.5) (end 1.2 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 2.5) (end -2.1 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 2.7) (end -1.2 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 2.7) (end -1.2 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 1.8) (end -2.1 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 1.8) (end -2.1 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 2.7) (end 1.2 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 2.7) (end 1.2 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 1.8) (end 2.1 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 1.8) (end 2.1 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 -2.7) (end -2.1 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 -1.8) (end -1.2 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -1.8) (end -1.2 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -2.7) (end -2.1 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 -2.7) (end 1.2 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 -1.8) (end 2.1 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -1.8) (end 2.1 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -2.7) (end 1.2 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.5 2.5) (end 2.5 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.49936 -2.49936) (end -2.49936 2.49936) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (pad 1 smd rect (at 1.65 2.4 100) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 2 N-GND-0) */ */
+/* TODO    ) */
+/* TODO    (pad 2 smd rect (at -1.65 2.4 100) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 151 N-RGB-D3) */ */
+/* TODO    ) */
+/* TODO    (pad 3 smd rect (at -1.65 -2.4 100) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 1 N-5V-0) */ */
+/* TODO    ) */
+/* TODO    (pad 4 smd rect (at 1.65 -2.4 100) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 152 N-RGB-D4) */ */
+/* TODO    ) */
+/* TODO  ) */
+/* TODO */
+/* TODO  (module WS2812B (layer Back) (tedit 53BEE615) (tstamp 0) */
+/* TODO    (at 259.007 102.725 100) */
+/* TODO    (fp_text reference RGB4 (at 0 4.7 360) (layer B.SilkS) */
+/* TODO      (effects (font (size 1 1) (thickness 0.2)) (justify mirror)) */
+/* TODO    ) */
+/* TODO    (fp_text value VAL** (at 0 -4.8 360) (layer B.SilkS) hide */
+/* TODO      (effects (font (size 1 1) (thickness 0.2)) (justify mirror)) */
+/* TODO    ) */
+/* TODO    (fp_line (start -1 1) (end 0.5 1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 0.5 1) (end 1 0.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 1 0.5) (end 1 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 1 -1) (end -1 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -1 -1) (end -1 1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 1) (end -2.5 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -0.5 -2.5) (end 0.5 -2.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 2.5 1) (end 2.5 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -0.5 2.5) (end 0.5 2.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -2.5) (end 2.5 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -2.5) (end 1.2 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 -2.5) (end -2.1 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 2.5) (end 2.5 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 2.5) (end 1.2 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 2.5) (end -2.1 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 2.7) (end -1.2 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 2.7) (end -1.2 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 1.8) (end -2.1 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 1.8) (end -2.1 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 2.7) (end 1.2 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 2.7) (end 1.2 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 1.8) (end 2.1 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 1.8) (end 2.1 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 -2.7) (end -2.1 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 -1.8) (end -1.2 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -1.8) (end -1.2 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -2.7) (end -2.1 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 -2.7) (end 1.2 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 -1.8) (end 2.1 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -1.8) (end 2.1 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -2.7) (end 1.2 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.5 2.5) (end 2.5 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.49936 -2.49936) (end -2.49936 2.49936) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (pad 1 smd rect (at 1.65 2.4 100) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 2 N-GND-0) */ */
+/* TODO    ) */
+/* TODO    (pad 2 smd rect (at -1.65 2.4 100) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 152 N-RGB-D4) */ */
+/* TODO    ) */
+/* TODO    (pad 3 smd rect (at -1.65 -2.4 100) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 1 N-5V-0) */ */
+/* TODO    ) */
+/* TODO    (pad 4 smd rect (at 1.65 -2.4 100) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 153 N-RGB-D5) */ */
+/* TODO    ) */
+/* TODO  ) */
+/* TODO */
+/* TODO  (module WS2812B (layer Back) (tedit 53BEE615) (tstamp 0) */
+/* TODO    (at 223.396 120.174 100) */
+/* TODO    (fp_text reference RGB5 (at 0 4.7 360) (layer B.SilkS) */
+/* TODO      (effects (font (size 1 1) (thickness 0.2)) (justify mirror)) */
+/* TODO    ) */
+/* TODO    (fp_text value VAL** (at 0 -4.8 360) (layer B.SilkS) hide */
+/* TODO      (effects (font (size 1 1) (thickness 0.2)) (justify mirror)) */
+/* TODO    ) */
+/* TODO    (fp_line (start -1 1) (end 0.5 1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 0.5 1) (end 1 0.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 1 0.5) (end 1 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 1 -1) (end -1 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -1 -1) (end -1 1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 1) (end -2.5 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -0.5 -2.5) (end 0.5 -2.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 2.5 1) (end 2.5 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -0.5 2.5) (end 0.5 2.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -2.5) (end 2.5 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -2.5) (end 1.2 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 -2.5) (end -2.1 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 2.5) (end 2.5 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 2.5) (end 1.2 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 2.5) (end -2.1 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 2.7) (end -1.2 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 2.7) (end -1.2 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 1.8) (end -2.1 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 1.8) (end -2.1 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 2.7) (end 1.2 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 2.7) (end 1.2 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 1.8) (end 2.1 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 1.8) (end 2.1 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 -2.7) (end -2.1 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 -1.8) (end -1.2 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -1.8) (end -1.2 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -2.7) (end -2.1 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 -2.7) (end 1.2 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 -1.8) (end 2.1 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -1.8) (end 2.1 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -2.7) (end 1.2 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.5 2.5) (end 2.5 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.49936 -2.49936) (end -2.49936 2.49936) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (pad 1 smd rect (at 1.65 2.4 100) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 2 N-GND-0) */ */
+/* TODO    ) */
+/* TODO    (pad 2 smd rect (at -1.65 2.4 100) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 153 N-RGB-D5) */ */
+/* TODO    ) */
+/* TODO    (pad 3 smd rect (at -1.65 -2.4 100) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 1 N-5V-0) */ */
+/* TODO    ) */
+/* TODO    (pad 4 smd rect (at 1.65 -2.4 100) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 154 N-RGB-D6) */ */
+/* TODO    ) */
+/* TODO  ) */
+/* TODO */
+/* TODO  (module WS2812B (layer Back) (tedit 53BEE615) (tstamp 0) */
+/* TODO    (at 146.604 120.174 80) */
+/* TODO    (fp_text reference RGB6 (at 0 4.7 360) (layer B.SilkS) */
+/* TODO      (effects (font (size 1 1) (thickness 0.2)) (justify mirror)) */
+/* TODO    ) */
+/* TODO    (fp_text value VAL** (at 0 -4.8 360) (layer B.SilkS) hide */
+/* TODO      (effects (font (size 1 1) (thickness 0.2)) (justify mirror)) */
+/* TODO    ) */
+/* TODO    (fp_line (start -1 1) (end 0.5 1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 0.5 1) (end 1 0.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 1 0.5) (end 1 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 1 -1) (end -1 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -1 -1) (end -1 1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 1) (end -2.5 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -0.5 -2.5) (end 0.5 -2.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 2.5 1) (end 2.5 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -0.5 2.5) (end 0.5 2.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -2.5) (end 2.5 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -2.5) (end 1.2 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 -2.5) (end -2.1 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 2.5) (end 2.5 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 2.5) (end 1.2 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 2.5) (end -2.1 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 2.7) (end -1.2 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 2.7) (end -1.2 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 1.8) (end -2.1 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 1.8) (end -2.1 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 2.7) (end 1.2 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 2.7) (end 1.2 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 1.8) (end 2.1 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 1.8) (end 2.1 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 -2.7) (end -2.1 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 -1.8) (end -1.2 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -1.8) (end -1.2 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -2.7) (end -2.1 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 -2.7) (end 1.2 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 -1.8) (end 2.1 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -1.8) (end 2.1 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -2.7) (end 1.2 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.5 2.5) (end 2.5 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.49936 -2.49936) (end -2.49936 2.49936) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (pad 1 smd rect (at 1.65 2.4 80) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 2 N-GND-0) */ */
+/* TODO    ) */
+/* TODO    (pad 2 smd rect (at -1.65 2.4 80) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 154 N-RGB-D6) */ */
+/* TODO    ) */
+/* TODO    (pad 3 smd rect (at -1.65 -2.4 80) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 1 N-5V-0) */ */
+/* TODO    ) */
+/* TODO    (pad 4 smd rect (at 1.65 -2.4 80) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 155 N-RGB-D7) */ */
+/* TODO    ) */
+/* TODO  ) */
+/* TODO */
+/* TODO  (module WS2812B (layer Back) (tedit 53BEE615) (tstamp 0) */
+/* TODO    (at 110.993 102.725 80) */
+/* TODO    (fp_text reference RGB7 (at 0 4.7 360) (layer B.SilkS) */
+/* TODO      (effects (font (size 1 1) (thickness 0.2)) (justify mirror)) */
+/* TODO    ) */
+/* TODO    (fp_text value VAL** (at 0 -4.8 360) (layer B.SilkS) hide */
+/* TODO      (effects (font (size 1 1) (thickness 0.2)) (justify mirror)) */
+/* TODO    ) */
+/* TODO    (fp_line (start -1 1) (end 0.5 1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 0.5 1) (end 1 0.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 1 0.5) (end 1 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 1 -1) (end -1 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -1 -1) (end -1 1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 1) (end -2.5 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -0.5 -2.5) (end 0.5 -2.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 2.5 1) (end 2.5 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -0.5 2.5) (end 0.5 2.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -2.5) (end 2.5 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -2.5) (end 1.2 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 -2.5) (end -2.1 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 2.5) (end 2.5 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 2.5) (end 1.2 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 2.5) (end -2.1 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 2.7) (end -1.2 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 2.7) (end -1.2 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 1.8) (end -2.1 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 1.8) (end -2.1 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 2.7) (end 1.2 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 2.7) (end 1.2 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 1.8) (end 2.1 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 1.8) (end 2.1 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 -2.7) (end -2.1 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 -1.8) (end -1.2 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -1.8) (end -1.2 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -2.7) (end -2.1 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 -2.7) (end 1.2 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 -1.8) (end 2.1 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -1.8) (end 2.1 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -2.7) (end 1.2 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.5 2.5) (end 2.5 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.49936 -2.49936) (end -2.49936 2.49936) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (pad 1 smd rect (at 1.65 2.4 80) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 2 N-GND-0) */ */
+/* TODO    ) */
+/* TODO    (pad 2 smd rect (at -1.65 2.4 80) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 155 N-RGB-D7) */ */
+/* TODO    ) */
+/* TODO    (pad 3 smd rect (at -1.65 -2.4 80) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 1 N-5V-0) */ */
+/* TODO    ) */
+/* TODO    (pad 4 smd rect (at 1.65 -2.4 80) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 156 N-RGB-D8) */ */
+/* TODO    ) */
+/* TODO  ) */
+/* TODO */
+/* TODO  (module WS2812B (layer Back) (tedit 53BEE615) (tstamp 0) */
+/* TODO    (at 72.083 103.987 80) */
+/* TODO    (fp_text reference RGB8 (at 0 4.7 360) (layer B.SilkS) */
+/* TODO      (effects (font (size 1 1) (thickness 0.2)) (justify mirror)) */
+/* TODO    ) */
+/* TODO    (fp_text value VAL** (at 0 -4.8 360) (layer B.SilkS) hide */
+/* TODO      (effects (font (size 1 1) (thickness 0.2)) (justify mirror)) */
+/* TODO    ) */
+/* TODO    (fp_line (start -1 1) (end 0.5 1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 0.5 1) (end 1 0.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 1 0.5) (end 1 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 1 -1) (end -1 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -1 -1) (end -1 1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 1) (end -2.5 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -0.5 -2.5) (end 0.5 -2.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 2.5 1) (end 2.5 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -0.5 2.5) (end 0.5 2.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -2.5) (end 2.5 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -2.5) (end 1.2 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 -2.5) (end -2.1 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 2.5) (end 2.5 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 2.5) (end 1.2 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 2.5) (end -2.1 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 2.7) (end -1.2 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 2.7) (end -1.2 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 1.8) (end -2.1 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 1.8) (end -2.1 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 2.7) (end 1.2 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 2.7) (end 1.2 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 1.8) (end 2.1 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 1.8) (end 2.1 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 -2.7) (end -2.1 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 -1.8) (end -1.2 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -1.8) (end -1.2 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -2.7) (end -2.1 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 -2.7) (end 1.2 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 -1.8) (end 2.1 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -1.8) (end 2.1 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -2.7) (end 1.2 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.5 2.5) (end 2.5 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.49936 -2.49936) (end -2.49936 2.49936) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (pad 1 smd rect (at 1.65 2.4 80) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 2 N-GND-0) */ */
+/* TODO    ) */
+/* TODO    (pad 2 smd rect (at -1.65 2.4 80) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 156 N-RGB-D8) */ */
+/* TODO    ) */
+/* TODO    (pad 3 smd rect (at -1.65 -2.4 80) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 1 N-5V-0) */ */
+/* TODO    ) */
+/* TODO    (pad 4 smd rect (at 1.65 -2.4 80) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 157 N-RGB-D9) */ */
+/* TODO    ) */
+/* TODO  ) */
+/* TODO */
+/* TODO  (module WS2812B (layer Back) (tedit 53BEE615) (tstamp 0) */
+/* TODO    (at 82.007 47.705 260) */
+/* TODO    (fp_text reference RGB9 (at 0 4.7 360) (layer B.SilkS) */
+/* TODO      (effects (font (size 1 1) (thickness 0.2)) (justify mirror)) */
+/* TODO    ) */
+/* TODO    (fp_text value VAL** (at 0 -4.8 360) (layer B.SilkS) hide */
+/* TODO      (effects (font (size 1 1) (thickness 0.2)) (justify mirror)) */
+/* TODO    ) */
+/* TODO    (fp_line (start -1 1) (end 0.5 1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 0.5 1) (end 1 0.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 1 0.5) (end 1 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 1 -1) (end -1 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -1 -1) (end -1 1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 1) (end -2.5 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -0.5 -2.5) (end 0.5 -2.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 2.5 1) (end 2.5 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -0.5 2.5) (end 0.5 2.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -2.5) (end 2.5 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -2.5) (end 1.2 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 -2.5) (end -2.1 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 2.5) (end 2.5 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 2.5) (end 1.2 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 2.5) (end -2.1 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 2.7) (end -1.2 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 2.7) (end -1.2 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 1.8) (end -2.1 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 1.8) (end -2.1 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 2.7) (end 1.2 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 2.7) (end 1.2 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 1.8) (end 2.1 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 1.8) (end 2.1 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 -2.7) (end -2.1 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 -1.8) (end -1.2 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -1.8) (end -1.2 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -2.7) (end -2.1 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 -2.7) (end 1.2 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 -1.8) (end 2.1 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -1.8) (end 2.1 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -2.7) (end 1.2 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.5 2.5) (end 2.5 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.49936 -2.49936) (end -2.49936 2.49936) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (pad 1 smd rect (at 1.65 2.4 260) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 2 N-GND-0) */ */
+/* TODO    ) */
+/* TODO    (pad 2 smd rect (at -1.65 2.4 260) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 157 N-RGB-D9) */ */
+/* TODO    ) */
+/* TODO    (pad 3 smd rect (at -1.65 -2.4 260) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 1 N-5V-0) */ */
+/* TODO    ) */
+/* TODO    (pad 4 smd rect (at 1.65 -2.4 260) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 158 N-RGB-D10) */ */
+/* TODO    ) */
+/* TODO  ) */
+/* TODO */
+/* TODO  (module WS2812B (layer Back) (tedit 53BEE615) (tstamp 0) */
+/* TODO    (at 120.917 46.442 260) */
+/* TODO    (fp_text reference RGB10 (at 0 4.7 360) (layer B.SilkS) */
+/* TODO      (effects (font (size 1 1) (thickness 0.2)) (justify mirror)) */
+/* TODO    ) */
+/* TODO    (fp_text value VAL** (at 0 -4.8 360) (layer B.SilkS) hide */
+/* TODO      (effects (font (size 1 1) (thickness 0.2)) (justify mirror)) */
+/* TODO    ) */
+/* TODO    (fp_line (start -1 1) (end 0.5 1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 0.5 1) (end 1 0.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 1 0.5) (end 1 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 1 -1) (end -1 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -1 -1) (end -1 1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 1) (end -2.5 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -0.5 -2.5) (end 0.5 -2.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 2.5 1) (end 2.5 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -0.5 2.5) (end 0.5 2.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -2.5) (end 2.5 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -2.5) (end 1.2 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 -2.5) (end -2.1 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 2.5) (end 2.5 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 2.5) (end 1.2 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 2.5) (end -2.1 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 2.7) (end -1.2 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 2.7) (end -1.2 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 1.8) (end -2.1 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 1.8) (end -2.1 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 2.7) (end 1.2 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 2.7) (end 1.2 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 1.8) (end 2.1 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 1.8) (end 2.1 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 -2.7) (end -2.1 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 -1.8) (end -1.2 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -1.8) (end -1.2 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -2.7) (end -2.1 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 -2.7) (end 1.2 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 -1.8) (end 2.1 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -1.8) (end 2.1 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -2.7) (end 1.2 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.5 2.5) (end 2.5 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.49936 -2.49936) (end -2.49936 2.49936) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (pad 1 smd rect (at 1.65 2.4 260) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 2 N-GND-0) */ */
+/* TODO    ) */
+/* TODO    (pad 2 smd rect (at -1.65 2.4 260) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 158 N-RGB-D10) */ */
+/* TODO    ) */
+/* TODO    (pad 3 smd rect (at -1.65 -2.4 260) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 1 N-5V-0) */ */
+/* TODO    ) */
+/* TODO    (pad 4 smd rect (at 1.65 -2.4 260) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 159 N-RGB-D11) */ */
+/* TODO    ) */
+/* TODO  ) */
+/* TODO */
+/* TODO  (module WS2812B (layer Back) (tedit 53BEE615) (tstamp 0) */
+/* TODO    (at 156.528 63.892 260) */
+/* TODO    (fp_text reference RGB11 (at 0 4.7 360) (layer B.SilkS) */
+/* TODO      (effects (font (size 1 1) (thickness 0.2)) (justify mirror)) */
+/* TODO    ) */
+/* TODO    (fp_text value VAL** (at 0 -4.8 360) (layer B.SilkS) hide */
+/* TODO      (effects (font (size 1 1) (thickness 0.2)) (justify mirror)) */
+/* TODO    ) */
+/* TODO    (fp_line (start -1 1) (end 0.5 1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 0.5 1) (end 1 0.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 1 0.5) (end 1 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 1 -1) (end -1 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -1 -1) (end -1 1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 1) (end -2.5 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -0.5 -2.5) (end 0.5 -2.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 2.5 1) (end 2.5 -1) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start -0.5 2.5) (end 0.5 2.5) (layer B.SilkS) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -2.5) (end 2.5 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -2.5) (end 1.2 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 -2.5) (end -2.1 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 2.5) (end 2.5 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 2.5) (end 1.2 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.5 2.5) (end -2.1 2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 2.7) (end -1.2 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 2.7) (end -1.2 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 1.8) (end -2.1 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 1.8) (end -2.1 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 2.7) (end 1.2 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 2.7) (end 1.2 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 1.8) (end 2.1 1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 1.8) (end 2.1 2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 -2.7) (end -2.1 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.1 -1.8) (end -1.2 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -1.8) (end -1.2 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -1.2 -2.7) (end -2.1 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 -2.7) (end 1.2 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 1.2 -1.8) (end 2.1 -1.8) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -1.8) (end 2.1 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.1 -2.7) (end 1.2 -2.7) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start 2.5 2.5) (end 2.5 -2.5) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (fp_line (start -2.49936 -2.49936) (end -2.49936 2.49936) (layer Dwgs.User) (width 0.2)) */
+/* TODO    (pad 1 smd rect (at 1.65 2.4 260) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 2 N-GND-0) */ */
+/* TODO    ) */
+/* TODO    (pad 2 smd rect (at -1.65 2.4 260) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 159 N-RGB-D11) */ */
+/* TODO    ) */
+/* TODO    (pad 3 smd rect (at -1.65 -2.4 260) (size 1.4 1.8) (layers Back B.Paste B.Mask) */
+/* TODO      /* (net 1 N-5V-0) */ */
+/* TODO    ) */
+/* TODO    (pad 4 smd rect (at 1.65 -2.4 260) (size 1.4 1.8) (layers Back B.Paste B.Mask)) */
+/* TODO  ) */
+/* TODO */

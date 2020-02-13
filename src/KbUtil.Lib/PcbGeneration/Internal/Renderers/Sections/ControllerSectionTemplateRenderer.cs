@@ -1,5 +1,6 @@
 ﻿namespace KbUtil.Lib.PcbGeneration.Internal.Renderers.Sections
 {
+    using KbUtil.Lib.PcbGeneration.Internal.Extensions;
     using KbUtil.Lib.PcbGeneration.Internal.Models.Sections;
     using System.IO;
 
@@ -17,7 +18,9 @@
                 "Sections",
                 $"controller_section_{KeyboardName}.template.kicad_pcb");
 
-            return File.ReadAllText(templatePath);
+            return File
+                .ReadAllText(templatePath)
+                .StripComments();
         }
     }
 }
