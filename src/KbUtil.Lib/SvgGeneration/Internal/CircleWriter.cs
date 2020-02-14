@@ -15,6 +15,9 @@
 
         public void Write(XmlWriter writer, Circle circle)
         {
+            if (!circle.Visible)
+                return;
+
             writer.WriteStartElement("g");
 
             var elementWriter = new ElementWriter { GenerationOptions = GenerationOptions };

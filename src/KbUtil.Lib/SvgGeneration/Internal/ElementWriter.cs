@@ -12,6 +12,9 @@
 
         public void Write(XmlWriter writer, Element element)
         {
+            if (!element.Visible)
+                return;
+
             writer.WriteStartElement("g");
 
             WriteAttributes(writer, element);

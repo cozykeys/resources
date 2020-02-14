@@ -33,6 +33,9 @@
 
         public void Write(XmlWriter writer, Key key)
         {
+            if (!key.Visible)
+                return;
+
             writer.WriteStartElement("g");
 
             var elementWriter = new ElementWriter { GenerationOptions = GenerationOptions };

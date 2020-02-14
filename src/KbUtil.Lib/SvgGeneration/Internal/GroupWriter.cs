@@ -12,6 +12,9 @@
 
         public void Write(XmlWriter writer, Group group)
         {
+            if (!group.Visible)
+                return;
+
             writer.WriteStartElement("g");
 
             var elementWriter = new ElementWriter { GenerationOptions = GenerationOptions };

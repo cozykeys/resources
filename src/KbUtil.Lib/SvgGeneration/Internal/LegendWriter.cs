@@ -11,6 +11,9 @@ namespace KbUtil.Lib.SvgGeneration.Internal
 
         public void Write(XmlWriter writer, Legend legend)
         {
+            if (!legend.Visible)
+                return;
+
             writer.WriteStartElement("text");
 
             var elementWriter = new ElementWriter { GenerationOptions = GenerationOptions };

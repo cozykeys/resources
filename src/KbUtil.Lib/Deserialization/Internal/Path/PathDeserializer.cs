@@ -25,6 +25,8 @@ namespace KbUtil.Lib.Deserialization.Path
 
         public void Deserialize(XElement pathElement, Path path)
         {
+            ElementDeserializer.Default.Deserialize(pathElement, path);
+
             DeserializeFill(pathElement, path);
             DeserializeFillOpacity(pathElement, path);
             DeserializeStroke(pathElement, path);

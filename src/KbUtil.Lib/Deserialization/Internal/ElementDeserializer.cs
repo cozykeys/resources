@@ -24,6 +24,7 @@
             DeserializeWidth(xElement, element);
             DeserializeMargin(xElement, element);
             DeserializeDebug(xElement, element);
+            DeserializeVisible(xElement, element);
         }
 
         private static void DeserializeConstants(XElement xElement, Element element)
@@ -112,6 +113,14 @@
             if(XmlUtilities.TryGetAttribute(xElement, "Debug", out XAttribute debugAttribute))
             {
                 element.Debug = debugAttribute.ValueAsBool(element);
+            }
+        }
+
+        private void DeserializeVisible(XElement xElement, Element element)
+        {
+            if(XmlUtilities.TryGetAttribute(xElement, "Visible", out XAttribute visibleAttribute))
+            {
+                element.Visible = visibleAttribute.ValueAsBool(element);
             }
         }
     }

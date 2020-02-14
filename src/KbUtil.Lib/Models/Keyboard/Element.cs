@@ -14,5 +14,9 @@
         public Element Parent { get; set; }
         public IDictionary<string, Constant> Constants { get; set; }
         public bool Debug { get; set; }
+
+        // FIXME: This isn't fully supported by all of the deserializers/writers
+        // yet but it's still useful.
+        public bool Visible { get; set; } = true;
     }
 }

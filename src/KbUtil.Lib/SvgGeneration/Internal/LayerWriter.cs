@@ -9,6 +9,9 @@
 
         public void Write(XmlWriter writer, Layer layer)
         {
+            if (!layer.Visible)
+                return;
+
             writer.WriteStartElement("g");
 
             var elementWriter = new ElementWriter { GenerationOptions = GenerationOptions };

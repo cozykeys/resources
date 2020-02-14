@@ -9,6 +9,9 @@
 
         public void Write(XmlWriter writer, Stack stack)
         {
+            if (!stack.Visible)
+                return;
+
             writer.WriteStartElement("g");
 
             var elementWriter = new ElementWriter { GenerationOptions = GenerationOptions };

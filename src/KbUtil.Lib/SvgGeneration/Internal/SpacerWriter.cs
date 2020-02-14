@@ -9,6 +9,9 @@ namespace KbUtil.Lib.SvgGeneration.Internal
 
         public void Write(XmlWriter writer, Spacer spacer)
         {
+            if (!spacer.Visible)
+                return;
+
             writer.WriteStartElement("g");
 
             var elementWriter = new ElementWriter { GenerationOptions = GenerationOptions };

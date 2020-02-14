@@ -31,6 +31,9 @@ namespace KbUtil.Lib.SvgGeneration.Internal.Path
 
         public void Write(XmlWriter writer, Path path)
         {
+            if (!path.Visible)
+                return;
+
             writer.WriteStartElement("g");
 
             var elementWriter = new ElementWriter { GenerationOptions = GenerationOptions };
