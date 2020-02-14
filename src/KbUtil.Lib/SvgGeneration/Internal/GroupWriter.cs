@@ -37,32 +37,32 @@
                 {
                     case var _ when child is Keyboard:
                         throw new InvalidDataException("Keyboard is not a valid child type.");
-                    case var key when child is Key:
+                    case Key key when child is Key:
                         var keyWriter = new KeyWriter { GenerationOptions = GenerationOptions };
-                        keyWriter.Write(writer, (Key)key);
+                        keyWriter.Write(writer, key);
                         break;
-                    case var spacer when child is Spacer:
+                    case Spacer spacer when child is Spacer:
                         var spacerWriter = new SpacerWriter { GenerationOptions = GenerationOptions };
-                        spacerWriter.Write(writer, (Spacer)spacer);
+                        spacerWriter.Write(writer, spacer);
                         break;
-                    case var stack when child is Stack:
+                    case Stack stack when child is Stack:
                         var stackWriter = new StackWriter { GenerationOptions = GenerationOptions };
-                        stackWriter.Write(writer, (Stack)stack);
+                        stackWriter.Write(writer, stack);
                         break;
-                    case var path when child is Models.Path.Path:
+                    case Models.Path.Path path when child is Models.Path.Path:
                         var pathWriter = new PathWriter { GenerationOptions = GenerationOptions };
-                        pathWriter.Write(writer, (Models.Path.Path)path);
+                        pathWriter.Write(writer, path);
                         break;
-                    case var circle when child is Circle:
+                    case Circle circle when child is Circle:
                         var holeWriter = new CircleWriter { GenerationOptions = GenerationOptions };
-                        holeWriter.Write(writer, (Circle)circle);
+                        holeWriter.Write(writer, circle);
                         break;
-                    case var text when child is Text:
+                    case Text text when child is Text:
                         var textWriter = new TextWriter { GenerationOptions = GenerationOptions };
-                        textWriter.Write(writer, (Text)text);
+                        textWriter.Write(writer, text);
                         break;
-                    case var subGroup when child is Group:
-                        Write(writer, (Group)subGroup);
+                    case Group subGroup when child is Group:
+                        Write(writer, subGroup);
                         break;
                     default:
                         throw new NotSupportedException();
