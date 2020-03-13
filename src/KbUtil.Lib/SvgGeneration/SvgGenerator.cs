@@ -1,6 +1,8 @@
 ﻿namespace KbUtil.Lib.SvgGeneration
 {
+    using System.Collections.Generic;
     using System.IO;
+    using System.Linq;
     using System.Xml;
     using KbUtil.Lib.Models.Keyboard;
     using KbUtil.Lib.SvgGeneration.Internal;
@@ -19,6 +21,49 @@
 
             Directory.CreateDirectory(outputDirectory);
 
+            if (options != null && options.SquashLayers)
+            {
+                GenerateLayersSquashed(keyboard, outputDirectory, options, settings);
+            }
+            else
+            {
+                GenerateLayers(keyboard, outputDirectory, options, settings);
+            }
+        }
+
+        private static void GenerateLayersSquashed(Keyboard keyboard, string outputDirectory, SvgGenerationOptions options, XmlWriterSettings settings)
+        {
+            string path = System.IO.Path.Combine(outputDirectory, $"{keyboard.Name}.svg");
+
+            using (FileStream stream = File.Open(path, FileMode.Create))
+            using (XmlWriter writer = XmlWriter.Create(stream, settings))
+            {
+                int maxWidth = -1;
+                int maxHeight = -1;
+
+                foreach (var layer in keyboard.Layers)
+                {
+                    if ((int)layer.Width > maxWidth)
+                        maxWidth = (int)layer.Width;
+                    if ((int)layer.Height > maxHeight)
+                        maxHeight = (int)layer.Height;
+                }
+
+                WriteSvgOpenTag(writer, maxWidth, maxHeight);
+
+                var orderedLayers = keyboard.Layers.OrderBy(l => l.ZIndex).ToList();
+                foreach (var layer in orderedLayers)
+                {
+                    var layerWriter = new LayerWriter { GenerationOptions = options };
+                    layerWriter.Write(writer, layer);
+                }
+
+                WriteSvgCloseTag(writer);
+            }
+        }
+
+        private static void GenerateLayers(Keyboard keyboard, string outputDirectory, SvgGenerationOptions options, XmlWriterSettings settings)
+        {
             foreach (var layer in keyboard.Layers)
             {
                 string path = System.IO.Path.Combine(outputDirectory, $"{keyboard.Name}_{layer.Name}.svg");

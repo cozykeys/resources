@@ -17,6 +17,7 @@
         private readonly CommandOption _keycapOverlayOption;
         private readonly CommandOption _visualSwitchCutoutsOption;
         private readonly CommandOption _keycapLegendsOption;
+        private readonly CommandOption _squashOption;
 
         public GenerateSvgCommand(
             IApplicationService applicationService,
@@ -51,6 +52,11 @@
                 "--keycap-legends",
                 "Write keycap legends to the generated SVG file.",
                 CommandOptionType.NoValue);
+
+            _squashOption = Command.Option(
+                "--squash",
+                "Squash all layers into a single SVG file.",
+                CommandOptionType.NoValue);
         }
 
         public CommandLineApplication Command { get; }
@@ -63,6 +69,8 @@
 
         public bool WriteKeycapLegends => _keycapLegendsOption != null && _keycapLegendsOption.HasValue();
 
+        public bool SquashLayers => _squashOption != null && _squashOption.HasValue();
+
         public bool WriteVisualSwitchCutouts => _visualSwitchCutoutsOption != null && _visualSwitchCutoutsOption.HasValue();
 
         public int Execute()
@@ -73,7 +81,8 @@
             {
                 EnableKeycapOverlays = WriteKeycapOverlays,
                 EnableLegends = WriteKeycapLegends,
-                EnableVisualSwitchCutouts = WriteVisualSwitchCutouts
+                EnableVisualSwitchCutouts = WriteVisualSwitchCutouts,
+                SquashLayers = SquashLayers
             };
 
             _svgGenerationService.GenerateSvg(keyboard, OutputPath, generationOptions);

@@ -6,5 +6,6 @@
         public bool EnableLegends { get; set; }
         public bool EnableVisualSwitchCutouts { get; set; }
         public string IndentString { get; set; }
+        public bool SquashLayers { get; set; }
     }
 }
