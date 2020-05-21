@@ -83,6 +83,7 @@
         {
             ActivatorUtilities.CreateInstance<GenerateSwitchBearingsCommand>(serviceProvider);
             ActivatorUtilities.CreateInstance<ExpandVerticesCommand>(serviceProvider);
+            ActivatorUtilities.CreateInstance<ExpandVerticesCommand2>(serviceProvider);
             ActivatorUtilities.CreateInstance<GenerateCurvesCommand>(serviceProvider);
             ActivatorUtilities.CreateInstance<DrawSvgPathCommand>(serviceProvider);
             ActivatorUtilities.CreateInstance<DrawSvgHolesCommand>(serviceProvider);
