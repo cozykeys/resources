@@ -8,23 +8,9 @@ namespace KbUtil.Lib.SvgGeneration.Internal.Path
 
     internal class PathWriter : IElementWriter<Path>
     {
-        private static Dictionary<string, string> _pathStyleVisual = new Dictionary<string, string>
-        {
-            { "fill", "none" },
-            { "stroke", "#0000ff" },
-            { "stroke-width", "0.01" },
-        };
-
-        private static readonly Dictionary<string, string> PathStylePonoko = new Dictionary<string, string>
-        {
-            { "fill", "none" },
-            { "stroke", "#0000ff" },
-            { "stroke-width", "0.5" },
-        };
-
         private static readonly string DefaultFill = "none";
         private static readonly string DefaultFillOpacity = "1";
-        private static readonly string DefaultStroke = "#0000ff";
+        private static readonly string DefaultStroke = "#000000";
         private static readonly string DefaultStrokeWidth = "0.5";
 
         public SvgGenerationOptions GenerationOptions { get; set; }
@@ -68,7 +54,6 @@ namespace KbUtil.Lib.SvgGeneration.Internal.Path
                 ? path.StrokeWidth
                 : DefaultStrokeWidth;
 
-            //WritePath(writer, path, _pathStyleVisual);
             WritePath(writer, path, styleDictionary);
         }
 
