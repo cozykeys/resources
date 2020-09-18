@@ -53,7 +53,7 @@
             writer.WriteStartElement("circle");
             //writer.WriteAttributeString("id", "TODO");
             writer.WriteAttributeString("r", $"{circle.Size/2}");
-            writer.WriteAttributeString("style", "fill:none;stroke:#0000ff;stroke-width:0.01");
+            writer.WriteAttributeString("style", "fill:none;stroke:#000000;stroke-width:0.5");
             writer.WriteEndElement();
 
             // Next we write it with a style that is more visually pleasing
