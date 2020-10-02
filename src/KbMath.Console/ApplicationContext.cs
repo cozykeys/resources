@@ -9,7 +9,6 @@
             Name = "Lorem Ipsum",
             FullName = "Lorem Ipsum",
             Description = "Lorem Ipsum",
-            ExtendedHelpText = "Lorem Ipsum"
         };
     }
 }

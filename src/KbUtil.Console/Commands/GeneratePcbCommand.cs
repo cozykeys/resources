@@ -25,7 +25,6 @@
                 .Command("gen-pcb", config =>
                 {
                     config.Description = "Generate a Kicad PCB file from an XML input file.";
-                    config.ExtendedHelpText = "TODO";
                     config.OnExecute(() => Execute());
                 });
 

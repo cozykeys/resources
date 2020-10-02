@@ -54,7 +54,6 @@ namespace KbMath.Console.Commands
                 .Command("generate-curves", config =>
                 {
                     config.Description = "TODO";
-                    config.ExtendedHelpText = "TODO";
                     config.OnExecute(() => Execute());
                 });
             

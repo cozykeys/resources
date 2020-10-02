@@ -31,7 +31,6 @@
                 .Command("gen-svg", config =>
                 {
                     config.Description = "Generate an SVG file from an XML input file.";
-                    config.ExtendedHelpText = "TODO";
                     config.OnExecute(() => Execute());
                 });
 

@@ -62,7 +62,6 @@ namespace KbMath.Console.Commands
                 .Command("expand-vertices2", config =>
                 {
                     config.Description = "TODO";
-                    config.ExtendedHelpText = "TODO";
                     config.OnExecute(() => Execute());
                 });
             
