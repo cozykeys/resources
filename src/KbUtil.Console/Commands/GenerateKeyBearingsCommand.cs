@@ -47,7 +47,7 @@ namespace KbUtil.Console.Commands
             
             _debugSvg = Command.Option(
                 "--debug-svg",
-                "TODO",
+                "Optional file path to write a SVG file for visual confirmation",
                 CommandOptionType.SingleValue);
         }
 
