@@ -39,7 +39,6 @@ namespace KbUtil.Console.Commands
                 .Command("gen-key-bearings", config =>
                 {
                     config.Description = "Print the key geometry from an XML input file.";
-                    config.ExtendedHelpText = "TODO";
                     config.OnExecute(() => Execute());
                 });
 

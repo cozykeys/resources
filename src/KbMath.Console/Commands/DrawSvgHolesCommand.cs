@@ -37,7 +37,6 @@ namespace KbMath.Console.Commands
                 .Command("draw-svg-holes", config =>
                 {
                     config.Description = "TODO";
-                    config.ExtendedHelpText = "TODO";
                     config.OnExecute(() => Execute());
                 });
             

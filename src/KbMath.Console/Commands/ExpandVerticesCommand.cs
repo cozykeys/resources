@@ -60,7 +60,6 @@
                 .Command("expand-vertices", config =>
                 {
                     config.Description = "TODO";
-                    config.ExtendedHelpText = "TODO";
                     config.OnExecute(() => Execute());
                 });
             

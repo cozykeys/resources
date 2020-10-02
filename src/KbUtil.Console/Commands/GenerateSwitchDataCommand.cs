@@ -28,7 +28,6 @@ namespace KbUtil.Console.Commands
                 .Command("gen-switches", config =>
                 {
                     config.Description = "Generate a switch data JSON file from an XML input file.";
-                    config.ExtendedHelpText = "TODO";
                     config.OnExecute(() => Execute());
                 });
 

@@ -34,7 +34,6 @@ namespace KbMath.Console.Commands
                 .Command("draw-switches", config =>
                 {
                     config.Description = "TODO";
-                    config.ExtendedHelpText = "TODO";
                     config.OnExecute(() => Execute());
                 });
             

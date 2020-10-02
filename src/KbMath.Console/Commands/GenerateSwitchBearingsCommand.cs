@@ -13,7 +13,6 @@
                 .Command("generate-switch-bearings", config =>
                 {
                     config.Description = "TODO";
-                    config.ExtendedHelpText = "TODO";
                     config.OnExecute(() => Execute());
                 });
             
