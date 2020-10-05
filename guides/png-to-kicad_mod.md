@@ -32,7 +32,7 @@ Siroky's blog here:
 http://www.smallbulb.net/kicad_mod-scaler
 
 I've committed a copy of the script to this repository with Python 3 support:
-[scripts/scale_kicad_mod.py](../../scripts/scale_kicad_mod.py)
+[scripts/scale_kicad_mod.py](../scripts/scale_kicad_mod.py)
 
 The script is very easy to use:
 ```bash
