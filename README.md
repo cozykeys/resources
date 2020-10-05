@@ -1,8 +1,8 @@
-# Kicad Symbols and Footprints
+# CozyKeys Resources
 
-These libraries contain some of the symbols and footprints used in CozyKeys
-keyboards.
-
-**Disclaimer:** They were not all authored by me! Many of them were copied from
-existing libraries and modified in some way or another.
+- [./assets](./assets): Various assets used on CozyKeys website, keyboards, etc.
+- [./concepts](./concepts): Unfinished keyboard concepts
+- [./cozy-components](./cozy-components): Kicad symbol library
+- [./cozy-parts.pretty](./cozy-parts.pretty): Kicad footprint library
+- [./kbutil](./kbutil): Tool for accelerating keyboard creation
 
