@@ -1,9 +1,8 @@
-# kbutil
+# CozyKeys Resources
 
-The `kbutil` command line tool provides a number of utilities that make
-keyboard development easier. These are currently incomplete, unorganized, and
-undocumented.
-
-The `kbmath` tool provides some math operations for calculating things such as
-case edge curves.
+- [./assets](./assets): Various assets used on CozyKeys website, keyboards, etc.
+- [./concepts](./concepts): Unfinished keyboard concepts
+- [./cozy-components](./cozy-components): Kicad symbol library
+- [./cozy-parts.pretty](./cozy-parts.pretty): Kicad footprint library
+- [./kbutil](./kbutil): Tool for accelerating keyboard creation
 

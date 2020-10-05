@@ -1,0 +1,4 @@
+*.swp
+*.kicad_pcb-bak
+*.pyc
+*.FCStd1
