@@ -13,7 +13,7 @@ With the image file in hand, run Kicad and open the `Bitmap to Component
 Converter` tool. On the right-hand side of the window, click the `Load Bitmap`
 button and select the image file.
 
-In the `Board Layer for Outline` options, select the `Front silk screen` option.
+In the `Board Layer for Outline` options, select `Front silk screen`.
 
 Click the `Export` button to write the result to a `kicad_mod` file. This
 should be placed in a directory that is loaded in Kicad as a footprint library.
