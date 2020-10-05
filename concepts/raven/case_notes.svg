@@ -1,0 +1,1540 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="500mm"
+   height="500mm"
+   viewBox="0 0 500 500"
+   version="1.1"
+   id="svg549"
+   sodipodi:docname="case_notes.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata555">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs553" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="3400"
+     inkscape:window-height="1345"
+     id="namedview551"
+     showgrid="false"
+     inkscape:zoom="1.4128936"
+     inkscape:cx="780.07699"
+     inkscape:cy="1600.3759"
+     inkscape:window-x="20"
+     inkscape:window-y="75"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg549" />
+  <g
+     id="Left-3-4-0-0"
+     transform="rotate(10,-400.97771,892.89664)">
+    <g
+       id="LeftKeywellPerimeter-6-4-4-5"
+       transform="translate(-66.675)">
+      <g
+         id="g64-7-4-8-6">
+        <path
+           style="fill:#1f1f1f;stroke:#000000;stroke-width:0.5"
+           d="m -0.525,50.65 h 39.15 v -3 h 19.05 v -5 h 18 v 6 h 19.05 v 5 h 39.15 v -20.1 h -19.05 v -76.2 h -19.05 v -5 h -19.05 v -6 h -20.1 v 5 h -19.05 v 3 h -38.1 v 96.3"
+           id="path62-5-4-0-7"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+    <g
+       id="Column00-3-7-4-7"
+       transform="translate(-57.15,2.5)">
+      <g
+         id="Column00Key00-5-6-2-4"
+         transform="translate(0,-38.1)">
+        <g
+           id="g69-6-3-9-0">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path67-2-1-6-6"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column00Key00KeycapOverlay-9-7-1-4"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column00Key00Legend0-1-5-0-7"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">=</text>
+      </g>
+      <g
+         id="Column00Key01-2-9-4-4"
+         transform="translate(0,-19.05)">
+        <g
+           id="g76-7-6-2-8">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path74-0-2-2-5"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column00Key01KeycapOverlay-9-1-2-8"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#b3b0ac;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column00Key01Legend0-3-7-0-2"
+           style="font-style:normal;font-weight:normal;font-size:4px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">TAB</text>
+      </g>
+      <g
+         id="Column00Key02-6-8-5-6"
+         transform="translate(0,-3.814697e-6)">
+        <g
+           id="g83-0-5-5-0">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path81-6-7-2-6"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column00Key02KeycapOverlay-2-4-9-6"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#b3b0ac;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column00Key02Legend0-6-1-0-4"
+           style="font-style:normal;font-weight:normal;font-size:4px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">ESC</text>
+      </g>
+      <g
+         id="Column00Key03-1-8-2-6"
+         transform="translate(0,19.05)">
+        <g
+           id="g90-8-5-8-2">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path88-7-9-3-8"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column00Key03KeycapOverlay-9-7-8-9"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#b3b0ac;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column00Key03Legend0-2-5-0-6"
+           style="font-style:normal;font-weight:normal;font-size:4px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">SHFT</text>
+      </g>
+      <g
+         id="Column00Key04-0-3-4-0"
+         transform="translate(0,38.1)">
+        <g
+           id="g97-2-8-0-7">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path95-3-8-9-0"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column00Key04KeycapOverlay-7-3-1-1"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#b3b0ac;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column00Key04Legend0-5-1-9-0"
+           style="font-style:normal;font-weight:normal;font-size:4px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">CTRL</text>
+      </g>
+    </g>
+    <g
+       id="Column01-9-8-6-1"
+       transform="translate(-38.1,2.5)">
+      <g
+         id="Column01Key00-2-9-2-3"
+         transform="translate(0,-38.1)">
+        <g
+           id="g105-2-6-5-7">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path103-8-4-4-7"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column01Key00KeycapOverlay-9-3-4-2"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column01Key00Legend0-7-3-9-6"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">1</text>
+      </g>
+      <g
+         id="Column01Key01-3-3-9-4"
+         transform="translate(0,-19.05)">
+        <g
+           id="g112-6-8-3-5">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path110-1-6-6-2"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column01Key01KeycapOverlay-2-0-0-0"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column01Key01Legend0-9-4-5-2"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">Q</text>
+      </g>
+      <g
+         id="Column01Key02-3-8-0-9"
+         transform="translate(0,-3.814697e-6)">
+        <g
+           id="g119-1-8-2-0">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path117-9-8-9-9"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column01Key02KeycapOverlay-4-9-4-9"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column01Key02Legend0-7-7-3-4"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">A</text>
+      </g>
+      <g
+         id="Column01Key03-8-7-5-5"
+         transform="translate(0,19.05)">
+        <g
+           id="g126-4-6-1-1">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path124-5-4-7-0"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column01Key03KeycapOverlay-0-3-4-3"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column01Key03Legend0-3-0-3-7"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">Z</text>
+      </g>
+      <g
+         id="Column01Key04-6-3-1-8"
+         transform="translate(0,38.1)">
+        <g
+           id="g133-1-0-4-8">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path131-0-9-6-6"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column01Key04KeycapOverlay-6-2-9-0"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#b3b0ac;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column01Key04Legend0-3-5-4-4"
+           style="font-style:normal;font-weight:normal;font-size:4px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">OS</text>
+      </g>
+    </g>
+    <g
+       id="Column02-2-4-2-6"
+       transform="translate(-19.05,-0.5)">
+      <g
+         id="Column02Key00-0-0-2-7"
+         transform="translate(0,-38.1)">
+        <g
+           id="g141-6-5-6-6">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path139-1-9-4-0"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column02Key00KeycapOverlay-5-4-1-9"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column02Key00Legend0-5-6-2-7"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">2</text>
+      </g>
+      <g
+         id="Column02Key01-4-9-8-5"
+         transform="translate(0,-19.05)">
+        <g
+           id="g148-7-2-8-9">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path146-6-2-9-7"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column02Key01KeycapOverlay-5-4-2-8"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column02Key01Legend0-6-7-8-5"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">W</text>
+      </g>
+      <g
+         id="Column02Key02-9-7-8-3"
+         transform="translate(0,-3.814697e-6)">
+        <g
+           id="g155-3-5-8-3">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path153-7-4-6-8"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column02Key02KeycapOverlay-4-8-8-3"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column02Key02Legend0-5-1-3-7"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">S</text>
+      </g>
+      <g
+         id="Column02Key03-2-2-8-9"
+         transform="translate(0,19.05)">
+        <g
+           id="g162-5-8-3-3">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path160-4-9-3-7"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column02Key03KeycapOverlay-7-3-3-8"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column02Key03Legend0-4-6-8-7"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">X</text>
+      </g>
+      <g
+         id="Column02Key04-4-8-0-4"
+         transform="translate(0,38.1)">
+        <g
+           id="g169-3-0-4-1">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path167-0-2-7-9"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column02Key04KeycapOverlay-7-1-6-0"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#b3b0ac;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column02Key04Legend0-8-0-8-9"
+           style="font-style:normal;font-weight:normal;font-size:4px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">ALT</text>
+      </g>
+    </g>
+    <g
+       id="Column03-6-5-9-8"
+       transform="translate(0,-5.5)">
+      <g
+         id="Column03Key00-8-1-0-8"
+         transform="translate(0,-38.1)">
+        <g
+           id="g177-8-1-6-5">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path175-4-0-8-8"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column03Key00KeycapOverlay-3-8-7-4"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column03Key00Legend0-1-5-9-3"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">3</text>
+      </g>
+      <g
+         id="Column03Key01-4-0-0-7"
+         transform="translate(0,-19.05)">
+        <g
+           id="g184-9-6-3-1">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path182-2-4-3-3"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column03Key01KeycapOverlay-0-6-3-8"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column03Key01Legend0-6-2-7-0"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">E</text>
+      </g>
+      <g
+         id="Column03Key02-8-5-3-9"
+         transform="translate(0,-3.814697e-6)">
+        <g
+           id="g191-9-8-2-7">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path189-2-6-6-9"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column03Key02KeycapOverlay-6-2-5-9"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column03Key02Legend0-6-8-2-3"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">D</text>
+      </g>
+      <g
+         id="Column03Key03-4-4-6-2"
+         transform="translate(0,19.05)">
+        <g
+           id="g198-9-7-5-4">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path196-5-2-8-3"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column03Key03KeycapOverlay-0-4-7-7"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column03Key03Legend0-4-0-9-1"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">C</text>
+      </g>
+      <g
+         id="Column03Key04-8-6-6-2"
+         transform="translate(0,38.1)">
+        <g
+           id="g205-7-2-0-2">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path203-1-9-4-0"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column03Key04KeycapOverlay-7-9-1-2"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column03Key04Legend0-2-0-0-1"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">`</text>
+      </g>
+    </g>
+    <g
+       id="Column04-7-8-4-7"
+       transform="translate(19.05,0.5)">
+      <g
+         id="Column04Key00-2-1-8-5"
+         transform="translate(0,-38.1)">
+        <g
+           id="g213-2-3-7-1">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path211-6-1-0-7"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column04Key00KeycapOverlay-1-1-8-4"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column04Key00Legend0-0-0-6-1"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">4</text>
+      </g>
+      <g
+         id="Column04Key01-6-3-2-7"
+         transform="translate(0,-19.05)">
+        <g
+           id="g220-1-4-4-1">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path218-5-0-7-1"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column04Key01KeycapOverlay-9-3-9-1"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column04Key01Legend0-4-9-3-7"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">R</text>
+      </g>
+      <g
+         id="Column04Key02-9-1-9-0"
+         transform="translate(0,-3.814697e-6)">
+        <g
+           id="g227-0-9-2-4">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path225-9-6-8-0"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column04Key02KeycapOverlay-1-9-3-8"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column04Key02Legend0-7-3-0-5"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">F</text>
+      </g>
+      <g
+         id="Column04Key03-7-3-1-1"
+         transform="translate(0,19.05)">
+        <g
+           id="g234-1-8-7-6">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path232-1-0-8-6"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column04Key03KeycapOverlay-5-5-9-2"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column04Key03Legend0-9-6-1-1"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">V</text>
+      </g>
+      <g
+         id="Column04Key04-7-6-5-9"
+         transform="translate(0,38.1)">
+        <g
+           id="g241-7-4-4-6">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path239-6-0-9-4"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column04Key04KeycapOverlay-7-0-2-8"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column04Key04Legend0-3-4-5-0"
+           style="font-style:normal;font-weight:normal;font-size:4px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">FN</text>
+      </g>
+    </g>
+    <g
+       id="Column05-6-6-7-8"
+       transform="translate(38.10001,5.5)">
+      <g
+         id="Column05Key00-5-2-4-1"
+         transform="translate(0,-38.1)">
+        <g
+           id="g249-6-6-9-0">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path247-3-7-9-2"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column05Key00KeycapOverlay-9-5-4-2"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column05Key00Legend0-4-6-5-9"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">5</text>
+      </g>
+      <g
+         id="Column05Key01-8-9-9-7"
+         transform="translate(0,-19.05)">
+        <g
+           id="g256-1-8-3-5">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path254-2-7-5-6"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column05Key01KeycapOverlay-9-2-7-4"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column05Key01Legend0-3-8-0-6"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">T</text>
+      </g>
+      <g
+         id="Column05Key02-9-2-8-3"
+         transform="translate(0,-3.814697e-6)">
+        <g
+           id="g263-0-9-1-7">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path261-8-9-9-9"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column05Key02KeycapOverlay-8-6-9-7"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column05Key02Legend0-5-0-7-4"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">G</text>
+      </g>
+      <g
+         id="Column05Key03-0-2-8-9"
+         transform="translate(0,19.05)">
+        <g
+           id="g270-9-7-2-1">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path268-6-6-5-7"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column05Key03KeycapOverlay-3-1-3-0"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column05Key03Legend0-8-3-4-6"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">B</text>
+      </g>
+      <g
+         id="Column05Key04-5-2-9-0"
+         transform="translate(0,38.1)">
+        <g
+           id="g277-6-1-0-8">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path275-1-5-2-5"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column05Key04KeycapOverlay-1-9-0-3"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column05Key04Legend0-5-9-1-9"
+           style="font-style:normal;font-weight:normal;font-size:4px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">BKSP</text>
+      </g>
+    </g>
+    <g
+       id="Column06-9-1-9-4"
+       transform="translate(57.15001,5.5)">
+      <g
+         id="g283-8-4-6-1"
+         transform="translate(0,-9.525002)" />
+      <g
+         id="Column06Key01-4-9-2-5"
+         transform="translate(0,38.1)">
+        <g
+           id="g287-8-1-1-4">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path285-1-0-2-1"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column06Key01KeycapOverlay-0-7-0-5"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column06Key01Legend0-3-5-7-5"
+           style="font-style:normal;font-weight:normal;font-size:4px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">DEL</text>
+      </g>
+    </g>
+  </g>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:0.20705454px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="M 62.482479,128.33662 82.061269,17.299757"
+     id="path3831-1-9"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:0.05689531px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 148.7963,18.111277 c 57.25784,10.09609 57.25784,10.09609 57.25784,10.09609"
+     id="path1362-8-7-1-8"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:0.20518263px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="M 376.76171,127.84587 357.35992,17.812847"
+     id="path3831-1-9-9"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:0.06031627px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 292.09599,17.592817 c -60.7006,10.70317 -60.7006,10.70317 -60.7006,10.70317"
+     id="path1362-8-7-1-8-6"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="M 149.09957,18.273307 H 81.832619"
+     id="path5769"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="M 357.52119,18.008477 H 290.25424"
+     id="path5769-7"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:0.28045484px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 204.70704,158.13636 h 30.64828"
+     id="path5786"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:0.14233439px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 205.19754,28.419947 h 26.14977"
+     id="path6128"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:0.37258267px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="M 376.7214,128.04555 235.35532,158.13636"
+     id="path6643"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:0.3698819px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="M 204.70704,157.6682 62.38671,128.21088"
+     id="path6643-7"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:none;stroke:#ff0000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 73.983759,121.40551 -11.60892,6.75142"
+     id="path6670"
+     inkscape:connector-curvature="0" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:4.51149464px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.11278737"
+     x="63.105892"
+     y="127.6365"
+     id="text6674"
+     transform="scale(0.93231052,1.072604)"><tspan
+       sodipodi:role="line"
+       id="tspan6672"
+       x="63.105892"
+       y="127.6365"
+       style="fill:#ff0000;fill-opacity:1;stroke:#ff0000;stroke-width:0.11278737;stroke-opacity:1">10mm (?)</tspan><tspan
+       sodipodi:role="line"
+       x="63.105892"
+       y="133.27588"
+       style="fill:#ff0000;fill-opacity:1;stroke:#ff0000;stroke-width:0.11278737;stroke-opacity:1"
+       id="tspan6676">Diagonal</tspan></text>
+  <flowRoot
+     xml:space="preserve"
+     id="flowRoot6660-3"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:#ff0000;stroke-opacity:1"
+     transform="matrix(0.15747881,0,0,0.1859445,-227.50959,-180.98591)"><flowRegion
+       id="flowRegion6662-7"
+       style="fill:#ff0000;fill-opacity:1;stroke:#ff0000;stroke-opacity:1"><rect
+         id="rect6664-1"
+         width="249.84187"
+         height="152.16998"
+         x="2478.6013"
+         y="1034.7808"
+         style="fill:#ff0000;fill-opacity:1;stroke:#ff0000;stroke-opacity:1" /></flowRegion><flowPara
+       id="flowPara6666-2">Parallel</flowPara></flowRoot>  <path
+     style="fill:none;stroke:#ff0000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 163.07592,30.589437 1.87264,-9.7377"
+     id="path6702"
+     inkscape:connector-curvature="0" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:4.51149464px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.11278737"
+     x="61.301945"
+     y="17.68845"
+     id="text6674-2"
+     transform="scale(0.93231052,1.072604)"><tspan
+       sodipodi:role="line"
+       id="tspan6672-1"
+       x="61.301945"
+       y="17.68845"
+       style="fill:#ff0000;fill-opacity:1;stroke:#ff0000;stroke-width:0.11278737;stroke-opacity:1">10mm (?)</tspan><tspan
+       sodipodi:role="line"
+       x="61.301945"
+       y="23.327816"
+       style="fill:#ff0000;fill-opacity:1;stroke:#ff0000;stroke-width:0.11278737;stroke-opacity:1"
+       id="tspan6676-5">Diagonal</tspan></text>
+  <path
+     style="fill:none;stroke:#fd0000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 90.706079,26.568527 -8.87346,-8.29522"
+     id="path6725"
+     inkscape:connector-curvature="0" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:6.68834496px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16720861"
+     x="6.1768408"
+     y="63.397465"
+     id="text6729"><tspan
+       sodipodi:role="line"
+       id="tspan6727"
+       x="6.1768408"
+       y="63.397465"
+       style="fill:#ff0000;fill-opacity:1;stroke:#ff0000;stroke-width:0.16720861;stroke-opacity:1">Should be exact</tspan><tspan
+       sodipodi:role="line"
+       x="6.1768408"
+       y="71.757889"
+       style="fill:#ff0000;fill-opacity:1;stroke:#ff0000;stroke-width:0.16720861;stroke-opacity:1"
+       id="tspan6731">diagonal (45*)</tspan></text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 34.425929,56.619057 20.599,-28.83857"
+     id="path6733"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 28.995299,75.345407 24.34424,58.613463"
+     id="path6735"
+     inkscape:connector-curvature="0" />
+  <g
+     id="Right-0"
+     transform="rotate(-10,619.27306,-1617.7698)">
+    <g
+       id="RightKeywellPerimeter-9"
+       transform="translate(-66.675)">
+      <g
+         id="g311-0">
+        <path
+           style="fill:#1f1f1f;stroke:#000000;stroke-width:0.5"
+           d="m 133.875,50.65 h -39.15 v -3 h -19.05 v -5 h -18 v 6 h -19.05 v 5 h -39.15 v -20.1 h 19.05 v -76.2 h 19.05 v -5 h 19.05 v -6 h 20.1 v 5 h 19.05 v 3 h 38.1 v 96.3"
+           id="path309-4"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+    <g
+       id="g323-0"
+       transform="translate(-57.15,5.5)">
+      <g
+         id="g314-1"
+         transform="translate(0,-9.525002)" />
+      <g
+         id="Column06Key02-3"
+         transform="translate(0,38.1)">
+        <g
+           id="g318-7">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path316-4"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column06Key02KeycapOverlay-1"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column06Key02Legend0-1"
+           style="font-style:normal;font-weight:normal;font-size:4px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">ENT</text>
+      </g>
+    </g>
+    <g
+       id="Column07-3"
+       transform="translate(-38.1,5.5)">
+      <g
+         id="Column07Key00-0"
+         transform="translate(0,-38.1)">
+        <g
+           id="g327-3">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path325-2"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column07Key00KeycapOverlay-1"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column07Key00Legend0-7"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">6</text>
+      </g>
+      <g
+         id="Column07Key01-5"
+         transform="translate(0,-19.05)">
+        <g
+           id="g334-6">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path332-5"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column07Key01KeycapOverlay-4"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column07Key01Legend0-2"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">Y</text>
+      </g>
+      <g
+         id="Column07Key02-2"
+         transform="translate(0,-3.814697e-6)">
+        <g
+           id="g341-1">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path339-7"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column07Key02KeycapOverlay-2"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column07Key02Legend0-4"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">H</text>
+      </g>
+      <g
+         id="Column07Key03-1"
+         transform="translate(0,19.05)">
+        <g
+           id="g348-6">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path346-5"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column07Key03KeycapOverlay-7"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column07Key03Legend0-8"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">N</text>
+      </g>
+      <g
+         id="Column07Key04-5"
+         transform="translate(0,38.1)">
+        <g
+           id="g355-9">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path353-2"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column07Key04KeycapOverlay-7"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column07Key04Legend0-3"
+           style="font-style:normal;font-weight:normal;font-size:4px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">SPC</text>
+      </g>
+    </g>
+    <g
+       id="Column08-6"
+       transform="translate(-19.05,0.5)">
+      <g
+         id="Column08Key00-4"
+         transform="translate(0,-38.1)">
+        <g
+           id="g363-7">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path361-9"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column08Key00KeycapOverlay-7"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column08Key00Legend0-2"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">7</text>
+      </g>
+      <g
+         id="Column08Key01-2"
+         transform="translate(0,-19.05)">
+        <g
+           id="g370-1">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path368-6"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column08Key01KeycapOverlay-3"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column08Key01Legend0-0"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">U</text>
+      </g>
+      <g
+         id="Column08Key02-2"
+         transform="translate(0,-3.814697e-6)">
+        <g
+           id="g377-1">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path375-5"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column08Key02KeycapOverlay-6"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column08Key02Legend0-5"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">J</text>
+      </g>
+      <g
+         id="Column08Key03-0"
+         transform="translate(0,19.05)">
+        <g
+           id="g384-0">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path382-3"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column08Key03KeycapOverlay-4"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column08Key03Legend0-6"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">M</text>
+      </g>
+      <g
+         id="Column08Key04-6"
+         transform="translate(0,38.1)">
+        <g
+           id="g391-0">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path389-2"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column08Key04KeycapOverlay-5"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column08Key04Legend0-8"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">[</text>
+      </g>
+    </g>
+    <g
+       id="Column09-9"
+       transform="translate(0,-5.5)">
+      <g
+         id="Column09Key00-5"
+         transform="translate(0,-38.1)">
+        <g
+           id="g399-0">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path397-6"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column09Key00KeycapOverlay-0"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column09Key00Legend0-8"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">8</text>
+      </g>
+      <g
+         id="Column09Key01-3"
+         transform="translate(0,-19.05)">
+        <g
+           id="g406-7">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path404-8"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column09Key01KeycapOverlay-2"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column09Key01Legend0-1"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">I</text>
+      </g>
+      <g
+         id="Column09Key02-0"
+         transform="translate(0,-3.814697e-6)">
+        <g
+           id="g413-5">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path411-8"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column09Key02KeycapOverlay-5"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column09Key02Legend0-5"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">K</text>
+      </g>
+      <g
+         id="Column09Key03-0"
+         transform="translate(0,19.05)">
+        <g
+           id="g420-7">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path418-3"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column09Key03KeycapOverlay-8"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column09Key03Legend0-2"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">,</text>
+      </g>
+      <g
+         id="Column09Key04-3"
+         transform="translate(0,38.1)">
+        <g
+           id="g427-0">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path425-7"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column09Key04KeycapOverlay-7"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column09Key04Legend0-7"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">]</text>
+      </g>
+    </g>
+    <g
+       id="Column10-6"
+       transform="translate(19.05,-0.5)">
+      <g
+         id="Column10Key00-9"
+         transform="translate(0,-38.1)">
+        <g
+           id="g435-1">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path433-1"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column10Key00KeycapOverlay-9"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column10Key00Legend0-0"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">9</text>
+      </g>
+      <g
+         id="Column10Key01-8"
+         transform="translate(0,-19.05)">
+        <g
+           id="g442-9">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path440-8"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column10Key01KeycapOverlay-8"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column10Key01Legend0-0"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">O</text>
+      </g>
+      <g
+         id="Column10Key02-3"
+         transform="translate(0,-3.814697e-6)">
+        <g
+           id="g449-7">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path447-0"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column10Key02KeycapOverlay-6"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column10Key02Legend0-9"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">L</text>
+      </g>
+      <g
+         id="Column10Key03-2"
+         transform="translate(0,19.05)">
+        <g
+           id="g456-1">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path454-7"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column10Key03KeycapOverlay-7"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column10Key03Legend0-9"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">.</text>
+      </g>
+      <g
+         id="Column10Key04-7"
+         transform="translate(0,38.1)">
+        <g
+           id="g463-6">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path461-2"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column10Key04KeycapOverlay-7"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#b3b0ac;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column10Key04Legend0-1"
+           style="font-style:normal;font-weight:normal;font-size:4px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">ALT</text>
+      </g>
+    </g>
+    <g
+       id="Column11-5"
+       transform="translate(38.10001,2.5)">
+      <g
+         id="Column11Key00-8"
+         transform="translate(0,-38.1)">
+        <g
+           id="g471-8">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path469-4"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column11Key00KeycapOverlay-5"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column11Key00Legend0-6"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">0</text>
+      </g>
+      <g
+         id="Column11Key01-5"
+         transform="translate(0,-19.05)">
+        <g
+           id="g478-6">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path476-8"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column11Key01KeycapOverlay-4"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column11Key01Legend0-8"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">P</text>
+      </g>
+      <g
+         id="Column11Key02-8"
+         transform="translate(0,-3.814697e-6)">
+        <g
+           id="g485-3">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path483-8"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column11Key02KeycapOverlay-7"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column11Key02Legend0-5"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">;</text>
+      </g>
+      <g
+         id="Column11Key03-2"
+         transform="translate(0,19.05)">
+        <g
+           id="g492-4">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path490-5"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column11Key03KeycapOverlay-0"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column11Key03Legend0-5"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">/</text>
+      </g>
+      <g
+         id="Column11Key04-7"
+         transform="translate(0,38.1)">
+        <g
+           id="g499-3">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path497-2"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column11Key04KeycapOverlay-7"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#b3b0ac;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column11Key04Legend0-2"
+           style="font-style:normal;font-weight:normal;font-size:4px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">OS</text>
+      </g>
+    </g>
+    <g
+       id="Column12-1"
+       transform="translate(57.15001,2.5)">
+      <g
+         id="Column12Key00-3"
+         transform="translate(0,-38.1)">
+        <g
+           id="g507-4">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path505-9"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column12Key00KeycapOverlay-4"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#d6d4c8;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column12Key00Legend0-1"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">-</text>
+      </g>
+      <g
+         id="Column12Key01-9"
+         transform="translate(0,-19.05)">
+        <g
+           id="g514-5">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path512-7"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column12Key01KeycapOverlay-4"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#b3b0ac;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column12Key01Legend0-1"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">\</text>
+      </g>
+      <g
+         id="Column12Key02-2"
+         transform="translate(0,-3.814697e-6)">
+        <g
+           id="g521-2">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path519-1"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column12Key02KeycapOverlay-6"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#b3b0ac;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column12Key02Legend0-2"
+           style="font-style:normal;font-weight:normal;font-size:6px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">'</text>
+      </g>
+      <g
+         id="Column12Key03-0"
+         transform="translate(0,19.05)">
+        <g
+           id="g528-2">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path526-2"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column12Key03KeycapOverlay-9"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#b3b0ac;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column12Key03Legend0-7"
+           style="font-style:normal;font-weight:normal;font-size:4px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">SHFT</text>
+      </g>
+      <g
+         id="Column12Key04-4"
+         transform="translate(0,38.1)">
+        <g
+           id="g535-3">
+          <path
+             style="fill:none;stroke:#0000ff;stroke-width:0.5"
+             d="M -7,-7 H 7 v 1 H 7.8 V 6 H 7 V 7 H -7 V 6 H -7.8 V -6 H -7 v -1"
+             id="path533-5"
+             inkscape:connector-curvature="0" />
+        </g>
+        <path
+           id="Column12Key04KeycapOverlay-6"
+           d="M -9.05,-9.05 H 9.05 V 9.05 H -9.05 V -9.05 H 9.05"
+           style="fill:#b3b0ac;stroke:#000000;stroke-width:0.5"
+           inkscape:connector-curvature="0" />
+        <text
+           id="Column12Key04Legend0-1"
+           style="font-style:normal;font-weight:normal;font-size:4px;font-family:sans-serif;dominant-baseline:central;text-anchor:middle;fill:#000000">CTRL</text>
+      </g>
+    </g>
+  </g>
+  <path
+     style="fill:none;stroke:#ff0000;stroke-width:0.09940281px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 205.81275,147.66319 -1.10571,10.00501"
+     id="path6670-3"
+     inkscape:connector-curvature="0" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:4.51149464px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.11278737"
+     x="220.61629"
+     y="152.76439"
+     id="text6674-6"
+     transform="scale(0.93231052,1.072604)"><tspan
+       sodipodi:role="line"
+       x="220.61629"
+       y="152.76439"
+       style="fill:#ff0000;fill-opacity:1;stroke:#ff0000;stroke-width:0.11278737;stroke-opacity:1"
+       id="tspan1222">10mm</tspan></text>
+</svg>

@@ -1,9 +1,8 @@
-# kbutil
+# Kicad Symbols and Footprints
 
-The `kbutil` command line tool provides a number of utilities that make
-keyboard development easier. These are currently incomplete, unorganized, and
-undocumented.
+These libraries contain some of the symbols and footprints used in CozyKeys
+keyboards.
 
-The `kbmath` tool provides some math operations for calculating things such as
-case edge curves.
+**Disclaimer:** They were not all authored by me! Many of them were copied from
+existing libraries and modified in some way or another.
 

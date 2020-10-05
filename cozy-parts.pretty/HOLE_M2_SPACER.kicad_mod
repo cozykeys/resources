@@ -1,0 +1,9 @@
+(module HOLE_M2_SPACER (layer F.Cu) (tedit 5EA6514F)
+  (fp_text reference HOLE_M2_SPACER (at 0 -4.5) (layer F.SilkS) hide
+    (effects (font (size 1.524 1.524) (thickness 0.3048)))
+  )
+  (fp_text value VAL** (at 0.05 -7.25) (layer F.SilkS) hide
+    (effects (font (size 1.524 1.524) (thickness 0.3048)))
+  )
+  (pad 1 thru_hole circle (at 0 0) (size 4.5 4.5) (drill 3.5) (layers *.Cu *.Mask F.SilkS))
+)
