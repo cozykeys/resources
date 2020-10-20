@@ -1,5 +1,7 @@
 # How to Finalize Images for the CozyKeys Website
 
+## Manual
+
 ```bash
 # Install ImageMagick; on Ubuntu:
 sudo apt install -y imagemagick
@@ -18,3 +20,8 @@ convert image.jpg -resize 800x800 -auto-orient image_800x800.png
 
 # Upload to Google Drive as well
 ```
+
+## Automated
+
+See: [prepare_images.py](../scripts/prepare_images.py)
+
