@@ -1,0 +1,20 @@
+{
+    "Name": "2 x 2 Macropad",
+    "Version": "1.0.0",
+    "Components": [
+        {
+            "Type": "Key",
+            "Name": "KeyR1C1",
+            "Legends": [
+                {
+                    "Text": "A"
+                }
+            ]
+        },
+        {
+            "Type": "Circle",
+            "Name": "Hole1",
+            "Radius": 1.0
+        }
+    ]
+}
