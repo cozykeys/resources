@@ -9,8 +9,15 @@ import (
 	"github.com/cozykeys/resources/kbutil-go/pkg/kbutil"
 )
 
+func printUsage() {
+	fmt.Fprintf(os.Stderr, "Usage: kbutil <input-file>\n")
+}
+
 func intMain() int {
-	fmt.Println("kbutil 2.0!")
+	if len(os.Args) < 2 {
+		printUsage()
+		return 1
+	}
 
 	bytes, err := ioutil.ReadFile(os.Args[1])
 	if err != nil {
@@ -23,6 +30,13 @@ func intMain() int {
 		fmt.Printf("ERROR: %s\n", err)
 		return 1
 	}
+
+	svg, err := kb.ToSvg([]string{})
+	if err != nil {
+		fmt.Printf("ERROR: %s\n", err)
+		return 1
+	}
+	fmt.Printf("%s\n", svg)
 
 	bytes, err = json.Marshal(kb)
 	if err != nil {
