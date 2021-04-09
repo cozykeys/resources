@@ -1,7 +1,9 @@
 package kbutil
 
 type ComponentBase struct {
-	Name string
+	Name    string
+	XOffset float64
+	YOffset float64
 }
 
 type Component interface {
@@ -26,5 +28,7 @@ type Circle struct {
 type Keyboard struct {
 	Name       string
 	Version    string
+	Width      float64
+	Height     float64
 	Components []Component
 }

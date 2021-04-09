@@ -2,7 +2,6 @@ package kbutil
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
 	"reflect"
 )
@@ -33,12 +32,104 @@ func (kb *Keyboard) UnmarshalJSON(bytes []byte) error {
 	return nil
 }
 
+func (cb *ComponentBase) fromMap(m map[string]interface{}) error {
+	log.Printf("(*ComponentBase)::fromMap()")
+
+	requiredFields := map[string]bool{
+		"Name": false,
+	}
+
+	for key, value := range m {
+		switch key {
+		case "Name":
+			valueStr, ok := value.(string)
+			if !ok {
+				return errInvalidType("ComponentBase", "Name")
+			}
+			cb.Name = valueStr
+			requiredFields["Name"] = true
+		case "XOffset":
+			valueFloat, ok := value.(float64)
+			if !ok {
+				return errInvalidType("ComponentBase", "XOffset")
+			}
+			cb.XOffset = valueFloat
+		case "YOffset":
+			valueFloat, ok := value.(float64)
+			if !ok {
+				return errInvalidType("ComponentBase", "YOffset")
+			}
+			cb.YOffset = valueFloat
+		}
+	}
+
+	for key, value := range requiredFields {
+		if value == false {
+			return errMissingRequired("ComponentBase", key)
+		}
+	}
+
+	return nil
+}
+
+func (legend *Legend) fromMap(m map[string]interface{}) error {
+	return nil
+}
+
 func (key *Key) fromMap(m map[string]interface{}) error {
+	if err := key.ComponentBase.fromMap(m); err != nil {
+		return err
+	}
+
+	requiredFields := map[string]bool{
+		"Legends": false,
+	}
+
+	for k, v := range m {
+		switch k {
+		case "Legends":
+			legends, ok := v.([]interface{})
+			if !ok {
+				log.Printf("%s", reflect.TypeOf(v))
+				return errInvalidType("Key", "Legends")
+			}
+
+			// TODO: Would be nice to have a "fromSlice" or something similar
+			// to "fromMap" to reduce LoC in this func
+
+			for _, legend := range legends {
+				legendMap, ok := legend.(map[string]interface{})
+				if !ok {
+					return errInvalidType("Key", "Legends")
+				}
+
+				l := Legend{}
+				if err := l.fromMap(legendMap); err != nil {
+					return err
+				}
+
+				key.Legends = append(key.Legends, l)
+			}
+
+			requiredFields["Legends"] = true
+		}
+	}
+
+	for k, v := range requiredFields {
+		if v == false {
+			return errMissingRequired("Key", k)
+		}
+	}
+
 	log.Printf("(*Key)::fromMap()")
 	return nil
 }
 
 func (circle *Circle) fromMap(m map[string]interface{}) error {
+	if err := circle.ComponentBase.fromMap(m); err != nil {
+		return err
+	}
+
 	log.Printf("(*Circle)::fromMap()")
 	return nil
 }
@@ -49,6 +140,8 @@ func (kb *Keyboard) fromMap(m map[string]interface{}) error {
 	requiredFields := map[string]bool{
 		"Name":       false,
 		"Version":    false,
+		"Height":     false,
+		"Width":      false,
 		"Components": false,
 	}
 
@@ -68,6 +161,20 @@ func (kb *Keyboard) fromMap(m map[string]interface{}) error {
 			}
 			kb.Version = valueStr
 			requiredFields["Version"] = true
+		case "Height":
+			valueFloat, ok := value.(float64)
+			if !ok {
+				return errInvalidType("Keyboard", "Height")
+			}
+			kb.Height = valueFloat
+			requiredFields["Height"] = true
+		case "Width":
+			valueFloat, ok := value.(float64)
+			if !ok {
+				return errInvalidType("Keyboard", "Width")
+			}
+			kb.Width = valueFloat
+			requiredFields["Width"] = true
 		case "Components":
 			cmps, ok := value.([]interface{})
 			if !ok {
@@ -120,15 +227,5 @@ func (kb *Keyboard) fromMap(m map[string]interface{}) error {
 	// TODO: Do any post-processing such as ensuring required fields were set
 	// and values are valid
 
-	return nil
-}
-
-func (k *Key) UnmarshalJSON(bytes []byte) error {
-	fmt.Printf("(*Key)::UnmarshalJSON()\n")
-	return nil
-}
-
-func (c *Circle) UnmarshalJSON(bytes []byte) error {
-	fmt.Printf("(*Circle)::UnmarshalJSON()\n")
 	return nil
 }

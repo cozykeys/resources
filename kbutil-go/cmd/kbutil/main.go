@@ -38,14 +38,6 @@ func intMain() int {
 	}
 	fmt.Printf("%s\n", svg)
 
-	bytes, err = json.Marshal(kb)
-	if err != nil {
-		fmt.Printf("ERROR: %s\n", err)
-		return 1
-	}
-
-	fmt.Println(string(bytes))
-
 	return 0
 }
 
