@@ -1,0 +1,94 @@
+{
+    "name": "bloomer",
+    "version": "v1.0.0",
+    "constants": [
+        { "name": "AlphaFillColor",        "value": "#ffffff" },
+        { "name": "AlphaLegendColor",      "value": "#000000" },
+        { "name": "ModFillColor",          "value": "#cfcfcf" },
+        { "name": "ModLegendColor",        "value": "#000000" },
+        { "name": "KeycapBorderColor",     "value": "#000000" },
+        { "name": "M2SpacerSize",          "value": "3.563" },
+        { "name": "M2ScrewSize",           "value": "2.3" },
+        { "name": "KeycapDiameterMm1u",    "value": "18.1" },
+        { "name": "KeyMarginMillimeters",  "value": "0.475" },
+        { "name": "CaseFillColor",         "value": "#7f7f7f" },
+        { "name": "CaseStrokeColor",       "value": "#000000" },
+        { "name": "KeywellFillColor",      "value": "#5f5f5f" }
+    ],
+    "layers": [
+        {
+            "name": "top",
+            "zindex": "5",
+            "xoffset": "185",
+            "yoffset": "80",
+            "groups": [
+                {
+                    "name": "CasePerimeter",
+                    "xoffset": "-185",
+                    "yoffset": "-80",
+                    "children": [
+                        {
+                            "type": "path",
+                            "stroke": "${CaseStrokeColor}",
+                            "components": [
+                                {
+                                    "type": "AbsoluteMoveTo",
+                                    "EndPoint": {
+                                        "X": "27.604",
+                                        "Y": "6.26"
+                                    }
+                                },
+                                {
+                                    "type": "AbsoluteQuadraticCurveTo",
+                                    "EndPoint": {
+                                        "x": "31.123",
+                                        "y": "3.412"
+                                    },
+                                    "ControlPoint": {
+                                        "x": "28.125",
+                                        "y": "3.306"
+                                    }
+                                },
+{ "type": "AbsoluteLineTo", "EndPoint": { "x": "93.594", "y": "5.627" } },
+{ "type": "AbsoluteQuadraticCurveTo", "EndPoint": { "x": "99.546", "y": "6.255" }, "ControlPoint": { "x": "96.592", "y": "5.734" } },
+{ "type": "AbsoluteLineTo", "EndPoint": { "x": "113.854", "y": "8.777" } },
+{ "type": "AbsoluteQuadraticCurveTo", "EndPoint": { "x": "119.502", "y": "10.618" }, "ControlPoint": { "x": "116.808", "y": "9.298" } },
+{ "type": "AbsoluteLineTo", "EndPoint": { "x": "148.792", "y": "24.97" } },
+{ "type": "AbsoluteQuadraticCurveTo", "EndPoint": { "x": "154.486", "y": "26.29" }, "ControlPoint": { "x": "151.486", "y": "26.29" } },
+{ "type": "AbsoluteLineTo", "EndPoint": { "x": "215.514", "y": "26.29" } },
+{ "type": "AbsoluteQuadraticCurveTo", "EndPoint": { "x": "221.208", "y": "24.97" }, "ControlPoint": { "x": "218.514", "y": "26.29" } },
+{ "type": "AbsoluteLineTo", "EndPoint": { "x": "250.498", "y": "10.618" } },
+{ "type": "AbsoluteQuadraticCurveTo", "EndPoint": { "x": "256.146", "y": "8.777" }, "ControlPoint": { "x": "253.192", "y": "9.298" } },
+{ "type": "AbsoluteLineTo", "EndPoint": { "x": "270.454", "y": "6.255" } },
+{ "type": "AbsoluteQuadraticCurveTo", "EndPoint": { "x": "276.406", "y": "5.627" }, "ControlPoint": { "x": "273.408", "y": "5.734" } },
+{ "type": "AbsoluteLineTo", "EndPoint": { "x": "338.877", "y": "3.412" } },
+{ "type": "AbsoluteQuadraticCurveTo", "EndPoint": { "x": "342.396", "y": "6.26" }, "ControlPoint": { "x": "341.875", "y": "3.306" } },
+{ "type": "AbsoluteLineTo", "EndPoint": { "x": "364.771", "y": "133.154" } },
+{ "type": "AbsoluteQuadraticCurveTo", "EndPoint": { "x": "362.338", "y": "136.629" }, "ControlPoint": { "x": "365.292", "y": "136.108" } },
+{ "type": "AbsoluteLineTo", "EndPoint": { "x": "320.628", "y": "143.984" } },
+{ "type": "AbsoluteQuadraticCurveTo", "EndPoint": { "x": "314.75", "y": "145.177" }, "ControlPoint": { "x": "317.673", "y": "144.505" } },
+{ "type": "AbsoluteLineTo", "EndPoint": { "x": "263.901", "y": "156.876" } },
+{ "type": "AbsoluteQuadraticCurveTo", "EndPoint": { "x": "258.023", "y": "158.07" }, "ControlPoint": { "x": "260.977", "y": "157.549" } },
+{ "type": "AbsoluteLineTo", "EndPoint": { "x": "226.356", "y": "163.653" } },
+{ "type": "AbsoluteQuadraticCurveTo", "EndPoint": { "x": "220.405", "y": "164.329" }, "ControlPoint": { "x": "223.401", "y": "164.174" } },
+{ "type": "AbsoluteLineTo", "EndPoint": { "x": "216.392", "y": "164.536" } },
+{ "type": "AbsoluteQuadraticCurveTo", "EndPoint": { "x": "210.396", "y": "164.69" }, "ControlPoint": { "x": "213.396", "y": "164.69" } },
+{ "type": "AbsoluteLineTo", "EndPoint": { "x": "159.604", "y": "164.69" } },
+{ "type": "AbsoluteQuadraticCurveTo", "EndPoint": { "x": "153.608", "y": "164.536" }, "ControlPoint": { "x": "156.604", "y": "164.69" } },
+{ "type": "AbsoluteLineTo", "EndPoint": { "x": "149.595", "y": "164.329" } },
+{ "type": "AbsoluteQuadraticCurveTo", "EndPoint": { "x": "143.644", "y": "163.653" }, "ControlPoint": { "x": "146.599", "y": "164.174" } },
+{ "type": "AbsoluteLineTo", "EndPoint": { "x": "111.977", "y": "158.07" } },
+{ "type": "AbsoluteQuadraticCurveTo", "EndPoint": { "x": "106.099", "y": "156.876" }, "ControlPoint": { "x": "109.023", "y": "157.549" } },
+{ "type": "AbsoluteLineTo", "EndPoint": { "x": "55.25", "y": "145.177" } },
+{ "type": "AbsoluteQuadraticCurveTo", "EndPoint": { "x": "49.372", "y": "143.984" }, "ControlPoint": { "x": "52.327", "y": "144.505" } },
+{ "type": "AbsoluteLineTo", "EndPoint": { "x": "7.662", "y": "136.629" } },
+{ "type": "AbsoluteQuadraticCurveTo", "EndPoint": { "x": "5.229", "y": "133.154" }, "ControlPoint": { "x": "4.708", "y": "136.108" } },
+{ "type": "AbsoluteLineTo", "EndPoint": { "x": "27.604", "y": "6.26" } }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

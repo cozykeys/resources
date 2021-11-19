@@ -4,3 +4,5 @@ build/
 .idea/
 *.DotSettings.user
 tags
+
+/kb/vendor
