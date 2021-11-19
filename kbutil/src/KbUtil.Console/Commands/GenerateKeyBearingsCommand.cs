@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 namespace KbUtil.Console.Commands
 {
     using System;
+    using System.Linq;
     using System.Collections.Generic;
     using Microsoft.Extensions.Logging;
 
@@ -104,7 +105,7 @@ namespace KbUtil.Console.Commands
         {
             Keyboard keyboard = _keyboardDataService.GetKeyboardData(InputPath);
 
-            var keys = EnumerateKeys(keyboard);
+            var keys = EnumerateKeys(keyboard).OrderBy(k => k.Name);
 
             var keyGeometry = new Dictionary<string, Bearing>();
 
@@ -118,6 +119,9 @@ namespace KbUtil.Console.Commands
                 keyGeometry[keyName].Position = new Vector(
                     Math.Round(keyGeometry[keyName].Position.X, 3),
                     Math.Round(keyGeometry[keyName].Position.Y, 3));
+
+                keyGeometry[keyName].Row = key.Row;
+                keyGeometry[keyName].Column = key.Column;
             }
 
             if (!string.IsNullOrEmpty(DebugSvgPath))

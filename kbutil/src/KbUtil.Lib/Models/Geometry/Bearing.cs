@@ -6,5 +6,7 @@ namespace KbUtil.Lib.Models.Geometry
     {
         public Vector Position { get; set; }
         public float Rotation { get; set; }
+        public int Row { get; set; }
+        public int Column { get; set; }
     }
 }
