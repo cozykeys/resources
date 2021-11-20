@@ -112,13 +112,4 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\KbMath.Core\KbMath.Core.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\KbMath.Core\KbMath.Core.csproj" />
-  </ItemGroup>
-
 </Project>

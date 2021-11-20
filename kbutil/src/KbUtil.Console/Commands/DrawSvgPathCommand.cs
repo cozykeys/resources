@@ -1,4 +1,4 @@
-﻿namespace KbMath.Console.Commands
+﻿namespace KbUtil.Console.Commands
 {
     using Microsoft.Extensions.CommandLineUtils;
     using System.Collections.Generic;

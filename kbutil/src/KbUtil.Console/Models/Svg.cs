@@ -1,4 +1,4 @@
-﻿namespace KbMath.Console.Models
+﻿namespace KbUtil.Console.Models
 {
     using System.Collections.Generic;
 

@@ -1,7 +1,7 @@
-namespace KbMath.Core.Tests.Comparers
+namespace KbUtil.Lib.Tests.Comparers
 {
     using System.Collections.Generic;
-    using KbMath.Core.Geometry2D.Extensions;
+    using KbUtil.Lib.Geometry2D.Extensions;
 
     public class DoubleComparer : IEqualityComparer<double>
     {

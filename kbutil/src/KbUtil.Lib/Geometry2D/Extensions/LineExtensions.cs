@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
-using KbMath.Core.Common.Extensions;
+using KbUtil.Lib.Common.Extensions;
 
-namespace KbMath.Core.Geometry2D.Extensions
+namespace KbUtil.Lib.Geometry2D.Extensions
 {
     using System;
     using Models;

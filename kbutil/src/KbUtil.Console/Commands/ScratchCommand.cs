@@ -1,9 +1,9 @@
-namespace KbMath.Console.Commands
+namespace KbUtil.Console.Commands
 {
     using System;
     using System.Collections.Generic;
-    using KbMath.Core.Geometry2D.Extensions;
-    using KbMath.Core.Geometry2D.Models;
+    using KbUtil.Lib.Geometry2D.Extensions;
+    using KbUtil.Lib.Geometry2D.Models;
     using Microsoft.Extensions.CommandLineUtils;
     using Services;
 

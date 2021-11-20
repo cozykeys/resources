@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace KbMath.Console.Services
+namespace KbUtil.Console.Services
 {
     using System.Collections.Generic;
     using Core.Geometry2D.Models;

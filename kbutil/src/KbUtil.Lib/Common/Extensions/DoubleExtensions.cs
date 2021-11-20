@@ -1,4 +1,4 @@
-﻿namespace KbMath.Core.Common.Extensions
+﻿namespace KbUtil.Lib.Common.Extensions
 {
     using System;
 

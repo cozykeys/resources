@@ -1,4 +1,4 @@
-﻿namespace KbMath.Console
+﻿namespace KbUtil.Console
 {
     using Microsoft.Extensions.CommandLineUtils;
 

@@ -1,4 +1,4 @@
-﻿namespace KbMath.Core.Tests.Geometry2D.Segment
+﻿namespace KbUtil.Lib.Tests.Geometry2D.Segment
 {
     using System.Collections.Generic;
     using Core.Geometry2D.Extensions;

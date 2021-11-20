@@ -1,4 +1,4 @@
-﻿namespace KbMath.Core.Geometry2D.Extensions
+﻿namespace KbUtil.Lib.Geometry2D.Extensions
 {
     public class RayExtensions
     {

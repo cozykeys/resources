@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace KbMath.Console.Services.Concrete
+namespace KbUtil.Console.Services.Concrete
 {
     using System;
     using System.Collections.Generic;

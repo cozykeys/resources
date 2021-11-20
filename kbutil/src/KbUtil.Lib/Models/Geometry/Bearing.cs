@@ -1,6 +1,6 @@
 namespace KbUtil.Lib.Models.Geometry
 {
-    using KbMath.Core.Geometry2D.Models;
+    using KbUtil.Lib.Geometry2D.Models;
 
     public class Bearing
     {

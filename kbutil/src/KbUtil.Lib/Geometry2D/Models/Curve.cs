@@ -1,4 +1,4 @@
-﻿namespace KbMath.Core.Geometry2D.Models
+﻿namespace KbUtil.Lib.Geometry2D.Models
 {
     using System;
 

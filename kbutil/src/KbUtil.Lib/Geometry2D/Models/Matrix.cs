@@ -1,6 +1,6 @@
 using System;
 
-namespace KbMath.Core.Geometry2D.Models
+namespace KbUtil.Lib.Geometry2D.Models
 {
     public class Matrix2x2
     {

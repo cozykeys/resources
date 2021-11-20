@@ -1,4 +1,4 @@
-﻿namespace KbMath.Console.Models
+﻿namespace KbUtil.Console.Models
 {
     public class SvgElement
     {

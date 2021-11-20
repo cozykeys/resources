@@ -1,8 +1,8 @@
 ﻿using System.Linq;
-using KbMath.Console.Models;
-using KbMath.Console.Services;
+using KbUtil.Console.Models;
+using KbUtil.Console.Services;
 
-namespace KbMath.Console.Commands
+namespace KbUtil.Console.Commands
 {
     using Microsoft.Extensions.CommandLineUtils;
     using System;

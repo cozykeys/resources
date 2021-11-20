@@ -1,4 +1,4 @@
-﻿namespace KbMath.Core.Geometry2D.Operations
+﻿namespace KbUtil.Lib.Geometry2D.Operations
 {
     using System.Collections.Generic;
     using System.Linq;

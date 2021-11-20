@@ -1,9 +1,9 @@
 ﻿using System;
-using KbMath.Core.Common.Extensions;
+using KbUtil.Lib.Common.Extensions;
 
-namespace KbMath.Core.Geometry2D.Extensions
+namespace KbUtil.Lib.Geometry2D.Extensions
 {
-    using KbMath.Core.Geometry2D.Models;
+    using KbUtil.Lib.Geometry2D.Models;
 
     public static class SegmentExtensions
     {

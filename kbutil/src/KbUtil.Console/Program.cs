@@ -90,7 +90,7 @@
             serviceCollection.AddSingleton<ISvgGenerationService, SvgGenerationService>();
             serviceCollection.AddSingleton<IPcbGenerationService, PcbGenerationService>();
 
-            // From KbMath
+            // From KbUtil
             serviceCollection.AddSingleton<ISvgService, SvgService>();
 
             return serviceCollection;
@@ -103,7 +103,7 @@
             ActivatorUtilities.CreateInstance<GenerateSwitchDataCommand>(serviceProvider);
             ActivatorUtilities.CreateInstance<GenerateKeyBearingsCommand>(serviceProvider);
 
-            // From KbMath
+            // From KbUtil
             ActivatorUtilities.CreateInstance<GenerateSwitchBearingsCommand>(serviceProvider);
             ActivatorUtilities.CreateInstance<ExpandVerticesCommand>(serviceProvider);
             ActivatorUtilities.CreateInstance<ExpandVerticesCommand2>(serviceProvider);

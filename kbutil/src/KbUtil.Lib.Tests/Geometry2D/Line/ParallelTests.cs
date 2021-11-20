@@ -1,11 +1,11 @@
-﻿namespace KbMath.Core.Tests.Geometry2D.Line
+﻿namespace KbUtil.Lib.Tests.Geometry2D.Line
 {
     using System;
     using System.Collections.Generic;
     using Core.Geometry2D.Extensions;
     using Core.Geometry2D.Models;
     using Xunit;
-    using KbMath.Core.Tests.Comparers;
+    using KbUtil.Lib.Tests.Comparers;
     
     public class ParallelTests
     {

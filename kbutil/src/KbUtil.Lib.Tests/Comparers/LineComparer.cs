@@ -1,7 +1,7 @@
-namespace KbMath.Core.Tests.Comparers
+namespace KbUtil.Lib.Tests.Comparers
 {
     using System.Collections.Generic;
-    using KbMath.Core.Geometry2D.Models;
+    using KbUtil.Lib.Geometry2D.Models;
 
     public class LineComparer : IEqualityComparer<Line>
     {

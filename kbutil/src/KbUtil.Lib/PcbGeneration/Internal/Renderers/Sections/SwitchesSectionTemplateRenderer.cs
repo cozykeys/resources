@@ -5,7 +5,7 @@
     using System;
     using System.Collections.Generic;
     using KbUtil.Lib.PcbGeneration.Internal.Models.Components;
-    using KbMath.Core.Geometry2D.Extensions;
+    using KbUtil.Lib.Geometry2D.Extensions;
 
     internal class SwitchesSectionTemplateRenderer : IPcbTemplateRenderer<SwitchesSectionTemplateData>
     {

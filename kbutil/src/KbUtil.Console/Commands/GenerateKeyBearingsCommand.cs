@@ -15,7 +15,7 @@ namespace KbUtil.Console.Commands
     using KbUtil.Lib.SvgGeneration;
     using KbUtil.Lib.Models.Keyboard;
     
-    using KbMath.Core.Geometry2D.Models;
+    using KbUtil.Lib.Geometry2D.Models;
 
     internal class GenerateKeyBearingsCommand
     {

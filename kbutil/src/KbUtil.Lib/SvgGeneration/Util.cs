@@ -2,8 +2,8 @@ namespace KbUtil.Lib.SvgGeneration
 {
     using System;
     
-    using KbMath.Core.Geometry2D.Extensions;
-    using KbMath.Core.Geometry2D.Models;
+    using KbUtil.Lib.Geometry2D.Extensions;
+    using KbUtil.Lib.Geometry2D.Models;
     using KbUtil.Lib.Models.Geometry;
     using KbUtil.Lib.Models.Keyboard;
 

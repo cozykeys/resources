@@ -1,4 +1,4 @@
-﻿namespace KbMath.Core.Tests.Geometry2D.Vector
+﻿namespace KbUtil.Lib.Tests.Geometry2D.Vector
 {
     using System.Collections.Generic;
     using Core.Geometry2D.Extensions;

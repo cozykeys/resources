@@ -1,8 +1,8 @@
 ﻿using System.Globalization;
 using System.Linq;
-using KbMath.Core.Geometry2D.Extensions;
+using KbUtil.Lib.Geometry2D.Extensions;
 
-namespace KbMath.Console.Commands
+namespace KbUtil.Console.Commands
 {
     using Microsoft.Extensions.CommandLineUtils;
     using System.Collections.Generic;

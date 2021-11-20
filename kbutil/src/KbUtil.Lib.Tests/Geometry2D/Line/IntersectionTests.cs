@@ -1,4 +1,4 @@
-﻿namespace KbMath.Core.Tests.Geometry2D.Line
+﻿namespace KbUtil.Lib.Tests.Geometry2D.Line
 {
     using System.Collections.Generic;
     using Core.Geometry2D.Extensions;
