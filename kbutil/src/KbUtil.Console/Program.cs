@@ -29,6 +29,9 @@
 
             try
             {
+                // TODO: Can we do this instead?
+                //return ApplicationContext.CommandLineApplication.Execute(args);
+
                 CommandLineApplication commandLineApplication = serviceProvider
                     .GetService<IApplicationService>().CommandLineApplication;
 
@@ -86,6 +89,10 @@
             serviceCollection.AddSingleton<IFileService, FileService>();
             serviceCollection.AddSingleton<ISvgGenerationService, SvgGenerationService>();
             serviceCollection.AddSingleton<IPcbGenerationService, PcbGenerationService>();
+
+            // From KbMath
+            serviceCollection.AddSingleton<ISvgService, SvgService>();
+
             return serviceCollection;
         }
 
@@ -95,6 +102,16 @@
             ActivatorUtilities.CreateInstance<GeneratePcbCommand>(serviceProvider);
             ActivatorUtilities.CreateInstance<GenerateSwitchDataCommand>(serviceProvider);
             ActivatorUtilities.CreateInstance<GenerateKeyBearingsCommand>(serviceProvider);
+
+            // From KbMath
+            ActivatorUtilities.CreateInstance<GenerateSwitchBearingsCommand>(serviceProvider);
+            ActivatorUtilities.CreateInstance<ExpandVerticesCommand>(serviceProvider);
+            ActivatorUtilities.CreateInstance<ExpandVerticesCommand2>(serviceProvider);
+            ActivatorUtilities.CreateInstance<GenerateCurvesCommand>(serviceProvider);
+            ActivatorUtilities.CreateInstance<DrawSvgPathCommand>(serviceProvider);
+            ActivatorUtilities.CreateInstance<DrawSvgHolesCommand>(serviceProvider);
+            ActivatorUtilities.CreateInstance<DrawSwitchesCommand>(serviceProvider);
+            ActivatorUtilities.CreateInstance<ScratchCommand>(serviceProvider);
         }
     }
 }
