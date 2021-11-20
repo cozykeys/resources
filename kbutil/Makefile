@@ -2,10 +2,8 @@ SOLUTION=src/KbUtil.sln
 RUNTIME_WIN="win7-x64"
 RUNTIME_LNX="linux-x64"
 PUBLISH_OPTS=--self-contained --configuration Release
-#
 
 PROJ_KBUTIL=src/KbUtil.Console/KbUtil.Console.csproj
-PROJ_KBMATH=src/KbMath.Console/KbMath.Console.csproj
 
 SRC_FILES=$(shell find src/ -type f)
 
@@ -15,12 +13,13 @@ all: build
 publish:
 	dotnet publish --runtime $(RUNTIME_WIN) $(PUBLISH_OPTS) --output "../../build/publish/win7-x64/kbutil" $(PROJ_KBUTIL)
 	dotnet publish --runtime $(RUNTIME_LNX) $(PUBLISH_OPTS) --output "../../build/publish/linux-x64/kbutil" $(PROJ_KBUTIL)
-	dotnet publish --runtime $(RUNTIME_WIN) $(PUBLISH_OPTS) --output "../../build/publish/win7-x64/kbmath" $(PROJ_KBMATH)
-	dotnet publish --runtime $(RUNTIME_LNX) $(PUBLISH_OPTS) --output "../../build/publish/linux-x64/kbmath" $(PROJ_KBMATH)
 
 build: $(SRC_FILES)
 	dotnet build -c Debug $(SOLUTION)
 	dotnet build -c Release $(SOLUTION)
+
+test:
+	dotnet test src/KbUtil.Lib.Tests
 
 clean:
 	rm -rf build

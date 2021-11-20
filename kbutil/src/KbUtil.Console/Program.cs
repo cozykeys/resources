@@ -5,11 +5,6 @@
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Logging;
 
-    using NLog;
-    using NLog.Config;
-    using NLog.Extensions.Logging;
-    using NLog.Targets;
-
     using KbUtil.Console.Commands;
     using KbUtil.Console.Services;
     using KbUtil.Console.Services.Concrete;
@@ -29,10 +24,7 @@
 
             try
             {
-                CommandLineApplication commandLineApplication = serviceProvider
-                    .GetService<IApplicationService>().CommandLineApplication;
-
-                return commandLineApplication.Execute(args);
+                return ApplicationContext.CommandLineApplication.Execute(args);
             }
             catch (Exception ex)
             {
@@ -41,41 +33,10 @@
             }
         }
 
-        private static LoggingConfiguration GetNLogConfig()
-        {
-            var fileTarget = new FileTarget("logfile")
-            {
-                FileNameKind = FilePathKind.Absolute,
-                FileName = $"${{specialfolder:folder=CommonApplicationData}}/{nameof(KbUtil.Console)}/Logs/application.log",
-                ArchiveFileName = $"${{specialfolder:folder=CommonApplicationData}}/{nameof(KbUtil.Console)}/Logs/application.#.log",
-                ArchiveEvery = FileArchivePeriod.Day,
-                ArchiveNumbering = ArchiveNumberingMode.DateAndSequence,
-                ConcurrentWrites = true,
-                KeepFileOpen = true,
-                MaxArchiveFiles = 14,
-                Layout = "${longdate}|${logger} ${ndc}|${uppercase:${level}}|${message}"
-            };
-
-            var consoleTarget = new ColoredConsoleTarget("console")
-            {
-                Layout = "${processtime:format=mm\\:ss.fff} | ${level:uppercase=true} | ${message}"
-            };
-
-            var config = new LoggingConfiguration();
-            config.AddTarget(consoleTarget);
-            config.AddTarget(fileTarget);
-            config.AddRuleForAllLevels(consoleTarget);
-            config.AddRuleForAllLevels(fileTarget);
-
-            return config;
-        }
-
         private static IServiceCollection AddServices(this IServiceCollection serviceCollection)
         {
-            LogManager.Configuration = GetNLogConfig();
-            ILoggerFactory loggerFactory = new LoggerFactory()
-                .AddDebug()
-                .AddNLog(new NLogProviderOptions { EventIdSeparator = "|" });
+            var loggerFactory = LoggerFactory.Create(builder => builder
+                    .AddConsole());
 
             serviceCollection.AddSingleton(loggerFactory);
             serviceCollection.AddSingleton<IAssemblyService, AssemblyService>();
@@ -85,16 +46,26 @@
             serviceCollection.AddSingleton<ISwitchDataService, SwitchDataService>();
             serviceCollection.AddSingleton<IFileService, FileService>();
             serviceCollection.AddSingleton<ISvgGenerationService, SvgGenerationService>();
-            serviceCollection.AddSingleton<IPcbGenerationService, PcbGenerationService>();
+
+            // From KbMath
+            serviceCollection.AddSingleton<ISvgService, SvgService>();
+
             return serviceCollection;
         }
 
         private static void CreateCommands(IServiceProvider serviceProvider)
         {
             ActivatorUtilities.CreateInstance<GenerateSvgCommand>(serviceProvider);
-            ActivatorUtilities.CreateInstance<GeneratePcbCommand>(serviceProvider);
-            ActivatorUtilities.CreateInstance<GenerateSwitchDataCommand>(serviceProvider);
             ActivatorUtilities.CreateInstance<GenerateKeyBearingsCommand>(serviceProvider);
+
+            // From KbMath
+            ActivatorUtilities.CreateInstance<ExpandVerticesCommand>(serviceProvider);
+            ActivatorUtilities.CreateInstance<ExpandVerticesCommand2>(serviceProvider);
+            ActivatorUtilities.CreateInstance<GenerateCurvesCommand>(serviceProvider);
+            ActivatorUtilities.CreateInstance<DrawSvgPathCommand>(serviceProvider);
+            ActivatorUtilities.CreateInstance<DrawSvgHolesCommand>(serviceProvider);
+            ActivatorUtilities.CreateInstance<DrawSwitchesCommand>(serviceProvider);
+            ActivatorUtilities.CreateInstance<ScratchCommand>(serviceProvider);
         }
     }
 }

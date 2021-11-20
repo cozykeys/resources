@@ -27,38 +27,36 @@
             _keyboardDataService = keyboardDataService;
             _svgGenerationService = svgGenerationService;
 
-            Command = applicationService.CommandLineApplication
+            CommandLineApplication command = ApplicationContext.CommandLineApplication
                 .Command("gen-svg", config =>
                 {
                     config.Description = "Generate an SVG file from an XML input file.";
                     config.OnExecute(() => Execute());
                 });
 
-            _inputPathArgument = Command.Argument("<input-path>", "The path to the keyboard layout data file.");
-            _outputPathArgument = Command.Argument("<output-path>", "The path to the generated SVG file.");
+            _inputPathArgument = command.Argument("<input-path>", "The path to the keyboard layout data file.");
+            _outputPathArgument = command.Argument("<output-path>", "The path to the generated SVG file.");
 
-            _visualSwitchCutoutsOption = Command.Option(
+            _visualSwitchCutoutsOption = command.Option(
                 "--visual-switch-cutouts",
                 "Write switch cutouts with thicker path strokes.",
                 CommandOptionType.NoValue);
 
-            _keycapOverlayOption = Command.Option(
+            _keycapOverlayOption = command.Option(
                 "--keycap-overlays",
                 "Write keycap overlays to the generated SVG file.",
                 CommandOptionType.NoValue);
 
-            _keycapLegendsOption = Command.Option(
+            _keycapLegendsOption = command.Option(
                 "--keycap-legends",
                 "Write keycap legends to the generated SVG file.",
                 CommandOptionType.NoValue);
 
-            _squashOption = Command.Option(
+            _squashOption = command.Option(
                 "--squash",
                 "Squash all layers into a single SVG file.",
                 CommandOptionType.NoValue);
         }
-
-        public CommandLineApplication Command { get; }
 
         public string InputPath => _inputPathArgument.Value;
 
