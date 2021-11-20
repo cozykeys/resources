@@ -19,8 +19,8 @@ namespace KbUtil.Console.Commands
 
     internal class GenerateKeyBearingsCommand
     {
-        private readonly IKeyboardDataService _keyboardDataService;
         private readonly ILogger _logger;
+        private readonly IKeyboardDataService _keyboardDataService;
 
         private readonly CommandArgument _inputPathArgument;
         private readonly CommandArgument _outputPathArgument;

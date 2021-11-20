@@ -46,7 +46,6 @@
             serviceCollection.AddSingleton<ISwitchDataService, SwitchDataService>();
             serviceCollection.AddSingleton<IFileService, FileService>();
             serviceCollection.AddSingleton<ISvgGenerationService, SvgGenerationService>();
-            serviceCollection.AddSingleton<IPcbGenerationService, PcbGenerationService>();
 
             // From KbMath
             serviceCollection.AddSingleton<ISvgService, SvgService>();
@@ -57,12 +56,9 @@
         private static void CreateCommands(IServiceProvider serviceProvider)
         {
             ActivatorUtilities.CreateInstance<GenerateSvgCommand>(serviceProvider);
-            ActivatorUtilities.CreateInstance<GeneratePcbCommand>(serviceProvider);
-            ActivatorUtilities.CreateInstance<GenerateSwitchDataCommand>(serviceProvider);
             ActivatorUtilities.CreateInstance<GenerateKeyBearingsCommand>(serviceProvider);
 
             // From KbMath
-            ActivatorUtilities.CreateInstance<GenerateSwitchBearingsCommand>(serviceProvider);
             ActivatorUtilities.CreateInstance<ExpandVerticesCommand>(serviceProvider);
             ActivatorUtilities.CreateInstance<ExpandVerticesCommand2>(serviceProvider);
             ActivatorUtilities.CreateInstance<GenerateCurvesCommand>(serviceProvider);

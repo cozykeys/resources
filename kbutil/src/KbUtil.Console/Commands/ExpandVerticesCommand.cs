@@ -5,6 +5,7 @@
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
+    using Microsoft.Extensions.Logging;
 
     using Newtonsoft.Json;
     
@@ -16,6 +17,7 @@
 
     internal class ExpandVerticesCommand
     {
+        private readonly ILogger _logger;
         private readonly ISvgService _svgService;
         
         private readonly CommandArgument _inputPathArgument;
@@ -52,8 +54,10 @@
             { "fill", "purple" }
         };
         
-        public ExpandVerticesCommand(ISvgService svgService)
+        public ExpandVerticesCommand(ILoggerFactory loggerFactory, ISvgService svgService)
         {
+            _logger = loggerFactory.CreateLogger(nameof(ExpandVerticesCommand));
+
             _svgService = svgService;
             
             CommandLineApplication command = ApplicationContext.CommandLineApplication
@@ -81,6 +85,8 @@
         
         public int Execute()
         {
+            _logger.LogInformation("ExpandVerticesCommand.Execute");
+
             if (!double.TryParse(Distance, out double distance))
             {
                 Console.WriteLine("Distance must be a valid floating point number.");

@@ -5,6 +5,7 @@ namespace KbUtil.Console.Commands
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
+    using Microsoft.Extensions.Logging;
 
     using Newtonsoft.Json;
     
@@ -18,6 +19,7 @@ namespace KbUtil.Console.Commands
 
     internal class ExpandVerticesCommand2
     {
+        private readonly ILogger _logger;
         private readonly ISvgService _svgService;
         
         private readonly CommandArgument _inputPathArgument;
@@ -54,8 +56,10 @@ namespace KbUtil.Console.Commands
             { "fill", "purple" }
         };
         
-        public ExpandVerticesCommand2(ISvgService svgService)
+        public ExpandVerticesCommand2(ILoggerFactory loggerFactory, ISvgService svgService)
         {
+            _logger = loggerFactory.CreateLogger(nameof(ExpandVerticesCommand2));
+
             _svgService = svgService;
             
             CommandLineApplication command = ApplicationContext.CommandLineApplication
@@ -83,6 +87,8 @@ namespace KbUtil.Console.Commands
         
         public int Execute()
         {
+            _logger.LogInformation("ExpandVerticesCommand2.Execute");
+
             if (!double.TryParse(Distance, out double distance))
             {
                 Console.WriteLine("Distance must be a valid floating point number.");

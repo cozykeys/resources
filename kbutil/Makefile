@@ -18,5 +18,8 @@ build: $(SRC_FILES)
 	dotnet build -c Debug $(SOLUTION)
 	dotnet build -c Release $(SOLUTION)
 
+test:
+	dotnet test src/KbUtil.Lib.Tests
+
 clean:
 	rm -rf build
