@@ -2,8 +2,8 @@
 {
     using System;
     using System.Collections.Generic;
-    using Core.Geometry2D.Extensions;
-    using Core.Geometry2D.Models;
+    using KbUtil.Lib.Geometry2D.Extensions;
+    using KbUtil.Lib.Geometry2D.Models;
     using Xunit;
     using KbUtil.Lib.Tests.Comparers;
     

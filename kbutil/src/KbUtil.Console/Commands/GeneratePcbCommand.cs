@@ -21,19 +21,17 @@
             _switchDataService = switchDataService;
             _pcbGenerationService = pcbGenerationService;
 
-            Command = applicationService.CommandLineApplication
+            CommandLineApplication command = ApplicationContext.CommandLineApplication
                 .Command("gen-pcb", config =>
                 {
                     config.Description = "Generate a Kicad PCB file from an XML input file.";
                     config.OnExecute(() => Execute());
                 });
-
-            _keyboardNameArgument = Command.Argument("<keyboard-name>", "The keyboard name (Used to look up templates).");
-            _inputPathArgument = Command.Argument("<input-path>", "The path to the keyboard data file.");
-            _outputPathArgument = Command.Argument("<output-path>", "The path to the generated PCB file.");
+            
+            _keyboardNameArgument = command.Argument("<keyboard-name>", "The keyboard name (Used to look up templates).");
+            _inputPathArgument = command.Argument("<input-path>", "The path to the keyboard data file.");
+            _outputPathArgument = command.Argument("<output-path>", "The path to the generated PCB file.");
         }
-
-        public CommandLineApplication Command { get; }
 
         public string KeyboardName => _keyboardNameArgument.Value;
 

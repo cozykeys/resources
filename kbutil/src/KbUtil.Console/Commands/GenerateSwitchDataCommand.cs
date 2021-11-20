@@ -24,18 +24,16 @@ namespace KbUtil.Console.Commands
         {
             _keyboardDataService = keyboardDataService;
 
-            Command = applicationService.CommandLineApplication
+            CommandLineApplication command = ApplicationContext.CommandLineApplication
                 .Command("gen-switches", config =>
                 {
                     config.Description = "Generate a switch data JSON file from an XML input file.";
                     config.OnExecute(() => Execute());
                 });
 
-            _inputPathArgument = Command.Argument("<input-path>", "The path to the keyboard layout data file.");
-            _outputPathArgument = Command.Argument("<output-path>", "The path to the generated JSON file.");
+            _inputPathArgument = command.Argument("<input-path>", "The path to the keyboard layout data file.");
+            _outputPathArgument = command.Argument("<output-path>", "The path to the generated JSON file.");
         }
-
-        public CommandLineApplication Command { get; }
 
         public string InputPath => _inputPathArgument.Value;
 

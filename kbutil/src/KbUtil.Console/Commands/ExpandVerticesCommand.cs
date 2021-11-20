@@ -10,9 +10,9 @@
     
     using Models;
     using Services;
-    using Core.Geometry2D.Extensions;
-    using Core.Geometry2D.Models;
-    using Core.Geometry2D.Operations;
+    using KbUtil.Lib.Geometry2D.Extensions;
+    using KbUtil.Lib.Geometry2D.Models;
+    using KbUtil.Lib.Geometry2D.Operations;
 
     internal class ExpandVerticesCommand
     {

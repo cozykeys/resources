@@ -9,7 +9,7 @@ namespace KbUtil.Console.Services.Concrete
     using System.Text;
     
     using Models;
-    using Core.Geometry2D.Models;
+    using KbUtil.Lib.Geometry2D.Models;
 
     public class SvgService : ISvgService
     {

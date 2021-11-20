@@ -3,7 +3,7 @@
 namespace KbUtil.Console.Services
 {
     using System.Collections.Generic;
-    using Core.Geometry2D.Models;
+    using KbUtil.Lib.Geometry2D.Models;
     using Models;
 
     public interface ISvgService

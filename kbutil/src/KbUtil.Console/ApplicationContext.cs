@@ -1,4 +1,4 @@
-﻿namespace KbUtil.Console
+namespace KbUtil.Console
 {
     using Microsoft.Extensions.CommandLineUtils;
 
