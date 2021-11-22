@@ -8,9 +8,10 @@
     {
         public IEnumerable<Legend> Legends { get; set; }
 
-        /// <summary>
+        public int Row { get; set; }
+        public int Column { get; set; }
+
         /// TODO: Strongly type these instead of using string
-        /// </summary>
         public string Fill { get; set; }
         public string Stroke { get; set; }
     }

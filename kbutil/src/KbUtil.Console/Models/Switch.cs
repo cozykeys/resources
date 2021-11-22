@@ -1,24 +1,19 @@
-using Newtonsoft.Json;
-
 namespace KbUtil.Console.Models
 {
+    using Newtonsoft.Json;
+
     public class Switch
     {
         [JsonProperty("row")]
         public int Row { get; set; }
-        
         [JsonProperty("column")]
         public int Column { get; set; }
-        
         [JsonProperty("x")]
-        public float X { get; set; }
-        
+        public double X { get; set; }
         [JsonProperty("y")]
-        public float Y { get; set; }
-        
+        public double Y { get; set; }
         [JsonProperty("rotation")]
-        public int Rotation { get; set; }
-        
+        public double Rotation { get; set; }
         [JsonProperty("diode_position")]
         public string DiodePosition  { get; set; }
     }

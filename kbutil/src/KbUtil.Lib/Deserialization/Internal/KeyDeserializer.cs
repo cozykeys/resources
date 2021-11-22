@@ -14,9 +14,27 @@
         {
             ElementDeserializer.Default.Deserialize(keyElement, key);
 
+            DeserializeRow(keyElement, key);
+            DeserializeColumn(keyElement, key);
             DeserializeFill(keyElement, key);
             DeserializeStroke(keyElement, key);
             DeserializeLegends(keyElement, key);
+        }
+
+        private void DeserializeRow(XElement keyElement, Key key)
+        {
+            if(XmlUtilities.TryGetAttribute(keyElement, "Row", out XAttribute rowAttribute))
+            {
+                key.Row = rowAttribute.ValueAsInt(key);
+            }
+        }
+
+        private void DeserializeColumn(XElement keyElement, Key key)
+        {
+            if(XmlUtilities.TryGetAttribute(keyElement, "Column", out XAttribute columnAttribute))
+            {
+                key.Column = columnAttribute.ValueAsInt(key);
+            }
         }
 
         private void DeserializeFill(XElement keyElement, Key key)

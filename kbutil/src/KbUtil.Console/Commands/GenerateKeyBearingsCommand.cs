@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 namespace KbUtil.Console.Commands
 {
     using System;
+    using System.Linq;
     using System.Collections.Generic;
     using Microsoft.Extensions.Logging;
 
@@ -14,12 +15,12 @@ namespace KbUtil.Console.Commands
     using KbUtil.Lib.SvgGeneration;
     using KbUtil.Lib.Models.Keyboard;
     
-    using KbMath.Core.Geometry2D.Models;
+    using KbUtil.Lib.Geometry2D.Models;
 
     internal class GenerateKeyBearingsCommand
     {
-        private readonly IKeyboardDataService _keyboardDataService;
         private readonly ILogger _logger;
+        private readonly IKeyboardDataService _keyboardDataService;
 
         private readonly CommandArgument _inputPathArgument;
         private readonly CommandArgument _outputPathArgument;
@@ -35,23 +36,21 @@ namespace KbUtil.Console.Commands
             
             _keyboardDataService = keyboardDataService;
 
-            Command = applicationService.CommandLineApplication
+            CommandLineApplication command = ApplicationContext.CommandLineApplication
                 .Command("gen-key-bearings", config =>
                 {
                     config.Description = "Print the key geometry from an XML input file.";
                     config.OnExecute(() => Execute());
                 });
 
-            _inputPathArgument = Command.Argument("<input-path>", "The path to the keyboard layout data file.");
-            _outputPathArgument = Command.Argument("<output-path>", "The path to the generated JSON geometry data file.");
+            _inputPathArgument = command.Argument("<input-path>", "The path to the keyboard layout data file.");
+            _outputPathArgument = command.Argument("<output-path>", "The path to the generated JSON geometry data file.");
             
-            _debugSvg = Command.Option(
+            _debugSvg = command.Option(
                 "--debug-svg",
                 "Optional file path to write a SVG file for visual confirmation",
                 CommandOptionType.SingleValue);
         }
-
-        public CommandLineApplication Command { get; }
 
         public string InputPath => _inputPathArgument.Value;
         
@@ -67,7 +66,7 @@ namespace KbUtil.Console.Commands
                 switch (child)
                 {
                     case Key key:
-                        _logger.LogDebug($"Found key {key.Name}");
+                        _logger.LogInformation($"Found key {key.Name}");
                         keysInGroup.Add(key);
                         continue;
                     case Group subgroup:
@@ -87,7 +86,7 @@ namespace KbUtil.Console.Commands
             var keys = new List<Key>();
             foreach (var layer in keyboard.Layers)
             {
-                _logger.LogDebug($"Enumerating keys on layer {layer.Name}");
+                _logger.LogInformation($"Enumerating keys on layer {layer.Name}");
 
                 var keysInLayer = new List<Key>();
                 foreach (var group in layer.Groups)
@@ -104,7 +103,7 @@ namespace KbUtil.Console.Commands
         {
             Keyboard keyboard = _keyboardDataService.GetKeyboardData(InputPath);
 
-            var keys = EnumerateKeys(keyboard);
+            var keys = EnumerateKeys(keyboard).OrderBy(k => k.Name);
 
             var keyGeometry = new Dictionary<string, Bearing>();
 
@@ -118,6 +117,9 @@ namespace KbUtil.Console.Commands
                 keyGeometry[keyName].Position = new Vector(
                     Math.Round(keyGeometry[keyName].Position.X, 3),
                     Math.Round(keyGeometry[keyName].Position.Y, 3));
+
+                keyGeometry[keyName].Row = key.Row;
+                keyGeometry[keyName].Column = key.Column;
             }
 
             if (!string.IsNullOrEmpty(DebugSvgPath))
