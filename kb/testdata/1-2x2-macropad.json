@@ -1,0 +1,80 @@
+{
+    "Name": "2 x 2 Macropad",
+    "Version": "1.0.0",
+    "Height": 350.0,
+    "Width": 200.0,
+    "Components": [
+        {
+            "Type": "Key",
+            "Name": "KeyR0C0",
+            "XOffset": 25,
+            "YOffset": 15,
+            "Legends": [
+                {
+                    "Text": "0"
+                }
+            ]
+        },
+        {
+            "Type": "Key",
+            "Name": "KeyR0C1",
+            "XOffset": 44.05,
+            "YOffset": 15,
+            "Legends": [
+                {
+                    "Text": "1"
+                }
+            ]
+        },
+        {
+            "Type": "Key",
+            "Name": "KeyR1C0",
+            "XOffset": 25,
+            "YOffset": 34.05,
+            "Legends": [
+                {
+                    "Text": "2"
+                }
+            ]
+        },
+        {
+            "Type": "Key",
+            "Name": "KeyR1C1",
+            "XOffset": 44.05,
+            "YOffset": 34.05,
+            "Legends": [
+                {
+                    "Text": "3"
+                }
+            ]
+        },
+        {
+            "Type": "Circle",
+            "Name": "Hole0",
+            "XOffset": 15,
+            "YOffset": 5,
+            "Radius": 1.0
+        },
+        {
+            "Type": "Circle",
+            "Name": "Hole1",
+            "XOffset": 54.05,
+            "YOffset": 5,
+            "Radius": 1.0
+        },
+        {
+            "Type": "Circle",
+            "Name": "Hole2",
+            "XOffset": 15,
+            "YOffset": 44.05,
+            "Radius": 1.0
+        },
+        {
+            "Type": "Circle",
+            "Name": "Hole3",
+            "XOffset": 54.05,
+            "YOffset": 44.05,
+            "Radius": 1.0
+        }
+    ]
+}
