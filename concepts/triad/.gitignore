@@ -1,0 +1,8 @@
+*.swp
+*.kicad_pcb-bak
+*.pyc
+*.FCStd1
+.mypy_cache/
+temp/
+pcb/fp-info-cache
+/tags

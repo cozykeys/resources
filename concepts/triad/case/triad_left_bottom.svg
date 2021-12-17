@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<svg
+  width="192mm"
+  height="160mm"
+  viewBox="0 0 192 160" xmlns="http://www.w3.org/2000/svg">
+  <g
+    id="bottom"
+    transform="translate(96.45,80)">
+    <g
+      id="Outer">
+      <g
+        id="PlatePerimeter">
+        <g
+          id="">
+          <path
+            style="fill:#7f7f7f;fill-opacity:1.0;stroke:#000000;stroke-width:0.5"
+            d="M -69.675 -54.259 Q -69.675 -57.259 -66.704 -57.675 L -12.705 -65.234 Q -9.734 -65.65 -6.734 -65.65 L 6.949 -65.65 Q 9.949 -65.65 12.831 -64.818 L 49.749 -54.159 Q 52.631 -53.327 53.152 -50.373 L 65.586 20.146 L 55.492 21.926 L 58.617 39.652 L 68.711 37.872 L 69.154 40.384 Q 69.675 43.338 69.675 46.338 L 69.675 62.65 Q 69.675 65.65 66.675 65.65 L 31.496 65.65 Q 28.496 65.65 25.5 65.493 L -25.658 62.807 Q -28.654 62.65 -31.654 62.65 L -66.675 62.65 Q -69.675 62.65 -69.675 59.65 L -69.675 -54.259" />
+        </g>
+      </g>
+      <g
+        id="ScrewHoles">
+        <g
+          id=""
+          transform="translate(-47.625,-35.6)">
+          <circle
+            r="1.15"
+            style="fill:none;stroke:#0000ff;stroke-width:0.01" />
+          <circle
+            r="1.15"
+            style="fill:#000000;stroke:#000000;stroke-width:0.01" />
+        </g>
+        <g
+          id=""
+          transform="translate(28.575,-37.6)">
+          <circle
+            r="1.15"
+            style="fill:none;stroke:#0000ff;stroke-width:0.01" />
+          <circle
+            r="1.15"
+            style="fill:#000000;stroke:#000000;stroke-width:0.01" />
+        </g>
+        <g
+          id=""
+          transform="translate(-47.625,40.6)">
+          <circle
+            r="1.15"
+            style="fill:none;stroke:#0000ff;stroke-width:0.01" />
+          <circle
+            r="1.15"
+            style="fill:#000000;stroke:#000000;stroke-width:0.01" />
+        </g>
+        <g
+          id=""
+          transform="translate(28.575,38.6)">
+          <circle
+            r="1.15"
+            style="fill:none;stroke:#0000ff;stroke-width:0.01" />
+          <circle
+            r="1.15"
+            style="fill:#000000;stroke:#000000;stroke-width:0.01" />
+        </g>
+      </g>
+      <g
+        id="TentingHoles"
+        transform="translate(-96.45,-80)">
+        <g
+          id=""
+          transform="translate(48.825,34.875)">
+          <circle
+            r="1.15"
+            style="fill:none;stroke:#0000ff;stroke-width:0.01" />
+          <circle
+            r="1.15"
+            style="fill:#000000;stroke:#000000;stroke-width:0.01" />
+        </g>
+        <g
+          id=""
+          transform="translate(48.825,130.125)">
+          <circle
+            r="1.15"
+            style="fill:none;stroke:#0000ff;stroke-width:0.01" />
+          <circle
+            r="1.15"
+            style="fill:#000000;stroke:#000000;stroke-width:0.01" />
+        </g>
+        <g
+          id=""
+          transform="translate(144.075,34.875)">
+          <circle
+            r="1.15"
+            style="fill:none;stroke:#0000ff;stroke-width:0.01" />
+          <circle
+            r="1.15"
+            style="fill:#000000;stroke:#000000;stroke-width:0.01" />
+        </g>
+        <g
+          id=""
+          transform="translate(144.075,130.125)">
+          <circle
+            r="1.15"
+            style="fill:none;stroke:#0000ff;stroke-width:0.01" />
+          <circle
+            r="1.15"
+            style="fill:#000000;stroke:#000000;stroke-width:0.01" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

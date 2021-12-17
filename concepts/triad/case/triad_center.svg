@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<svg
+  width="96mm"
+  height="160mm"
+  viewBox="0 0 96 160" xmlns="http://www.w3.org/2000/svg">
+  <g
+    id="switch"
+    transform="translate(48.35,80)">
+    <g
+      id="Outer">
+      <g
+        id="PlatePerimeter">
+        <g
+          id="">
+          <path
+            style="fill:#7f7f7f;fill-opacity:1.0;stroke:#000000;stroke-width:0.5"
+            d="M -31.575 -65.08 Q -31.575 -68.08 -28.575 -68.08 L 28.575 -68.08 Q 31.575 -68.08 31.575 -65.08 L 31.575 62.65 Q 31.575 65.65 28.575 65.65 L -28.575 65.65 Q -31.575 65.65 -31.575 62.65 L -31.575 -65.08" />
+        </g>
+      </g>
+      <g
+        id="OLEDCutout">
+        <g
+          id="">
+          <path
+            style="fill:#000000;fill-opacity:1.0;stroke:#000000;stroke-width:0.5"
+            d="M -19.5 -64.865 L 19.5 -64.865 L 19.5 -51.865 L -19.5 -51.865 L -19.5 -64.865" />
+        </g>
+      </g>
+      <g
+        id="ScrewHoles">
+        <g
+          id=""
+          transform="translate(-23.575,-51.65)">
+          <circle
+            r="1.15"
+            style="fill:none;stroke:#0000ff;stroke-width:0.01" />
+          <circle
+            r="1.15"
+            style="fill:#000000;stroke:#000000;stroke-width:0.01" />
+        </g>
+        <g
+          id=""
+          transform="translate(23.575,-51.65)">
+          <circle
+            r="1.15"
+            style="fill:none;stroke:#0000ff;stroke-width:0.01" />
+          <circle
+            r="1.15"
+            style="fill:#000000;stroke:#000000;stroke-width:0.01" />
+        </g>
+        <g
+          id=""
+          transform="translate(-23.575,43.6)">
+          <circle
+            r="1.15"
+            style="fill:none;stroke:#0000ff;stroke-width:0.01" />
+          <circle
+            r="1.15"
+            style="fill:#000000;stroke:#000000;stroke-width:0.01" />
+        </g>
+        <g
+          id=""
+          transform="translate(23.575,43.6)">
+          <circle
+            r="1.15"
+            style="fill:none;stroke:#0000ff;stroke-width:0.01" />
+          <circle
+            r="1.15"
+            style="fill:#000000;stroke:#000000;stroke-width:0.01" />
+        </g>
+      </g>
+      <g
+        id="Center"
+        transform="translate(0,5.5)">
+        <g
+          id="Column06"
+          transform="translate(-19.05,0)">
+          <g
+            id="Column06Key00"
+            transform="translate(0,-47.625)">
+            <g
+              id="">
+              <path
+                style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.5"
+                d="M -7 -7 L 7 -7 L 7 -6 L 7.8 -6 L 7.8 6 L 7 6 L 7 7 L -7 7 L -7 6 L -7.8 6 L -7.8 -6 L -7 -6 L -7 -7" />
+            </g>
+            <path
+              id="Column06Key00KeycapOverlay"
+              d="M -9.05,-9.05 h 18.1 v 18.1 h -18.1 v -18.1 h 18.1"
+              style="fill:#cfcfcf;stroke:#000000;stroke-width:0.5" />
+            <text
+              id="Column06Key00Legend0"
+              text-anchor="middle"
+              style="fill:#000000;dominant-baseline:central;text-anchor:middle;font-size:4px;font-family:sans-serif;font-weight:normal;font-style:normal">PRSC</text>
+          </g>
+          <g
+            id=""
+            transform="translate(0,-33.3375)" />
+          <g
+            id="Column06Key01"
+            transform="translate(0,-19.050003)">
+            <g
+              id="">
+              <path
+                style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.5"
+                d="M -7 -7 L 7 -7 L 7 -6 L 7.8 -6 L 7.8 6 L 7 6 L 7 7 L -7 7 L -7 6 L -7.8 6 L -7.8 -6 L -7 -6 L -7 -7" />
+            </g>
+            <path
+              id="Column06Key01KeycapOverlay"
+              d="M -9.05,-9.05 h 18.1 v 18.1 h -18.1 v -18.1 h 18.1"
+              style="fill:#cfcfcf;stroke:#000000;stroke-width:0.5" />
+            <text
+              id="Column06Key01Legend0"
+              text-anchor="middle"
+              style="fill:#000000;dominant-baseline:central;text-anchor:middle;font-size:4px;font-family:sans-serif;font-weight:normal;font-style:normal">INS</text>
+          </g>
+          <g
+            id="Column06Key02"
+            transform="translate(0,-3.8146973E-06)">
+            <g
+              id="">
+              <path
+                style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.5"
+                d="M -7 -7 L 7 -7 L 7 -6 L 7.8 -6 L 7.8 6 L 7 6 L 7 7 L -7 7 L -7 6 L -7.8 6 L -7.8 -6 L -7 -6 L -7 -7" />
+            </g>
+            <path
+              id="Column06Key02KeycapOverlay"
+              d="M -9.05,-9.05 h 18.1 v 18.1 h -18.1 v -18.1 h 18.1"
+              style="fill:#cfcfcf;stroke:#000000;stroke-width:0.5" />
+            <text
+              id="Column06Key02Legend0"
+              text-anchor="middle"
+              style="fill:#000000;dominant-baseline:central;text-anchor:middle;font-size:4px;font-family:sans-serif;font-weight:normal;font-style:normal">CAPS</text>
+          </g>
+          <g
+            id=""
+            transform="translate(0,14.287498)" />
+          <g
+            id=""
+            transform="translate(0,28.575005)" />
+          <g
+            id="Column06Key05"
+            transform="translate(0,47.625)">
+            <g
+              id="">
+              <path
+                style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.5"
+                d="M -7 -7 L 7 -7 L 7 -6 L 7.8 -6 L 7.8 6 L 7 6 L 7 7 L -7 7 L -7 6 L -7.8 6 L -7.8 -6 L -7 -6 L -7 -7" />
+            </g>
+            <path
+              id="Column06Key05KeycapOverlay"
+              d="M -9.05,-9.05 h 18.1 v 18.1 h -18.1 v -18.1 h 18.1"
+              style="fill:#cfcfcf;stroke:#000000;stroke-width:0.5" />
+            <text
+              id="Column06Key05Legend0"
+              text-anchor="middle"
+              style="fill:#000000;dominant-baseline:central;text-anchor:middle;font-size:4px;font-family:sans-serif;font-weight:normal;font-style:normal">LEFT</text>
+          </g>
+        </g>
+        <g
+          id="Column07">
+          <g
+            id="Column07Key00"
+            transform="translate(0,-47.625004)">
+            <g
+              id="">
+              <path
+                style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.5"
+                d="M -7 -7 L 7 -7 L 7 -6 L 7.8 -6 L 7.8 6 L 7 6 L 7 7 L -7 7 L -7 6 L -7.8 6 L -7.8 -6 L -7 -6 L -7 -7" />
+            </g>
+            <path
+              id="Column07Key00KeycapOverlay"
+              d="M -9.05,-9.05 h 18.1 v 18.1 h -18.1 v -18.1 h 18.1"
+              style="fill:#cfcfcf;stroke:#000000;stroke-width:0.5" />
+            <text
+              id="Column07Key00Legend0"
+              text-anchor="middle"
+              style="fill:#000000;dominant-baseline:central;text-anchor:middle;font-size:4px;font-family:sans-serif;font-weight:normal;font-style:normal">SCLK</text>
+          </g>
+          <g
+            id=""
+            transform="translate(0,-33.337505)" />
+          <g
+            id="Column07Key01"
+            transform="translate(0,-19.050007)">
+            <g
+              id="">
+              <path
+                style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.5"
+                d="M -7 -7 L 7 -7 L 7 -6 L 7.8 -6 L 7.8 6 L 7 6 L 7 7 L -7 7 L -7 6 L -7.8 6 L -7.8 -6 L -7 -6 L -7 -7" />
+            </g>
+            <path
+              id="Column07Key01KeycapOverlay"
+              d="M -9.05,-9.05 h 18.1 v 18.1 h -18.1 v -18.1 h 18.1"
+              style="fill:#cfcfcf;stroke:#000000;stroke-width:0.5" />
+            <text
+              id="Column07Key01Legend0"
+              text-anchor="middle"
+              style="fill:#000000;dominant-baseline:central;text-anchor:middle;font-size:4px;font-family:sans-serif;font-weight:normal;font-style:normal">HOME</text>
+          </g>
+          <g
+            id="Column07Key02"
+            transform="translate(0,-7.6293945E-06)">
+            <g
+              id="">
+              <path
+                style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.5"
+                d="M -7 -7 L 7 -7 L 7 -6 L 7.8 -6 L 7.8 6 L 7 6 L 7 7 L -7 7 L -7 6 L -7.8 6 L -7.8 -6 L -7 -6 L -7 -7" />
+            </g>
+            <path
+              id="Column07Key02KeycapOverlay"
+              d="M -9.05,-9.05 h 18.1 v 18.1 h -18.1 v -18.1 h 18.1"
+              style="fill:#cfcfcf;stroke:#000000;stroke-width:0.5" />
+            <text
+              id="Column07Key02Legend0"
+              text-anchor="middle"
+              style="fill:#000000;dominant-baseline:central;text-anchor:middle;font-size:4px;font-family:sans-serif;font-weight:normal;font-style:normal">END</text>
+          </g>
+          <g
+            id=""
+            transform="translate(0,14.287495)" />
+          <g
+            id="Column07Key03"
+            transform="translate(0,28.575)">
+            <g
+              id="">
+              <path
+                style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.5"
+                d="M -7 -7 L 7 -7 L 7 -6 L 7.8 -6 L 7.8 6 L 7 6 L 7 7 L -7 7 L -7 6 L -7.8 6 L -7.8 -6 L -7 -6 L -7 -7" />
+            </g>
+            <path
+              id="Column07Key03KeycapOverlay"
+              d="M -9.05,-9.05 h 18.1 v 18.1 h -18.1 v -18.1 h 18.1"
+              style="fill:#cfcfcf;stroke:#000000;stroke-width:0.5" />
+            <text
+              id="Column07Key03Legend0"
+              text-anchor="middle"
+              style="fill:#000000;dominant-baseline:central;text-anchor:middle;font-size:4px;font-family:sans-serif;font-weight:normal;font-style:normal">UP</text>
+          </g>
+          <g
+            id="Column07Key04"
+            transform="translate(0,47.625004)">
+            <g
+              id="">
+              <path
+                style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.5"
+                d="M -7 -7 L 7 -7 L 7 -6 L 7.8 -6 L 7.8 6 L 7 6 L 7 7 L -7 7 L -7 6 L -7.8 6 L -7.8 -6 L -7 -6 L -7 -7" />
+            </g>
+            <path
+              id="Column07Key04KeycapOverlay"
+              d="M -9.05,-9.05 h 18.1 v 18.1 h -18.1 v -18.1 h 18.1"
+              style="fill:#cfcfcf;stroke:#000000;stroke-width:0.5" />
+            <text
+              id="Column07Key04Legend0"
+              text-anchor="middle"
+              style="fill:#000000;dominant-baseline:central;text-anchor:middle;font-size:4px;font-family:sans-serif;font-weight:normal;font-style:normal">DOWN</text>
+          </g>
+        </g>
+        <g
+          id="Column08"
+          transform="translate(19.050003,0)">
+          <g
+            id="Column08Key00"
+            transform="translate(0,-47.625)">
+            <g
+              id="">
+              <path
+                style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.5"
+                d="M -7 -7 L 7 -7 L 7 -6 L 7.8 -6 L 7.8 6 L 7 6 L 7 7 L -7 7 L -7 6 L -7.8 6 L -7.8 -6 L -7 -6 L -7 -7" />
+            </g>
+            <path
+              id="Column08Key00KeycapOverlay"
+              d="M -9.05,-9.05 h 18.1 v 18.1 h -18.1 v -18.1 h 18.1"
+              style="fill:#cfcfcf;stroke:#000000;stroke-width:0.5" />
+            <text
+              id="Column08Key00Legend0"
+              text-anchor="middle"
+              style="fill:#000000;dominant-baseline:central;text-anchor:middle;font-size:4px;font-family:sans-serif;font-weight:normal;font-style:normal">PAUS</text>
+          </g>
+          <g
+            id=""
+            transform="translate(0,-33.3375)" />
+          <g
+            id="Column08Key01"
+            transform="translate(0,-19.050003)">
+            <g
+              id="">
+              <path
+                style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.5"
+                d="M -7 -7 L 7 -7 L 7 -6 L 7.8 -6 L 7.8 6 L 7 6 L 7 7 L -7 7 L -7 6 L -7.8 6 L -7.8 -6 L -7 -6 L -7 -7" />
+            </g>
+            <path
+              id="Column08Key01KeycapOverlay"
+              d="M -9.05,-9.05 h 18.1 v 18.1 h -18.1 v -18.1 h 18.1"
+              style="fill:#cfcfcf;stroke:#000000;stroke-width:0.5" />
+            <text
+              id="Column08Key01Legend0"
+              text-anchor="middle"
+              style="fill:#000000;dominant-baseline:central;text-anchor:middle;font-size:4px;font-family:sans-serif;font-weight:normal;font-style:normal">PGUP</text>
+          </g>
+          <g
+            id="Column08Key02"
+            transform="translate(0,-3.8146973E-06)">
+            <g
+              id="">
+              <path
+                style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.5"
+                d="M -7 -7 L 7 -7 L 7 -6 L 7.8 -6 L 7.8 6 L 7 6 L 7 7 L -7 7 L -7 6 L -7.8 6 L -7.8 -6 L -7 -6 L -7 -7" />
+            </g>
+            <path
+              id="Column08Key02KeycapOverlay"
+              d="M -9.05,-9.05 h 18.1 v 18.1 h -18.1 v -18.1 h 18.1"
+              style="fill:#cfcfcf;stroke:#000000;stroke-width:0.5" />
+            <text
+              id="Column08Key02Legend0"
+              text-anchor="middle"
+              style="fill:#000000;dominant-baseline:central;text-anchor:middle;font-size:4px;font-family:sans-serif;font-weight:normal;font-style:normal">PGDN</text>
+          </g>
+          <g
+            id=""
+            transform="translate(0,14.287498)" />
+          <g
+            id=""
+            transform="translate(0,28.575005)" />
+          <g
+            id="Column08Key05"
+            transform="translate(0,47.625)">
+            <g
+              id="">
+              <path
+                style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.5"
+                d="M -7 -7 L 7 -7 L 7 -6 L 7.8 -6 L 7.8 6 L 7 6 L 7 7 L -7 7 L -7 6 L -7.8 6 L -7.8 -6 L -7 -6 L -7 -7" />
+            </g>
+            <path
+              id="Column08Key05KeycapOverlay"
+              d="M -9.05,-9.05 h 18.1 v 18.1 h -18.1 v -18.1 h 18.1"
+              style="fill:#cfcfcf;stroke:#000000;stroke-width:0.5" />
+            <text
+              id="Column08Key05Legend0"
+              text-anchor="middle"
+              style="fill:#000000;dominant-baseline:central;text-anchor:middle;font-size:4px;font-family:sans-serif;font-weight:normal;font-style:normal">RGHT</text>
+          </g>
+        </g>
+      </g>
+      <g
+        id=""
+        transform="translate(0,-59.365)">
+        <text
+          text-anchor="middle"
+          style="font:3px sans-serif;fill:#ffff00">CozyKeys Triad</text>
+      </g>
+      <g
+        id=""
+        transform="translate(0,-56.365)">
+        <text
+          text-anchor="middle"
+          style="font:3px sans-serif;fill:#ffff00">Layer 1</text>
+      </g>
+    </g>
+  </g>
+</svg>

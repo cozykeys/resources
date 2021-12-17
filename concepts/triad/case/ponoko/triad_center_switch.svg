@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="96mm"
+   height="160mm"
+   viewBox="0 0 96 160"
+   version="1.1"
+   id="svg173"
+   sodipodi:docname="triad_center_switch.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+  <metadata
+     id="metadata179">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs177" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="3416"
+     inkscape:window-height="1364"
+     id="namedview175"
+     showgrid="false"
+     inkscape:zoom="1.5610417"
+     inkscape:cx="284.83094"
+     inkscape:cy="269.8226"
+     inkscape:window-x="10"
+     inkscape:window-y="64"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg173" />
+  <g
+     id="switch"
+     transform="translate(48.35,80)"
+     style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+    <g
+       id="Outer"
+       style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+      <g
+         id="PlatePerimeter"
+         style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+        <g
+           id=""
+           style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+          <path
+             style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.1;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+             d="M -31.575 -65.08 Q -31.575 -68.08 -28.575 -68.08 L 28.575 -68.08 Q 31.575 -68.08 31.575 -65.08 L 31.575 62.65 Q 31.575 65.65 28.575 65.65 L -28.575 65.65 Q -31.575 65.65 -31.575 62.65 L -31.575 -65.08"
+             id="path56" />
+        </g>
+      </g>
+      <g
+         id="OLEDCutout"
+         style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+        <g
+           id="g62"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+          <path
+             style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.1;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+             d="M -19.5 -64.865 L 19.5 -64.865 L 19.5 -51.865 L -19.5 -51.865 L -19.5 -64.865"
+             id="path60" />
+        </g>
+      </g>
+      <g
+         id="ScrewHoles"
+         style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+        <g
+           id="g67"
+           transform="translate(-23.575,-51.65)"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+          <circle
+             r="1.15"
+             style="fill:none;stroke:#0000ff;stroke-width:0.1;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+             id="circle65" />
+        </g>
+        <g
+           id="g71"
+           transform="translate(23.575,-51.65)"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+          <circle
+             r="1.15"
+             style="fill:none;stroke:#0000ff;stroke-width:0.1;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+             id="circle69" />
+        </g>
+        <g
+           id="g75"
+           transform="translate(-23.575,43.6)"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+          <circle
+             r="1.15"
+             style="fill:none;stroke:#0000ff;stroke-width:0.1;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+             id="circle73" />
+        </g>
+        <g
+           id="g79"
+           transform="translate(23.575,43.6)"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+          <circle
+             r="1.15"
+             style="fill:none;stroke:#0000ff;stroke-width:0.1;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+             id="circle77" />
+        </g>
+      </g>
+      <g
+         id="Center"
+         transform="translate(0,5.5)"
+         style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+        <g
+           id="Column06"
+           transform="translate(-19.05,0)"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+          <g
+             id="Column06Key00"
+             transform="translate(0,-47.625)"
+             style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+            <g
+               id="g84"
+               style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+              <path
+                 style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.1;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+                 d="M -7 -7 L 7 -7 L 7 -6 L 7.8 -6 L 7.8 6 L 7 6 L 7 7 L -7 7 L -7 6 L -7.8 6 L -7.8 -6 L -7 -6 L -7 -7"
+                 id="path82" />
+            </g>
+          </g>
+          <g
+             id="g87"
+             transform="translate(0,-33.3375)"
+             style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none" />
+          <g
+             id="Column06Key01"
+             transform="translate(0,-19.050003)"
+             style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+            <g
+               id="g91"
+               style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+              <path
+                 style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.1;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+                 d="M -7 -7 L 7 -7 L 7 -6 L 7.8 -6 L 7.8 6 L 7 6 L 7 7 L -7 7 L -7 6 L -7.8 6 L -7.8 -6 L -7 -6 L -7 -7"
+                 id="path89" />
+            </g>
+          </g>
+          <g
+             id="Column06Key02"
+             transform="translate(0,-3.8146973E-06)"
+             style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+            <g
+               id="g96"
+               style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+              <path
+                 style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.1;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+                 d="M -7 -7 L 7 -7 L 7 -6 L 7.8 -6 L 7.8 6 L 7 6 L 7 7 L -7 7 L -7 6 L -7.8 6 L -7.8 -6 L -7 -6 L -7 -7"
+                 id="path94" />
+            </g>
+          </g>
+          <g
+             id="g99"
+             transform="translate(0,14.287498)"
+             style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none" />
+          <g
+             id="g101"
+             transform="translate(0,28.575005)"
+             style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none" />
+          <g
+             id="Column06Key05"
+             transform="translate(0,47.625)"
+             style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+            <g
+               id="g105"
+               style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+              <path
+                 style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.1;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+                 d="M -7 -7 L 7 -7 L 7 -6 L 7.8 -6 L 7.8 6 L 7 6 L 7 7 L -7 7 L -7 6 L -7.8 6 L -7.8 -6 L -7 -6 L -7 -7"
+                 id="path103" />
+            </g>
+          </g>
+        </g>
+        <g
+           id="Column07"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+          <g
+             id="Column07Key00"
+             transform="translate(0,-47.625004)"
+             style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+            <g
+               id="g111"
+               style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+              <path
+                 style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.1;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+                 d="M -7 -7 L 7 -7 L 7 -6 L 7.8 -6 L 7.8 6 L 7 6 L 7 7 L -7 7 L -7 6 L -7.8 6 L -7.8 -6 L -7 -6 L -7 -7"
+                 id="path109" />
+            </g>
+          </g>
+          <g
+             id="g114"
+             transform="translate(0,-33.337505)"
+             style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none" />
+          <g
+             id="Column07Key01"
+             transform="translate(0,-19.050007)"
+             style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+            <g
+               id="g118"
+               style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+              <path
+                 style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.1;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+                 d="M -7 -7 L 7 -7 L 7 -6 L 7.8 -6 L 7.8 6 L 7 6 L 7 7 L -7 7 L -7 6 L -7.8 6 L -7.8 -6 L -7 -6 L -7 -7"
+                 id="path116" />
+            </g>
+          </g>
+          <g
+             id="Column07Key02"
+             transform="translate(0,-7.6293945E-06)"
+             style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+            <g
+               id="g123"
+               style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+              <path
+                 style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.1;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+                 d="M -7 -7 L 7 -7 L 7 -6 L 7.8 -6 L 7.8 6 L 7 6 L 7 7 L -7 7 L -7 6 L -7.8 6 L -7.8 -6 L -7 -6 L -7 -7"
+                 id="path121" />
+            </g>
+          </g>
+          <g
+             id="g126"
+             transform="translate(0,14.287495)"
+             style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none" />
+          <g
+             id="Column07Key03"
+             transform="translate(0,28.575)"
+             style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+            <g
+               id="g130"
+               style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+              <path
+                 style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.1;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+                 d="M -7 -7 L 7 -7 L 7 -6 L 7.8 -6 L 7.8 6 L 7 6 L 7 7 L -7 7 L -7 6 L -7.8 6 L -7.8 -6 L -7 -6 L -7 -7"
+                 id="path128" />
+            </g>
+          </g>
+          <g
+             id="Column07Key04"
+             transform="translate(0,47.625004)"
+             style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+            <g
+               id="g135"
+               style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+              <path
+                 style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.1;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+                 d="M -7 -7 L 7 -7 L 7 -6 L 7.8 -6 L 7.8 6 L 7 6 L 7 7 L -7 7 L -7 6 L -7.8 6 L -7.8 -6 L -7 -6 L -7 -7"
+                 id="path133" />
+            </g>
+          </g>
+        </g>
+        <g
+           id="Column08"
+           transform="translate(19.050003,0)"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+          <g
+             id="Column08Key00"
+             transform="translate(0,-47.625)"
+             style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+            <g
+               id="g141"
+               style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+              <path
+                 style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.1;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+                 d="M -7 -7 L 7 -7 L 7 -6 L 7.8 -6 L 7.8 6 L 7 6 L 7 7 L -7 7 L -7 6 L -7.8 6 L -7.8 -6 L -7 -6 L -7 -7"
+                 id="path139" />
+            </g>
+          </g>
+          <g
+             id="g144"
+             transform="translate(0,-33.3375)"
+             style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none" />
+          <g
+             id="Column08Key01"
+             transform="translate(0,-19.050003)"
+             style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+            <g
+               id="g148"
+               style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+              <path
+                 style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.1;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+                 d="M -7 -7 L 7 -7 L 7 -6 L 7.8 -6 L 7.8 6 L 7 6 L 7 7 L -7 7 L -7 6 L -7.8 6 L -7.8 -6 L -7 -6 L -7 -7"
+                 id="path146" />
+            </g>
+          </g>
+          <g
+             id="Column08Key02"
+             transform="translate(0,-3.8146973E-06)"
+             style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+            <g
+               id="g153"
+               style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+              <path
+                 style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.1;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+                 d="M -7 -7 L 7 -7 L 7 -6 L 7.8 -6 L 7.8 6 L 7 6 L 7 7 L -7 7 L -7 6 L -7.8 6 L -7.8 -6 L -7 -6 L -7 -7"
+                 id="path151" />
+            </g>
+          </g>
+          <g
+             id="g156"
+             transform="translate(0,14.287498)"
+             style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none" />
+          <g
+             id="g158"
+             transform="translate(0,28.575005)"
+             style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none" />
+          <g
+             id="Column08Key05"
+             transform="translate(0,47.625)"
+             style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+            <g
+               id="g162"
+               style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
+              <path
+                 style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.1;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+                 d="M -7 -7 L 7 -7 L 7 -6 L 7.8 -6 L 7.8 6 L 7 6 L 7 7 L -7 7 L -7 6 L -7.8 6 L -7.8 -6 L -7 -6 L -7 -7"
+                 id="path160" />
+            </g>
+          </g>
+        </g>
+      </g>
+      <g
+         id="g167"
+         transform="translate(0,-59.365)"
+         style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none" />
+      <g
+         id="g169"
+         transform="translate(0,-56.365)"
+         style="fill:none;stroke:#0000ff;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none" />
+    </g>
+  </g>
+</svg>

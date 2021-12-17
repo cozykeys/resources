@@ -1,0 +1,1453 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text Label 900  1750 2    50   ~ 0
+row0
+Text Label 900  1850 2    50   ~ 0
+row1
+$Comp
+L triad_right-rescue:D_Small-Device D00
+U 1 1 5EA19CBB
+P 2250 1000
+F 0 "D00" V 2250 932 50  0000 R CNN
+F 1 "D_Small" V 2205 932 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 2250 1000 50  0001 C CNN
+F 3 "~" V 2250 1000 50  0001 C CNN
+	1    2250 1000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D01
+U 1 1 5EA21066
+P 2950 1000
+F 0 "D01" V 2950 932 50  0000 R CNN
+F 1 "D_Small" V 2905 932 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 2950 1000 50  0001 C CNN
+F 3 "~" V 2950 1000 50  0001 C CNN
+	1    2950 1000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D06
+U 1 1 5EA231B4
+P 2250 1500
+F 0 "D06" V 2250 1432 50  0000 R CNN
+F 1 "D_Small" V 2205 1432 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 2250 1500 50  0001 C CNN
+F 3 "~" V 2250 1500 50  0001 C CNN
+	1    2250 1500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D07
+U 1 1 5EA231C1
+P 2950 1500
+F 0 "D07" V 2950 1432 50  0000 R CNN
+F 1 "D_Small" V 2905 1432 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 2950 1500 50  0001 C CNN
+F 3 "~" V 2950 1500 50  0001 C CNN
+	1    2950 1500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D02
+U 1 1 5EA280B4
+P 3650 1000
+F 0 "D02" V 3650 932 50  0000 R CNN
+F 1 "D_Small" V 3605 932 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 3650 1000 50  0001 C CNN
+F 3 "~" V 3650 1000 50  0001 C CNN
+	1    3650 1000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D03
+U 1 1 5EA280C1
+P 4350 1000
+F 0 "D03" V 4350 932 50  0000 R CNN
+F 1 "D_Small" V 4305 932 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 4350 1000 50  0001 C CNN
+F 3 "~" V 4350 1000 50  0001 C CNN
+	1    4350 1000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D08
+U 1 1 5EA280CE
+P 3650 1500
+F 0 "D08" V 3650 1432 50  0000 R CNN
+F 1 "D_Small" V 3605 1432 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 3650 1500 50  0001 C CNN
+F 3 "~" V 3650 1500 50  0001 C CNN
+	1    3650 1500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D09
+U 1 1 5EA280DB
+P 4350 1500
+F 0 "D09" V 4350 1432 50  0000 R CNN
+F 1 "D_Small" V 4305 1432 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 4350 1500 50  0001 C CNN
+F 3 "~" V 4350 1500 50  0001 C CNN
+	1    4350 1500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D04
+U 1 1 5EA2B224
+P 5050 1000
+F 0 "D04" V 5050 932 50  0000 R CNN
+F 1 "D_Small" V 5005 932 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 5050 1000 50  0001 C CNN
+F 3 "~" V 5050 1000 50  0001 C CNN
+	1    5050 1000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D05
+U 1 1 5EA2B231
+P 5750 1000
+F 0 "D05" V 5750 932 50  0000 R CNN
+F 1 "D_Small" V 5705 932 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 5750 1000 50  0001 C CNN
+F 3 "~" V 5750 1000 50  0001 C CNN
+	1    5750 1000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D10
+U 1 1 5EA2B23E
+P 5050 1500
+F 0 "D10" V 5050 1432 50  0000 R CNN
+F 1 "D_Small" V 5005 1432 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 5050 1500 50  0001 C CNN
+F 3 "~" V 5050 1500 50  0001 C CNN
+	1    5050 1500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D11
+U 1 1 5EA2B24B
+P 5750 1500
+F 0 "D11" V 5750 1432 50  0000 R CNN
+F 1 "D_Small" V 5705 1432 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 5750 1500 50  0001 C CNN
+F 3 "~" V 5750 1500 50  0001 C CNN
+	1    5750 1500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D12
+U 1 1 5EA35A73
+P 2250 2000
+F 0 "D12" V 2250 1932 50  0000 R CNN
+F 1 "D_Small" V 2205 1932 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 2250 2000 50  0001 C CNN
+F 3 "~" V 2250 2000 50  0001 C CNN
+	1    2250 2000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D13
+U 1 1 5EA35A80
+P 2950 2000
+F 0 "D13" V 2950 1932 50  0000 R CNN
+F 1 "D_Small" V 2905 1932 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 2950 2000 50  0001 C CNN
+F 3 "~" V 2950 2000 50  0001 C CNN
+	1    2950 2000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D18
+U 1 1 5EA35A8D
+P 2250 2500
+F 0 "D18" V 2250 2432 50  0000 R CNN
+F 1 "D_Small" V 2205 2432 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 2250 2500 50  0001 C CNN
+F 3 "~" V 2250 2500 50  0001 C CNN
+	1    2250 2500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D19
+U 1 1 5EA35A9A
+P 2950 2500
+F 0 "D19" V 2950 2432 50  0000 R CNN
+F 1 "D_Small" V 2905 2432 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 2950 2500 50  0001 C CNN
+F 3 "~" V 2950 2500 50  0001 C CNN
+	1    2950 2500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D14
+U 1 1 5EA35AAB
+P 3650 2000
+F 0 "D14" V 3650 1932 50  0000 R CNN
+F 1 "D_Small" V 3605 1932 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 3650 2000 50  0001 C CNN
+F 3 "~" V 3650 2000 50  0001 C CNN
+	1    3650 2000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D15
+U 1 1 5EA35AB8
+P 4350 2000
+F 0 "D15" V 4350 1932 50  0000 R CNN
+F 1 "D_Small" V 4305 1932 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 4350 2000 50  0001 C CNN
+F 3 "~" V 4350 2000 50  0001 C CNN
+	1    4350 2000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D20
+U 1 1 5EA35AC5
+P 3650 2500
+F 0 "D20" V 3650 2432 50  0000 R CNN
+F 1 "D_Small" V 3605 2432 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 3650 2500 50  0001 C CNN
+F 3 "~" V 3650 2500 50  0001 C CNN
+	1    3650 2500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D21
+U 1 1 5EA35AD2
+P 4350 2500
+F 0 "D21" V 4350 2432 50  0000 R CNN
+F 1 "D_Small" V 4305 2432 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 4350 2500 50  0001 C CNN
+F 3 "~" V 4350 2500 50  0001 C CNN
+	1    4350 2500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D16
+U 1 1 5EA35AE3
+P 5050 2000
+F 0 "D16" V 5050 1932 50  0000 R CNN
+F 1 "D_Small" V 5005 1932 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 5050 2000 50  0001 C CNN
+F 3 "~" V 5050 2000 50  0001 C CNN
+	1    5050 2000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D17
+U 1 1 5EA35AF0
+P 5750 2000
+F 0 "D17" V 5750 1932 50  0000 R CNN
+F 1 "D_Small" V 5705 1932 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 5750 2000 50  0001 C CNN
+F 3 "~" V 5750 2000 50  0001 C CNN
+	1    5750 2000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D22
+U 1 1 5EA35AFD
+P 5050 2500
+F 0 "D22" V 5050 2432 50  0000 R CNN
+F 1 "D_Small" V 5005 2432 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 5050 2500 50  0001 C CNN
+F 3 "~" V 5050 2500 50  0001 C CNN
+	1    5050 2500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D23
+U 1 1 5EA35B0A
+P 5750 2500
+F 0 "D23" V 5750 2432 50  0000 R CNN
+F 1 "D_Small" V 5705 2432 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 5750 2500 50  0001 C CNN
+F 3 "~" V 5750 2500 50  0001 C CNN
+	1    5750 2500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D25
+U 1 1 5EA41214
+P 2250 3000
+F 0 "D25" V 2250 2932 50  0000 R CNN
+F 1 "D_Small" V 2205 2932 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 2250 3000 50  0001 C CNN
+F 3 "~" V 2250 3000 50  0001 C CNN
+	1    2250 3000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D26
+U 1 1 5EA41221
+P 2950 3000
+F 0 "D26" V 2950 2932 50  0000 R CNN
+F 1 "D_Small" V 2905 2932 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 2950 3000 50  0001 C CNN
+F 3 "~" V 2950 3000 50  0001 C CNN
+	1    2950 3000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D31
+U 1 1 5EA4122E
+P 2250 3500
+F 0 "D31" V 2250 3432 50  0000 R CNN
+F 1 "D_Small" V 2205 3432 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 2250 3500 50  0001 C CNN
+F 3 "~" V 2250 3500 50  0001 C CNN
+	1    2250 3500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D32
+U 1 1 5EA4123B
+P 2950 3500
+F 0 "D32" V 2950 3432 50  0000 R CNN
+F 1 "D_Small" V 2905 3432 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 2950 3500 50  0001 C CNN
+F 3 "~" V 2950 3500 50  0001 C CNN
+	1    2950 3500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D27
+U 1 1 5EA4124C
+P 3650 3000
+F 0 "D27" V 3650 2932 50  0000 R CNN
+F 1 "D_Small" V 3605 2932 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 3650 3000 50  0001 C CNN
+F 3 "~" V 3650 3000 50  0001 C CNN
+	1    3650 3000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D28
+U 1 1 5EA41259
+P 4350 3000
+F 0 "D28" V 4350 2932 50  0000 R CNN
+F 1 "D_Small" V 4305 2932 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 4350 3000 50  0001 C CNN
+F 3 "~" V 4350 3000 50  0001 C CNN
+	1    4350 3000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D33
+U 1 1 5EA41266
+P 3650 3500
+F 0 "D33" V 3650 3432 50  0000 R CNN
+F 1 "D_Small" V 3605 3432 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 3650 3500 50  0001 C CNN
+F 3 "~" V 3650 3500 50  0001 C CNN
+	1    3650 3500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D34
+U 1 1 5EA41273
+P 4350 3500
+F 0 "D34" V 4350 3432 50  0000 R CNN
+F 1 "D_Small" V 4305 3432 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 4350 3500 50  0001 C CNN
+F 3 "~" V 4350 3500 50  0001 C CNN
+	1    4350 3500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D29
+U 1 1 5EA41284
+P 5050 3000
+F 0 "D29" V 5050 2932 50  0000 R CNN
+F 1 "D_Small" V 5005 2932 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 5050 3000 50  0001 C CNN
+F 3 "~" V 5050 3000 50  0001 C CNN
+	1    5050 3000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D30
+U 1 1 5EA41291
+P 5750 3000
+F 0 "D30" V 5750 2932 50  0000 R CNN
+F 1 "D_Small" V 5705 2932 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 5750 3000 50  0001 C CNN
+F 3 "~" V 5750 3000 50  0001 C CNN
+	1    5750 3000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D35
+U 1 1 5EA4129E
+P 5050 3500
+F 0 "D35" V 5050 3432 50  0000 R CNN
+F 1 "D_Small" V 5005 3432 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 5050 3500 50  0001 C CNN
+F 3 "~" V 5050 3500 50  0001 C CNN
+	1    5050 3500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D36
+U 1 1 5EA412AB
+P 5750 3500
+F 0 "D36" V 5750 3432 50  0000 R CNN
+F 1 "D_Small" V 5705 3432 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 5750 3500 50  0001 C CNN
+F 3 "~" V 5750 3500 50  0001 C CNN
+	1    5750 3500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L triad_right-rescue:D_Small-Device D24
+U 1 1 5EAA5AB0
+P 1550 3000
+F 0 "D24" V 1550 2932 50  0000 R CNN
+F 1 "D_Small" V 1505 2932 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-123F" V 1550 3000 50  0001 C CNN
+F 3 "~" V 1550 3000 50  0001 C CNN
+	1    1550 3000
+	0    -1   -1   0   
+$EndComp
+Text Label 6450 1100 0    50   ~ 0
+row0
+Text Label 6450 1600 0    50   ~ 0
+row1
+Text Label 6450 2100 0    50   ~ 0
+row2
+Text Label 6450 2600 0    50   ~ 0
+row3
+Text Label 6450 3100 0    50   ~ 0
+row4
+Text Label 6450 3600 0    50   ~ 0
+row5
+Text Label 2850 700  0    50   ~ 0
+col9
+Text Label 3550 700  0    50   ~ 0
+col10
+Text Label 4250 700  0    50   ~ 0
+col11
+Text Label 4950 700  0    50   ~ 0
+col12
+Text Label 5650 700  0    50   ~ 0
+col13
+Text Label 6350 700  0    50   ~ 0
+col14
+Text Label 2150 2700 2    50   ~ 0
+col8
+Text Label 900  1650 2    50   ~ 0
+col8
+$Comp
+L triad_right-rescue:GND-power #PWR0101
+U 1 1 5EC3C6B8
+P 800 2850
+F 0 "#PWR0101" H 800 2600 50  0001 C CNN
+F 1 "GND" V 805 2722 50  0000 R CNN
+F 2 "" H 800 2850 50  0001 C CNN
+F 3 "" H 800 2850 50  0001 C CNN
+	1    800  2850
+	0    1    1    0   
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K00
+U 1 1 5EA56262
+P 2550 850
+F 0 "K00" H 2550 850 50  0000 C CNN
+F 1 "MX" H 2550 850 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 2550 850 60  0001 C CNN
+F 3 "" H 2550 850 60  0001 C CNN
+	1    2550 850 
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K01
+U 1 1 5EA5A0C3
+P 3250 850
+F 0 "K01" H 3250 850 50  0000 C CNN
+F 1 "MX" H 3250 850 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 3250 850 60  0001 C CNN
+F 3 "" H 3250 850 60  0001 C CNN
+	1    3250 850 
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K02
+U 1 1 5EA5BE90
+P 3950 850
+F 0 "K02" H 3950 850 50  0000 C CNN
+F 1 "MX" H 3950 850 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 3950 850 60  0001 C CNN
+F 3 "" H 3950 850 60  0001 C CNN
+	1    3950 850 
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K03
+U 1 1 5EA5DCE3
+P 4650 850
+F 0 "K03" H 4650 850 50  0000 C CNN
+F 1 "MX" H 4650 850 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 4650 850 60  0001 C CNN
+F 3 "" H 4650 850 60  0001 C CNN
+	1    4650 850 
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K04
+U 1 1 5EA5FB32
+P 5350 850
+F 0 "K04" H 5350 850 50  0000 C CNN
+F 1 "MX" H 5350 850 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 5350 850 60  0001 C CNN
+F 3 "" H 5350 850 60  0001 C CNN
+	1    5350 850 
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K05
+U 1 1 5EA61A0C
+P 6050 850
+F 0 "K05" H 6050 850 50  0000 C CNN
+F 1 "MX" H 6050 850 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 6050 850 60  0001 C CNN
+F 3 "" H 6050 850 60  0001 C CNN
+	1    6050 850 
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K06
+U 1 1 5EA63964
+P 2550 1350
+F 0 "K06" H 2550 1350 50  0000 C CNN
+F 1 "MX" H 2550 1350 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 2550 1350 60  0001 C CNN
+F 3 "" H 2550 1350 60  0001 C CNN
+	1    2550 1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K07
+U 1 1 5EA658D4
+P 3250 1350
+F 0 "K07" H 3250 1350 50  0000 C CNN
+F 1 "MX" H 3250 1350 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 3250 1350 60  0001 C CNN
+F 3 "" H 3250 1350 60  0001 C CNN
+	1    3250 1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K08
+U 1 1 5EA677FE
+P 3950 1350
+F 0 "K08" H 3950 1350 50  0000 C CNN
+F 1 "MX" H 3950 1350 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 3950 1350 60  0001 C CNN
+F 3 "" H 3950 1350 60  0001 C CNN
+	1    3950 1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K09
+U 1 1 5EA696A5
+P 4650 1350
+F 0 "K09" H 4650 1350 50  0000 C CNN
+F 1 "MX" H 4650 1350 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 4650 1350 60  0001 C CNN
+F 3 "" H 4650 1350 60  0001 C CNN
+	1    4650 1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K10
+U 1 1 5EA6B956
+P 5350 1350
+F 0 "K10" H 5350 1350 50  0000 C CNN
+F 1 "MX" H 5350 1350 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 5350 1350 60  0001 C CNN
+F 3 "" H 5350 1350 60  0001 C CNN
+	1    5350 1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K11
+U 1 1 5EA6D937
+P 6050 1350
+F 0 "K11" H 6050 1350 50  0000 C CNN
+F 1 "MX" H 6050 1350 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 6050 1350 60  0001 C CNN
+F 3 "" H 6050 1350 60  0001 C CNN
+	1    6050 1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K12
+U 1 1 5EA70E54
+P 2550 1850
+F 0 "K12" H 2550 1850 50  0000 C CNN
+F 1 "MX" H 2550 1850 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 2550 1850 60  0001 C CNN
+F 3 "" H 2550 1850 60  0001 C CNN
+	1    2550 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K13
+U 1 1 5EA72E15
+P 3250 1850
+F 0 "K13" H 3250 1850 50  0000 C CNN
+F 1 "MX" H 3250 1850 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 3250 1850 60  0001 C CNN
+F 3 "" H 3250 1850 60  0001 C CNN
+	1    3250 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K14
+U 1 1 5EA74DD7
+P 3950 1850
+F 0 "K14" H 3950 1850 50  0000 C CNN
+F 1 "MX" H 3950 1850 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 3950 1850 60  0001 C CNN
+F 3 "" H 3950 1850 60  0001 C CNN
+	1    3950 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K15
+U 1 1 5EA76EA1
+P 4650 1850
+F 0 "K15" H 4650 1850 50  0000 C CNN
+F 1 "MX" H 4650 1850 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 4650 1850 60  0001 C CNN
+F 3 "" H 4650 1850 60  0001 C CNN
+	1    4650 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K16
+U 1 1 5EA78EE0
+P 5350 1850
+F 0 "K16" H 5350 1850 50  0000 C CNN
+F 1 "MX" H 5350 1850 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 5350 1850 60  0001 C CNN
+F 3 "" H 5350 1850 60  0001 C CNN
+	1    5350 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K17
+U 1 1 5EA7AFCD
+P 6050 1850
+F 0 "K17" H 6050 1850 50  0000 C CNN
+F 1 "MX" H 6050 1850 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 6050 1850 60  0001 C CNN
+F 3 "" H 6050 1850 60  0001 C CNN
+	1    6050 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K18
+U 1 1 5EA7F4E0
+P 2550 2350
+F 0 "K18" H 2550 2350 50  0000 C CNN
+F 1 "MX" H 2550 2350 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 2550 2350 60  0001 C CNN
+F 3 "" H 2550 2350 60  0001 C CNN
+	1    2550 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K19
+U 1 1 5EA8149D
+P 3250 2350
+F 0 "K19" H 3250 2350 50  0000 C CNN
+F 1 "MX" H 3250 2350 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 3250 2350 60  0001 C CNN
+F 3 "" H 3250 2350 60  0001 C CNN
+	1    3250 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K20
+U 1 1 5EA834FC
+P 3950 2350
+F 0 "K20" H 3950 2350 50  0000 C CNN
+F 1 "MX" H 3950 2350 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 3950 2350 60  0001 C CNN
+F 3 "" H 3950 2350 60  0001 C CNN
+	1    3950 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K21
+U 1 1 5EA87A6F
+P 4650 2350
+F 0 "K21" H 4650 2350 50  0000 C CNN
+F 1 "MX" H 4650 2350 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 4650 2350 60  0001 C CNN
+F 3 "" H 4650 2350 60  0001 C CNN
+	1    4650 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K22
+U 1 1 5EA89ACC
+P 5350 2350
+F 0 "K22" H 5350 2350 50  0000 C CNN
+F 1 "MX" H 5350 2350 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 5350 2350 60  0001 C CNN
+F 3 "" H 5350 2350 60  0001 C CNN
+	1    5350 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K23
+U 1 1 5EA8BB79
+P 6050 2350
+F 0 "K23" H 6050 2350 50  0000 C CNN
+F 1 "MX" H 6050 2350 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 6050 2350 60  0001 C CNN
+F 3 "" H 6050 2350 60  0001 C CNN
+	1    6050 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K25
+U 1 1 5EA8DC50
+P 2550 2850
+F 0 "K25" H 2550 2850 50  0000 C CNN
+F 1 "MX" H 2550 2850 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 2550 2850 60  0001 C CNN
+F 3 "" H 2550 2850 60  0001 C CNN
+	1    2550 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K26
+U 1 1 5EA8FC85
+P 3250 2850
+F 0 "K26" H 3250 2850 50  0000 C CNN
+F 1 "MX" H 3250 2850 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 3250 2850 60  0001 C CNN
+F 3 "" H 3250 2850 60  0001 C CNN
+	1    3250 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K27
+U 1 1 5EA91CE9
+P 3950 2850
+F 0 "K27" H 3950 2850 50  0000 C CNN
+F 1 "MX" H 3950 2850 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 3950 2850 60  0001 C CNN
+F 3 "" H 3950 2850 60  0001 C CNN
+	1    3950 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K28
+U 1 1 5EA93D7A
+P 4650 2850
+F 0 "K28" H 4650 2850 50  0000 C CNN
+F 1 "MX" H 4650 2850 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 4650 2850 60  0001 C CNN
+F 3 "" H 4650 2850 60  0001 C CNN
+	1    4650 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K29
+U 1 1 5EA95E3F
+P 5350 2850
+F 0 "K29" H 5350 2850 50  0000 C CNN
+F 1 "MX" H 5350 2850 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 5350 2850 60  0001 C CNN
+F 3 "" H 5350 2850 60  0001 C CNN
+	1    5350 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K30
+U 1 1 5EA97FC5
+P 6050 2850
+F 0 "K30" H 6050 2850 50  0000 C CNN
+F 1 "MX" H 6050 2850 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 6050 2850 60  0001 C CNN
+F 3 "" H 6050 2850 60  0001 C CNN
+	1    6050 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K24
+U 1 1 5EA9A0D9
+P 1850 2850
+F 0 "K24" H 1850 2850 50  0000 C CNN
+F 1 "MX" H 1850 2850 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 1850 2850 60  0001 C CNN
+F 3 "" H 1850 2850 60  0001 C CNN
+	1    1850 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K36
+U 1 1 5EA9C181
+P 6050 3350
+F 0 "K36" H 6050 3350 50  0000 C CNN
+F 1 "MX" H 6050 3350 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 6050 3350 60  0001 C CNN
+F 3 "" H 6050 3350 60  0001 C CNN
+	1    6050 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K35
+U 1 1 5EA9E2B6
+P 5350 3350
+F 0 "K35" H 5350 3350 50  0000 C CNN
+F 1 "MX" H 5350 3350 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 5350 3350 60  0001 C CNN
+F 3 "" H 5350 3350 60  0001 C CNN
+	1    5350 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K34
+U 1 1 5EAA03FE
+P 4650 3350
+F 0 "K34" H 4650 3350 50  0000 C CNN
+F 1 "MX" H 4650 3350 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 4650 3350 60  0001 C CNN
+F 3 "" H 4650 3350 60  0001 C CNN
+	1    4650 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K33
+U 1 1 5EAA4B00
+P 3950 3350
+F 0 "K33" H 3950 3350 50  0000 C CNN
+F 1 "MX" H 3950 3350 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 3950 3350 60  0001 C CNN
+F 3 "" H 3950 3350 60  0001 C CNN
+	1    3950 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K32
+U 1 1 5EAA6CCD
+P 3250 3350
+F 0 "K32" H 3250 3350 50  0000 C CNN
+F 1 "MX" H 3250 3350 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 3250 3350 60  0001 C CNN
+F 3 "" H 3250 3350 60  0001 C CNN
+	1    3250 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L triad_right-rescue:MX-cozy K31
+U 1 1 5EAA8EA3
+P 2550 3350
+F 0 "K31" H 2550 3350 50  0000 C CNN
+F 1 "MX" H 2550 3350 60  0001 C CNN
+F 2 "cozy-parts:MX_1.00u" H 2550 3350 60  0001 C CNN
+F 3 "" H 2550 3350 60  0001 C CNN
+	1    2550 3350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2250 850  2250 900 
+Wire Wire Line
+	2850 700  2850 850 
+Wire Wire Line
+	2850 850  2850 1350
+Connection ~ 2850 850 
+Wire Wire Line
+	2850 1350 2850 1850
+Connection ~ 2850 1350
+Wire Wire Line
+	2850 1850 2850 2350
+Connection ~ 2850 1850
+Wire Wire Line
+	2850 2350 2850 2850
+Connection ~ 2850 2350
+Wire Wire Line
+	2850 2850 2850 3350
+Connection ~ 2850 2850
+Wire Wire Line
+	3550 3350 3550 2850
+Wire Wire Line
+	3550 2850 3550 2350
+Connection ~ 3550 2850
+Wire Wire Line
+	3550 2350 3550 1850
+Connection ~ 3550 2350
+Wire Wire Line
+	3550 1850 3550 1350
+Connection ~ 3550 1850
+Wire Wire Line
+	3550 1350 3550 850 
+Connection ~ 3550 1350
+Wire Wire Line
+	3550 850  3550 700 
+Connection ~ 3550 850 
+Wire Wire Line
+	4250 700  4250 850 
+Wire Wire Line
+	4250 850  4250 1350
+Connection ~ 4250 850 
+Wire Wire Line
+	4250 1350 4250 1850
+Connection ~ 4250 1350
+Wire Wire Line
+	4250 1850 4250 2350
+Connection ~ 4250 1850
+Wire Wire Line
+	4250 2350 4250 2850
+Connection ~ 4250 2350
+Wire Wire Line
+	4250 2850 4250 3350
+Connection ~ 4250 2850
+Wire Wire Line
+	4950 3350 4950 2850
+Wire Wire Line
+	4950 2850 4950 2350
+Connection ~ 4950 2850
+Wire Wire Line
+	4950 2350 4950 1850
+Connection ~ 4950 2350
+Wire Wire Line
+	4950 1850 4950 1350
+Connection ~ 4950 1850
+Wire Wire Line
+	4950 1350 4950 850 
+Connection ~ 4950 1350
+Wire Wire Line
+	4950 850  4950 700 
+Connection ~ 4950 850 
+Wire Wire Line
+	5650 700  5650 850 
+Wire Wire Line
+	5650 850  5650 1350
+Connection ~ 5650 850 
+Wire Wire Line
+	5650 1350 5650 1850
+Connection ~ 5650 1350
+Wire Wire Line
+	5650 1850 5650 2350
+Connection ~ 5650 1850
+Wire Wire Line
+	5650 2350 5650 2850
+Connection ~ 5650 2350
+Wire Wire Line
+	5650 2850 5650 3350
+Connection ~ 5650 2850
+Wire Wire Line
+	6350 3350 6350 2850
+Wire Wire Line
+	6350 2850 6350 2350
+Connection ~ 6350 2850
+Wire Wire Line
+	6350 2350 6350 1850
+Connection ~ 6350 2350
+Wire Wire Line
+	6350 1850 6350 1350
+Connection ~ 6350 1850
+Wire Wire Line
+	6350 1350 6350 850 
+Connection ~ 6350 1350
+Wire Wire Line
+	6350 700  6350 850 
+Connection ~ 6350 850 
+Wire Wire Line
+	2250 1400 2250 1350
+Wire Wire Line
+	2250 1900 2250 1850
+Wire Wire Line
+	2250 2400 2250 2350
+Wire Wire Line
+	2250 3400 2250 3350
+Wire Wire Line
+	2950 3400 2950 3350
+Wire Wire Line
+	2950 2900 2950 2850
+Wire Wire Line
+	2950 2400 2950 2350
+Wire Wire Line
+	2950 1900 2950 1850
+Wire Wire Line
+	2950 1400 2950 1350
+Wire Wire Line
+	2950 900  2950 850 
+Wire Wire Line
+	3650 850  3650 900 
+Wire Wire Line
+	3650 1350 3650 1400
+Wire Wire Line
+	3650 1850 3650 1900
+Wire Wire Line
+	3650 2350 3650 2400
+Wire Wire Line
+	3650 2850 3650 2900
+Wire Wire Line
+	3650 3350 3650 3400
+Wire Wire Line
+	4350 3400 4350 3350
+Wire Wire Line
+	4350 2900 4350 2850
+Wire Wire Line
+	4350 2400 4350 2350
+Wire Wire Line
+	5050 3400 5050 3350
+Wire Wire Line
+	5050 2900 5050 2850
+Wire Wire Line
+	5050 2400 5050 2350
+Wire Wire Line
+	5750 2400 5750 2350
+Wire Wire Line
+	5750 2900 5750 2850
+Wire Wire Line
+	5750 3400 5750 3350
+Wire Wire Line
+	4350 1900 4350 1850
+Wire Wire Line
+	4350 1400 4350 1350
+Wire Wire Line
+	4350 900  4350 850 
+Wire Wire Line
+	5050 850  5050 900 
+Wire Wire Line
+	5050 1350 5050 1400
+Wire Wire Line
+	5050 1850 5050 1900
+Wire Wire Line
+	5750 1900 5750 1850
+Wire Wire Line
+	5750 1400 5750 1350
+Wire Wire Line
+	5750 900  5750 850 
+Wire Wire Line
+	2250 1100 2950 1100
+Wire Wire Line
+	2950 1100 3650 1100
+Connection ~ 2950 1100
+Wire Wire Line
+	3650 1100 4350 1100
+Connection ~ 3650 1100
+Wire Wire Line
+	4350 1100 5050 1100
+Connection ~ 4350 1100
+Wire Wire Line
+	5050 1100 5750 1100
+Connection ~ 5050 1100
+Wire Wire Line
+	2250 1600 2950 1600
+Wire Wire Line
+	2950 1600 3650 1600
+Connection ~ 2950 1600
+Wire Wire Line
+	3650 1600 4350 1600
+Connection ~ 3650 1600
+Wire Wire Line
+	4350 1600 5050 1600
+Connection ~ 4350 1600
+Wire Wire Line
+	5050 1600 5750 1600
+Connection ~ 5050 1600
+Wire Wire Line
+	2250 2100 2950 2100
+Wire Wire Line
+	2950 2100 3650 2100
+Connection ~ 2950 2100
+Wire Wire Line
+	3650 2100 4350 2100
+Connection ~ 3650 2100
+Wire Wire Line
+	4350 2100 5050 2100
+Connection ~ 4350 2100
+Wire Wire Line
+	5050 2100 5750 2100
+Connection ~ 5050 2100
+Wire Wire Line
+	2250 2600 2950 2600
+Wire Wire Line
+	2950 2600 3650 2600
+Connection ~ 2950 2600
+Wire Wire Line
+	3650 2600 4350 2600
+Connection ~ 3650 2600
+Wire Wire Line
+	4350 2600 5050 2600
+Connection ~ 4350 2600
+Wire Wire Line
+	5050 2600 5750 2600
+Connection ~ 5050 2600
+Wire Wire Line
+	2250 3100 2950 3100
+Wire Wire Line
+	2950 3100 3650 3100
+Connection ~ 2950 3100
+Wire Wire Line
+	3650 3100 4350 3100
+Connection ~ 3650 3100
+Wire Wire Line
+	4350 3100 5050 3100
+Connection ~ 4350 3100
+Wire Wire Line
+	5050 3100 5750 3100
+Connection ~ 5050 3100
+Wire Wire Line
+	2250 3600 2950 3600
+Wire Wire Line
+	2950 3600 3650 3600
+Connection ~ 2950 3600
+Wire Wire Line
+	3650 3600 4350 3600
+Connection ~ 3650 3600
+Wire Wire Line
+	4350 3600 5050 3600
+Connection ~ 4350 3600
+Wire Wire Line
+	5050 3600 5750 3600
+Connection ~ 5050 3600
+$Comp
+L LED:WS2812B L1
+U 1 1 5EA6DB0A
+P 1650 4200
+F 0 "L1" H 1700 4450 50  0000 L CNN
+F 1 "WS2812B" H 1700 3950 50  0000 L CNN
+F 2 "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm" H 1700 3900 50  0001 L TNN
+F 3 "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf" H 1750 3825 50  0001 L TNN
+	1    1650 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L LED:WS2812B L2
+U 1 1 5EA77F1B
+P 2400 4200
+F 0 "L2" H 2450 4450 50  0000 L CNN
+F 1 "WS2812B" H 2450 3950 50  0000 L CNN
+F 2 "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm" H 2450 3900 50  0001 L TNN
+F 3 "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf" H 2500 3825 50  0001 L TNN
+	1    2400 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L LED:WS2812B L3
+U 1 1 5EA7BADC
+P 3150 4200
+F 0 "L3" H 3200 4450 50  0000 L CNN
+F 1 "WS2812B" H 3200 3950 50  0000 L CNN
+F 2 "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm" H 3200 3900 50  0001 L TNN
+F 3 "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf" H 3250 3825 50  0001 L TNN
+	1    3150 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L LED:WS2812B L4
+U 1 1 5EA7F8BB
+P 3900 4200
+F 0 "L4" H 3950 4450 50  0000 L CNN
+F 1 "WS2812B" H 3950 3950 50  0000 L CNN
+F 2 "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm" H 3950 3900 50  0001 L TNN
+F 3 "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf" H 4000 3825 50  0001 L TNN
+	1    3900 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0103
+U 1 1 5EAABE63
+P 1250 4500
+F 0 "#PWR0103" H 1250 4250 50  0001 C CNN
+F 1 "GND" V 1250 4300 50  0000 C CNN
+F 2 "" H 1250 4500 50  0001 C CNN
+F 3 "" H 1250 4500 50  0001 C CNN
+	1    1250 4500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1650 3900 2300 3900
+Wire Wire Line
+	2400 3900 3050 3900
+Connection ~ 2400 3900
+Wire Wire Line
+	3150 3900 3800 3900
+Connection ~ 3150 3900
+Wire Wire Line
+	1250 4500 1650 4500
+Wire Wire Line
+	1650 4500 2400 4500
+Connection ~ 1650 4500
+Wire Wire Line
+	2400 4500 3150 4500
+Connection ~ 2400 4500
+Wire Wire Line
+	3150 4500 3900 4500
+Connection ~ 3150 4500
+Text Label 1200 4200 2    50   ~ 0
+rgb_in
+Text Label 4300 4200 0    50   ~ 0
+rgb_out
+Wire Wire Line
+	1200 4200 1350 4200
+Wire Wire Line
+	1950 4200 2100 4200
+Wire Wire Line
+	2700 4200 2850 4200
+Wire Wire Line
+	3450 4200 3600 4200
+Wire Wire Line
+	4200 4200 4300 4200
+Text Label 900  2350 2    50   ~ 0
+rgb_in
+Text Label 900  2450 2    50   ~ 0
+rgb_out
+Wire Wire Line
+	5750 1100 6450 1100
+Connection ~ 5750 1100
+Wire Wire Line
+	5750 1600 6450 1600
+Connection ~ 5750 1600
+Wire Wire Line
+	5750 2100 6450 2100
+Connection ~ 5750 2100
+Wire Wire Line
+	5750 2600 6450 2600
+Connection ~ 5750 2600
+Wire Wire Line
+	5750 3100 6450 3100
+Connection ~ 5750 3100
+Wire Wire Line
+	5750 3600 6450 3600
+Connection ~ 5750 3600
+Wire Wire Line
+	1550 2900 1550 2850
+Wire Wire Line
+	1550 3100 2250 3100
+Connection ~ 2250 3100
+Wire Wire Line
+	2250 2900 2250 2850
+Wire Wire Line
+	2150 2850 2150 2700
+Text Label 900  1950 2    50   ~ 0
+row2
+Text Label 900  2050 2    50   ~ 0
+row3
+Text Label 900  2150 2    50   ~ 0
+row4
+Text Label 900  2250 2    50   ~ 0
+row5
+Text Label 900  1550 2    50   ~ 0
+col9
+Text Label 900  1350 2    50   ~ 0
+col11
+Text Label 900  1250 2    50   ~ 0
+col12
+Text Label 900  1150 2    50   ~ 0
+col13
+Text Label 900  1050 2    50   ~ 0
+col14
+Text Label 900  1450 2    50   ~ 0
+col10
+$Comp
+L cozy:MOLEX_FPC_20_P0.5mm_505110-2091 J1
+U 1 1 5EB53B90
+P 1150 2000
+F 0 "J1" H 1200 1100 50  0000 R CNN
+F 1 "MOLEX_FPC_20_P0.5mm_505110-2091" V 1050 2750 50  0000 R CNN
+F 2 "cozy-parts:MOLEX_FPC_20_P0.5mm_505110-2091" H 1250 2000 50  0001 C CNN
+F 3 "" H 1250 2000 50  0001 C CNN
+	1    1150 2000
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:VCC #PWR0102
+U 1 1 5EBEE515
+P 800 2950
+F 0 "#PWR0102" H 800 2800 50  0001 C CNN
+F 1 "VCC" V 818 3077 50  0000 L CNN
+F 2 "" H 800 2950 50  0001 C CNN
+F 3 "" H 800 2950 50  0001 C CNN
+	1    800  2950
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0104
+U 1 1 5EBF200B
+P 1200 800
+F 0 "#PWR0104" H 1200 550 50  0001 C CNN
+F 1 "GND" H 1205 627 50  0000 C CNN
+F 2 "" H 1200 800 50  0001 C CNN
+F 3 "" H 1200 800 50  0001 C CNN
+	1    1200 800 
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0105
+U 1 1 5EBF4678
+P 1200 3200
+F 0 "#PWR0105" H 1200 2950 50  0001 C CNN
+F 1 "GND" H 1205 3027 50  0000 C CNN
+F 2 "" H 1200 3200 50  0001 C CNN
+F 3 "" H 1200 3200 50  0001 C CNN
+	1    1200 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1200 900  1200 800 
+Wire Wire Line
+	1200 3200 1200 3100
+Wire Wire Line
+	800  2850 900  2850
+Wire Wire Line
+	800  2950 900  2950
+NoConn ~ 900  2750
+NoConn ~ 900  2650
+NoConn ~ 900  2550
+$Comp
+L power:VCC #PWR0106
+U 1 1 5EC22BE2
+P 1250 3900
+F 0 "#PWR0106" H 1250 3750 50  0001 C CNN
+F 1 "VCC" V 1268 4027 50  0000 L CNN
+F 2 "" H 1250 3900 50  0001 C CNN
+F 3 "" H 1250 3900 50  0001 C CNN
+	1    1250 3900
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1650 3900 1550 3900
+Connection ~ 1650 3900
+$Comp
+L Device:C_Small C1
+U 1 1 5EC3979A
+P 1650 3800
+F 0 "C1" V 1700 3900 50  0000 C CNN
+F 1 "100n" V 1512 3800 50  0000 C CNN
+F 2 "" H 1650 3800 50  0001 C CNN
+F 3 "~" H 1650 3800 50  0001 C CNN
+	1    1650 3800
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0107
+U 1 1 5EC3A431
+P 1850 3800
+F 0 "#PWR0107" H 1850 3550 50  0001 C CNN
+F 1 "GND" V 1855 3672 50  0000 R CNN
+F 2 "" H 1850 3800 50  0001 C CNN
+F 3 "" H 1850 3800 50  0001 C CNN
+	1    1850 3800
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1750 3800 1850 3800
+$Comp
+L Device:C_Small C2
+U 1 1 5EC430E5
+P 2400 3800
+F 0 "C2" V 2450 3900 50  0000 C CNN
+F 1 "100n" V 2262 3800 50  0000 C CNN
+F 2 "" H 2400 3800 50  0001 C CNN
+F 3 "~" H 2400 3800 50  0001 C CNN
+	1    2400 3800
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0108
+U 1 1 5EC430EB
+P 2600 3800
+F 0 "#PWR0108" H 2600 3550 50  0001 C CNN
+F 1 "GND" V 2605 3672 50  0000 R CNN
+F 2 "" H 2600 3800 50  0001 C CNN
+F 3 "" H 2600 3800 50  0001 C CNN
+	1    2600 3800
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2500 3800 2600 3800
+$Comp
+L Device:C_Small C3
+U 1 1 5EC47D7C
+P 3150 3800
+F 0 "C3" V 3200 3900 50  0000 C CNN
+F 1 "100n" V 3012 3800 50  0000 C CNN
+F 2 "" H 3150 3800 50  0001 C CNN
+F 3 "~" H 3150 3800 50  0001 C CNN
+	1    3150 3800
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0109
+U 1 1 5EC47D82
+P 3350 3800
+F 0 "#PWR0109" H 3350 3550 50  0001 C CNN
+F 1 "GND" V 3355 3672 50  0000 R CNN
+F 2 "" H 3350 3800 50  0001 C CNN
+F 3 "" H 3350 3800 50  0001 C CNN
+	1    3350 3800
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3250 3800 3350 3800
+$Comp
+L Device:C_Small C4
+U 1 1 5EC4DD62
+P 3900 3800
+F 0 "C4" V 3950 3900 50  0000 C CNN
+F 1 "100n" V 3762 3800 50  0000 C CNN
+F 2 "" H 3900 3800 50  0001 C CNN
+F 3 "~" H 3900 3800 50  0001 C CNN
+	1    3900 3800
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0110
+U 1 1 5EC4DD68
+P 4100 3800
+F 0 "#PWR0110" H 4100 3550 50  0001 C CNN
+F 1 "GND" V 4105 3672 50  0000 R CNN
+F 2 "" H 4100 3800 50  0001 C CNN
+F 3 "" H 4100 3800 50  0001 C CNN
+	1    4100 3800
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4000 3800 4100 3800
+Wire Wire Line
+	1550 3800 1550 3900
+Connection ~ 1550 3900
+Wire Wire Line
+	1550 3900 1250 3900
+Wire Wire Line
+	2300 3800 2300 3900
+Connection ~ 2300 3900
+Wire Wire Line
+	2300 3900 2400 3900
+Wire Wire Line
+	3050 3800 3050 3900
+Connection ~ 3050 3900
+Wire Wire Line
+	3050 3900 3150 3900
+Wire Wire Line
+	3800 3800 3800 3900
+Connection ~ 3800 3900
+Wire Wire Line
+	3800 3900 3900 3900
+$EndSCHEMATC
