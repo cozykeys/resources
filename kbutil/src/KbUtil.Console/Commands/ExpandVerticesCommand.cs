@@ -93,6 +93,7 @@
                 return -2;
             }
 
+            // Parse input JSON file
             List<Vector> inputVertices = GetVertices(InputPath);
            
             // First, turn the list of vertices into a list of line segments.

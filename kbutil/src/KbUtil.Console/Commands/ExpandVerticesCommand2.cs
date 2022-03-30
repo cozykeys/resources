@@ -65,7 +65,7 @@ namespace KbUtil.Console.Commands
             CommandLineApplication command = ApplicationContext.CommandLineApplication
                 .Command("expand-vertices2", config =>
                 {
-                    config.Description = "TODO";
+                    config.Description = "Expand list of vertices; this version uses the GeometRi library to avoid issues with vertical lines that the expand-vertices command has.";
                     config.OnExecute(() => Execute());
                 });
             
@@ -95,33 +95,67 @@ namespace KbUtil.Console.Commands
                 return -2;
             }
 
+            // Parse JSON input file
             List<Point3d> inputVertices = GetVertices(InputPath)
                 .Select(v => new Point3d(v.X, v.Y, 0.0))
                 .ToList();
+
+            _logger.LogInformation("Parsed input vertices:");
+            foreach (Point3d v in inputVertices) {
+                _logger.LogInformation($" - ({v.X}, {v.Y})");
+            }
            
             // First, turn the list of vertices into a list of line segments.
             List<Segment3d> inputSegments = GetSegments(inputVertices).ToList();
+
+            _logger.LogInformation("Converted vertices to segments:");
+            foreach (Segment3d s in inputSegments) {
+                _logger.LogInformation($" - [({s.P1.X}, {s.P1.Y}), ({s.P2.X}, {s.P2.Y})]");
+            }
             
             // Next, expand the segments into parallel lines that are a given distance away.
             List<Line3d> expandedLines = ExpandSegments(inputSegments, distance)
                 .ToList();
+
+            _logger.LogInformation("Expanded segments into lines:");
+            foreach (Line3d l in expandedLines) {
+                _logger.LogInformation($" - Direction: {l.Direction}, Point: {l.Point}");
+            }
             
             // Finally, get the intersection points of the adjacent lines.
             List<Point3d> expandedVertices = GetIntersectionPoints(expandedLines)
                 .ToList();
             
-            //WriteVerticesToFile(OutputPath, expandedVertices);
+            WriteVerticesToFile(OutputPath, expandedVertices);
             WriteVerticesToConsole(inputVertices, expandedVertices);
 
             if (!string.IsNullOrEmpty(DebugSvgPath))
             {
                 Svg svg = _svgService.CreateSvg();
-                //_svgService.Append(svg, inputVertices, InitialVertexSvgStyles);
-                //_svgService.Append(svg, inputSegments, InitialSegmentSvgStyles);
-                //_svgService.Append(svg, expandedVertices, ExpandedVertexSvgStyles);
+                _svgService.Append(
+                    svg,
+                    inputVertices.Select(p => new Vector(p.X, p.Y)),
+                    InitialVertexSvgStyles);
+                _svgService.Append(
+                    svg,
+                    inputSegments.Select(s => new Segment(
+                        new Vector(s.P1.X, s.P1.Y),
+                        new Vector(s.P2.X, s.P2.Y)
+                    )),
+                    InitialSegmentSvgStyles);
+                _svgService.Append(
+                    svg,
+                    expandedVertices.Select(p => new Vector(p.X, p.Y)),
+                    ExpandedVertexSvgStyles);
                 
-                //List<Segment> expandedSegments = VectorOperations.GetSegments(expandedVertices).ToList();
-                //_svgService.Append(svg, expandedSegments, ExpandedSegmentSvgStyles);
+                _svgService.Append(
+                    svg,
+                    GetSegments(expandedVertices).Select(s => new Segment(
+                        new Vector(s.P1.X, s.P1.Y),
+                        new Vector(s.P2.X, s.P2.Y)
+                    ))
+                    .ToList(),
+                    ExpandedSegmentSvgStyles);
                 
                 _svgService.WriteToFile(svg, DebugSvgPath);
             }
@@ -147,30 +181,27 @@ namespace KbUtil.Console.Commands
         {
             var lines = new List<Line3d>();
 
+            Segment3d PerpendicularClockwise(Segment3d s)
+            {
+                var dx = s.P2.X - s.P1.X;
+                var dy = s.P2.Y - s.P1.Y;
+                var v = new Vector3d(dy, -dx, 0.0).Normalized * distance;
+                return new Segment3d(s.P1.Translate(v), s.P2.Translate(v));
+            }
+
+            /*
+            Segment3d PerpendicularCounterClockwise(Segment3d s)
+            {
+                var dx = s.P2.X - s.P1.X;
+                var dy = s.P2.Y - s.P1.Y;
+                var v = new Vector3d(-dy, dx, 0.0).Normalized * distance;
+                return new Segment3d(s.P1.Translate(v), s.P2.Translate(v));
+            }
+            */
+
             foreach (Segment3d segment in segments)
             {
-                // TODO:
-                //var p1 = new Vector3d(segment.P1.X, segment.P1.Y, 0);
-                //var line = segment.ToLine;
-
-                var directionVec1 = new Vector3d(segment.P1.Y, -segment.P1.X, 0);
-                directionVec1.Normalize();
-                var v1 = directionVec1 * distance;
-                var p1 = new Point3d(segment.P1.X + v1.X, segment.P1.Y + v1.Y, 0);
-
-                var directionVec2 = new Vector3d(segment.P2.Y, -segment.P2.X, 0);
-                directionVec2.Normalize();
-                var v2 = directionVec2 * distance;
-                var p2 = new Point3d(segment.P2.X + v2.X, segment.P2.Y + v2.Y, 0);
-
-                var s = new Segment3d(p2, p2);
-                lines.Add(s.ToLine);
-
-                //bool InLeftHemisphere(double theta) => ((0.5 * Math.PI) < theta) && (theta < (1.5 * Math.PI));
-
-                //lines.Add(InLeftHemisphere(segment.P1.AngleTo(segment.P2))
-                    //? line.Parallel(distance)
-                    //: line.Parallel(-distance));
+                lines.Add(PerpendicularClockwise(segment).ToLine);
             }
 
             return lines;

@@ -24,6 +24,7 @@
 
             try
             {
+                logger.LogInformation("Running...");
                 return ApplicationContext.CommandLineApplication.Execute(args);
             }
             catch (Exception ex)
