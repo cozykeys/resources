@@ -3,6 +3,18 @@ package kb
 import (
 	"log"
 	"reflect"
+	"strconv"
+
+	"github.com/beevik/etree"
+)
+
+const (
+	ElementKeyboard = "Keyboard"
+
+	AttributeName    = "Name"
+	AttributeVersion = "Version"
+	AttributeWidth   = "Width"
+	AttributeHeight  = "Height"
 )
 
 type Keyboard struct {
@@ -105,6 +117,114 @@ func (kb *Keyboard) fromMap(m map[string]interface{}) error {
 
 	// TODO: Do any post-processing such as ensuring required fields were set
 	// and values are valid
+
+	return nil
+}
+
+func (kb *Keyboard) fromXMLElement(e *etree.Element) error {
+	if e == nil {
+		return &nilElementError{}
+	}
+
+	if e.Tag != ElementKeyboard {
+		return &invalidTagError{
+			expected: ElementKeyboard,
+			actual:   e.Tag,
+		}
+	}
+
+	err := kb.parseAttributes(e.Attr)
+	if err != nil {
+		return err
+	}
+
+	err = kb.parseChildren(e.Child)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (kb *Keyboard) parseAttributes(attributes []etree.Attr) error {
+	supportedAttributes := map[string]struct {
+		required bool
+		found    bool
+	}{
+		AttributeName:    {required: true},
+		AttributeVersion: {required: false},
+		AttributeWidth:   {required: false},
+		AttributeHeight:  {required: false},
+	}
+
+	for _, attr := range attributes {
+		log.Printf("Attribute key = %q, value = %q\n", attr.Key, attr.Value)
+
+		switch attr.Key {
+		case AttributeName:
+			kb.Name = attr.Value
+		case AttributeVersion:
+			kb.Version = attr.Value
+		case AttributeHeight:
+			height, err := strconv.ParseFloat(attr.Value, 64)
+			if err != nil {
+				return &invalidAttributeTypeError{
+					element:   ElementKeyboard,
+					attribute: attr.Key,
+				}
+			}
+			kb.Height = height
+		case AttributeWidth:
+			width, err := strconv.ParseFloat(attr.Value, 64)
+			if err != nil {
+				return &invalidAttributeTypeError{
+					element:   ElementKeyboard,
+					attribute: attr.Key,
+				}
+			}
+			kb.Height = width
+		default:
+			return &unexpectedAttributeError{
+				element:   ElementKeyboard,
+				attribute: attr.Key,
+			}
+		}
+
+		if a, ok := supportedAttributes[attr.Key]; ok && a.required {
+			a.found = true
+		}
+	}
+
+	for k, v := range supportedAttributes {
+		if v.found == false {
+			return &missingRequiredAttributeError{
+				element:   ElementKeyboard,
+				attribute: k,
+			}
+		}
+	}
+
+	return nil
+}
+
+func (kb *Keyboard) parseChildren(children []etree.Token) error {
+	for _, child := range children {
+		element, ok := child.(*etree.Element)
+		if !ok {
+			// Ignore children that are not elements
+			continue
+		}
+
+		switch element.Tag {
+		case "Foo":
+			log.Print("Foo")
+		default:
+			return &invalidChildElementError{
+				element: ElementKeyboard,
+				child:   element.Tag,
+			}
+		}
+	}
 
 	return nil
 }
