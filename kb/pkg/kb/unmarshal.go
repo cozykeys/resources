@@ -1,31 +1,41 @@
 package kb
 
 import (
-	"encoding/json"
+	"strconv"
+
+	"github.com/beevik/etree"
 )
 
-// TODO: Explanation; this is the only exported method related to unmarshaling.
-// User of the package is expected to unmarshal a la:
-//
-//     kb := &kbutil.Keyboard{}
-//     if err := json.Unmarshal(bytes, kb); err != nil { ... }
-//
-// Internally, all unmarshaling is done by handle from generic maps/slices. The
-// primary reason for this is that the schema is somewhat complicated and
-// requires overriding some of the unmarshal functions anyways to support:
-// - Sum types
-// - Required fields
-// As an added benefit, we don't have to unmarshal anything twice so it ends up
-// being a bit more performant, not that that matters much.
-func (k *Keyboard) UnmarshalJSON(bytes []byte) error {
-	kbMap := map[string]interface{}{}
-	if err := json.Unmarshal(bytes, &kbMap); err != nil {
-		return err
+func Unmarshal(bytes []byte) (*Keyboard, error) {
+	doc := etree.NewDocument()
+
+	err := doc.ReadFromBytes(bytes)
+	if err != nil {
+		return nil, err
 	}
 
-	if err := k.fromMap(kbMap); err != nil {
-		return err
+	keyboard := &Keyboard{}
+	err = keyboard.unmarshal(doc.Root())
+	if err != nil {
+		return nil, err
 	}
 
-	return nil
+	return keyboard, nil
+}
+
+func unmarshalAttributeString(key, raw string) (string, error) {
+	// TODO: Process constants
+	return raw, nil
+}
+
+func unmarshalAttributeFloat64(key, raw string) (float64, error) {
+	// TODO: Process constants
+	val, err := strconv.ParseFloat(raw, 64)
+	if err != nil {
+		return 0, &invalidAttributeTypeError{
+			element:   ElementKeyboard,
+			attribute: key,
+		}
+	}
+	return val, nil
 }
