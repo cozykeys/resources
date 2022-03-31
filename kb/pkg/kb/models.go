@@ -6,6 +6,20 @@ type Constant struct {
 	Value string
 }
 
+// Keyboard TODO
+type Keyboard struct {
+	//ComponentBase
+
+	Name     string
+	Version  string
+	Width    float64
+	Height   float64
+	Constant []Constant
+	Layers   []Layer
+}
+
+var _ Component = &Keyboard{}
+
 // ComponentBase TODO
 type ComponentBase struct {
 	Name      string
@@ -34,19 +48,6 @@ type Circle struct {
 }
 
 var _ Component = &Circle{}
-
-// Keyboard TODO
-type Keyboard struct {
-	ComponentBase
-
-	Name       string
-	Version    string
-	Width      float64
-	Height     float64
-	Components []Component
-}
-
-var _ Component = &Keyboard{}
 
 // Key TODO
 type Key struct {

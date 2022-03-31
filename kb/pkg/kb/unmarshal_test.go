@@ -35,6 +35,17 @@ func Test_ParseKeyboard(t *testing.T) {
 	}
 }
 
+// TODO: Temporary, delete this
+func Test_WalkTree(t *testing.T) {
+
+	//func (kb *Keyboard) WalkTree(bytes []byte) {
+
+	xml, err := GetTestData("bloomer.xml")
+	require.Nil(t, err)
+
+	WalkTree(xml)
+}
+
 func GetTestData(filename string) ([]byte, error) {
 	_, testFile, _, _ := runtime.Caller(0)
 

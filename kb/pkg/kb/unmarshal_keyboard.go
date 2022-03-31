@@ -41,7 +41,7 @@ func (kb *Keyboard) unmarshal(e *etree.Element) error {
 }
 
 func (kb *Keyboard) parseAttributes(attributes []etree.Attr) error {
-	supportedAttributes := map[string]struct {
+	supportedAttributes := map[string]*struct {
 		required bool
 		found    bool
 	}{
@@ -83,13 +83,15 @@ func (kb *Keyboard) parseAttributes(attributes []etree.Attr) error {
 			}
 		}
 
-		if a, ok := supportedAttributes[attr.Key]; ok && a.required {
+		if a, ok := supportedAttributes[attr.Key]; ok {
+			log.Printf("Setting %s found to true", attr.Key)
+
 			a.found = true
 		}
 	}
 
 	for k, v := range supportedAttributes {
-		if v.found == false {
+		if v.required && v.found == false {
 			return &missingRequiredAttributeError{
 				element:   ElementKeyboard,
 				attribute: k,

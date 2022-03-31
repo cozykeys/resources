@@ -71,9 +71,11 @@ func (kb *Keyboard) ToSvg(tags []string) (string, error) {
 	root.CreateAttr("viewBox", fmt.Sprintf("0 0 %d %d", w, h))
 	root.CreateAttr("xmlns", "http://www.w3.org/2000/svg")
 
-	for _, cmp := range kb.Components {
-		addChildComponent(root, cmp)
-	}
+	/*
+		for _, cmp := range kb.Components {
+			addChildComponent(root, cmp)
+		}
+	*/
 
 	doc.Indent(2)
 

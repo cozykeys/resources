@@ -2,6 +2,8 @@
 <Keyboard
     Name="bloomer"
     Version="1.0.0">
+<!--
+-->
     <Constants>
         <Constant
             Name="AlphaFillColor"
@@ -41,18 +43,6 @@
             Value="#5f5f5f" />
     </Constants>
     <Layers>
-        <!--
-        Height, width, XOffset, and YOffset were set up based on the key
-        cluster locations/sizes but will likely need to be updated once the case
-        is finalized.
-        -->
-        <!--<Layer
-            Name="switch"
-            ZIndex="4"
-            Height="181.642"
-            Width="379.918"
-            XOffset="189.959"
-            YOffset="90.821">-->
         <Layer
             Name="switch"
             ZIndex="4"
