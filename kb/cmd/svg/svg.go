@@ -2,10 +2,10 @@ package svg
 
 import (
 	"encoding/json"
+	"kb/pkg/kb"
+	"kb/pkg/models"
 	"log"
 	"os"
-
-	"kb/pkg/kb"
 
 	"github.com/spf13/cobra"
 )
@@ -50,12 +50,12 @@ func svg(cmd *cobra.Command, args []string) {
 		log.Fatalf("failed to read input file: %v\n", err)
 	}
 
-	keyboard := &kb.Keyboard{}
+	keyboard := &models.Keyboard{}
 	if err := json.Unmarshal(bytes, keyboard); err != nil {
 		log.Fatalf("failed to unmarshal input file: %v\n", err)
 	}
 
-	svg, err := keyboard.ToSvg([]string{})
+	svg, err := kb.KeyboardToSvg(keyboard, []string{})
 	if err != nil {
 		log.Fatalf("failed to generate svg: %v\n", err)
 	}

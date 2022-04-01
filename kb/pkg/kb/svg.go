@@ -2,6 +2,7 @@ package kb
 
 import (
 	"fmt"
+	"kb/pkg/models"
 	"strings"
 
 	"github.com/beevik/etree"
@@ -58,7 +59,7 @@ var keycapPathDataInner string = strings.Join([]string{
 	"L     0 -8.05",
 }, " ")
 
-func (kb *Keyboard) ToSvg(tags []string) (string, error) {
+func KeyboardToSvg(kb *models.Keyboard, tags []string) (string, error) {
 	w := int32(kb.Width + 10)
 	h := int32(kb.Height + 10)
 
@@ -84,18 +85,18 @@ func (kb *Keyboard) ToSvg(tags []string) (string, error) {
 	return b.String(), nil
 }
 
-func addChildComponent(parent *etree.Element, cmp Component) {
+func addChildComponent(parent *etree.Element, cmp models.Component) {
 	switch cmp := cmp.(type) {
-	case *Key:
+	case *models.Key:
 		addChildKey(parent, cmp)
-	case *Circle:
+	case *models.Circle:
 		addChildCircle(parent, cmp)
 	default:
 		panic(fmt.Sprintf("Unknown type %T", cmp))
 	}
 }
 
-func addChildKey(parent *etree.Element, key *Key) {
+func addChildKey(parent *etree.Element, key *models.Key) {
 	g := parent.CreateElement("g")
 	g.CreateAttr("id", key.Name)
 	g.CreateAttr("transform", fmt.Sprintf("translate(%.3f,%.3f)", key.XOffset, key.YOffset))
@@ -113,7 +114,7 @@ func addChildKey(parent *etree.Element, key *Key) {
 	t2.CreateAttr("d", keycapPathDataInner)
 }
 
-func addChildCircle(parent *etree.Element, circle *Circle) {
+func addChildCircle(parent *etree.Element, circle *models.Circle) {
 	g := parent.CreateElement("g")
 	g.CreateAttr("id", circle.Name)
 	g.CreateAttr("transform", fmt.Sprintf("translate(%.3f,%.3f)", circle.XOffset, circle.YOffset))

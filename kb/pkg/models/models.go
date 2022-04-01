@@ -1,4 +1,4 @@
-package kb
+package models
 
 // Constant TODO
 type Constant struct {
@@ -10,12 +10,12 @@ type Constant struct {
 type Keyboard struct {
 	//ComponentBase
 
-	Name     string
-	Version  string
-	Width    float64
-	Height   float64
-	Constant []Constant
-	Layers   []Layer
+	Name      string
+	Version   string
+	Width     float64
+	Height    float64
+	Constants []Constant
+	Layers    []Layer
 }
 
 var _ Component = &Keyboard{}

@@ -1,4 +1,4 @@
-package kb
+package unmarshal
 
 import (
 	"encoding/json"
@@ -6,10 +6,23 @@ import (
 	"log"
 	"strconv"
 
+	"kb/pkg/models"
+
 	"github.com/beevik/etree"
 )
 
-func Unmarshal(bytes []byte) (*Keyboard, error) {
+const (
+	ElementKeyboard  = "Keyboard"
+	ElementLayers    = "Layers"
+	ElementConstants = "Constants"
+	ElementConstant  = "Constant"
+
+	AttributeName    = "Name"
+	AttributeVersion = "Version"
+	AttributeValue   = "Value"
+)
+
+func Unmarshal(bytes []byte) (*models.Keyboard, error) {
 	doc := etree.NewDocument()
 
 	err := doc.ReadFromBytes(bytes)
@@ -17,8 +30,7 @@ func Unmarshal(bytes []byte) (*Keyboard, error) {
 		return nil, err
 	}
 
-	keyboard := &Keyboard{}
-	err = keyboard.unmarshal(doc.Root())
+	keyboard, err := unmarshalKeyboard(doc.Root())
 	if err != nil {
 		return nil, err
 	}
@@ -44,7 +56,8 @@ func unmarshalAttributeFloat64(key, raw string) (float64, error) {
 }
 
 type XmlMeta struct {
-	child *XmlMeta
+	Attributes []string
+	Children   []string
 }
 
 // TODO: Temporary code, delete this
@@ -56,83 +69,66 @@ func WalkTree(bytes []byte) {
 		panic(err)
 	}
 
-	attrMap := make(map[string][]string)
-	childMap := make(map[string][]string)
+	xmlMeta := map[string]*XmlMeta{}
 
-	walkTree(doc.Root(), attrMap, childMap)
+	walkTree(doc.Root(), xmlMeta)
 
-	attrMapJSON, err := json.Marshal(attrMap)
+	jsonBytes, err := json.Marshal(xmlMeta)
 	if err != nil {
 		panic(err)
 	}
 
-	childMapJSON, err := json.Marshal(childMap)
-	if err != nil {
-		panic(err)
-	}
-
-	fmt.Println(string(attrMapJSON))
-	fmt.Println(string(childMapJSON))
+	fmt.Println(string(jsonBytes))
 }
 
 // TODO: Temporary code, delete this
-func walkTree(e *etree.Element, attrMap, childMap map[string][]string) {
+func walkTree(e *etree.Element, xmlMetaMap map[string]*XmlMeta) {
 	if e == nil {
 		panic("element is nil")
 	}
 
+	xmlMeta, ok := xmlMetaMap[e.Tag]
+	if !ok {
+		xmlMeta = &XmlMeta{
+			Attributes: []string{},
+			Children:   []string{},
+		}
+		xmlMetaMap[e.Tag] = xmlMeta
+	}
+
 	for _, attr := range e.Attr {
-		attrMapEntry, ok := attrMap[e.Tag]
-		if !ok {
-			attrMap[e.Tag] = []string{}
+		if !stringSliceContains(attr.Key, xmlMeta.Attributes) {
+			xmlMeta.Attributes = append(xmlMeta.Attributes, attr.Key)
 		}
-
-		attrMapEntry, _ = attrMap[e.Tag]
-
-		if stringSliceContains(attr.Key, attrMapEntry) {
-			continue
-		}
-
-		attrMapEntry = append(attrMapEntry, attr.Key)
-		attrMap[e.Tag] = attrMapEntry
 	}
 
 	for _, child := range e.Child {
-		childElement, ok := child.(*etree.Element)
+		var childElement *etree.Element
 
 		switch v := child.(type) {
 		case *etree.Element:
-			// Do nothing
+			childElement = v
 		case *etree.CharData:
 			log.Printf("Skipping child of type CharData, Data = %q", v.Data)
+			continue
 		case *etree.Comment:
 			fmt.Println("Skipping child of type Comment")
+			continue
 		case *etree.Directive:
 			fmt.Println("Skipping child of type Directive")
+			continue
 		case *etree.ProcInst:
 			fmt.Println("Skipping child of type ProcInst")
+			continue
 		default:
 			panic("unknown type")
 		}
-		if !ok {
-			continue
+
+		if !stringSliceContains(childElement.Tag, xmlMeta.Children) {
+			xmlMeta.Children = append(xmlMeta.Children, childElement.Tag)
 		}
 
-		childMapEntry, ok := childMap[e.Tag]
-		if !ok {
-			childMap[e.Tag] = []string{}
-		}
-
-		childMapEntry, _ = childMap[e.Tag]
-
-		if stringSliceContains(childElement.Tag, childMapEntry) {
-			continue
-		}
-
-		childMapEntry = append(childMapEntry, childElement.Tag)
-		childMap[e.Tag] = childMapEntry
-
-		walkTree(childElement, attrMap, childMap)
+		walkTree(childElement, xmlMetaMap)
 	}
 }
 

@@ -1,7 +1,8 @@
-package kb
+package unmarshal
 
 import (
 	"io/ioutil"
+	"kb/pkg/models"
 	"path/filepath"
 	"runtime"
 	"testing"
@@ -31,11 +32,19 @@ func Test_ParseKeyboard(t *testing.T) {
 			kb, err := Unmarshal(xml)
 			require.Nil(t, err)
 			require.NotNil(t, kb)
+
+			require.Equal(t, kb, &models.Keyboard{
+				Name:      "bloomer",
+				Version:   "1.0.0",
+				Constants: nil,
+				Layers:    nil,
+			})
 		})
 	}
 }
 
 // TODO: Temporary, delete this
+/*
 func Test_WalkTree(t *testing.T) {
 
 	//func (kb *Keyboard) WalkTree(bytes []byte) {
@@ -45,6 +54,7 @@ func Test_WalkTree(t *testing.T) {
 
 	WalkTree(xml)
 }
+*/
 
 func GetTestData(filename string) ([]byte, error) {
 	_, testFile, _, _ := runtime.Caller(0)
