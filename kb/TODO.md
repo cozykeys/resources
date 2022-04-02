@@ -1,9 +1,17 @@
 # To Do List
 
-This list is not exhaustive but simply a place to document upcoming tasks so
-that I remember what I'm working on day-to-day.
-
-## Tasks
-
-- [ ] Implement unmarshaling of json such that feature parity with the existing
-    .NET Core `kbutil` tool is achieved
+- [x] Keyboard
+- [x] Constants
+- [x] Constant
+- [x] Layers
+- [x] Layer
+- [x] Groups
+- [x] Group
+- [~] Children
+- [x] Path
+- [x] Components
+- [x] AbsoluteLineTo
+- [x] AbsoluteMoveTo
+- [x] EndPoint
+- [ ] Key
+- [ ] Legend

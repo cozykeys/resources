@@ -2,16 +2,35 @@ package unmarshal
 
 import (
 	"kb/pkg/models"
-	"log"
 
 	"github.com/beevik/etree"
 )
 
-// TODO Move this to unmarshal_constant.go
 func unmarshalConstants(e *etree.Element) ([]models.Constant, error) {
-	// TODO: Implement this
-	log.Print("unmarshalConstants")
-	return nil, nil
+	constants := []models.Constant{}
+
+	for _, child := range e.Child {
+		element, ok := child.(*etree.Element)
+		if !ok {
+			continue
+		}
+
+		if element.Tag != ElementConstant {
+			return nil, &invalidChildElementError{
+				element: ElementConstants,
+				child:   element.Tag,
+			}
+		}
+
+		constant, err := unmarshalConstant(element)
+		if err != nil {
+			return nil, err
+		}
+
+		constants = append(constants, *constant)
+	}
+
+	return constants, nil
 }
 
 func unmarshalConstant(e *etree.Element) (*models.Constant, error) {
@@ -26,17 +45,17 @@ func unmarshalConstant(e *etree.Element) (*models.Constant, error) {
 		}
 	}
 
-	kb := &models.Constant{}
+	constant := &models.Constant{}
 
-	err := unmarshalConstantAttributes(kb, e.Attr)
+	err := unmarshalConstantAttributes(constant, e.Attr)
 	if err != nil {
 		return nil, err
 	}
 
-	return kb, nil
+	return constant, nil
 }
 
-func unmarshalConstantAttributes(kb *models.Constant, attributes []etree.Attr) error {
+func unmarshalConstantAttributes(constant *models.Constant, attributes []etree.Attr) error {
 	supportedAttributes := map[string]*struct {
 		required bool
 		found    bool
@@ -49,9 +68,9 @@ func unmarshalConstantAttributes(kb *models.Constant, attributes []etree.Attr) e
 		var err error
 		switch attr.Key {
 		case AttributeName:
-			kb.Name, err = unmarshalAttributeString(attr.Key, attr.Value)
+			constant.Name, err = unmarshalAttributeString(attr.Key, attr.Value)
 		case AttributeValue:
-			kb.Value, err = unmarshalAttributeString(attr.Key, attr.Value)
+			constant.Value, err = unmarshalAttributeString(attr.Key, attr.Value)
 		default:
 			err = &unexpectedAttributeError{
 				element:   ElementConstant,

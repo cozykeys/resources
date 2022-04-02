@@ -1,0 +1,134 @@
+{
+  "AbsoluteLineTo": {
+    "Attributes": [],
+    "Children": [
+      "EndPoint"
+    ]
+  },
+  "AbsoluteMoveTo": {
+    "Attributes": [],
+    "Children": [
+      "EndPoint"
+    ]
+  },
+  "Children": {
+    "Attributes": [],
+    "Children": [
+      "Group",
+      "Path",
+      "Key"
+    ]
+  },
+  "Components": {
+    "Attributes": [],
+    "Children": [
+      "AbsoluteMoveTo",
+      "AbsoluteLineTo"
+    ]
+  },
+  "Constant": {
+    "Attributes": [
+      "Name",
+      "Value"
+    ],
+    "Children": []
+  },
+  "Constants": {
+    "Attributes": [],
+    "Children": [
+      "Constant"
+    ]
+  },
+  "EndPoint": {
+    "Attributes": [
+      "X",
+      "Y"
+    ],
+    "Children": []
+  },
+  "Group": {
+    "Attributes": [
+      "Name",
+      "Rotation",
+      "XOffset",
+      "YOffset",
+      "Visible"
+    ],
+    "Children": [
+      "Children",
+      "Constants"
+    ]
+  },
+  "Groups": {
+    "Attributes": [],
+    "Children": [
+      "Group"
+    ]
+  },
+  "Key": {
+    "Attributes": [
+      "Name",
+      "Row",
+      "Column",
+      "XOffset",
+      "YOffset",
+      "Width",
+      "Height",
+      "Margin",
+      "Fill",
+      "Stroke"
+    ],
+    "Children": [
+      "Legend"
+    ]
+  },
+  "Keyboard": {
+    "Attributes": [
+      "Name",
+      "Version"
+    ],
+    "Children": [
+      "Constants",
+      "Layers"
+    ]
+  },
+  "Layer": {
+    "Attributes": [
+      "Name",
+      "ZIndex",
+      "XOffset",
+      "YOffset"
+    ],
+    "Children": [
+      "Groups"
+    ]
+  },
+  "Layers": {
+    "Attributes": [],
+    "Children": [
+      "Layer"
+    ]
+  },
+  "Legend": {
+    "Attributes": [
+      "HorizontalAlignment",
+      "VerticalAlignment",
+      "Text",
+      "FontSize",
+      "Color",
+      "YOffset"
+    ],
+    "Children": []
+  },
+  "Path": {
+    "Attributes": [
+      "Stroke",
+      "Fill",
+      "FillOpacity",
+      "Visible"
+    ],
+    "Children": [
+      "Components"
+    ]
+  }
+}

@@ -18,10 +18,10 @@ func Test_ParseKeyboard(t *testing.T) {
 			"happy path simple": {
 				dataFile: "happy_path_simple.xml",
 			},
+			"bloomer": {
+				dataFile: "bloomer.xml",
+			},
 		*/
-		"bloomer": {
-			dataFile: "bloomer.xml",
-		},
 	}
 
 	for name, testCase := range testCases {

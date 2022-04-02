@@ -85,6 +85,7 @@ func KeyboardToSvg(kb *models.Keyboard, tags []string) (string, error) {
 	return b.String(), nil
 }
 
+/*
 func addChildComponent(parent *etree.Element, cmp models.Component) {
 	switch cmp := cmp.(type) {
 	case *models.Key:
@@ -95,6 +96,7 @@ func addChildComponent(parent *etree.Element, cmp models.Component) {
 		panic(fmt.Sprintf("Unknown type %T", cmp))
 	}
 }
+*/
 
 func addChildKey(parent *etree.Element, key *models.Key) {
 	g := parent.CreateElement("g")

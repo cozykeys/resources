@@ -8,8 +8,6 @@ type Constant struct {
 
 // Keyboard TODO
 type Keyboard struct {
-	//ComponentBase
-
 	Name      string
 	Version   string
 	Width     float64
@@ -18,88 +16,67 @@ type Keyboard struct {
 	Layers    []Layer
 }
 
-var _ Component = &Keyboard{}
-
-// ComponentBase TODO
-type ComponentBase struct {
-	Name      string
-	XOffset   float64
-	YOffset   float64
-	Rotation  float64
-	Height    float64
-	Width     float64
-	Margin    float64
-	Parent    Component
-	Constants map[string]Constant
-	Debug     bool
-	Visible   bool
-}
-
-type Component interface{}
-
 // Circle TODO
 type Circle struct {
-	ComponentBase
-
 	Size        float64
 	Fill        string
 	Stroke      string
 	StrokeWidth string
+	XOffset     float64
+	YOffset     float64
+	Name        string
 }
-
-var _ Component = &Circle{}
 
 // Key TODO
 type Key struct {
-	ComponentBase
-
 	Legends []Legend
 	Row     int
 	Column  int
 	Fill    string
 	Stroke  string
+	XOffset float64
+	YOffset float64
+	Name    string
+	Width   float64
+	Height  float64
+	Margin  float64
 }
-
-var _ Component = &Key{}
 
 // Legend TODO
 type Legend struct {
-	ComponentBase
-
 	Text                string
 	FontSize            float64
 	HorizontalAlignment LegendHorizontalAlignment
 	VerticalAlignment   LegendVerticalAlignment
 	Color               string
+	YOffset             float64
 }
 
-var _ Component = &Legend{}
+type GroupChild interface{}
 
 // Group TODO
 type Group struct {
-	ComponentBase
-
-	Children []Component
+	Name     string
+	Rotation float64
+	XOffset  float64
+	YOffset  float64
+	Visible  bool
+	// TODO: Strongly type this to a GroupChild interface?
+	Children []GroupChild
 }
-
-var _ Component = &Group{}
 
 // Layer TODO
 type Layer struct {
-	ComponentBase
-
-	ZIndex int
-	Groups []Group
+	ZIndex  int
+	Groups  []Group
+	XOffset float64
+	YOffset float64
+	Name    string
 }
-
-var _ Component = &Layer{}
 
 // Spacer TODO
 type Spacer struct {
-	ComponentBase
 }
-
-var _ Component = &Spacer{}
 
 // Stack TODO
 type Stack struct {
@@ -108,8 +85,6 @@ type Stack struct {
 	Orientation StackOrientation
 }
 
-var _ Component = &Stack{}
-
 // Text TODO
 type Text struct {
 	Content    string
@@ -117,8 +92,6 @@ type Text struct {
 	Font       string
 	Fill       string
 }
-
-var _ Component = &Text{}
 
 // LegendHorizontalAlignment TODO
 type LegendHorizontalAlignment int
@@ -129,6 +102,12 @@ const (
 	LegendHorizontalAlignmentRight
 )
 
+var LegendHorizontalAlignmentStr = map[string]LegendHorizontalAlignment{
+	"Left":   LegendHorizontalAlignmentLeft,
+	"Center": LegendHorizontalAlignmentCenter,
+	"Right":  LegendHorizontalAlignmentRight,
+}
+
 // LegendVerticalAlignment TODO
 type LegendVerticalAlignment int
 
@@ -137,6 +116,12 @@ const (
 	LegendVerticalAlignmentCenter
 	LegendVerticalAlignmentBottom
 )
+
+var LegendVerticalAlignmentStr = map[string]LegendVerticalAlignment{
+	"Top":    LegendVerticalAlignmentTop,
+	"Center": LegendVerticalAlignmentCenter,
+	"Bottom": LegendVerticalAlignmentBottom,
+}
 
 // StackOrientation TODO
 type StackOrientation int
@@ -152,14 +137,11 @@ type PathComponent interface {
 
 // AbsoluteCubicCurveTo TODO
 type AbsoluteCubicCurveTo struct {
-	ComponentBase
-
 	EndPoint      Vec2
 	ControlPointA Vec2
 	ControlPointB Vec2
 }
 
-var _ Component = &AbsoluteCubicCurveTo{}
 var _ PathComponent = &AbsoluteCubicCurveTo{}
 
 func (x *AbsoluteCubicCurveTo) Data() string {
@@ -169,12 +151,9 @@ func (x *AbsoluteCubicCurveTo) Data() string {
 
 // AbsoluteHorizontalLineTo TODO
 type AbsoluteHorizontalLineTo struct {
-	ComponentBase
-
 	X float64
 }
 
-var _ Component = &AbsoluteHorizontalLineTo{}
 var _ PathComponent = &AbsoluteHorizontalLineTo{}
 
 func (x *AbsoluteHorizontalLineTo) Data() string {
@@ -184,12 +163,9 @@ func (x *AbsoluteHorizontalLineTo) Data() string {
 
 // AbsoluteLineTo TODO
 type AbsoluteLineTo struct {
-	ComponentBase
-
-	EndPoint Vec2
+	EndPoint *Vec2
 }
 
-var _ Component = &AbsoluteLineTo{}
 var _ PathComponent = &AbsoluteLineTo{}
 
 func (x *AbsoluteLineTo) Data() string {
@@ -199,12 +175,9 @@ func (x *AbsoluteLineTo) Data() string {
 
 // AbsoluteMoveTo TODO
 type AbsoluteMoveTo struct {
-	ComponentBase
-
-	EndPoint Vec2
+	EndPoint *Vec2
 }
 
-var _ Component = &AbsoluteMoveTo{}
 var _ PathComponent = &AbsoluteMoveTo{}
 
 func (x *AbsoluteMoveTo) Data() string {
@@ -214,13 +187,10 @@ func (x *AbsoluteMoveTo) Data() string {
 
 // AbsoluteQuadraticCurveTo TODO
 type AbsoluteQuadraticCurveTo struct {
-	ComponentBase
-
 	EndPoint     Vec2
 	ControlPoint Vec2
 }
 
-var _ Component = &AbsoluteQuadraticCurveTo{}
 var _ PathComponent = &AbsoluteQuadraticCurveTo{}
 
 func (x *AbsoluteQuadraticCurveTo) Data() string {
@@ -230,12 +200,9 @@ func (x *AbsoluteQuadraticCurveTo) Data() string {
 
 // AbsoluteVerticalLineTo TODO
 type AbsoluteVerticalLineTo struct {
-	ComponentBase
-
 	Y float64
 }
 
-var _ Component = &AbsoluteVerticalLineTo{}
 var _ PathComponent = &AbsoluteVerticalLineTo{}
 
 func (x *AbsoluteVerticalLineTo) Data() string {
@@ -246,16 +213,13 @@ func (x *AbsoluteVerticalLineTo) Data() string {
 // Path TODO
 type Path struct //
 {
-	ComponentBase
-
 	Fill        string
 	FillOpacity string
 	Stroke      string
 	StrokeWidth string
+	Visible     bool
 	Components  []PathComponent
 }
-
-var _ Component = &Path{}
 
 func (x *Path) Data() string {
 	//string Data => string.Join(" ", Components.Select(component => component.Data));
@@ -264,14 +228,11 @@ func (x *Path) Data() string {
 
 // RelativeCubicCurveTo TODO
 type RelativeCubicCurveTo struct {
-	ComponentBase
-
 	EndPoint      Vec2
 	ControlPointA Vec2
 	ControlPointB Vec2
 }
 
-var _ Component = &RelativeCubicCurveTo{}
 var _ PathComponent = &RelativeCubicCurveTo{}
 
 func (x *RelativeCubicCurveTo) Data() string {
@@ -281,12 +242,9 @@ func (x *RelativeCubicCurveTo) Data() string {
 
 // RelativeHorizontalLineTo TODO
 type RelativeHorizontalLineTo struct {
-	ComponentBase
-
 	X float64
 }
 
-var _ Component = &RelativeHorizontalLineTo{}
 var _ PathComponent = &RelativeHorizontalLineTo{}
 
 func (x *RelativeHorizontalLineTo) Data() string {
@@ -296,12 +254,9 @@ func (x *RelativeHorizontalLineTo) Data() string {
 
 // RelativeLineTo TODO
 type RelativeLineTo struct {
-	ComponentBase
-
 	EndPoint Vec2
 }
 
-var _ Component = &RelativeLineTo{}
 var _ PathComponent = &RelativeLineTo{}
 
 func (x *RelativeLineTo) Data() string {
@@ -311,12 +266,9 @@ func (x *RelativeLineTo) Data() string {
 
 // RelativeMoveTo TODO
 type RelativeMoveTo struct {
-	ComponentBase
-
 	EndPoint Vec2
 }
 
-var _ Component = &RelativeMoveTo{}
 var _ PathComponent = &RelativeMoveTo{}
 
 func (x *RelativeMoveTo) Data() string {
@@ -326,13 +278,10 @@ func (x *RelativeMoveTo) Data() string {
 
 // RelativeQuadraticCurveTo TODO
 type RelativeQuadraticCurveTo struct {
-	ComponentBase
-
 	EndPoint     Vec2
 	ControlPoint Vec2
 }
 
-var _ Component = &RelativeQuadraticCurveTo{}
 var _ PathComponent = &RelativeQuadraticCurveTo{}
 
 func (x *RelativeQuadraticCurveTo) Data() string {
@@ -342,12 +291,9 @@ func (x *RelativeQuadraticCurveTo) Data() string {
 
 // RelativeVerticalLineTo TODO
 type RelativeVerticalLineTo struct {
-	ComponentBase
-
 	Y float64
 }
 
-var _ Component = &RelativeVerticalLineTo{}
 var _ PathComponent = &RelativeVerticalLineTo{}
 
 func (x *RelativeVerticalLineTo) Data() string {
@@ -356,10 +302,6 @@ func (x *RelativeVerticalLineTo) Data() string {
 }
 
 type Vec2 struct {
-	ComponentBase
-
 	X float64
 	Y float64
 }
-
-var _ Component = &Vec2{}

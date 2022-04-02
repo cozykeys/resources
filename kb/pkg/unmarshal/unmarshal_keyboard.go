@@ -81,7 +81,6 @@ func unmarshalKeyboardChildren(kb *models.Keyboard, children []etree.Token) erro
 	for _, child := range children {
 		element, ok := child.(*etree.Element)
 		if !ok {
-			// Ignore children that are not elements
 			continue
 		}
 

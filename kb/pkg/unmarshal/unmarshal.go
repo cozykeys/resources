@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"strconv"
+	"strings"
 
 	"kb/pkg/models"
 
@@ -12,14 +13,46 @@ import (
 )
 
 const (
-	ElementKeyboard  = "Keyboard"
-	ElementLayers    = "Layers"
-	ElementConstants = "Constants"
-	ElementConstant  = "Constant"
+	ElementAbsoluteLineTo = "AbsoluteLineTo"
+	ElementAbsoluteMoveTo = "AbsoluteMoveTo"
+	ElementChildren       = "Children"
+	ElementComponents     = "Components"
+	ElementConstant       = "Constant"
+	ElementConstants      = "Constants"
+	ElementEndPoint       = "EndPoint"
+	ElementGroup          = "Group"
+	ElementGroups         = "Groups"
+	ElementKey            = "Key"
+	ElementKeyboard       = "Keyboard"
+	ElementLayer          = "Layer"
+	ElementLayers         = "Layers"
+	ElementLegend         = "Legend"
+	ElementPath           = "Path"
 
-	AttributeName    = "Name"
-	AttributeVersion = "Version"
-	AttributeValue   = "Value"
+	AttributeColor               = "Color"
+	AttributeColumn              = "Column"
+	AttributeFill                = "Fill"
+	AttributeFillOpacity         = "FillOpacity"
+	AttributeFontSize            = "FontSize"
+	AttributeHeight              = "Height"
+	AttributeHorizontalAlignment = "HorizontalAlignment"
+	AttributeMargin              = "Margin"
+	AttributeName                = "Name"
+	AttributeRotation            = "Rotation"
+	AttributeRow                 = "Row"
+	AttributeStroke              = "Stroke"
+	AttributeStrokeWidth         = "StrokeWidth"
+	AttributeText                = "Text"
+	AttributeValue               = "Value"
+	AttributeVersion             = "Version"
+	AttributeVerticalAlignment   = "VerticalAlignment"
+	AttributeVisible             = "Visible"
+	AttributeWidth               = "Width"
+	AttributeX                   = "X"
+	AttributeXOffset             = "XOffset"
+	AttributeY                   = "Y"
+	AttributeYOffset             = "YOffset"
+	AttributeZIndex              = "ZIndex"
 )
 
 func Unmarshal(bytes []byte) (*models.Keyboard, error) {
@@ -43,15 +76,80 @@ func unmarshalAttributeString(key, raw string) (string, error) {
 	return raw, nil
 }
 
+func unmarshalAttributeBool(key, raw string) (bool, error) {
+	// TODO: Process constants
+
+	lower := strings.ToLower(raw)
+	switch lower {
+	case "true":
+		return true, nil
+	case "false":
+		return false, nil
+	default:
+		// TODO: This error is a bit confusing currently; make a new
+		// "invalidAttributeValueError" instead
+		return false, &invalidAttributeTypeError{
+			element:   "TODO",
+			attribute: key,
+		}
+	}
+}
+
 func unmarshalAttributeFloat64(key, raw string) (float64, error) {
 	// TODO: Process constants
 	val, err := strconv.ParseFloat(raw, 64)
 	if err != nil {
 		return 0, &invalidAttributeTypeError{
-			element:   ElementKeyboard,
+			element:   "TODO",
 			attribute: key,
 		}
 	}
+	return val, nil
+}
+
+func unmarshalAttributeInt(key, raw string) (int, error) {
+	// TODO: Process constants
+	val, err := strconv.ParseInt(raw, 10, 32)
+	if err != nil {
+		return 0, &invalidAttributeTypeError{
+			element:   "TODO",
+			attribute: key,
+		}
+	}
+	return int(val), nil
+}
+
+func unmarshalLegendHorizontalAlignment(key, raw string) (models.LegendHorizontalAlignment, error) {
+	str, err := unmarshalAttributeString(key, raw)
+	if err != nil {
+		return models.LegendHorizontalAlignmentLeft, err
+	}
+
+	val, ok := models.LegendHorizontalAlignmentStr[str]
+	if !ok {
+		return models.LegendHorizontalAlignmentLeft, &invalidAttributeTypeError{
+			element:   "TODO",
+			attribute: key,
+		}
+	}
+
+	return val, nil
+}
+
+func unmarshalLegendVerticalAlignment(key, raw string) (models.LegendVerticalAlignment, error) {
+	str, err := unmarshalAttributeString(key, raw)
+	if err != nil {
+		return models.LegendVerticalAlignmentTop, err
+	}
+
+	val, ok := models.LegendVerticalAlignmentStr[str]
+	if !ok {
+		return models.LegendVerticalAlignmentTop, &invalidAttributeTypeError{
+			element:   "TODO",
+			attribute: key,
+		}
+	}
+
 	return val, nil
 }
 
