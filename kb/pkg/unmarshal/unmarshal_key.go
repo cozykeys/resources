@@ -7,33 +7,49 @@ import (
 )
 
 func unmarshalKey(e *etree.Element) (*models.Key, error) {
-	if e == nil {
+	unmarshaller := newKeyUnmarshaller(e)
+	return unmarshaller.unmarshal()
+}
+
+// TODO: This is the pattern I'd like to move towards for all element
+// unmarshalling
+type keyUnmarshaller struct {
+	element *etree.Element
+	key     *models.Key
+}
+
+func newKeyUnmarshaller(e *etree.Element) *keyUnmarshaller {
+	return &keyUnmarshaller{element: e}
+}
+
+func (u *keyUnmarshaller) unmarshal() (*models.Key, error) {
+	if u.element == nil {
 		return nil, &nilElementError{}
 	}
 
-	if e.Tag != ElementKey {
+	if u.element.Tag != ElementKey {
 		return nil, &invalidTagError{
 			expected: ElementKey,
-			actual:   e.Tag,
+			actual:   u.element.Tag,
 		}
 	}
 
-	key := &models.Key{}
+	u.key = &models.Key{}
 
-	err := unmarshalKeyAttributes(key, e.Attr)
+	err := u.unmarshalAttributes()
 	if err != nil {
 		return nil, err
 	}
 
-	err = unmarshalKeyChildren(key, e.Child)
+	err = u.unmarshalChildElements()
 	if err != nil {
 		return nil, err
 	}
 
-	return key, nil
+	return u.key, nil
 }
 
-func unmarshalKeyAttributes(key *models.Key, attributes []etree.Attr) error {
+func (u *keyUnmarshaller) unmarshalAttributes() error {
 	supportedAttributes := map[string]*struct {
 		required bool
 		found    bool
@@ -50,29 +66,29 @@ func unmarshalKeyAttributes(key *models.Key, attributes []etree.Attr) error {
 		AttributeStroke:  {required: false},
 	}
 
-	for _, attr := range attributes {
+	for _, attr := range u.element.Attr {
 		var err error
 		switch attr.Key {
 		case AttributeName:
-			key.Name, err = unmarshalAttributeString(attr.Key, attr.Value)
+			u.key.Name, err = unmarshalAttributeString(attr.Key, attr.Value)
 		case AttributeRow:
-			key.Row, err = unmarshalAttributeInt(attr.Key, attr.Value)
+			u.key.Row, err = unmarshalAttributeInt(attr.Key, attr.Value)
 		case AttributeColumn:
-			key.Column, err = unmarshalAttributeInt(attr.Key, attr.Value)
+			u.key.Column, err = unmarshalAttributeInt(attr.Key, attr.Value)
 		case AttributeXOffset:
-			key.XOffset, err = unmarshalAttributeFloat64(attr.Key, attr.Value)
+			u.key.XOffset, err = unmarshalAttributeFloat64(attr.Key, attr.Value)
 		case AttributeYOffset:
-			key.YOffset, err = unmarshalAttributeFloat64(attr.Key, attr.Value)
+			u.key.YOffset, err = unmarshalAttributeFloat64(attr.Key, attr.Value)
 		case AttributeWidth:
-			key.Width, err = unmarshalAttributeFloat64(attr.Key, attr.Value)
+			u.key.Width, err = unmarshalAttributeFloat64(attr.Key, attr.Value)
 		case AttributeHeight:
-			key.Height, err = unmarshalAttributeFloat64(attr.Key, attr.Value)
+			u.key.Height, err = unmarshalAttributeFloat64(attr.Key, attr.Value)
 		case AttributeMargin:
-			key.Margin, err = unmarshalAttributeFloat64(attr.Key, attr.Value)
+			u.key.Margin, err = unmarshalAttributeFloat64(attr.Key, attr.Value)
 		case AttributeFill:
-			key.Fill, err = unmarshalAttributeString(attr.Key, attr.Value)
+			u.key.Fill, err = unmarshalAttributeString(attr.Key, attr.Value)
 		case AttributeStroke:
-			key.Stroke, err = unmarshalAttributeString(attr.Key, attr.Value)
+			u.key.Stroke, err = unmarshalAttributeString(attr.Key, attr.Value)
 		default:
 			err = &unexpectedAttributeError{
 				element:   ElementKey,
@@ -101,8 +117,9 @@ func unmarshalKeyAttributes(key *models.Key, attributes []etree.Attr) error {
 	return nil
 }
 
-func unmarshalKeyChildren(key *models.Key, children []etree.Token) error {
-	for _, child := range children {
+func (u *keyUnmarshaller) unmarshalChildElements() error {
+	legends := []models.Legend{}
+	for _, child := range u.element.Child {
 		element, ok := child.(*etree.Element)
 		if !ok {
 			continue
@@ -110,7 +127,14 @@ func unmarshalKeyChildren(key *models.Key, children []etree.Token) error {
 
 		var err error
 		switch element.Tag {
-		// TODO
+		// TODO: Put <Legend /> elements in a <Legends /> element so we can
+		// change this to:
+		// case ElementLegends:
+		//     u.key.Legends, err = unmarshalLegends(element)
+		case ElementLegend:
+			var legend *models.Legend
+			legend, err = unmarshalLegend(element)
+			legends = append(legends, *legend)
 		default:
 			err = &invalidChildElementError{
 				element: ElementKey,
@@ -123,5 +147,6 @@ func unmarshalKeyChildren(key *models.Key, children []etree.Token) error {
 		}
 	}
 
+	u.key.Legends = legends
 	return nil
 }

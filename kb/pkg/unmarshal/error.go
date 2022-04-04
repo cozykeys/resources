@@ -54,3 +54,11 @@ type invalidChildElementError struct {
 func (e *invalidChildElementError) Error() string {
 	return fmt.Sprintf("invalid child: element = %q, child = %q", e.element, e.child)
 }
+
+type unimplementedElementError struct {
+	elementPath string
+}
+
+func (e *unimplementedElementError) Error() string {
+	return fmt.Sprintf("unimplemented element: elementPath = %q", e.elementPath)
+}

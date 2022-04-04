@@ -52,7 +52,7 @@ func unmarshalGroup(e *etree.Element) (*models.Group, error) {
 		return nil, err
 	}
 
-	err = unmarshalGroupChildren(group, e.Child)
+	err = unmarshalGroupChildElements(group, e.Child)
 	if err != nil {
 		return nil, err
 	}
@@ -113,7 +113,7 @@ func unmarshalGroupAttributes(group *models.Group, attributes []etree.Attr) erro
 	return nil
 }
 
-func unmarshalGroupChildren(group *models.Group, children []etree.Token) error {
+func unmarshalGroupChildElements(group *models.Group, children []etree.Token) error {
 	for _, child := range children {
 		element, ok := child.(*etree.Element)
 		if !ok {
@@ -123,7 +123,9 @@ func unmarshalGroupChildren(group *models.Group, children []etree.Token) error {
 		var err error
 		switch element.Tag {
 		case ElementChildren:
-			group.Children, err = unmarshalChildren(element)
+			group.Children, err = unmarshalGroupChildren(element)
+		case ElementConstants:
+			group.Constants, err = unmarshalConstants(element)
 		default:
 			err = &invalidChildElementError{
 				element: ElementGroup,
@@ -139,8 +141,7 @@ func unmarshalGroupChildren(group *models.Group, children []etree.Token) error {
 	return nil
 }
 
-// TODO: Move this into unmarshal_children.go?
-func unmarshalChildren(e *etree.Element) ([]models.GroupChild, error) {
+func unmarshalGroupChildren(e *etree.Element) ([]models.GroupChild, error) {
 	children := []models.GroupChild{}
 
 	for _, child := range e.Child {
@@ -155,15 +156,20 @@ func unmarshalChildren(e *etree.Element) ([]models.GroupChild, error) {
 		case ElementGroup:
 			child, err = unmarshalGroup(element)
 		case ElementPath:
-			// TODO
-			//child, err = unmarshalPath(element)
+			child, err = unmarshalPath(element)
 		case ElementKey:
-			// TODO
-			//child, err = unmarshalKey(element)
+			child, err = unmarshalKey(element)
+		case ElementStack:
+			child, err = unmarshalStack(element)
+		case ElementSpacer:
+			child, err = unmarshalSpacer(element)
+		case ElementCircle:
+			child, err = unmarshalCircle(element)
+		case ElementText:
+			child, err = unmarshalText(element)
 		default:
-			return nil, &invalidChildElementError{
-				element: ElementGroups,
-				child:   element.Tag,
+			return nil, &unimplementedElementError{
+				elementPath: getElementPath(element),
 			}
 		}
 

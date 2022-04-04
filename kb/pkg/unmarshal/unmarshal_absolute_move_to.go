@@ -6,6 +6,15 @@ import (
 	"github.com/beevik/etree"
 )
 
+/*
+   "AbsoluteMoveTo": {
+       "Attributes": [],
+       "Children": [
+           "EndPoint"
+       ]
+   },
+*/
+
 func unmarshalAbsoluteMoveTo(e *etree.Element) (*models.AbsoluteMoveTo, error) {
 	if e == nil {
 		return nil, &nilElementError{}
@@ -20,7 +29,7 @@ func unmarshalAbsoluteMoveTo(e *etree.Element) (*models.AbsoluteMoveTo, error) {
 
 	absoluteMoveTo := &models.AbsoluteMoveTo{}
 
-	err := unmarshalAbsoluteMoveToChildren(absoluteMoveTo, e.Child)
+	err := unmarshalAbsoluteMoveToChildElements(absoluteMoveTo, e.Child)
 	if err != nil {
 		return nil, err
 	}
@@ -28,7 +37,7 @@ func unmarshalAbsoluteMoveTo(e *etree.Element) (*models.AbsoluteMoveTo, error) {
 	return absoluteMoveTo, nil
 }
 
-func unmarshalAbsoluteMoveToChildren(absoluteMoveTo *models.AbsoluteMoveTo, children []etree.Token) error {
+func unmarshalAbsoluteMoveToChildElements(absoluteMoveTo *models.AbsoluteMoveTo, children []etree.Token) error {
 	for _, child := range children {
 		element, ok := child.(*etree.Element)
 		if !ok {
@@ -38,7 +47,7 @@ func unmarshalAbsoluteMoveToChildren(absoluteMoveTo *models.AbsoluteMoveTo, chil
 		var err error
 		switch element.Tag {
 		case ElementEndPoint:
-			absoluteMoveTo.EndPoint, err = unmarshalEndPoint(element)
+			absoluteMoveTo.EndPoint, err = unmarshalPoint(element)
 		default:
 			err = &invalidChildElementError{
 				element: ElementAbsoluteMoveTo,

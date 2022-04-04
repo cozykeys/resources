@@ -25,11 +25,6 @@ func unmarshalLegend(e *etree.Element) (*models.Legend, error) {
 		return nil, err
 	}
 
-	err = unmarshalLegendChildren(legend, e.Child)
-	if err != nil {
-		return nil, err
-	}
-
 	return legend, nil
 }
 
@@ -40,7 +35,7 @@ func unmarshalLegendAttributes(legend *models.Legend, attributes []etree.Attr) e
 	}{
 		AttributeHorizontalAlignment: {required: false},
 		AttributeVerticalAlignment:   {required: false},
-		AttributeText:                {required: false},
+		AttributeText:                {required: true},
 		AttributeFontSize:            {required: false},
 		AttributeColor:               {required: false},
 		AttributeYOffset:             {required: false},
@@ -50,9 +45,9 @@ func unmarshalLegendAttributes(legend *models.Legend, attributes []etree.Attr) e
 		var err error
 		switch attr.Key {
 		case AttributeHorizontalAlignment:
-			legend.HorizontalAlignment, err = unmarshalLegendHorizontalAlignment(attr.Key, attr.Value)
+			legend.HorizontalAlignment, err = unmarshalAttributeLegendHorizontalAlignment(&attr)
 		case AttributeVerticalAlignment:
-			legend.VerticalAlignment, err = unmarshalLegendVerticalAlignment(attr.Key, attr.Value)
+			legend.VerticalAlignment, err = unmarshalAttributeLegendVerticalAlignment(&attr)
 		case AttributeText:
 			legend.Text, err = unmarshalAttributeString(attr.Key, attr.Value)
 		case AttributeFontSize:
@@ -83,31 +78,6 @@ func unmarshalLegendAttributes(legend *models.Legend, attributes []etree.Attr) e
 				element:   ElementLegend,
 				attribute: k,
 			}
-		}
-	}
-
-	return nil
-}
-
-func unmarshalLegendChildren(legend *models.Legend, children []etree.Token) error {
-	for _, child := range children {
-		element, ok := child.(*etree.Element)
-		if !ok {
-			continue
-		}
-
-		var err error
-		switch element.Tag {
-		// TODO
-		default:
-			err = &invalidChildElementError{
-				element: ElementLegend,
-				child:   element.Tag,
-			}
-		}
-
-		if err != nil {
-			return err
 		}
 	}
 

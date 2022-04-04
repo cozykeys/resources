@@ -4,6 +4,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"os"
+	"path"
 	"strconv"
 	"strings"
 
@@ -16,6 +18,7 @@ const (
 	ElementAbsoluteLineTo = "AbsoluteLineTo"
 	ElementAbsoluteMoveTo = "AbsoluteMoveTo"
 	ElementChildren       = "Children"
+	ElementCircle         = "Circle"
 	ElementComponents     = "Components"
 	ElementConstant       = "Constant"
 	ElementConstants      = "Constants"
@@ -28,11 +31,16 @@ const (
 	ElementLayers         = "Layers"
 	ElementLegend         = "Legend"
 	ElementPath           = "Path"
+	ElementSpacer         = "Spacer"
+	ElementStack          = "Stack"
+	ElementText           = "Text"
 
 	AttributeColor               = "Color"
 	AttributeColumn              = "Column"
+	AttributeContent             = "Content"
 	AttributeFill                = "Fill"
 	AttributeFillOpacity         = "FillOpacity"
+	AttributeFont                = "Font"
 	AttributeFontSize            = "FontSize"
 	AttributeHeight              = "Height"
 	AttributeHorizontalAlignment = "HorizontalAlignment"
@@ -40,9 +48,11 @@ const (
 	AttributeName                = "Name"
 	AttributeRotation            = "Rotation"
 	AttributeRow                 = "Row"
+	AttributeSize                = "Size"
 	AttributeStroke              = "Stroke"
 	AttributeStrokeWidth         = "StrokeWidth"
 	AttributeText                = "Text"
+	AttributeTextAnchor          = "TextAnchor"
 	AttributeValue               = "Value"
 	AttributeVersion             = "Version"
 	AttributeVerticalAlignment   = "VerticalAlignment"
@@ -119,8 +129,8 @@ func unmarshalAttributeInt(key, raw string) (int, error) {
 	return int(val), nil
 }
 
-func unmarshalLegendHorizontalAlignment(key, raw string) (models.LegendHorizontalAlignment, error) {
-	str, err := unmarshalAttributeString(key, raw)
+func unmarshalAttributeLegendHorizontalAlignment(attr *etree.Attr) (models.LegendHorizontalAlignment, error) {
+	str, err := unmarshalAttributeString(attr.Key, attr.Value)
 	if err != nil {
 		return models.LegendHorizontalAlignmentLeft, err
 	}
@@ -128,16 +138,16 @@ func unmarshalLegendHorizontalAlignment(key, raw string) (models.LegendHorizonta
 	val, ok := models.LegendHorizontalAlignmentStr[str]
 	if !ok {
 		return models.LegendHorizontalAlignmentLeft, &invalidAttributeTypeError{
-			element:   "TODO",
-			attribute: key,
+			element:   attr.Element().Tag,
+			attribute: attr.Key,
 		}
 	}
 
 	return val, nil
 }
 
-func unmarshalLegendVerticalAlignment(key, raw string) (models.LegendVerticalAlignment, error) {
-	str, err := unmarshalAttributeString(key, raw)
+func unmarshalAttributeLegendVerticalAlignment(attr *etree.Attr) (models.LegendVerticalAlignment, error) {
+	str, err := unmarshalAttributeString(attr.Key, attr.Value)
 	if err != nil {
 		return models.LegendVerticalAlignmentTop, err
 	}
@@ -145,21 +155,45 @@ func unmarshalLegendVerticalAlignment(key, raw string) (models.LegendVerticalAli
 	val, ok := models.LegendVerticalAlignmentStr[str]
 	if !ok {
 		return models.LegendVerticalAlignmentTop, &invalidAttributeTypeError{
-			element:   "TODO",
-			attribute: key,
+			element:   attr.Element().Tag,
+			attribute: attr.Key,
 		}
 	}
 
 	return val, nil
 }
 
+// TODO: Temporary code, delete this
 type XmlMeta struct {
 	Attributes []string
 	Children   []string
 }
 
 // TODO: Temporary code, delete this
-func WalkTree(bytes []byte) {
+func WalkFiles(files []string) {
+	xmlMeta := map[string]*XmlMeta{}
+	for _, file := range files {
+		xml, err := os.ReadFile(file)
+		if err != nil {
+			panic(err)
+		}
+		WalkTree(xml, xmlMeta)
+	}
+
+	jsonBytes, err := json.MarshalIndent(xmlMeta, "", "    ")
+	if err != nil {
+		panic(err)
+	}
+
+	// WriteFile(name string, data []byte, perm FileMode) error
+	err = os.WriteFile("/home/pewing/xml_support.xml", jsonBytes, 0644)
+	if err != nil {
+		panic(err)
+	}
+}
+
+// TODO: Temporary code, delete this
+func WalkTree(bytes []byte, xmlMeta map[string]*XmlMeta) {
 	doc := etree.NewDocument()
 
 	err := doc.ReadFromBytes(bytes)
@@ -167,16 +201,7 @@ func WalkTree(bytes []byte) {
 		panic(err)
 	}
 
-	xmlMeta := map[string]*XmlMeta{}
-
 	walkTree(doc.Root(), xmlMeta)
-
-	jsonBytes, err := json.Marshal(xmlMeta)
-	if err != nil {
-		panic(err)
-	}
-
-	fmt.Println(string(jsonBytes))
 }
 
 // TODO: Temporary code, delete this
@@ -238,4 +263,23 @@ func stringSliceContains(needle string, haystack []string) bool {
 	}
 
 	return false
+}
+
+func getElementPath(e *etree.Element) string {
+	tags := []string{}
+
+	for e != nil {
+		tags = append(tags, e.Tag)
+		e = e.Parent()
+	}
+
+	result := ""
+	if len(tags) > 0 {
+		result = tags[len(tags)-1]
+
+		for i := len(tags) - 2; i >= 0; i-- {
+			result = path.Join(result, tags[i])
+		}
+	}
+	return result
 }

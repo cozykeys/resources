@@ -6,6 +6,16 @@ import (
 	"github.com/beevik/etree"
 )
 
+/*
+   "Constant": {
+       "Attributes": [
+           "Name",
+           "Value"
+       ],
+       "Children": []
+   },
+*/
+
 func unmarshalConstants(e *etree.Element) ([]models.Constant, error) {
 	constants := []models.Constant{}
 

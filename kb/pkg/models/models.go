@@ -61,8 +61,9 @@ type Group struct {
 	XOffset  float64
 	YOffset  float64
 	Visible  bool
-	// TODO: Strongly type this to a GroupChild interface?
-	Children []GroupChild
+
+	Children  []GroupChild
+	Constants []Constant
 }
 
 // Layer TODO
@@ -76,6 +77,8 @@ type Layer struct {
 
 // Spacer TODO
 type Spacer struct {
+	Height float64
+	Width  float64
 }
 
 // Stack TODO
@@ -91,6 +94,8 @@ type Text struct {
 	TextAnchor string
 	Font       string
 	Fill       string
+	XOffset    float64
+	YOffset    float64
 }
 
 // LegendHorizontalAlignment TODO

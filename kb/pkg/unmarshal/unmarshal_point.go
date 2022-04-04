@@ -2,27 +2,31 @@ package unmarshal
 
 import (
 	"kb/pkg/models"
+	"strings"
 
 	"github.com/beevik/etree"
 )
 
-// TODO: Change this file and symbol names from EndPoint to Vec2 or Point or
-// something
-func unmarshalEndPoint(e *etree.Element) (*models.Vec2, error) {
+func unmarshalPoint(e *etree.Element) (*models.Vec2, error) {
 	if e == nil {
 		return nil, &nilElementError{}
 	}
 
-	if e.Tag != ElementEndPoint {
+	validPointTags := []string{
+		"EndPoint",
+		"ControlPoint",
+	}
+
+	if !stringSliceContains(e.Tag, validPointTags) {
 		return nil, &invalidTagError{
-			expected: ElementEndPoint,
+			expected: strings.Join(validPointTags, ","),
 			actual:   e.Tag,
 		}
 	}
 
 	endPoint := &models.Vec2{}
 
-	err := unmarshalEndPointAttributes(endPoint, e.Attr)
+	err := unmarshalPointAttributes(endPoint, e.Attr, e.Tag)
 	if err != nil {
 		return nil, err
 	}
@@ -30,13 +34,13 @@ func unmarshalEndPoint(e *etree.Element) (*models.Vec2, error) {
 	return endPoint, nil
 }
 
-func unmarshalEndPointAttributes(endPoint *models.Vec2, attributes []etree.Attr) error {
+func unmarshalPointAttributes(endPoint *models.Vec2, attributes []etree.Attr, tag string) error {
 	supportedAttributes := map[string]*struct {
 		required bool
 		found    bool
 	}{
-		AttributeX: {required: false},
-		AttributeY: {required: false},
+		AttributeX: {required: true},
+		AttributeY: {required: true},
 	}
 
 	for _, attr := range attributes {
@@ -48,7 +52,7 @@ func unmarshalEndPointAttributes(endPoint *models.Vec2, attributes []etree.Attr)
 			endPoint.Y, err = unmarshalAttributeFloat64(attr.Key, attr.Value)
 		default:
 			err = &unexpectedAttributeError{
-				element:   ElementEndPoint,
+				element:   tag,
 				attribute: attr.Key,
 			}
 		}
@@ -65,7 +69,7 @@ func unmarshalEndPointAttributes(endPoint *models.Vec2, attributes []etree.Attr)
 	for k, v := range supportedAttributes {
 		if v.required && v.found == false {
 			return &missingRequiredAttributeError{
-				element:   ElementEndPoint,
+				element:   tag,
 				attribute: k,
 			}
 		}

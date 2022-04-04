@@ -6,6 +6,15 @@ import (
 	"github.com/beevik/etree"
 )
 
+/*
+   "AbsoluteLineTo": {
+       "Attributes": [],
+       "Children": [
+           "EndPoint"
+       ]
+   },
+*/
+
 func unmarshalAbsoluteLineTo(e *etree.Element) (*models.AbsoluteLineTo, error) {
 	if e == nil {
 		return nil, &nilElementError{}
@@ -20,7 +29,7 @@ func unmarshalAbsoluteLineTo(e *etree.Element) (*models.AbsoluteLineTo, error) {
 
 	absoluteLineTo := &models.AbsoluteLineTo{}
 
-	err := unmarshalAbsoluteLineToChildren(absoluteLineTo, e.Child)
+	err := unmarshalAbsoluteLineToChildElements(absoluteLineTo, e.Child)
 	if err != nil {
 		return nil, err
 	}
@@ -28,7 +37,7 @@ func unmarshalAbsoluteLineTo(e *etree.Element) (*models.AbsoluteLineTo, error) {
 	return absoluteLineTo, nil
 }
 
-func unmarshalAbsoluteLineToChildren(absoluteLineTo *models.AbsoluteLineTo, children []etree.Token) error {
+func unmarshalAbsoluteLineToChildElements(absoluteLineTo *models.AbsoluteLineTo, children []etree.Token) error {
 	for _, child := range children {
 		element, ok := child.(*etree.Element)
 		if !ok {
@@ -38,7 +47,7 @@ func unmarshalAbsoluteLineToChildren(absoluteLineTo *models.AbsoluteLineTo, chil
 		var err error
 		switch element.Tag {
 		case ElementEndPoint:
-			absoluteLineTo.EndPoint, err = unmarshalEndPoint(element)
+			absoluteLineTo.EndPoint, err = unmarshalPoint(element)
 		default:
 			err = &invalidChildElementError{
 				element: ElementAbsoluteLineTo,

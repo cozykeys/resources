@@ -6,6 +6,22 @@ import (
 	"github.com/beevik/etree"
 )
 
+/*
+   "Layer": {
+       "Attributes": [
+           "Name",
+           "ZIndex",
+           "XOffset",
+           "YOffset",
+           "Width",
+           "Height"
+       ],
+       "Children": [
+           "Groups"
+       ]
+   },
+*/
+
 func unmarshalLayers(e *etree.Element) ([]models.Layer, error) {
 	layers := []models.Layer{}
 
@@ -52,7 +68,7 @@ func unmarshalLayer(e *etree.Element) (*models.Layer, error) {
 		return nil, err
 	}
 
-	err = unmarshalLayerChildren(layer, e.Child)
+	err = unmarshalLayerChildElements(layer, e.Child)
 	if err != nil {
 		return nil, err
 	}
@@ -110,7 +126,7 @@ func unmarshalLayerAttributes(layer *models.Layer, attributes []etree.Attr) erro
 	return nil
 }
 
-func unmarshalLayerChildren(layer *models.Layer, children []etree.Token) error {
+func unmarshalLayerChildElements(layer *models.Layer, children []etree.Token) error {
 	for _, child := range children {
 		element, ok := child.(*etree.Element)
 		if !ok {

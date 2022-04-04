@@ -6,6 +6,20 @@ import (
 	"github.com/beevik/etree"
 )
 
+/*
+   "Keyboard": {
+       "Attributes": [
+           "Name",
+           "Version"
+       ],
+       "Children": [
+           "Constants",
+           "Layers",
+           "Foo"
+       ]
+   },
+*/
+
 func unmarshalKeyboard(e *etree.Element) (*models.Keyboard, error) {
 	if e == nil {
 		return nil, &nilElementError{}
@@ -25,7 +39,7 @@ func unmarshalKeyboard(e *etree.Element) (*models.Keyboard, error) {
 		return nil, err
 	}
 
-	err = unmarshalKeyboardChildren(kb, e.Child)
+	err = unmarshalKeyboardChildElements(kb, e.Child)
 	if err != nil {
 		return nil, err
 	}
@@ -77,7 +91,7 @@ func unmarshalKeyboardAttributes(kb *models.Keyboard, attributes []etree.Attr) e
 	return nil
 }
 
-func unmarshalKeyboardChildren(kb *models.Keyboard, children []etree.Token) error {
+func unmarshalKeyboardChildElements(kb *models.Keyboard, children []etree.Token) error {
 	for _, child := range children {
 		element, ok := child.(*etree.Element)
 		if !ok {

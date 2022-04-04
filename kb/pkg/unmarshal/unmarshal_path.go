@@ -6,34 +6,64 @@ import (
 	"github.com/beevik/etree"
 )
 
+/*
+   "Path": {
+       "Attributes": [
+           "Fill",
+           "Stroke",
+           "FillOpacity",
+           "Visible"
+       ],
+       "Children": [
+           "Components"
+       ]
+   },
+*/
+
 func unmarshalPath(e *etree.Element) (*models.Path, error) {
-	if e == nil {
+	unmarshaller := newPathUnmarshaller(e)
+	return unmarshaller.unmarshal()
+}
+
+// TODO: This is the pattern I'd like to move towards for all element
+// unmarshalling
+type pathUnmarshaller struct {
+	element *etree.Element
+	path    *models.Path
+}
+
+func newPathUnmarshaller(e *etree.Element) *pathUnmarshaller {
+	return &pathUnmarshaller{element: e}
+}
+
+func (u *pathUnmarshaller) unmarshal() (*models.Path, error) {
+	if u.element == nil {
 		return nil, &nilElementError{}
 	}
 
-	if e.Tag != ElementPath {
+	if u.element.Tag != ElementPath {
 		return nil, &invalidTagError{
 			expected: ElementPath,
-			actual:   e.Tag,
+			actual:   u.element.Tag,
 		}
 	}
 
-	path := &models.Path{}
+	u.path = &models.Path{}
 
-	err := unmarshalPathAttributes(path, e.Attr)
+	err := u.unmarshalAttributes()
 	if err != nil {
 		return nil, err
 	}
 
-	err = unmarshalPathChildren(path, e.Child)
+	err = u.unmarshalChildElements()
 	if err != nil {
 		return nil, err
 	}
 
-	return path, nil
+	return u.path, nil
 }
 
-func unmarshalPathAttributes(path *models.Path, attributes []etree.Attr) error {
+func (u *pathUnmarshaller) unmarshalAttributes() error {
 	supportedAttributes := map[string]*struct {
 		required bool
 		found    bool
@@ -44,19 +74,19 @@ func unmarshalPathAttributes(path *models.Path, attributes []etree.Attr) error {
 		AttributeVisible:     {required: false},
 	}
 
-	for _, attr := range attributes {
+	for _, attr := range u.element.Attr {
 		var err error
 		switch attr.Key {
 		case AttributeFill:
-			path.Fill, err = unmarshalAttributeString(attr.Key, attr.Value)
+			u.path.Fill, err = unmarshalAttributeString(attr.Key, attr.Value)
 		case AttributeFillOpacity:
-			path.FillOpacity, err = unmarshalAttributeString(attr.Key, attr.Value)
+			u.path.FillOpacity, err = unmarshalAttributeString(attr.Key, attr.Value)
 		case AttributeStroke:
-			path.Stroke, err = unmarshalAttributeString(attr.Key, attr.Value)
+			u.path.Stroke, err = unmarshalAttributeString(attr.Key, attr.Value)
 		case AttributeStrokeWidth:
-			path.StrokeWidth, err = unmarshalAttributeString(attr.Key, attr.Value)
+			u.path.StrokeWidth, err = unmarshalAttributeString(attr.Key, attr.Value)
 		case AttributeVisible:
-			path.Visible, err = unmarshalAttributeBool(attr.Key, attr.Value)
+			u.path.Visible, err = unmarshalAttributeBool(attr.Key, attr.Value)
 		default:
 			err = &unexpectedAttributeError{
 				element:   ElementPath,
@@ -85,8 +115,8 @@ func unmarshalPathAttributes(path *models.Path, attributes []etree.Attr) error {
 	return nil
 }
 
-func unmarshalPathChildren(path *models.Path, children []etree.Token) error {
-	for _, child := range children {
+func (u *pathUnmarshaller) unmarshalChildElements() error {
+	for _, child := range u.element.Child {
 		element, ok := child.(*etree.Element)
 		if !ok {
 			continue
@@ -95,7 +125,7 @@ func unmarshalPathChildren(path *models.Path, children []etree.Token) error {
 		var err error
 		switch element.Tag {
 		case ElementComponents:
-			path.Components, err = unmarshalPathComponents(element)
+			u.path.Components, err = unmarshalPathComponents(element)
 		default:
 			err = &invalidChildElementError{
 				element: ElementPath,
@@ -127,6 +157,29 @@ func unmarshalPathComponents(e *etree.Element) ([]models.PathComponent, error) {
 			pathComponent, err = unmarshalAbsoluteMoveTo(element)
 		case ElementAbsoluteLineTo:
 			pathComponent, err = unmarshalAbsoluteLineTo(element)
+			// TODO: Implement the other path components
+			/*
+				case ElementAbsoluteCubicCurveTo:
+					pathComponent, err = unmarshalFoo(element)
+				case ElementAbsoluteHorizontalLineTo:
+					pathComponent, err = unmarshalFoo(element)
+				case ElementAbsoluteQuadraticCurveTo:
+					pathComponent, err = unmarshalFoo(element)
+				case ElementAbsoluteVerticalLineTo:
+					pathComponent, err = unmarshalFoo(element)
+				case ElementRelativeCubicCurveTo:
+					pathComponent, err = unmarshalFoo(element)
+				case ElementRelativeHorizontalLineTo:
+					pathComponent, err = unmarshalFoo(element)
+				case ElementRelativeLineTo:
+					pathComponent, err = unmarshalFoo(element)
+				case ElementRelativeMoveTo:
+					pathComponent, err = unmarshalFoo(element)
+				case ElementRelativeQuadraticCurveTo:
+					pathComponent, err = unmarshalFoo(element)
+				case ElementRelativeVerticalLineTo:
+					pathComponent, err = unmarshalFoo(element)
+			*/
 		default:
 			return nil, &invalidChildElementError{
 				element: ElementGroups,
