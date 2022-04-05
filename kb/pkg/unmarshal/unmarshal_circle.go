@@ -6,20 +6,18 @@ import (
 	"github.com/beevik/etree"
 )
 
-func unmarshalCircle(e *etree.Element) (*models.Circle, error) {
-	unmarshaller := newCircleUnmarshaller(e)
+func unmarshalCircle(e *etree.Element, parent models.KeyboardElement) (*models.Circle, error) {
+	unmarshaller := &circleUnmarshaller{
+		element: e,
+		parent:  parent,
+	}
 	return unmarshaller.unmarshal()
 }
 
-// TODO: This is the pattern I'd like to move towards for all element
-// unmarshalling
 type circleUnmarshaller struct {
 	element *etree.Element
 	circle  *models.Circle
-}
-
-func newCircleUnmarshaller(e *etree.Element) *circleUnmarshaller {
-	return &circleUnmarshaller{element: e}
+	parent  models.KeyboardElement
 }
 
 func (u *circleUnmarshaller) unmarshal() (*models.Circle, error) {
@@ -34,7 +32,11 @@ func (u *circleUnmarshaller) unmarshal() (*models.Circle, error) {
 		}
 	}
 
-	u.circle = &models.Circle{}
+	u.circle = &models.Circle{
+		KeyboardElementBase: models.KeyboardElementBase{
+			Parent: u.parent,
+		},
+	}
 
 	err := u.unmarshalAttributes()
 	if err != nil {
@@ -61,17 +63,17 @@ func (u *circleUnmarshaller) unmarshalAttributes() error {
 		var err error
 		switch attr.Key {
 		case AttributeSize:
-			u.circle.Size, err = unmarshalAttributeFloat64(attr.Key, attr.Value)
+			u.circle.Size, err = unmarshalAttributeFloat64(&attr, u.circle.GetConstants())
 		case AttributeXOffset:
-			u.circle.XOffset, err = unmarshalAttributeFloat64(attr.Key, attr.Value)
+			u.circle.XOffset, err = unmarshalAttributeFloat64(&attr, u.circle.GetConstants())
 		case AttributeYOffset:
-			u.circle.YOffset, err = unmarshalAttributeFloat64(attr.Key, attr.Value)
+			u.circle.YOffset, err = unmarshalAttributeFloat64(&attr, u.circle.GetConstants())
 		case AttributeFill:
-			u.circle.Fill, err = unmarshalAttributeString(attr.Key, attr.Value)
+			u.circle.Fill, err = unmarshalAttributeString(&attr, u.circle.GetConstants())
 		case AttributeStroke:
-			u.circle.Stroke, err = unmarshalAttributeString(attr.Key, attr.Value)
+			u.circle.Stroke, err = unmarshalAttributeString(&attr, u.circle.GetConstants())
 		case AttributeStrokeWidth:
-			u.circle.StrokeWidth, err = unmarshalAttributeString(attr.Key, attr.Value)
+			u.circle.StrokeWidth, err = unmarshalAttributeString(&attr, u.circle.GetConstants())
 		default:
 			err = &unexpectedAttributeError{
 				element:   ElementLegend,

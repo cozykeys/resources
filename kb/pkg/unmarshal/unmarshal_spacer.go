@@ -6,20 +6,18 @@ import (
 	"github.com/beevik/etree"
 )
 
-func unmarshalSpacer(e *etree.Element) (*models.Spacer, error) {
-	unmarshaller := newSpacerUnmarshaller(e)
+func unmarshalSpacer(e *etree.Element, parent models.KeyboardElement) (*models.Spacer, error) {
+	unmarshaller := &spacerUnmarshaller{
+		element: e,
+		parent:  parent,
+	}
 	return unmarshaller.unmarshal()
 }
 
-// TODO: This is the pattern I'd like to move towards for all element
-// unmarshalling
 type spacerUnmarshaller struct {
 	element *etree.Element
 	spacer  *models.Spacer
-}
-
-func newSpacerUnmarshaller(e *etree.Element) *spacerUnmarshaller {
-	return &spacerUnmarshaller{element: e}
+	parent  models.KeyboardElement
 }
 
 func (u *spacerUnmarshaller) unmarshal() (*models.Spacer, error) {
@@ -34,7 +32,11 @@ func (u *spacerUnmarshaller) unmarshal() (*models.Spacer, error) {
 		}
 	}
 
-	u.spacer = &models.Spacer{}
+	u.spacer = &models.Spacer{
+		KeyboardElementBase: models.KeyboardElementBase{
+			Parent: u.parent,
+		},
+	}
 
 	err := u.unmarshalAttributes()
 	if err != nil {
@@ -57,9 +59,9 @@ func (u *spacerUnmarshaller) unmarshalAttributes() error {
 		var err error
 		switch attr.Key {
 		case AttributeHeight:
-			u.spacer.Height, err = unmarshalAttributeFloat64(attr.Key, attr.Value)
+			u.spacer.Height, err = unmarshalAttributeFloat64(&attr, u.spacer.GetConstants())
 		case AttributeWidth:
-			u.spacer.Width, err = unmarshalAttributeFloat64(attr.Key, attr.Value)
+			u.spacer.Width, err = unmarshalAttributeFloat64(&attr, u.spacer.GetConstants())
 		default:
 			err = &unexpectedAttributeError{
 				element:   ElementLegend,

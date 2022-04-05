@@ -6,7 +6,7 @@ import (
 	"github.com/beevik/etree"
 )
 
-func unmarshalGroups(e *etree.Element) ([]models.Group, error) {
+func unmarshalGroups(e *etree.Element, parent models.KeyboardElement) ([]models.Group, error) {
 	groups := []models.Group{}
 
 	for _, child := range e.Child {
@@ -22,7 +22,7 @@ func unmarshalGroups(e *etree.Element) ([]models.Group, error) {
 			}
 		}
 
-		group, err := unmarshalGroup(element)
+		group, err := unmarshalGroup(element, parent)
 		if err != nil {
 			return nil, err
 		}
@@ -33,34 +33,56 @@ func unmarshalGroups(e *etree.Element) ([]models.Group, error) {
 	return groups, nil
 }
 
-func unmarshalGroup(e *etree.Element) (*models.Group, error) {
-	if e == nil {
+func unmarshalGroup(e *etree.Element, parent models.KeyboardElement) (*models.Group, error) {
+	unmarshaller := &groupUnmarshaller{
+		element: e,
+		parent:  parent,
+	}
+	return unmarshaller.unmarshal()
+}
+
+type groupUnmarshaller struct {
+	element *etree.Element
+	group   *models.Group
+	parent  models.KeyboardElement
+}
+
+func (u *groupUnmarshaller) unmarshal() (*models.Group, error) {
+	if u.element == nil {
 		return nil, &nilElementError{}
 	}
 
-	if e.Tag != ElementGroup {
+	if u.element.Tag != ElementGroup {
 		return nil, &invalidTagError{
 			expected: ElementGroup,
-			actual:   e.Tag,
+			actual:   u.element.Tag,
 		}
 	}
 
-	group := &models.Group{}
+	u.group = &models.Group{
+		KeyboardElementBase: models.KeyboardElementBase{
+			Parent: u.parent,
+		},
+	}
 
-	err := unmarshalGroupAttributes(group, e.Attr)
+	if err := u.unmarshalConstants(); err != nil {
+		return nil, err
+	}
+
+	err := u.unmarshalAttributes()
 	if err != nil {
 		return nil, err
 	}
 
-	err = unmarshalGroupChildElements(group, e.Child)
+	err = u.unmarshalChildElements()
 	if err != nil {
 		return nil, err
 	}
 
-	return group, nil
+	return u.group, nil
 }
 
-func unmarshalGroupAttributes(group *models.Group, attributes []etree.Attr) error {
+func (u *groupUnmarshaller) unmarshalAttributes() error {
 	supportedAttributes := map[string]*struct {
 		required bool
 		found    bool
@@ -72,19 +94,19 @@ func unmarshalGroupAttributes(group *models.Group, attributes []etree.Attr) erro
 		AttributeVisible:  {required: false},
 	}
 
-	for _, attr := range attributes {
+	for _, attr := range u.element.Attr {
 		var err error
 		switch attr.Key {
 		case AttributeName:
-			group.Name, err = unmarshalAttributeString(attr.Key, attr.Value)
+			u.group.Name, err = unmarshalAttributeString(&attr, u.group.GetConstants())
 		case AttributeRotation:
-			group.Rotation, err = unmarshalAttributeFloat64(attr.Key, attr.Value)
+			u.group.Rotation, err = unmarshalAttributeFloat64(&attr, u.group.GetConstants())
 		case AttributeXOffset:
-			group.XOffset, err = unmarshalAttributeFloat64(attr.Key, attr.Value)
+			u.group.XOffset, err = unmarshalAttributeFloat64(&attr, u.group.GetConstants())
 		case AttributeYOffset:
-			group.YOffset, err = unmarshalAttributeFloat64(attr.Key, attr.Value)
+			u.group.YOffset, err = unmarshalAttributeFloat64(&attr, u.group.GetConstants())
 		case AttributeVisible:
-			group.Visible, err = unmarshalAttributeBool(attr.Key, attr.Value)
+			u.group.Visible, err = unmarshalAttributeBool(&attr, u.group.GetConstants())
 		default:
 			err = &unexpectedAttributeError{
 				element:   ElementGroup,
@@ -113,8 +135,8 @@ func unmarshalGroupAttributes(group *models.Group, attributes []etree.Attr) erro
 	return nil
 }
 
-func unmarshalGroupChildElements(group *models.Group, children []etree.Token) error {
-	for _, child := range children {
+func (u *groupUnmarshaller) unmarshalChildElements() error {
+	for _, child := range u.element.Child {
 		element, ok := child.(*etree.Element)
 		if !ok {
 			continue
@@ -123,9 +145,9 @@ func unmarshalGroupChildElements(group *models.Group, children []etree.Token) er
 		var err error
 		switch element.Tag {
 		case ElementChildren:
-			group.Children, err = unmarshalGroupChildren(element)
+			u.group.Children, err = u.unmarshalChildren(element)
 		case ElementConstants:
-			group.Constants, err = unmarshalConstants(element)
+			u.group.Constants, err = unmarshalConstants(element, u.group)
 		default:
 			err = &invalidChildElementError{
 				element: ElementGroup,
@@ -141,7 +163,7 @@ func unmarshalGroupChildElements(group *models.Group, children []etree.Token) er
 	return nil
 }
 
-func unmarshalGroupChildren(e *etree.Element) ([]models.GroupChild, error) {
+func (u *groupUnmarshaller) unmarshalChildren(e *etree.Element) ([]models.GroupChild, error) {
 	children := []models.GroupChild{}
 
 	for _, child := range e.Child {
@@ -154,19 +176,19 @@ func unmarshalGroupChildren(e *etree.Element) ([]models.GroupChild, error) {
 		var child models.GroupChild
 		switch element.Tag {
 		case ElementGroup:
-			child, err = unmarshalGroup(element)
+			child, err = unmarshalGroup(element, u.group)
 		case ElementPath:
-			child, err = unmarshalPath(element)
+			child, err = unmarshalPath(element, u.group)
 		case ElementKey:
-			child, err = unmarshalKey(element)
+			child, err = unmarshalKey(element, u.group)
 		case ElementStack:
-			child, err = unmarshalStack(element)
+			child, err = unmarshalStack(element, u.group)
 		case ElementSpacer:
-			child, err = unmarshalSpacer(element)
+			child, err = unmarshalSpacer(element, u.group)
 		case ElementCircle:
-			child, err = unmarshalCircle(element)
+			child, err = unmarshalCircle(element, u.group)
 		case ElementText:
-			child, err = unmarshalText(element)
+			child, err = unmarshalText(element, u.group)
 		default:
 			return nil, &unimplementedElementError{
 				elementPath: getElementPath(element),
@@ -181,4 +203,24 @@ func unmarshalGroupChildren(e *etree.Element) ([]models.GroupChild, error) {
 	}
 
 	return children, nil
+}
+
+func (u *groupUnmarshaller) unmarshalConstants() error {
+	for _, child := range u.element.Child {
+		element, ok := child.(*etree.Element)
+		if !ok {
+			continue
+		}
+
+		if element.Tag == ElementConstants {
+			var err error
+			u.group.Constants, err = unmarshalConstants(element, u.group)
+			if err != nil {
+				return err
+			}
+			return nil
+		}
+	}
+
+	return nil
 }

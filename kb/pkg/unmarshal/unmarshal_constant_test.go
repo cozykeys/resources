@@ -29,7 +29,7 @@ func Test_unmarshalConstant(t *testing.T) {
 			err := doc.ReadFromBytes(testCase.xml)
 			require.Nil(t, err)
 
-			constant, err := unmarshalConstant(doc.Root())
+			constant, err := unmarshalConstant(doc.Root(), nil)
 			require.Nil(t, err)
 			require.Equal(t, testCase.expected, constant)
 		})
@@ -59,7 +59,7 @@ func Test_unmarshalConstants(t *testing.T) {
 			err := doc.ReadFromBytes(testCase.xml)
 			require.Nil(t, err)
 
-			constants, err := unmarshalConstants(doc.Root())
+			constants, err := unmarshalConstants(doc.Root(), nil)
 			require.Nil(t, err)
 			require.Equal(t, testCase.expected, constants)
 		})

@@ -6,43 +6,48 @@ import (
 	"github.com/beevik/etree"
 )
 
-/*
-   "Text": {
-       "Attributes": [
-           "Content",
-           "TextAnchor",
-           "Font",
-           "Fill",
-           "XOffset",
-           "YOffset"
-       ],
-       "Children": []
-   }
-*/
+func unmarshalText(e *etree.Element, parent models.KeyboardElement) (*models.Text, error) {
+	unmarshaller := &textUnmarshaller{
+		element: e,
+		parent:  parent,
+	}
 
-func unmarshalText(e *etree.Element) (*models.Text, error) {
-	if e == nil {
+	return unmarshaller.unmarshal()
+}
+
+type textUnmarshaller struct {
+	element *etree.Element
+	text    *models.Text
+	parent  models.KeyboardElement
+}
+
+func (u *textUnmarshaller) unmarshal() (*models.Text, error) {
+	if u.element == nil {
 		return nil, &nilElementError{}
 	}
 
-	if e.Tag != ElementText {
+	if u.element.Tag != ElementText {
 		return nil, &invalidTagError{
 			expected: ElementText,
-			actual:   e.Tag,
+			actual:   u.element.Tag,
 		}
 	}
 
-	text := &models.Text{}
+	u.text = &models.Text{
+		KeyboardElementBase: models.KeyboardElementBase{
+			Parent: u.parent,
+		},
+	}
 
-	err := unmarshalTextAttributes(text, e.Attr)
+	err := u.unmarshalAttributes()
 	if err != nil {
 		return nil, err
 	}
 
-	return text, nil
+	return u.text, nil
 }
 
-func unmarshalTextAttributes(text *models.Text, attributes []etree.Attr) error {
+func (u *textUnmarshaller) unmarshalAttributes() error {
 	supportedAttributes := map[string]*struct {
 		required bool
 		found    bool
@@ -55,21 +60,21 @@ func unmarshalTextAttributes(text *models.Text, attributes []etree.Attr) error {
 		AttributeYOffset:    {required: false},
 	}
 
-	for _, attr := range attributes {
+	for _, attr := range u.element.Attr {
 		var err error
 		switch attr.Key {
 		case AttributeContent:
-			text.Content, err = unmarshalAttributeString(attr.Key, attr.Value)
+			u.text.Content, err = unmarshalAttributeString(&attr, u.text.GetConstants())
 		case AttributeTextAnchor:
-			text.TextAnchor, err = unmarshalAttributeString(attr.Key, attr.Value)
+			u.text.TextAnchor, err = unmarshalAttributeString(&attr, u.text.GetConstants())
 		case AttributeFont:
-			text.Font, err = unmarshalAttributeString(attr.Key, attr.Value)
+			u.text.Font, err = unmarshalAttributeString(&attr, u.text.GetConstants())
 		case AttributeFill:
-			text.Fill, err = unmarshalAttributeString(attr.Key, attr.Value)
+			u.text.Fill, err = unmarshalAttributeString(&attr, u.text.GetConstants())
 		case AttributeXOffset:
-			text.XOffset, err = unmarshalAttributeFloat64(attr.Key, attr.Value)
+			u.text.XOffset, err = unmarshalAttributeFloat64(&attr, u.text.GetConstants())
 		case AttributeYOffset:
-			text.YOffset, err = unmarshalAttributeFloat64(attr.Key, attr.Value)
+			u.text.YOffset, err = unmarshalAttributeFloat64(&attr, u.text.GetConstants())
 		default:
 			err = &unexpectedAttributeError{
 				element:   ElementText,

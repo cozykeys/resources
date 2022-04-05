@@ -6,39 +6,48 @@ import (
 	"github.com/beevik/etree"
 )
 
-/*
-   "AbsoluteLineTo": {
-       "Attributes": [],
-       "Children": [
-           "EndPoint"
-       ]
-   },
-*/
+func unmarshalAbsoluteLineTo(e *etree.Element, parent models.KeyboardElement) (*models.AbsoluteLineTo, error) {
+	unmarshaller := &absoluteLineToUnmarshaller{
+		element: e,
+		parent:  parent,
+	}
+	return unmarshaller.unmarshal()
+}
 
-func unmarshalAbsoluteLineTo(e *etree.Element) (*models.AbsoluteLineTo, error) {
-	if e == nil {
+type absoluteLineToUnmarshaller struct {
+	element        *etree.Element
+	absoluteLineTo *models.AbsoluteLineTo
+	parent         models.KeyboardElement
+}
+
+func (u *absoluteLineToUnmarshaller) unmarshal() (*models.AbsoluteLineTo, error) {
+	if u.element == nil {
 		return nil, &nilElementError{}
 	}
 
-	if e.Tag != ElementAbsoluteLineTo {
+	if u.element.Tag != ElementAbsoluteLineTo {
 		return nil, &invalidTagError{
 			expected: ElementAbsoluteLineTo,
-			actual:   e.Tag,
+			actual:   u.element.Tag,
 		}
 	}
 
-	absoluteLineTo := &models.AbsoluteLineTo{}
+	u.absoluteLineTo = &models.AbsoluteLineTo{
+		KeyboardElementBase: models.KeyboardElementBase{
+			Parent: u.parent,
+		},
+	}
 
-	err := unmarshalAbsoluteLineToChildElements(absoluteLineTo, e.Child)
+	err := u.unmarshalChildElements()
 	if err != nil {
 		return nil, err
 	}
 
-	return absoluteLineTo, nil
+	return u.absoluteLineTo, nil
 }
 
-func unmarshalAbsoluteLineToChildElements(absoluteLineTo *models.AbsoluteLineTo, children []etree.Token) error {
-	for _, child := range children {
+func (u *absoluteLineToUnmarshaller) unmarshalChildElements() error {
+	for _, child := range u.element.Child {
 		element, ok := child.(*etree.Element)
 		if !ok {
 			continue
@@ -47,7 +56,7 @@ func unmarshalAbsoluteLineToChildElements(absoluteLineTo *models.AbsoluteLineTo,
 		var err error
 		switch element.Tag {
 		case ElementEndPoint:
-			absoluteLineTo.EndPoint, err = unmarshalPoint(element)
+			u.absoluteLineTo.EndPoint, err = unmarshalPoint(element, u.absoluteLineTo)
 		default:
 			err = &invalidChildElementError{
 				element: ElementAbsoluteLineTo,

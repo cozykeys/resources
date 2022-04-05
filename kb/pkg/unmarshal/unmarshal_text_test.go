@@ -39,7 +39,7 @@ func Test_unmarshalText(t *testing.T) {
 			err := doc.ReadFromBytes(testCase.xml)
 			require.Nil(t, err)
 
-			text, err := unmarshalText(doc.Root())
+			text, err := unmarshalText(doc.Root(), nil)
 			require.Nil(t, err)
 			require.Equal(t, testCase.expected, text)
 		})

@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 	"path"
+	"regexp"
 	"strconv"
 	"strings"
 
@@ -46,6 +47,7 @@ const (
 	AttributeHorizontalAlignment = "HorizontalAlignment"
 	AttributeMargin              = "Margin"
 	AttributeName                = "Name"
+	AttributeOrientation         = "Orientation"
 	AttributeRotation            = "Rotation"
 	AttributeRow                 = "Row"
 	AttributeSize                = "Size"
@@ -81,15 +83,21 @@ func Unmarshal(bytes []byte) (*models.Keyboard, error) {
 	return keyboard, nil
 }
 
-func unmarshalAttributeString(key, raw string) (string, error) {
-	// TODO: Process constants
-	return raw, nil
+func unmarshalAttributeString(attr *etree.Attr, constants []models.Constant) (string, error) {
+	value, err := expandConstants(attr, constants)
+	if err != nil {
+		return "", err
+	}
+	return value, nil
 }
 
-func unmarshalAttributeBool(key, raw string) (bool, error) {
-	// TODO: Process constants
+func unmarshalAttributeBool(attr *etree.Attr, constants []models.Constant) (bool, error) {
+	value, err := expandConstants(attr, constants)
+	if err != nil {
+		return false, err
+	}
 
-	lower := strings.ToLower(raw)
+	lower := strings.ToLower(value)
 	switch lower {
 	case "true":
 		return true, nil
@@ -99,43 +107,52 @@ func unmarshalAttributeBool(key, raw string) (bool, error) {
 		// TODO: This error is a bit confusing currently; make a new
 		// "invalidAttributeValueError" instead
 		return false, &invalidAttributeTypeError{
-			element:   "TODO",
-			attribute: key,
+			element:   attr.Element().Tag,
+			attribute: attr.Key,
 		}
 	}
 }
 
-func unmarshalAttributeFloat64(key, raw string) (float64, error) {
-	// TODO: Process constants
-	val, err := strconv.ParseFloat(raw, 64)
+func unmarshalAttributeFloat64(attr *etree.Attr, constants []models.Constant) (float64, error) {
+	value, err := expandConstants(attr, constants)
+	if err != nil {
+		return 0.0, err
+	}
+
+	val, err := strconv.ParseFloat(value, 64)
 	if err != nil {
 		return 0, &invalidAttributeTypeError{
-			element:   "TODO",
-			attribute: key,
+			element:   attr.Element().Tag,
+			attribute: attr.Key,
+			value:     attr.Value,
 		}
 	}
 	return val, nil
 }
 
-func unmarshalAttributeInt(key, raw string) (int, error) {
-	// TODO: Process constants
-	val, err := strconv.ParseInt(raw, 10, 32)
+func unmarshalAttributeInt(attr *etree.Attr, constants []models.Constant) (int, error) {
+	value, err := expandConstants(attr, constants)
+	if err != nil {
+		return 0, err
+	}
+
+	val, err := strconv.ParseInt(value, 10, 32)
 	if err != nil {
 		return 0, &invalidAttributeTypeError{
-			element:   "TODO",
-			attribute: key,
+			element:   attr.Element().Tag,
+			attribute: attr.Key,
 		}
 	}
 	return int(val), nil
 }
 
-func unmarshalAttributeLegendHorizontalAlignment(attr *etree.Attr) (models.LegendHorizontalAlignment, error) {
-	str, err := unmarshalAttributeString(attr.Key, attr.Value)
+func unmarshalAttributeLegendHorizontalAlignment(attr *etree.Attr, constants []models.Constant) (models.LegendHorizontalAlignment, error) {
+	value, err := expandConstants(attr, constants)
 	if err != nil {
-		return models.LegendHorizontalAlignmentLeft, err
+		return 0, err
 	}
 
-	val, ok := models.LegendHorizontalAlignmentStr[str]
+	val, ok := models.LegendHorizontalAlignmentStr[value]
 	if !ok {
 		return models.LegendHorizontalAlignmentLeft, &invalidAttributeTypeError{
 			element:   attr.Element().Tag,
@@ -146,13 +163,13 @@ func unmarshalAttributeLegendHorizontalAlignment(attr *etree.Attr) (models.Legen
 	return val, nil
 }
 
-func unmarshalAttributeLegendVerticalAlignment(attr *etree.Attr) (models.LegendVerticalAlignment, error) {
-	str, err := unmarshalAttributeString(attr.Key, attr.Value)
+func unmarshalAttributeLegendVerticalAlignment(attr *etree.Attr, constants []models.Constant) (models.LegendVerticalAlignment, error) {
+	value, err := expandConstants(attr, constants)
 	if err != nil {
-		return models.LegendVerticalAlignmentTop, err
+		return 0, err
 	}
 
-	val, ok := models.LegendVerticalAlignmentStr[str]
+	val, ok := models.LegendVerticalAlignmentStr[value]
 	if !ok {
 		return models.LegendVerticalAlignmentTop, &invalidAttributeTypeError{
 			element:   attr.Element().Tag,
@@ -161,6 +178,75 @@ func unmarshalAttributeLegendVerticalAlignment(attr *etree.Attr) (models.LegendV
 	}
 
 	return val, nil
+}
+
+func unmarshalAttributeStackOrientation(attr *etree.Attr, constants []models.Constant) (models.StackOrientation, error) {
+	value, err := expandConstants(attr, constants)
+	if err != nil {
+		return 0, err
+	}
+
+	val, ok := models.StackOrientationStr[value]
+	if !ok {
+		return models.StackOrientationHorizontal, &invalidAttributeTypeError{
+			element:   attr.Element().Tag,
+			attribute: attr.Key,
+		}
+	}
+
+	return val, nil
+}
+
+func expandConstants(attr *etree.Attr, constants []models.Constant) (string, error) {
+	if constants == nil && len(constants) < 1 {
+		return attr.Value, nil
+	}
+
+	re := regexp.MustCompile(`\$\{([a-zA-Z0-9]+)\}`)
+	constantsFound := re.FindAllString(attr.Value, -1)
+
+	expanded := attr.Value
+	for _, c := range constantsFound {
+		constantName := strings.Trim(c, "${}")
+		constant, ok := getConstant(constantName, constants)
+		if !ok {
+			return "", &undefinedConstantError{
+				element:   getElementPath(attr.Element()),
+				attribute: attr.Key,
+				constant:  constantName,
+			}
+		}
+		expanded = strings.ReplaceAll(expanded, c, constant.Value)
+	}
+	return expanded, nil
+}
+
+func getConstant(name string, constants []models.Constant) (*models.Constant, bool) {
+	for _, c := range constants {
+		if name == c.Name {
+			return &c, true
+		}
+	}
+	return nil, false
+}
+
+func expandConstants2() {
+	constants := map[string]string{
+		"VersionMajor": "1",
+		"VersionMinor": "2",
+	}
+
+	s := "v${VersionMajor}.${VersionMinor}"
+	re := regexp.MustCompile(`\$\{([a-zA-Z]+)\}`)
+	constantsFound := re.FindAllString(s, -1)
+	for _, c := range constantsFound {
+		constantName := strings.Trim(c, "${}")
+		constant, ok := constants[constantName]
+		if !ok {
+			panic("TODO")
+		}
+		s = strings.ReplaceAll(s, c, constant)
+	}
 }
 
 // TODO: Temporary code, delete this

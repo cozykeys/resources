@@ -29,7 +29,7 @@ func Test_unmarshalSpacer(t *testing.T) {
 			err := doc.ReadFromBytes(testCase.xml)
 			require.Nil(t, err)
 
-			spacer, err := unmarshalSpacer(doc.Root())
+			spacer, err := unmarshalSpacer(doc.Root(), nil)
 			require.Nil(t, err)
 			require.Equal(t, testCase.expected, spacer)
 		})

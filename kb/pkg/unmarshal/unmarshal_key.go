@@ -6,20 +6,18 @@ import (
 	"github.com/beevik/etree"
 )
 
-func unmarshalKey(e *etree.Element) (*models.Key, error) {
-	unmarshaller := newKeyUnmarshaller(e)
+func unmarshalKey(e *etree.Element, parent models.KeyboardElement) (*models.Key, error) {
+	unmarshaller := &keyUnmarshaller{
+		element: e,
+		parent:  parent,
+	}
 	return unmarshaller.unmarshal()
 }
 
-// TODO: This is the pattern I'd like to move towards for all element
-// unmarshalling
 type keyUnmarshaller struct {
 	element *etree.Element
 	key     *models.Key
-}
-
-func newKeyUnmarshaller(e *etree.Element) *keyUnmarshaller {
-	return &keyUnmarshaller{element: e}
+	parent  models.KeyboardElement
 }
 
 func (u *keyUnmarshaller) unmarshal() (*models.Key, error) {
@@ -34,7 +32,11 @@ func (u *keyUnmarshaller) unmarshal() (*models.Key, error) {
 		}
 	}
 
-	u.key = &models.Key{}
+	u.key = &models.Key{
+		KeyboardElementBase: models.KeyboardElementBase{
+			Parent: u.parent,
+		},
+	}
 
 	err := u.unmarshalAttributes()
 	if err != nil {
@@ -70,25 +72,25 @@ func (u *keyUnmarshaller) unmarshalAttributes() error {
 		var err error
 		switch attr.Key {
 		case AttributeName:
-			u.key.Name, err = unmarshalAttributeString(attr.Key, attr.Value)
+			u.key.Name, err = unmarshalAttributeString(&attr, u.key.GetConstants())
 		case AttributeRow:
-			u.key.Row, err = unmarshalAttributeInt(attr.Key, attr.Value)
+			u.key.Row, err = unmarshalAttributeInt(&attr, u.key.GetConstants())
 		case AttributeColumn:
-			u.key.Column, err = unmarshalAttributeInt(attr.Key, attr.Value)
+			u.key.Column, err = unmarshalAttributeInt(&attr, u.key.GetConstants())
 		case AttributeXOffset:
-			u.key.XOffset, err = unmarshalAttributeFloat64(attr.Key, attr.Value)
+			u.key.XOffset, err = unmarshalAttributeFloat64(&attr, u.key.GetConstants())
 		case AttributeYOffset:
-			u.key.YOffset, err = unmarshalAttributeFloat64(attr.Key, attr.Value)
+			u.key.YOffset, err = unmarshalAttributeFloat64(&attr, u.key.GetConstants())
 		case AttributeWidth:
-			u.key.Width, err = unmarshalAttributeFloat64(attr.Key, attr.Value)
+			u.key.Width, err = unmarshalAttributeFloat64(&attr, u.key.GetConstants())
 		case AttributeHeight:
-			u.key.Height, err = unmarshalAttributeFloat64(attr.Key, attr.Value)
+			u.key.Height, err = unmarshalAttributeFloat64(&attr, u.key.GetConstants())
 		case AttributeMargin:
-			u.key.Margin, err = unmarshalAttributeFloat64(attr.Key, attr.Value)
+			u.key.Margin, err = unmarshalAttributeFloat64(&attr, u.key.GetConstants())
 		case AttributeFill:
-			u.key.Fill, err = unmarshalAttributeString(attr.Key, attr.Value)
+			u.key.Fill, err = unmarshalAttributeString(&attr, u.key.GetConstants())
 		case AttributeStroke:
-			u.key.Stroke, err = unmarshalAttributeString(attr.Key, attr.Value)
+			u.key.Stroke, err = unmarshalAttributeString(&attr, u.key.GetConstants())
 		default:
 			err = &unexpectedAttributeError{
 				element:   ElementKey,
@@ -133,7 +135,7 @@ func (u *keyUnmarshaller) unmarshalChildElements() error {
 		//     u.key.Legends, err = unmarshalLegends(element)
 		case ElementLegend:
 			var legend *models.Legend
-			legend, err = unmarshalLegend(element)
+			legend, err = unmarshalLegend(element, u.key)
 			legends = append(legends, *legend)
 		default:
 			err = &invalidChildElementError{

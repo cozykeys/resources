@@ -6,17 +6,7 @@ import (
 	"github.com/beevik/etree"
 )
 
-/*
-   "Constant": {
-       "Attributes": [
-           "Name",
-           "Value"
-       ],
-       "Children": []
-   },
-*/
-
-func unmarshalConstants(e *etree.Element) ([]models.Constant, error) {
+func unmarshalConstants(e *etree.Element, parent models.KeyboardElement) ([]models.Constant, error) {
 	constants := []models.Constant{}
 
 	for _, child := range e.Child {
@@ -32,7 +22,7 @@ func unmarshalConstants(e *etree.Element) ([]models.Constant, error) {
 			}
 		}
 
-		constant, err := unmarshalConstant(element)
+		constant, err := unmarshalConstant(element, parent)
 		if err != nil {
 			return nil, err
 		}
@@ -43,29 +33,47 @@ func unmarshalConstants(e *etree.Element) ([]models.Constant, error) {
 	return constants, nil
 }
 
-func unmarshalConstant(e *etree.Element) (*models.Constant, error) {
-	if e == nil {
+func unmarshalConstant(e *etree.Element, parent models.KeyboardElement) (*models.Constant, error) {
+	unmarshaller := &constantUnmarshaller{
+		element: e,
+		parent:  parent,
+	}
+	return unmarshaller.unmarshal()
+}
+
+type constantUnmarshaller struct {
+	element  *etree.Element
+	constant *models.Constant
+	parent   models.KeyboardElement
+}
+
+func (u *constantUnmarshaller) unmarshal() (*models.Constant, error) {
+	if u.element == nil {
 		return nil, &nilElementError{}
 	}
 
-	if e.Tag != ElementConstant {
+	if u.element.Tag != ElementConstant {
 		return nil, &invalidTagError{
 			expected: ElementConstant,
-			actual:   e.Tag,
+			actual:   u.element.Tag,
 		}
 	}
 
-	constant := &models.Constant{}
+	u.constant = &models.Constant{
+		KeyboardElementBase: models.KeyboardElementBase{
+			Parent: u.parent,
+		},
+	}
 
-	err := unmarshalConstantAttributes(constant, e.Attr)
+	err := u.unmarshalAttributes()
 	if err != nil {
 		return nil, err
 	}
 
-	return constant, nil
+	return u.constant, nil
 }
 
-func unmarshalConstantAttributes(constant *models.Constant, attributes []etree.Attr) error {
+func (u *constantUnmarshaller) unmarshalAttributes() error {
 	supportedAttributes := map[string]*struct {
 		required bool
 		found    bool
@@ -74,13 +82,13 @@ func unmarshalConstantAttributes(constant *models.Constant, attributes []etree.A
 		AttributeValue: {required: true},
 	}
 
-	for _, attr := range attributes {
+	for _, attr := range u.element.Attr {
 		var err error
 		switch attr.Key {
 		case AttributeName:
-			constant.Name, err = unmarshalAttributeString(attr.Key, attr.Value)
+			u.constant.Name, err = unmarshalAttributeString(&attr, u.constant.GetConstants())
 		case AttributeValue:
-			constant.Value, err = unmarshalAttributeString(attr.Key, attr.Value)
+			u.constant.Value, err = unmarshalAttributeString(&attr, u.constant.GetConstants())
 		default:
 			err = &unexpectedAttributeError{
 				element:   ElementConstant,

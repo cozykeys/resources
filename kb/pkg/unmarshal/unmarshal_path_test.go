@@ -33,7 +33,7 @@ func Test_unmarshalPath(t *testing.T) {
 			err := doc.ReadFromBytes(testCase.xml)
 			require.Nil(t, err)
 
-			path, err := unmarshalPath(doc.Root())
+			path, err := unmarshalPath(doc.Root(), nil)
 			require.Nil(t, err)
 			require.Equal(t, testCase.expected, path)
 		})

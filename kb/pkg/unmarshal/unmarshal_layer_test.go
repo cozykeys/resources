@@ -32,7 +32,7 @@ func Test_unmarshalLayer(t *testing.T) {
 			err := doc.ReadFromBytes(testCase.xml)
 			require.Nil(t, err)
 
-			layer, err := unmarshalLayer(doc.Root())
+			layer, err := unmarshalLayer(doc.Root(), nil)
 			require.Nil(t, err)
 			require.Equal(t, testCase.expected, layer)
 		})
@@ -65,7 +65,7 @@ func Test_unmarshalLayers(t *testing.T) {
 			err := doc.ReadFromBytes(testCase.xml)
 			require.Nil(t, err)
 
-			layers, err := unmarshalLayers(doc.Root())
+			layers, err := unmarshalLayers(doc.Root(), nil)
 			require.Nil(t, err)
 			require.Equal(t, testCase.expected, layers)
 		})

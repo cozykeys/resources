@@ -33,7 +33,7 @@ func Test_unmarshalGroup(t *testing.T) {
 			err := doc.ReadFromBytes(testCase.xml)
 			require.Nil(t, err)
 
-			group, err := unmarshalGroup(doc.Root())
+			group, err := unmarshalGroup(doc.Root(), nil)
 			require.Nil(t, err)
 			require.Equal(t, testCase.expected, group)
 		})
@@ -67,7 +67,7 @@ func Test_unmarshalGroups(t *testing.T) {
 			err := doc.ReadFromBytes(testCase.xml)
 			require.Nil(t, err)
 
-			groups, err := unmarshalGroups(doc.Root())
+			groups, err := unmarshalGroups(doc.Root(), nil)
 			require.Nil(t, err)
 			require.Equal(t, testCase.expected, groups)
 		})

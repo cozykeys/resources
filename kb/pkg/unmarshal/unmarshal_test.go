@@ -13,17 +13,17 @@ func Test_ParseKeyboard(t *testing.T) {
 	testCases := map[string]struct {
 		dataFile string
 	}{
-		"happy path simple": {
-			dataFile: "happy_path_simple.xml",
-		},
-		"bloomer_v2": {
-			dataFile: "bloomer_v2.xml",
-		},
-		"bloomer_v3": {
-			dataFile: "bloomer_v3.xml",
-		},
 		/*
-		 */
+			"happy path simple": {
+				dataFile: "happy_path_simple.xml",
+			},
+			"bloomer_v2": {
+				dataFile: "bloomer_v2.xml",
+			},
+			"bloomer_v3": {
+				dataFile: "bloomer_v3.xml",
+			},
+		*/
 		"bloomer_v4": {
 			dataFile: "bloomer_v4.xml",
 		},
@@ -51,6 +51,12 @@ func Test_ParseKeyboard(t *testing.T) {
 			kb, err := Unmarshal(xml)
 			require.Nil(t, err)
 			require.NotNil(t, kb)
+
+			/*
+				bytes, err := json.Marshal(kb)
+				require.Nil(t, err)
+				fmt.Println(string(bytes))
+			*/
 
 			/*
 				require.Equal(t, kb, &models.Keyboard{

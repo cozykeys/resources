@@ -164,7 +164,7 @@ func unmarshal{{.Name}}Attributes({{.NameCamelCase}} *models.{{.Name}}, attribut
 		var err error
 		switch attr.Key { {{range .Attributes}}
 		case Attribute{{.}}:
-			{{$.NameCamelCase}}.Name, err = unmarshalAttributeString(attr.Key, attr.Value){{end}}
+			{{$.NameCamelCase}}.Name, err = unmarshalAttributeString(attr){{end}}
 		default:
 			err = &unexpectedAttributeError{
 				element:   Element{{.Name}},

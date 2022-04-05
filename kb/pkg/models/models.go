@@ -1,23 +1,53 @@
 package models
 
+type KeyboardElement interface {
+	GetParent() KeyboardElement
+	GetConstants() []Constant
+}
+
+type KeyboardElementBase struct {
+	Parent    KeyboardElement
+	Constants []Constant
+}
+
+func (e *KeyboardElementBase) GetParent() KeyboardElement {
+	return e.Parent
+}
+
+func (e *KeyboardElementBase) GetConstants() []Constant {
+	constants := e.Constants
+	parent := e.GetParent()
+	for parent != nil {
+		parentConstants := parent.GetConstants()
+		constants = mergeConstants(parentConstants, constants)
+		parent = parent.GetParent()
+	}
+	return constants
+}
+
 // Constant TODO
 type Constant struct {
+	KeyboardElementBase
+
 	Name  string
 	Value string
 }
 
 // Keyboard TODO
 type Keyboard struct {
-	Name      string
-	Version   string
-	Width     float64
-	Height    float64
-	Constants []Constant
-	Layers    []Layer
+	KeyboardElementBase
+
+	Name    string
+	Version string
+	Width   float64
+	Height  float64
+	Layers  []Layer
 }
 
 // Circle TODO
 type Circle struct {
+	KeyboardElementBase
+
 	Size        float64
 	Fill        string
 	Stroke      string
@@ -29,6 +59,8 @@ type Circle struct {
 
 // Key TODO
 type Key struct {
+	KeyboardElementBase
+
 	Legends []Legend
 	Row     int
 	Column  int
@@ -44,6 +76,8 @@ type Key struct {
 
 // Legend TODO
 type Legend struct {
+	KeyboardElementBase
+
 	Text                string
 	FontSize            float64
 	HorizontalAlignment LegendHorizontalAlignment
@@ -56,18 +90,21 @@ type GroupChild interface{}
 
 // Group TODO
 type Group struct {
+	KeyboardElementBase
+
 	Name     string
 	Rotation float64
 	XOffset  float64
 	YOffset  float64
 	Visible  bool
 
-	Children  []GroupChild
-	Constants []Constant
+	Children []GroupChild
 }
 
 // Layer TODO
 type Layer struct {
+	KeyboardElementBase
+
 	ZIndex  int
 	Groups  []Group
 	XOffset float64
@@ -77,6 +114,8 @@ type Layer struct {
 
 // Spacer TODO
 type Spacer struct {
+	KeyboardElementBase
+
 	Height float64
 	Width  float64
 }
@@ -90,6 +129,8 @@ type Stack struct {
 
 // Text TODO
 type Text struct {
+	KeyboardElementBase
+
 	Content    string
 	TextAnchor string
 	Font       string
@@ -136,15 +177,22 @@ const (
 	StackOrientationVertical
 )
 
+var StackOrientationStr = map[string]StackOrientation{
+	"Horizontal": StackOrientationHorizontal,
+	"Vertical":   StackOrientationVertical,
+}
+
 type PathComponent interface {
 	Data() string
 }
 
 // AbsoluteCubicCurveTo TODO
 type AbsoluteCubicCurveTo struct {
-	EndPoint      Vec2
-	ControlPointA Vec2
-	ControlPointB Vec2
+	KeyboardElementBase
+
+	EndPoint      Point
+	ControlPointA Point
+	ControlPointB Point
 }
 
 var _ PathComponent = &AbsoluteCubicCurveTo{}
@@ -156,6 +204,8 @@ func (x *AbsoluteCubicCurveTo) Data() string {
 
 // AbsoluteHorizontalLineTo TODO
 type AbsoluteHorizontalLineTo struct {
+	KeyboardElementBase
+
 	X float64
 }
 
@@ -168,7 +218,9 @@ func (x *AbsoluteHorizontalLineTo) Data() string {
 
 // AbsoluteLineTo TODO
 type AbsoluteLineTo struct {
-	EndPoint *Vec2
+	KeyboardElementBase
+
+	EndPoint *Point
 }
 
 var _ PathComponent = &AbsoluteLineTo{}
@@ -180,7 +232,9 @@ func (x *AbsoluteLineTo) Data() string {
 
 // AbsoluteMoveTo TODO
 type AbsoluteMoveTo struct {
-	EndPoint *Vec2
+	KeyboardElementBase
+
+	EndPoint *Point
 }
 
 var _ PathComponent = &AbsoluteMoveTo{}
@@ -192,8 +246,10 @@ func (x *AbsoluteMoveTo) Data() string {
 
 // AbsoluteQuadraticCurveTo TODO
 type AbsoluteQuadraticCurveTo struct {
-	EndPoint     Vec2
-	ControlPoint Vec2
+	KeyboardElementBase
+
+	EndPoint     Point
+	ControlPoint Point
 }
 
 var _ PathComponent = &AbsoluteQuadraticCurveTo{}
@@ -205,6 +261,8 @@ func (x *AbsoluteQuadraticCurveTo) Data() string {
 
 // AbsoluteVerticalLineTo TODO
 type AbsoluteVerticalLineTo struct {
+	KeyboardElementBase
+
 	Y float64
 }
 
@@ -216,8 +274,9 @@ func (x *AbsoluteVerticalLineTo) Data() string {
 }
 
 // Path TODO
-type Path struct //
-{
+type Path struct {
+	KeyboardElementBase
+
 	Fill        string
 	FillOpacity string
 	Stroke      string
@@ -233,9 +292,11 @@ func (x *Path) Data() string {
 
 // RelativeCubicCurveTo TODO
 type RelativeCubicCurveTo struct {
-	EndPoint      Vec2
-	ControlPointA Vec2
-	ControlPointB Vec2
+	KeyboardElementBase
+
+	EndPoint      Point
+	ControlPointA Point
+	ControlPointB Point
 }
 
 var _ PathComponent = &RelativeCubicCurveTo{}
@@ -247,6 +308,8 @@ func (x *RelativeCubicCurveTo) Data() string {
 
 // RelativeHorizontalLineTo TODO
 type RelativeHorizontalLineTo struct {
+	KeyboardElementBase
+
 	X float64
 }
 
@@ -259,7 +322,9 @@ func (x *RelativeHorizontalLineTo) Data() string {
 
 // RelativeLineTo TODO
 type RelativeLineTo struct {
-	EndPoint Vec2
+	KeyboardElementBase
+
+	EndPoint Point
 }
 
 var _ PathComponent = &RelativeLineTo{}
@@ -271,7 +336,9 @@ func (x *RelativeLineTo) Data() string {
 
 // RelativeMoveTo TODO
 type RelativeMoveTo struct {
-	EndPoint Vec2
+	KeyboardElementBase
+
+	EndPoint Point
 }
 
 var _ PathComponent = &RelativeMoveTo{}
@@ -283,8 +350,10 @@ func (x *RelativeMoveTo) Data() string {
 
 // RelativeQuadraticCurveTo TODO
 type RelativeQuadraticCurveTo struct {
-	EndPoint     Vec2
-	ControlPoint Vec2
+	KeyboardElementBase
+
+	EndPoint     Point
+	ControlPoint Point
 }
 
 var _ PathComponent = &RelativeQuadraticCurveTo{}
@@ -296,6 +365,8 @@ func (x *RelativeQuadraticCurveTo) Data() string {
 
 // RelativeVerticalLineTo TODO
 type RelativeVerticalLineTo struct {
+	KeyboardElementBase
+
 	Y float64
 }
 
@@ -306,7 +377,9 @@ func (x *RelativeVerticalLineTo) Data() string {
 	return "NYI"
 }
 
-type Vec2 struct {
+type Point struct {
+	KeyboardElementBase
+
 	X float64
 	Y float64
 }

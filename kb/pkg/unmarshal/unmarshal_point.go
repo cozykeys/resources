@@ -7,8 +7,23 @@ import (
 	"github.com/beevik/etree"
 )
 
-func unmarshalPoint(e *etree.Element) (*models.Vec2, error) {
-	if e == nil {
+func unmarshalPoint(e *etree.Element, parent models.KeyboardElement) (*models.Point, error) {
+	unmarshaller := &pointUnmarshaller{
+		element: e,
+		parent:  parent,
+	}
+
+	return unmarshaller.unmarshal()
+}
+
+type pointUnmarshaller struct {
+	element *etree.Element
+	point   *models.Point
+	parent  models.KeyboardElement
+}
+
+func (u *pointUnmarshaller) unmarshal() (*models.Point, error) {
+	if u.element == nil {
 		return nil, &nilElementError{}
 	}
 
@@ -17,24 +32,28 @@ func unmarshalPoint(e *etree.Element) (*models.Vec2, error) {
 		"ControlPoint",
 	}
 
-	if !stringSliceContains(e.Tag, validPointTags) {
+	if !stringSliceContains(u.element.Tag, validPointTags) {
 		return nil, &invalidTagError{
 			expected: strings.Join(validPointTags, ","),
-			actual:   e.Tag,
+			actual:   getElementPath(u.element),
 		}
 	}
 
-	endPoint := &models.Vec2{}
+	u.point = &models.Point{
+		KeyboardElementBase: models.KeyboardElementBase{
+			Parent: u.parent,
+		},
+	}
 
-	err := unmarshalPointAttributes(endPoint, e.Attr, e.Tag)
+	err := u.unmarshalAttributes()
 	if err != nil {
 		return nil, err
 	}
 
-	return endPoint, nil
+	return u.point, nil
 }
 
-func unmarshalPointAttributes(endPoint *models.Vec2, attributes []etree.Attr, tag string) error {
+func (u *pointUnmarshaller) unmarshalAttributes() error {
 	supportedAttributes := map[string]*struct {
 		required bool
 		found    bool
@@ -43,16 +62,16 @@ func unmarshalPointAttributes(endPoint *models.Vec2, attributes []etree.Attr, ta
 		AttributeY: {required: true},
 	}
 
-	for _, attr := range attributes {
+	for _, attr := range u.element.Attr {
 		var err error
 		switch attr.Key {
 		case AttributeX:
-			endPoint.X, err = unmarshalAttributeFloat64(attr.Key, attr.Value)
+			u.point.X, err = unmarshalAttributeFloat64(&attr, u.point.GetConstants())
 		case AttributeY:
-			endPoint.Y, err = unmarshalAttributeFloat64(attr.Key, attr.Value)
+			u.point.Y, err = unmarshalAttributeFloat64(&attr, u.point.GetConstants())
 		default:
 			err = &unexpectedAttributeError{
-				element:   tag,
+				element:   getElementPath(u.element),
 				attribute: attr.Key,
 			}
 		}
@@ -69,7 +88,7 @@ func unmarshalPointAttributes(endPoint *models.Vec2, attributes []etree.Attr, ta
 	for k, v := range supportedAttributes {
 		if v.required && v.found == false {
 			return &missingRequiredAttributeError{
-				element:   tag,
+				element:   getElementPath(u.element),
 				attribute: k,
 			}
 		}

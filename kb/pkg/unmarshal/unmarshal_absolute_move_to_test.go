@@ -15,12 +15,17 @@ func Test_unmarshalAbsoluteMoveTo(t *testing.T) {
 	}{
 		"happy path": {
 			xml: []byte(`<AbsoluteMoveTo><EndPoint X="1.0" Y="2.0" /></AbsoluteMoveTo>`),
-			expected: &models.AbsoluteMoveTo{
-				EndPoint: &models.Vec2{
+			expected: func() *models.AbsoluteMoveTo {
+				absoluteMoveTo := &models.AbsoluteMoveTo{}
+				absoluteMoveTo.EndPoint = &models.Point{
+					KeyboardElementBase: models.KeyboardElementBase{
+						Parent: absoluteMoveTo,
+					},
 					X: 1.0,
 					Y: 2.0,
-				},
-			},
+				}
+				return absoluteMoveTo
+			}(),
 		},
 	}
 
@@ -31,7 +36,7 @@ func Test_unmarshalAbsoluteMoveTo(t *testing.T) {
 			err := doc.ReadFromBytes(testCase.xml)
 			require.Nil(t, err)
 
-			absoluteMoveTo, err := unmarshalAbsoluteMoveTo(doc.Root())
+			absoluteMoveTo, err := unmarshalAbsoluteMoveTo(doc.Root(), nil)
 			require.Nil(t, err)
 			require.Equal(t, testCase.expected, absoluteMoveTo)
 		})

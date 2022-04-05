@@ -6,34 +6,19 @@ import (
 	"github.com/beevik/etree"
 )
 
-/*
-   "Path": {
-       "Attributes": [
-           "Fill",
-           "Stroke",
-           "FillOpacity",
-           "Visible"
-       ],
-       "Children": [
-           "Components"
-       ]
-   },
-*/
+func unmarshalPath(e *etree.Element, parent models.KeyboardElement) (*models.Path, error) {
+	unmarshaller := &pathUnmarshaller{
+		element: e,
+		parent:  parent,
+	}
 
-func unmarshalPath(e *etree.Element) (*models.Path, error) {
-	unmarshaller := newPathUnmarshaller(e)
 	return unmarshaller.unmarshal()
 }
 
-// TODO: This is the pattern I'd like to move towards for all element
-// unmarshalling
 type pathUnmarshaller struct {
 	element *etree.Element
 	path    *models.Path
-}
-
-func newPathUnmarshaller(e *etree.Element) *pathUnmarshaller {
-	return &pathUnmarshaller{element: e}
+	parent  models.KeyboardElement
 }
 
 func (u *pathUnmarshaller) unmarshal() (*models.Path, error) {
@@ -48,7 +33,11 @@ func (u *pathUnmarshaller) unmarshal() (*models.Path, error) {
 		}
 	}
 
-	u.path = &models.Path{}
+	u.path = &models.Path{
+		KeyboardElementBase: models.KeyboardElementBase{
+			Parent: u.parent,
+		},
+	}
 
 	err := u.unmarshalAttributes()
 	if err != nil {
@@ -78,15 +67,15 @@ func (u *pathUnmarshaller) unmarshalAttributes() error {
 		var err error
 		switch attr.Key {
 		case AttributeFill:
-			u.path.Fill, err = unmarshalAttributeString(attr.Key, attr.Value)
+			u.path.Fill, err = unmarshalAttributeString(&attr, u.path.GetConstants())
 		case AttributeFillOpacity:
-			u.path.FillOpacity, err = unmarshalAttributeString(attr.Key, attr.Value)
+			u.path.FillOpacity, err = unmarshalAttributeString(&attr, u.path.GetConstants())
 		case AttributeStroke:
-			u.path.Stroke, err = unmarshalAttributeString(attr.Key, attr.Value)
+			u.path.Stroke, err = unmarshalAttributeString(&attr, u.path.GetConstants())
 		case AttributeStrokeWidth:
-			u.path.StrokeWidth, err = unmarshalAttributeString(attr.Key, attr.Value)
+			u.path.StrokeWidth, err = unmarshalAttributeString(&attr, u.path.GetConstants())
 		case AttributeVisible:
-			u.path.Visible, err = unmarshalAttributeBool(attr.Key, attr.Value)
+			u.path.Visible, err = unmarshalAttributeBool(&attr, u.path.GetConstants())
 		default:
 			err = &unexpectedAttributeError{
 				element:   ElementPath,
@@ -125,7 +114,7 @@ func (u *pathUnmarshaller) unmarshalChildElements() error {
 		var err error
 		switch element.Tag {
 		case ElementComponents:
-			u.path.Components, err = unmarshalPathComponents(element)
+			u.path.Components, err = u.unmarshalPathComponents(element)
 		default:
 			err = &invalidChildElementError{
 				element: ElementPath,
@@ -141,7 +130,7 @@ func (u *pathUnmarshaller) unmarshalChildElements() error {
 	return nil
 }
 
-func unmarshalPathComponents(e *etree.Element) ([]models.PathComponent, error) {
+func (u *pathUnmarshaller) unmarshalPathComponents(e *etree.Element) ([]models.PathComponent, error) {
 	pathComponents := []models.PathComponent{}
 
 	for _, child := range e.Child {
@@ -154,9 +143,9 @@ func unmarshalPathComponents(e *etree.Element) ([]models.PathComponent, error) {
 		var pathComponent models.PathComponent
 		switch element.Tag {
 		case ElementAbsoluteMoveTo:
-			pathComponent, err = unmarshalAbsoluteMoveTo(element)
+			pathComponent, err = unmarshalAbsoluteMoveTo(element, u.path)
 		case ElementAbsoluteLineTo:
-			pathComponent, err = unmarshalAbsoluteLineTo(element)
+			pathComponent, err = unmarshalAbsoluteLineTo(element, u.path)
 			// TODO: Implement the other path components
 			/*
 				case ElementAbsoluteCubicCurveTo:

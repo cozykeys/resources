@@ -1,5 +1,9 @@
 # To Do List
 
+- Convert all unmarshal files to using an "unmarshaller" to encapsulate
+  functions
+- Implement constants and walking up the parent tree
+
 - [x] Keyboard
 - [x] Constants
 - [x] Constant (LEAF)

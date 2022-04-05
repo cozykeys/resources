@@ -39,7 +39,7 @@ func Test_unmarshalLegend(t *testing.T) {
 			err := doc.ReadFromBytes(testCase.xml)
 			require.Nil(t, err)
 
-			legend, err := unmarshalLegend(doc.Root())
+			legend, err := unmarshalLegend(doc.Root(), nil)
 			require.Nil(t, err)
 			require.Equal(t, testCase.expected, legend)
 		})

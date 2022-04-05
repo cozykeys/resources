@@ -31,10 +31,12 @@ func (e *missingRequiredAttributeError) Error() string {
 type invalidAttributeTypeError struct {
 	element   string
 	attribute string
+	value     string
 }
 
 func (e *invalidAttributeTypeError) Error() string {
-	return fmt.Sprintf("invalid attribute type: element = %q, attribute = %q", e.element, e.attribute)
+	return fmt.Sprintf("invalid attribute type: element = %q, attribute = %q, value = %q",
+		e.element, e.attribute, e.value)
 }
 
 type unexpectedAttributeError struct {
@@ -61,4 +63,15 @@ type unimplementedElementError struct {
 
 func (e *unimplementedElementError) Error() string {
 	return fmt.Sprintf("unimplemented element: elementPath = %q", e.elementPath)
+}
+
+type undefinedConstantError struct {
+	element   string
+	attribute string
+	constant  string
+}
+
+func (e *undefinedConstantError) Error() string {
+	return fmt.Sprintf("undefined constant: element = %q, attribute = %q, constant = %q",
+		e.element, e.attribute, e.constant)
 }

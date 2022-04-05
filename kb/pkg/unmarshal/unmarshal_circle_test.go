@@ -39,7 +39,7 @@ func Test_unmarshalCircle(t *testing.T) {
 			err := doc.ReadFromBytes(testCase.xml)
 			require.Nil(t, err)
 
-			circle, err := unmarshalCircle(doc.Root())
+			circle, err := unmarshalCircle(doc.Root(), nil)
 			require.Nil(t, err)
 			require.Equal(t, testCase.expected, circle)
 		})

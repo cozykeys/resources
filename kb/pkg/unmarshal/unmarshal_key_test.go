@@ -32,27 +32,35 @@ func Test_unmarshalKey(t *testing.T) {
 								FontSize="4"
 								Color="#000000" />
 							</Key>`),
-			expected: &models.Key{
-				Name:    "k13",
-				Row:     1,
-				Column:  2,
-				XOffset: -1.0,
-				YOffset: 3.0,
-				Width:   18.1,
-				Height:  18.1,
-				Margin:  0.475,
-				Fill:    "#ffffff",
-				Stroke:  "#000000",
-				Legends: []models.Legend{
+			expected: func() *models.Key {
+				key := &models.Key{
+					Name:    "k13",
+					Row:     1,
+					Column:  2,
+					XOffset: -1.0,
+					YOffset: 3.0,
+					Width:   18.1,
+					Height:  18.1,
+					Margin:  0.475,
+					Fill:    "#ffffff",
+					Stroke:  "#000000",
+				}
+
+				key.Legends = []models.Legend{
 					{
+						KeyboardElementBase: models.KeyboardElementBase{
+							Parent: key,
+						},
 						HorizontalAlignment: models.LegendHorizontalAlignmentCenter,
 						VerticalAlignment:   models.LegendVerticalAlignmentCenter,
 						Text:                "F1",
 						FontSize:            4,
 						Color:               "#000000",
 					},
-				},
-			},
+				}
+
+				return key
+			}(),
 		},
 	}
 
@@ -63,7 +71,7 @@ func Test_unmarshalKey(t *testing.T) {
 			err := doc.ReadFromBytes(testCase.xml)
 			require.Nil(t, err)
 
-			key, err := unmarshalKey(doc.Root())
+			key, err := unmarshalKey(doc.Root(), nil)
 			require.Nil(t, err)
 			require.Equal(t, testCase.expected, key)
 		})

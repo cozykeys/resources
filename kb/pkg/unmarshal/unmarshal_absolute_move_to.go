@@ -6,39 +6,48 @@ import (
 	"github.com/beevik/etree"
 )
 
-/*
-   "AbsoluteMoveTo": {
-       "Attributes": [],
-       "Children": [
-           "EndPoint"
-       ]
-   },
-*/
+func unmarshalAbsoluteMoveTo(e *etree.Element, parent models.KeyboardElement) (*models.AbsoluteMoveTo, error) {
+	unmarshaller := &absoluteMoveToUnmarshaller{
+		element: e,
+		parent:  parent,
+	}
+	return unmarshaller.unmarshal()
+}
 
-func unmarshalAbsoluteMoveTo(e *etree.Element) (*models.AbsoluteMoveTo, error) {
-	if e == nil {
+type absoluteMoveToUnmarshaller struct {
+	element        *etree.Element
+	absoluteMoveTo *models.AbsoluteMoveTo
+	parent         models.KeyboardElement
+}
+
+func (u *absoluteMoveToUnmarshaller) unmarshal() (*models.AbsoluteMoveTo, error) {
+	if u.element == nil {
 		return nil, &nilElementError{}
 	}
 
-	if e.Tag != ElementAbsoluteMoveTo {
+	if u.element.Tag != ElementAbsoluteMoveTo {
 		return nil, &invalidTagError{
 			expected: ElementAbsoluteMoveTo,
-			actual:   e.Tag,
+			actual:   u.element.Tag,
 		}
 	}
 
-	absoluteMoveTo := &models.AbsoluteMoveTo{}
+	u.absoluteMoveTo = &models.AbsoluteMoveTo{
+		KeyboardElementBase: models.KeyboardElementBase{
+			Parent: u.parent,
+		},
+	}
 
-	err := unmarshalAbsoluteMoveToChildElements(absoluteMoveTo, e.Child)
+	err := u.unmarshalChildElements()
 	if err != nil {
 		return nil, err
 	}
 
-	return absoluteMoveTo, nil
+	return u.absoluteMoveTo, nil
 }
 
-func unmarshalAbsoluteMoveToChildElements(absoluteMoveTo *models.AbsoluteMoveTo, children []etree.Token) error {
-	for _, child := range children {
+func (u *absoluteMoveToUnmarshaller) unmarshalChildElements() error {
+	for _, child := range u.element.Child {
 		element, ok := child.(*etree.Element)
 		if !ok {
 			continue
@@ -47,7 +56,7 @@ func unmarshalAbsoluteMoveToChildElements(absoluteMoveTo *models.AbsoluteMoveTo,
 		var err error
 		switch element.Tag {
 		case ElementEndPoint:
-			absoluteMoveTo.EndPoint, err = unmarshalPoint(element)
+			u.absoluteMoveTo.EndPoint, err = unmarshalPoint(element, u.absoluteMoveTo)
 		default:
 			err = &invalidChildElementError{
 				element: ElementAbsoluteMoveTo,

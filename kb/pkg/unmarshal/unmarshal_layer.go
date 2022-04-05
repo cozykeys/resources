@@ -6,23 +6,7 @@ import (
 	"github.com/beevik/etree"
 )
 
-/*
-   "Layer": {
-       "Attributes": [
-           "Name",
-           "ZIndex",
-           "XOffset",
-           "YOffset",
-           "Width",
-           "Height"
-       ],
-       "Children": [
-           "Groups"
-       ]
-   },
-*/
-
-func unmarshalLayers(e *etree.Element) ([]models.Layer, error) {
+func unmarshalLayers(e *etree.Element, parent models.KeyboardElement) ([]models.Layer, error) {
 	layers := []models.Layer{}
 
 	for _, child := range e.Child {
@@ -38,7 +22,7 @@ func unmarshalLayers(e *etree.Element) ([]models.Layer, error) {
 			}
 		}
 
-		layer, err := unmarshalLayer(element)
+		layer, err := unmarshalLayer(element, parent)
 		if err != nil {
 			return nil, err
 		}
@@ -49,34 +33,52 @@ func unmarshalLayers(e *etree.Element) ([]models.Layer, error) {
 	return layers, nil
 }
 
-func unmarshalLayer(e *etree.Element) (*models.Layer, error) {
-	if e == nil {
+func unmarshalLayer(e *etree.Element, parent models.KeyboardElement) (*models.Layer, error) {
+	unmarshaller := &layerUnmarshaller{
+		element: e,
+		parent:  parent,
+	}
+	return unmarshaller.unmarshal()
+}
+
+type layerUnmarshaller struct {
+	element *etree.Element
+	layer   *models.Layer
+	parent  models.KeyboardElement
+}
+
+func (u *layerUnmarshaller) unmarshal() (*models.Layer, error) {
+	if u.element == nil {
 		return nil, &nilElementError{}
 	}
 
-	if e.Tag != ElementLayer {
+	if u.element.Tag != ElementLayer {
 		return nil, &invalidTagError{
 			expected: ElementLayer,
-			actual:   e.Tag,
+			actual:   u.element.Tag,
 		}
 	}
 
-	layer := &models.Layer{}
+	u.layer = &models.Layer{
+		KeyboardElementBase: models.KeyboardElementBase{
+			Parent: u.parent,
+		},
+	}
 
-	err := unmarshalLayerAttributes(layer, e.Attr)
+	err := u.unmarshalAttributes()
 	if err != nil {
 		return nil, err
 	}
 
-	err = unmarshalLayerChildElements(layer, e.Child)
+	err = u.unmarshalChildElements()
 	if err != nil {
 		return nil, err
 	}
 
-	return layer, nil
+	return u.layer, nil
 }
 
-func unmarshalLayerAttributes(layer *models.Layer, attributes []etree.Attr) error {
+func (u *layerUnmarshaller) unmarshalAttributes() error {
 	supportedAttributes := map[string]*struct {
 		required bool
 		found    bool
@@ -87,17 +89,17 @@ func unmarshalLayerAttributes(layer *models.Layer, attributes []etree.Attr) erro
 		AttributeYOffset: {required: false},
 	}
 
-	for _, attr := range attributes {
+	for _, attr := range u.element.Attr {
 		var err error
 		switch attr.Key {
 		case AttributeName:
-			layer.Name, err = unmarshalAttributeString(attr.Key, attr.Value)
+			u.layer.Name, err = unmarshalAttributeString(&attr, u.layer.GetConstants())
 		case AttributeZIndex:
-			layer.ZIndex, err = unmarshalAttributeInt(attr.Key, attr.Value)
+			u.layer.ZIndex, err = unmarshalAttributeInt(&attr, u.layer.GetConstants())
 		case AttributeXOffset:
-			layer.XOffset, err = unmarshalAttributeFloat64(attr.Key, attr.Value)
+			u.layer.XOffset, err = unmarshalAttributeFloat64(&attr, u.layer.GetConstants())
 		case AttributeYOffset:
-			layer.YOffset, err = unmarshalAttributeFloat64(attr.Key, attr.Value)
+			u.layer.YOffset, err = unmarshalAttributeFloat64(&attr, u.layer.GetConstants())
 		default:
 			err = &unexpectedAttributeError{
 				element:   ElementLayer,
@@ -126,8 +128,8 @@ func unmarshalLayerAttributes(layer *models.Layer, attributes []etree.Attr) erro
 	return nil
 }
 
-func unmarshalLayerChildElements(layer *models.Layer, children []etree.Token) error {
-	for _, child := range children {
+func (u *layerUnmarshaller) unmarshalChildElements() error {
+	for _, child := range u.element.Child {
 		element, ok := child.(*etree.Element)
 		if !ok {
 			continue
@@ -136,7 +138,7 @@ func unmarshalLayerChildElements(layer *models.Layer, children []etree.Token) er
 		var err error
 		switch element.Tag {
 		case ElementGroups:
-			layer.Groups, err = unmarshalGroups(element)
+			u.layer.Groups, err = unmarshalGroups(element, u.layer)
 		default:
 			err = &invalidChildElementError{
 				element: ElementLayer,

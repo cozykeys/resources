@@ -1,9 +1,8 @@
 package svg
 
 import (
-	"encoding/json"
-	"kb/pkg/kb"
-	"kb/pkg/models"
+	"kb/pkg/svg"
+	"kb/pkg/unmarshal"
 	"log"
 	"os"
 
@@ -13,55 +12,46 @@ import (
 var (
 	cfg     Config
 	Command = &cobra.Command{
-		Use:   "svg <input-file.json> <output-file.svg>",
+		Use:   "svg <input-file.xml> <output-directory>",
 		Short: "Generate SVG file from keyboard data",
 		Args:  cobra.ExactArgs(2),
-		Run:   svg,
+		Run:   svgFunc,
 	}
 )
 
 type Config struct {
-	path     string
-	noDryRun bool
+	inputFile string
+	outputDir string
 }
 
 func (cfg Config) Log() {
 	log.Printf("Config:")
-	log.Printf("- path: %q", cfg.path)
-	log.Printf("- dryRun: %t", !cfg.noDryRun)
+	log.Printf("- inputFile: %q", cfg.inputFile)
+	log.Printf("- outputDir: %q", cfg.outputDir)
 }
 
 func init() {
 	Command.SetArgs([]string{"directory"})
-	Command.Flags().BoolVar(&cfg.noDryRun, "no-dry-run", false,
-		"Disables the default \"dry-run\" behavior")
 }
 
-func svg(cmd *cobra.Command, args []string) {
+func svgFunc(cmd *cobra.Command, args []string) {
 	log.Print("Executing command: svg")
-	cfg.path = args[0]
+	cfg.inputFile = args[0]
+	cfg.outputDir = args[1]
 	cfg.Log()
 
-	inputFilePath := args[0]
-	outputFilePath := args[1]
-
-	bytes, err := os.ReadFile(inputFilePath)
+	bytes, err := os.ReadFile(cfg.inputFile)
 	if err != nil {
 		log.Fatalf("failed to read input file: %v\n", err)
 	}
 
-	keyboard := &models.Keyboard{}
-	if err := json.Unmarshal(bytes, keyboard); err != nil {
+	keyboard, err := unmarshal.Unmarshal(bytes)
+	if err != nil {
 		log.Fatalf("failed to unmarshal input file: %v\n", err)
 	}
 
-	svg, err := kb.KeyboardToSvg(keyboard, []string{})
+	err = svg.GenerateSVG(keyboard, cfg.outputDir)
 	if err != nil {
 		log.Fatalf("failed to generate svg: %v\n", err)
-	}
-
-	err = os.WriteFile(outputFilePath, []byte(svg), os.FileMode(int(0664)))
-	if err != nil {
-		log.Fatalf("failed to write to output file: %v\n", err)
 	}
 }

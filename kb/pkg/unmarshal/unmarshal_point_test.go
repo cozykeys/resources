@@ -11,18 +11,18 @@ import (
 func Test_unmarshalPoint(t *testing.T) {
 	testCases := map[string]struct {
 		xml      []byte
-		expected *models.Vec2
+		expected *models.Point
 	}{
 		"happy_path_end_point": {
 			xml: []byte(`<EndPoint X="1.0" Y="2.0" />`),
-			expected: &models.Vec2{
+			expected: &models.Point{
 				X: 1.0,
 				Y: 2.0,
 			},
 		},
 		"happy_path_control_point": {
 			xml: []byte(`<ControlPoint X="3.0" Y="4.0" />`),
-			expected: &models.Vec2{
+			expected: &models.Point{
 				X: 3.0,
 				Y: 4.0,
 			},
@@ -36,7 +36,7 @@ func Test_unmarshalPoint(t *testing.T) {
 			err := doc.ReadFromBytes(testCase.xml)
 			require.Nil(t, err)
 
-			point, err := unmarshalPoint(doc.Root())
+			point, err := unmarshalPoint(doc.Root(), nil)
 			require.Nil(t, err)
 			require.Equal(t, testCase.expected, point)
 		})

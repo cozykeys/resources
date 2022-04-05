@@ -6,48 +6,48 @@ import (
 	"github.com/beevik/etree"
 )
 
-/*
-   "Keyboard": {
-       "Attributes": [
-           "Name",
-           "Version"
-       ],
-       "Children": [
-           "Constants",
-           "Layers",
-           "Foo"
-       ]
-   },
-*/
-
 func unmarshalKeyboard(e *etree.Element) (*models.Keyboard, error) {
-	if e == nil {
+	unmarshaller := &keyboardUnmarshaller{element: e}
+	return unmarshaller.unmarshal()
+}
+
+type keyboardUnmarshaller struct {
+	element  *etree.Element
+	keyboard *models.Keyboard
+}
+
+func (u *keyboardUnmarshaller) unmarshal() (*models.Keyboard, error) {
+	if u.element == nil {
 		return nil, &nilElementError{}
 	}
 
-	if e.Tag != ElementKeyboard {
+	if u.element.Tag != ElementKeyboard {
 		return nil, &invalidTagError{
 			expected: ElementKeyboard,
-			actual:   e.Tag,
+			actual:   u.element.Tag,
 		}
 	}
 
-	kb := &models.Keyboard{}
+	u.keyboard = &models.Keyboard{}
 
-	err := unmarshalKeyboardAttributes(kb, e.Attr)
+	if err := u.unmarshalConstants(); err != nil {
+		return nil, err
+	}
+
+	err := u.unmarshalAttributes()
 	if err != nil {
 		return nil, err
 	}
 
-	err = unmarshalKeyboardChildElements(kb, e.Child)
+	err = u.unmarshalChildElements()
 	if err != nil {
 		return nil, err
 	}
 
-	return kb, nil
+	return u.keyboard, nil
 }
 
-func unmarshalKeyboardAttributes(kb *models.Keyboard, attributes []etree.Attr) error {
+func (u *keyboardUnmarshaller) unmarshalAttributes() error {
 	supportedAttributes := map[string]*struct {
 		required bool
 		found    bool
@@ -56,13 +56,13 @@ func unmarshalKeyboardAttributes(kb *models.Keyboard, attributes []etree.Attr) e
 		AttributeVersion: {required: false},
 	}
 
-	for _, attr := range attributes {
+	for _, attr := range u.element.Attr {
 		var err error
 		switch attr.Key {
 		case AttributeName:
-			kb.Name, err = unmarshalAttributeString(attr.Key, attr.Value)
+			u.keyboard.Name, err = unmarshalAttributeString(&attr, u.keyboard.GetConstants())
 		case AttributeVersion:
-			kb.Version, err = unmarshalAttributeString(attr.Key, attr.Value)
+			u.keyboard.Version, err = unmarshalAttributeString(&attr, u.keyboard.GetConstants())
 		default:
 			err = &unexpectedAttributeError{
 				element:   ElementKeyboard,
@@ -91,8 +91,8 @@ func unmarshalKeyboardAttributes(kb *models.Keyboard, attributes []etree.Attr) e
 	return nil
 }
 
-func unmarshalKeyboardChildElements(kb *models.Keyboard, children []etree.Token) error {
-	for _, child := range children {
+func (u *keyboardUnmarshaller) unmarshalChildElements() error {
+	for _, child := range u.element.Child {
 		element, ok := child.(*etree.Element)
 		if !ok {
 			continue
@@ -101,9 +101,9 @@ func unmarshalKeyboardChildElements(kb *models.Keyboard, children []etree.Token)
 		var err error
 		switch element.Tag {
 		case ElementConstants:
-			kb.Constants, err = unmarshalConstants(element)
+			// Skip this here; it was already processed
 		case ElementLayers:
-			kb.Layers, err = unmarshalLayers(element)
+			u.keyboard.Layers, err = unmarshalLayers(element, u.keyboard)
 		default:
 			err = &invalidChildElementError{
 				element: ElementKeyboard,
@@ -113,6 +113,26 @@ func unmarshalKeyboardChildElements(kb *models.Keyboard, children []etree.Token)
 
 		if err != nil {
 			return err
+		}
+	}
+
+	return nil
+}
+
+func (u *keyboardUnmarshaller) unmarshalConstants() error {
+	for _, child := range u.element.Child {
+		element, ok := child.(*etree.Element)
+		if !ok {
+			continue
+		}
+
+		if element.Tag == ElementConstants {
+			var err error
+			u.keyboard.Constants, err = unmarshalConstants(element, u.keyboard)
+			if err != nil {
+				return err
+			}
+			return nil
 		}
 	}
 
