@@ -2,29 +2,30 @@ package svg
 
 import (
 	"errors"
-	"io"
 	"kb/pkg/models"
+
+	"github.com/beevik/etree"
 )
 
-func WriteLayer(w io.Writer, layer *models.Layer) error {
+func WriteLayer(parent *etree.Element, layer *models.Layer) error {
 	writer := &layerWriter{
-		writer: w,
+		parent: parent,
 	}
 
 	return writer.Write()
 }
 
 type layerWriter struct {
-	writer io.Writer
+	parent *etree.Element
+}
 
+func (w *layerWriter) Write() error {
 	/*
 		g := parent.CreateElement("g")
 		g.CreateAttr("id", key.Name)
 		g.CreateAttr("transform", fmt.Sprintf("translate(%.3f,%.3f)", key.XOffset, key.YOffset))
 	*/
 	//public SvgGenerationOptions GenerationOptions { get; set; }
-}
 
-func (w *layerWriter) Write() error {
 	return errors.New("not yet implemented")
 }

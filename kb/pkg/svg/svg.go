@@ -1,6 +1,7 @@
 package svg
 
 import (
+	"bytes"
 	"fmt"
 	"kb/pkg/models"
 	"os"
@@ -103,8 +104,7 @@ func (g *generator) generate() error {
 		return err
 	}
 
-	g.generateLayers()
-	return nil
+	return g.generateLayers()
 }
 
 /*
@@ -133,7 +133,36 @@ func (g *generator) generateLayers() error {
 			strings.ToLower(g.keyboard.Name), strings.ToLower(layer.Name))
 		outputFile := path.Join(g.outputDirectory, filename)
 
-		os.WriteFile(outputFile, []byte("test"), 0644)
+		// Create XML Document
+		doc := etree.NewDocument()
+		doc.CreateProcInst("xml", `version="1.0" encoding="UTF-8"`)
+
+		// Set up the root SVG element
+		w := int32(g.keyboard.Width + 10)  // TODO
+		h := int32(g.keyboard.Height + 10) // TODO
+		root := doc.CreateElement("svg")
+		root.CreateAttr("width", fmt.Sprintf("%dmm", w))
+		root.CreateAttr("height", fmt.Sprintf("%dmm", h))
+		root.CreateAttr("viewBox", fmt.Sprintf("0 0 %d %d", w, h))
+		root.CreateAttr("xmlns", "http://www.w3.org/2000/svg")
+
+		doc.Indent(2)
+
+		err := WriteLayer(root, &layer)
+		if err != nil {
+			//return err
+		}
+
+		/*
+			for _, cmp := range kb.Components {
+				addChildComponent(root, cmp)
+			}
+		*/
+
+		b := &bytes.Buffer{}
+		doc.WriteTo(b)
+
+		os.WriteFile(outputFile, b.Bytes(), 0644)
 	}
 
 	return nil
