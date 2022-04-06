@@ -34,22 +34,26 @@ func Test_unmarshalKey(t *testing.T) {
 							</Key>`),
 			expected: func() *models.Key {
 				key := &models.Key{
-					Name:    "k13",
-					Row:     1,
-					Column:  2,
-					XOffset: -1.0,
-					YOffset: 3.0,
-					Width:   18.1,
-					Height:  18.1,
-					Margin:  0.475,
-					Fill:    "#ffffff",
-					Stroke:  "#000000",
+					KeyboardElementBase: models.KeyboardElementBase{
+						Name:    "k13",
+						XOffset: -1.0,
+						YOffset: 3.0,
+						Width:   18.1,
+						Height:  18.1,
+						Margin:  0.475,
+						Visible: true,
+					},
+					Row:    1,
+					Column: 2,
+					Fill:   "#ffffff",
+					Stroke: "#000000",
 				}
 
 				key.Legends = []models.Legend{
 					{
 						KeyboardElementBase: models.KeyboardElementBase{
-							Parent: key,
+							Parent:  key,
+							Visible: true,
 						},
 						HorizontalAlignment: models.LegendHorizontalAlignmentCenter,
 						VerticalAlignment:   models.LegendVerticalAlignmentCenter,

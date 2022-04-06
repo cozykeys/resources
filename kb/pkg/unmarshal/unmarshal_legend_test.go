@@ -22,12 +22,15 @@ func Test_unmarshalLegend(t *testing.T) {
                             Color="#000000"
                             YOffset="-3" />`),
 			expected: &models.Legend{
+				KeyboardElementBase: models.KeyboardElementBase{
+					YOffset: -3.0,
+					Visible: true,
+				},
 				HorizontalAlignment: models.LegendHorizontalAlignmentCenter,
 				VerticalAlignment:   models.LegendVerticalAlignmentCenter,
 				Text:                "+",
 				FontSize:            6.0,
 				Color:               "#000000",
-				YOffset:             -3.0,
 			},
 		},
 	}

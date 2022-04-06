@@ -28,9 +28,13 @@ func (u *keyboardUnmarshaller) unmarshal() (*models.Keyboard, error) {
 		}
 	}
 
-	u.keyboard = &models.Keyboard{}
+	u.keyboard = &models.Keyboard{
+		KeyboardElementBase: models.KeyboardElementBase{
+			Visible: true,
+		},
+	}
 
-	if err := u.unmarshalConstants(); err != nil {
+	if err := findAndUnmarshalConstants(u.element, &u.keyboard.KeyboardElementBase); err != nil {
 		return nil, err
 	}
 
@@ -52,21 +56,27 @@ func (u *keyboardUnmarshaller) unmarshalAttributes() error {
 		required bool
 		found    bool
 	}{
-		AttributeName:    {required: true},
 		AttributeVersion: {required: false},
+	}
+
+	constants := u.keyboard.GetConstants()
+
+	err := unmarshalElementAttributes(u.element, &u.keyboard.KeyboardElementBase)
+	if err != nil {
+		return err
 	}
 
 	for _, attr := range u.element.Attr {
 		var err error
 		switch attr.Key {
-		case AttributeName:
-			u.keyboard.Name, err = unmarshalAttributeString(&attr, u.keyboard.GetConstants())
 		case AttributeVersion:
-			u.keyboard.Version, err = unmarshalAttributeString(&attr, u.keyboard.GetConstants())
+			u.keyboard.Version, err = unmarshalAttributeString(&attr, constants)
 		default:
-			err = &unexpectedAttributeError{
-				element:   ElementKeyboard,
-				attribute: attr.Key,
+			if !isKeyboardElementAttribute(attr.Key) {
+				err = &unexpectedAttributeError{
+					element:   ElementKeyboard,
+					attribute: attr.Key,
+				}
 			}
 		}
 
@@ -113,26 +123,6 @@ func (u *keyboardUnmarshaller) unmarshalChildElements() error {
 
 		if err != nil {
 			return err
-		}
-	}
-
-	return nil
-}
-
-func (u *keyboardUnmarshaller) unmarshalConstants() error {
-	for _, child := range u.element.Child {
-		element, ok := child.(*etree.Element)
-		if !ok {
-			continue
-		}
-
-		if element.Tag == ElementConstants {
-			var err error
-			u.keyboard.Constants, err = unmarshalConstants(element, u.keyboard)
-			if err != nil {
-				return err
-			}
-			return nil
 		}
 	}
 

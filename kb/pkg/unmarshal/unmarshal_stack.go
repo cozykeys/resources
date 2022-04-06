@@ -36,9 +36,14 @@ func (u *stackUnmarshaller) unmarshal() (*models.Stack, error) {
 	u.stack = &models.Stack{
 		Group: models.Group{
 			KeyboardElementBase: models.KeyboardElementBase{
-				Parent: u.parent,
+				Parent:  u.parent,
+				Visible: true,
 			},
 		},
+	}
+
+	if err := findAndUnmarshalConstants(u.element, &u.stack.KeyboardElementBase); err != nil {
+		return nil, err
 	}
 
 	err := u.unmarshalAttributes()
@@ -59,30 +64,27 @@ func (u *stackUnmarshaller) unmarshalAttributes() error {
 		required bool
 		found    bool
 	}{
-		AttributeName:        {required: false},
-		AttributeRotation:    {required: false},
 		AttributeOrientation: {required: false},
-		AttributeXOffset:     {required: false},
-		AttributeYOffset:     {required: false},
+	}
+
+	constants := u.stack.GetConstants()
+
+	err := unmarshalElementAttributes(u.element, &u.stack.KeyboardElementBase)
+	if err != nil {
+		return err
 	}
 
 	for _, attr := range u.element.Attr {
 		var err error
 		switch attr.Key {
-		case AttributeName:
-			u.stack.Name, err = unmarshalAttributeString(&attr, u.stack.GetConstants())
-		case AttributeRotation:
-			u.stack.Rotation, err = unmarshalAttributeFloat64(&attr, u.stack.GetConstants())
 		case AttributeOrientation:
-			u.stack.Orientation, err = unmarshalAttributeStackOrientation(&attr, u.stack.GetConstants())
-		case AttributeXOffset:
-			u.stack.XOffset, err = unmarshalAttributeFloat64(&attr, u.stack.GetConstants())
-		case AttributeYOffset:
-			u.stack.YOffset, err = unmarshalAttributeFloat64(&attr, u.stack.GetConstants())
+			u.stack.Orientation, err = unmarshalAttributeStackOrientation(&attr, constants)
 		default:
-			err = &unexpectedAttributeError{
-				element:   ElementStack,
-				attribute: attr.Key,
+			if !isKeyboardElementAttribute(attr.Key) {
+				err = &unexpectedAttributeError{
+					element:   ElementStack,
+					attribute: attr.Key,
+				}
 			}
 		}
 

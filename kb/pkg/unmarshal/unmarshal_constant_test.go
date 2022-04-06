@@ -16,7 +16,10 @@ func Test_unmarshalConstant(t *testing.T) {
 		"happy path": {
 			xml: []byte(`<Constant Name="Foo" Value="Bar" />`),
 			expected: &models.Constant{
-				Name:  "Foo",
+				KeyboardElementBase: models.KeyboardElementBase{
+					Name:    "Foo",
+					Visible: true,
+				},
 				Value: "Bar",
 			},
 		},
@@ -39,15 +42,12 @@ func Test_unmarshalConstant(t *testing.T) {
 func Test_unmarshalConstants(t *testing.T) {
 	testCases := map[string]struct {
 		xml      []byte
-		expected []models.Constant
+		expected map[string]string
 	}{
 		"happy path": {
 			xml: []byte(`<Constants><Constant Name="Foo" Value="Bar" /></Constants>`),
-			expected: []models.Constant{
-				{
-					Name:  "Foo",
-					Value: "Bar",
-				},
+			expected: map[string]string{
+				"Foo": "Bar",
 			},
 		},
 	}

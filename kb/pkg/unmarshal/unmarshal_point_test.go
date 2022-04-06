@@ -16,6 +16,9 @@ func Test_unmarshalPoint(t *testing.T) {
 		"happy_path_end_point": {
 			xml: []byte(`<EndPoint X="1.0" Y="2.0" />`),
 			expected: &models.Point{
+				KeyboardElementBase: models.KeyboardElementBase{
+					Visible: true,
+				},
 				X: 1.0,
 				Y: 2.0,
 			},
@@ -23,6 +26,9 @@ func Test_unmarshalPoint(t *testing.T) {
 		"happy_path_control_point": {
 			xml: []byte(`<ControlPoint X="3.0" Y="4.0" />`),
 			expected: &models.Point{
+				KeyboardElementBase: models.KeyboardElementBase{
+					Visible: true,
+				},
 				X: 3.0,
 				Y: 4.0,
 			},

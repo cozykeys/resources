@@ -1,31 +1,47 @@
 package svg
 
 import (
-	"errors"
 	"kb/pkg/models"
 
 	"github.com/beevik/etree"
 )
 
-func WriteLayer(parent *etree.Element, layer *models.Layer) error {
+func writeLayer(parent *etree.Element, layer *models.Layer) error {
 	writer := &layerWriter{
 		parent: parent,
+		layer:  layer,
 	}
 
-	return writer.Write()
+	return writer.write()
 }
 
 type layerWriter struct {
 	parent *etree.Element
+	layer  *models.Layer
 }
 
-func (w *layerWriter) Write() error {
-	/*
-		g := parent.CreateElement("g")
-		g.CreateAttr("id", key.Name)
-		g.CreateAttr("transform", fmt.Sprintf("translate(%.3f,%.3f)", key.XOffset, key.YOffset))
-	*/
-	//public SvgGenerationOptions GenerationOptions { get; set; }
+func (w *layerWriter) write() error {
+	if !w.layer.Visible {
+		return nil
+	}
 
-	return errors.New("not yet implemented")
+	g := w.parent.CreateElement("g")
+
+	// Attributes
+	g.CreateAttr("id", w.layer.Name)
+	writeTransform(g, w.layer)
+
+	// Child Elements
+	if w.layer.Debug {
+		writeDebugOverlay(g, w.layer)
+	}
+
+	for _, group := range w.layer.Groups {
+		err := writeGroup(g, &group)
+		if err != nil {
+			return err
+		}
+	}
+
+	return nil
 }

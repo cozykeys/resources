@@ -16,8 +16,11 @@ func Test_unmarshalSpacer(t *testing.T) {
 		"happy_path": {
 			xml: []byte(`<Spacer Height="1.0" Width="2.0" />`),
 			expected: &models.Spacer{
-				Height: 1.0,
-				Width:  2.0,
+				KeyboardElementBase: models.KeyboardElementBase{
+					Height:  1.0,
+					Width:   2.0,
+					Visible: true,
+				},
 			},
 		},
 	}

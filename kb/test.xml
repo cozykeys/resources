@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Keyboard Name="test" Version="1.0.0">
+  <Constants>
+    <Constant Name="AlphaFillColor" Value="#ffffff" />
+    <Constant Name="AlphaLegendColor" Value="#000000" />
+    <Constant Name="ModFillColor" Value="#56cfff" />
+    <Constant Name="ModLegendColor" Value="#000000" />
+    <Constant Name="KeycapBorderColor" Value="#000000" />
+    <Constant Name="M2SpacerSize" Value="3.563" />
+    <Constant Name="M2ScrewSize" Value="2.3" />
+    <Constant Name="KeycapDiameterMm1u" Value="18.1" />
+    <Constant Name="KeyMarginMillimeters" Value="0.475" />
+  </Constants>
+  <Layers>
+    <Layer Name="Switch" ZIndex="3" XOffset="175" YOffset="80">
+      <Groups>
+        <Group Name="Outer">
+          <Children>
+            <Key Name="Column1Key1" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}" Debug="true">
+              <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F1" FontSize="4" Color="${AlphaLegendColor}" />
+            </Key>
+          </Children>
+        </Group>
+      </Groups>
+    </Layer>
+  </Layers>
+</Keyboard>

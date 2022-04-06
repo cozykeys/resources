@@ -22,9 +22,12 @@ func Test_unmarshalCircle(t *testing.T) {
 							Stroke="#000000"
 							StrokeWidth="2px" />`),
 			expected: &models.Circle{
+				KeyboardElementBase: models.KeyboardElementBase{
+					XOffset: 1.0,
+					YOffset: 2.0,
+					Visible: true,
+				},
 				Size:        5.0,
-				XOffset:     1.0,
-				YOffset:     2.0,
 				Fill:        "#ffffff",
 				Stroke:      "#000000",
 				StrokeWidth: "2px",

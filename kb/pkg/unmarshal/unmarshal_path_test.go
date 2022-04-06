@@ -16,11 +16,13 @@ func Test_unmarshalPath(t *testing.T) {
 		"happy path": {
 			xml: []byte(`<Path Fill="#ffffff" FillOpacity="0.5" Stroke="#000000" StrokeWidth="1.0" Visible="True"><Components /></Path>`),
 			expected: &models.Path{
+				KeyboardElementBase: models.KeyboardElementBase{
+					Visible: true,
+				},
 				Fill:        "#ffffff",
 				FillOpacity: "0.5",
 				Stroke:      "#000000",
 				StrokeWidth: "1.0",
-				Visible:     true,
 				Components:  []models.PathComponent{},
 			},
 		},

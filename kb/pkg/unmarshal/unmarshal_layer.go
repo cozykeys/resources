@@ -61,8 +61,13 @@ func (u *layerUnmarshaller) unmarshal() (*models.Layer, error) {
 
 	u.layer = &models.Layer{
 		KeyboardElementBase: models.KeyboardElementBase{
-			Parent: u.parent,
+			Parent:  u.parent,
+			Visible: true,
 		},
+	}
+
+	if err := findAndUnmarshalConstants(u.element, &u.layer.KeyboardElementBase); err != nil {
+		return nil, err
 	}
 
 	err := u.unmarshalAttributes()
@@ -83,27 +88,27 @@ func (u *layerUnmarshaller) unmarshalAttributes() error {
 		required bool
 		found    bool
 	}{
-		AttributeName:    {required: true},
-		AttributeZIndex:  {required: false},
-		AttributeXOffset: {required: false},
-		AttributeYOffset: {required: false},
+		AttributeZIndex: {required: false},
+	}
+
+	constants := u.layer.GetConstants()
+
+	err := unmarshalElementAttributes(u.element, &u.layer.KeyboardElementBase)
+	if err != nil {
+		return err
 	}
 
 	for _, attr := range u.element.Attr {
 		var err error
 		switch attr.Key {
-		case AttributeName:
-			u.layer.Name, err = unmarshalAttributeString(&attr, u.layer.GetConstants())
 		case AttributeZIndex:
-			u.layer.ZIndex, err = unmarshalAttributeInt(&attr, u.layer.GetConstants())
-		case AttributeXOffset:
-			u.layer.XOffset, err = unmarshalAttributeFloat64(&attr, u.layer.GetConstants())
-		case AttributeYOffset:
-			u.layer.YOffset, err = unmarshalAttributeFloat64(&attr, u.layer.GetConstants())
+			u.layer.ZIndex, err = unmarshalAttributeInt(&attr, constants)
 		default:
-			err = &unexpectedAttributeError{
-				element:   ElementLayer,
-				attribute: attr.Key,
+			if !isKeyboardElementAttribute(attr.Key) {
+				err = &unexpectedAttributeError{
+					element:   ElementLayer,
+					attribute: attr.Key,
+				}
 			}
 		}
 

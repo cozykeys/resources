@@ -11,57 +11,6 @@ import (
 	"github.com/beevik/etree"
 )
 
-var switchCutoutPathData string = strings.Join([]string{
-	"M    0 -7",
-	"L    7 -7",
-	"L    7 -6",
-	"L  7.8 -6",
-	"L  7.8  6",
-	"L    7  6",
-	"L    7  7",
-	"L   -7  7",
-	"L   -7  6",
-	"L -7.8  6",
-	"L -7.8 -6",
-	"L   -7 -6",
-	"L   -7 -7",
-	"L    0 -7",
-}, " ")
-
-var keycapPathDataOuter string = strings.Join([]string{
-	"M     0 -9.05",
-	"L  8.05 -9.05",
-	"Q  9.05 -9.05",
-	"   9.05 -8.05",
-	"L  9.05  8.05",
-	"Q  9.05  9.05",
-	"   8.05  9.05",
-	"L -8.05  9.05",
-	"Q -9.05  9.05",
-	"  -9.05  8.05",
-	"L -9.05 -8.05",
-	"Q -9.05 -9.05",
-	"  -8.05 -9.05",
-	"L     0 -9.05",
-}, " ")
-
-var keycapPathDataInner string = strings.Join([]string{
-	"M     0 -8.05",
-	"L  4.05 -8.05",
-	"Q  6.05 -8.05",
-	"   6.05 -6.05",
-	"L  6.05  4.55",
-	"Q  6.05  6.55",
-	"   4.05  6.55",
-	"L -4.05  6.55",
-	"Q -6.05  6.55",
-	"  -6.05  4.55",
-	"L -6.05 -6.05",
-	"Q -6.05 -8.05",
-	"  -4.05 -8.05",
-	"L     0 -8.05",
-}, " ")
-
 func GenerateSVG(kb *models.Keyboard, outputDirectory string) error {
 	generator := &generator{
 		keyboard:        kb,
@@ -146,9 +95,7 @@ func (g *generator) generateLayers() error {
 		root.CreateAttr("viewBox", fmt.Sprintf("0 0 %d %d", w, h))
 		root.CreateAttr("xmlns", "http://www.w3.org/2000/svg")
 
-		doc.Indent(2)
-
-		err := WriteLayer(root, &layer)
+		err := writeLayer(root, &layer)
 		if err != nil {
 			//return err
 		}
@@ -159,6 +106,7 @@ func (g *generator) generateLayers() error {
 			}
 		*/
 
+		doc.Indent(4)
 		b := &bytes.Buffer{}
 		doc.WriteTo(b)
 
@@ -166,32 +114,6 @@ func (g *generator) generateLayers() error {
 	}
 
 	return nil
-}
-
-func KeyboardToSvg(kb *models.Keyboard, tags []string) (string, error) {
-	w := int32(kb.Width + 10)
-	h := int32(kb.Height + 10)
-
-	doc := etree.NewDocument()
-	doc.CreateProcInst("xml", `version="1.0" encoding="UTF-8"`)
-
-	root := doc.CreateElement("svg")
-	root.CreateAttr("width", fmt.Sprintf("%dmm", w))
-	root.CreateAttr("height", fmt.Sprintf("%dmm", h))
-	root.CreateAttr("viewBox", fmt.Sprintf("0 0 %d %d", w, h))
-	root.CreateAttr("xmlns", "http://www.w3.org/2000/svg")
-
-	/*
-		for _, cmp := range kb.Components {
-			addChildComponent(root, cmp)
-		}
-	*/
-
-	doc.Indent(2)
-
-	b := &strings.Builder{}
-	doc.WriteTo(b)
-	return b.String(), nil
 }
 
 /*

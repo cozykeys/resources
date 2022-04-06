@@ -17,9 +17,10 @@ func Test_unmarshalKeyboard(t *testing.T) {
 			xml: []byte(`<Keyboard Name="Bloomer" Version="1.0.0"><Constants /><Layers /></Keyboard>`),
 			expected: &models.Keyboard{
 				KeyboardElementBase: models.KeyboardElementBase{
-					Constants: []models.Constant{},
+					Name:      "Bloomer",
+					Constants: map[string]string{},
+					Visible:   true,
 				},
-				Name:    "Bloomer",
 				Version: "1.0.0",
 				Layers:  []models.Layer{},
 			},

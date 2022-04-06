@@ -35,8 +35,13 @@ func (u *pathUnmarshaller) unmarshal() (*models.Path, error) {
 
 	u.path = &models.Path{
 		KeyboardElementBase: models.KeyboardElementBase{
-			Parent: u.parent,
+			Parent:  u.parent,
+			Visible: true,
 		},
+	}
+
+	if err := findAndUnmarshalConstants(u.element, &u.path.KeyboardElementBase); err != nil {
+		return nil, err
 	}
 
 	err := u.unmarshalAttributes()
@@ -57,29 +62,36 @@ func (u *pathUnmarshaller) unmarshalAttributes() error {
 		required bool
 		found    bool
 	}{
+		AttributeStrokeWidth: {required: false},
 		AttributeStroke:      {required: false},
 		AttributeFill:        {required: false},
 		AttributeFillOpacity: {required: false},
-		AttributeVisible:     {required: false},
+	}
+
+	constants := u.path.GetConstants()
+
+	err := unmarshalElementAttributes(u.element, &u.path.KeyboardElementBase)
+	if err != nil {
+		return err
 	}
 
 	for _, attr := range u.element.Attr {
 		var err error
 		switch attr.Key {
 		case AttributeFill:
-			u.path.Fill, err = unmarshalAttributeString(&attr, u.path.GetConstants())
+			u.path.Fill, err = unmarshalAttributeString(&attr, constants)
 		case AttributeFillOpacity:
-			u.path.FillOpacity, err = unmarshalAttributeString(&attr, u.path.GetConstants())
+			u.path.FillOpacity, err = unmarshalAttributeString(&attr, constants)
 		case AttributeStroke:
-			u.path.Stroke, err = unmarshalAttributeString(&attr, u.path.GetConstants())
+			u.path.Stroke, err = unmarshalAttributeString(&attr, constants)
 		case AttributeStrokeWidth:
-			u.path.StrokeWidth, err = unmarshalAttributeString(&attr, u.path.GetConstants())
-		case AttributeVisible:
-			u.path.Visible, err = unmarshalAttributeBool(&attr, u.path.GetConstants())
+			u.path.StrokeWidth, err = unmarshalAttributeString(&attr, constants)
 		default:
-			err = &unexpectedAttributeError{
-				element:   ElementPath,
-				attribute: attr.Key,
+			if !isKeyboardElementAttribute(attr.Key) {
+				err = &unexpectedAttributeError{
+					element:   ElementPath,
+					attribute: attr.Key,
+				}
 			}
 		}
 

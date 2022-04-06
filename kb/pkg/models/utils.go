@@ -1,21 +1,15 @@
 package models
 
-func mergeConstants(parent, child []Constant) []Constant {
+func mergeConstants(parent, child map[string]string) map[string]string {
 	kvps := map[string]string{}
 
-	for _, constant := range parent {
-		kvps[constant.Name] = constant.Value
+	for name, value := range parent {
+		kvps[name] = value
 	}
 
-	for _, constant := range child {
-		kvps[constant.Name] = constant.Value
+	for name, value := range child {
+		kvps[name] = value
 	}
 
-	result := make([]Constant, len(kvps))
-	i := 0
-	for k, v := range kvps {
-		result[i] = Constant{Name: k, Value: v}
-		i++
-	}
-	return result
+	return kvps
 }

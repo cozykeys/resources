@@ -34,8 +34,13 @@ func (u *keyUnmarshaller) unmarshal() (*models.Key, error) {
 
 	u.key = &models.Key{
 		KeyboardElementBase: models.KeyboardElementBase{
-			Parent: u.parent,
+			Parent:  u.parent,
+			Visible: true,
 		},
+	}
+
+	if err := findAndUnmarshalConstants(u.element, &u.key.KeyboardElementBase); err != nil {
+		return nil, err
 	}
 
 	err := u.unmarshalAttributes()
@@ -56,45 +61,36 @@ func (u *keyUnmarshaller) unmarshalAttributes() error {
 		required bool
 		found    bool
 	}{
-		AttributeName:    {required: false},
-		AttributeRow:     {required: false},
-		AttributeColumn:  {required: false},
-		AttributeXOffset: {required: false},
-		AttributeYOffset: {required: false},
-		AttributeWidth:   {required: false},
-		AttributeHeight:  {required: false},
-		AttributeMargin:  {required: false},
-		AttributeFill:    {required: false},
-		AttributeStroke:  {required: false},
+		AttributeRow:    {required: false},
+		AttributeColumn: {required: false},
+		AttributeFill:   {required: false},
+		AttributeStroke: {required: false},
+	}
+
+	constants := u.key.GetConstants()
+
+	err := unmarshalElementAttributes(u.element, &u.key.KeyboardElementBase)
+	if err != nil {
+		return err
 	}
 
 	for _, attr := range u.element.Attr {
 		var err error
 		switch attr.Key {
-		case AttributeName:
-			u.key.Name, err = unmarshalAttributeString(&attr, u.key.GetConstants())
 		case AttributeRow:
-			u.key.Row, err = unmarshalAttributeInt(&attr, u.key.GetConstants())
+			u.key.Row, err = unmarshalAttributeInt(&attr, constants)
 		case AttributeColumn:
-			u.key.Column, err = unmarshalAttributeInt(&attr, u.key.GetConstants())
-		case AttributeXOffset:
-			u.key.XOffset, err = unmarshalAttributeFloat64(&attr, u.key.GetConstants())
-		case AttributeYOffset:
-			u.key.YOffset, err = unmarshalAttributeFloat64(&attr, u.key.GetConstants())
-		case AttributeWidth:
-			u.key.Width, err = unmarshalAttributeFloat64(&attr, u.key.GetConstants())
-		case AttributeHeight:
-			u.key.Height, err = unmarshalAttributeFloat64(&attr, u.key.GetConstants())
-		case AttributeMargin:
-			u.key.Margin, err = unmarshalAttributeFloat64(&attr, u.key.GetConstants())
+			u.key.Column, err = unmarshalAttributeInt(&attr, constants)
 		case AttributeFill:
-			u.key.Fill, err = unmarshalAttributeString(&attr, u.key.GetConstants())
+			u.key.Fill, err = unmarshalAttributeString(&attr, constants)
 		case AttributeStroke:
-			u.key.Stroke, err = unmarshalAttributeString(&attr, u.key.GetConstants())
+			u.key.Stroke, err = unmarshalAttributeString(&attr, constants)
 		default:
-			err = &unexpectedAttributeError{
-				element:   ElementKey,
-				attribute: attr.Key,
+			if !isKeyboardElementAttribute(attr.Key) {
+				err = &unexpectedAttributeError{
+					element:   ElementKey,
+					attribute: attr.Key,
+				}
 			}
 		}
 

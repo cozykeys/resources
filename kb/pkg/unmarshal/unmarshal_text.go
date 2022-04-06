@@ -35,8 +35,13 @@ func (u *textUnmarshaller) unmarshal() (*models.Text, error) {
 
 	u.text = &models.Text{
 		KeyboardElementBase: models.KeyboardElementBase{
-			Parent: u.parent,
+			Parent:  u.parent,
+			Visible: true,
 		},
+	}
+
+	if err := findAndUnmarshalConstants(u.element, &u.text.KeyboardElementBase); err != nil {
+		return nil, err
 	}
 
 	err := u.unmarshalAttributes()
@@ -56,29 +61,32 @@ func (u *textUnmarshaller) unmarshalAttributes() error {
 		AttributeTextAnchor: {required: false},
 		AttributeFont:       {required: false},
 		AttributeFill:       {required: false},
-		AttributeXOffset:    {required: false},
-		AttributeYOffset:    {required: false},
+	}
+
+	constants := u.text.GetConstants()
+
+	err := unmarshalElementAttributes(u.element, &u.text.KeyboardElementBase)
+	if err != nil {
+		return err
 	}
 
 	for _, attr := range u.element.Attr {
 		var err error
 		switch attr.Key {
 		case AttributeContent:
-			u.text.Content, err = unmarshalAttributeString(&attr, u.text.GetConstants())
+			u.text.Content, err = unmarshalAttributeString(&attr, constants)
 		case AttributeTextAnchor:
-			u.text.TextAnchor, err = unmarshalAttributeString(&attr, u.text.GetConstants())
+			u.text.TextAnchor, err = unmarshalAttributeString(&attr, constants)
 		case AttributeFont:
-			u.text.Font, err = unmarshalAttributeString(&attr, u.text.GetConstants())
+			u.text.Font, err = unmarshalAttributeString(&attr, constants)
 		case AttributeFill:
-			u.text.Fill, err = unmarshalAttributeString(&attr, u.text.GetConstants())
-		case AttributeXOffset:
-			u.text.XOffset, err = unmarshalAttributeFloat64(&attr, u.text.GetConstants())
-		case AttributeYOffset:
-			u.text.YOffset, err = unmarshalAttributeFloat64(&attr, u.text.GetConstants())
+			u.text.Fill, err = unmarshalAttributeString(&attr, constants)
 		default:
-			err = &unexpectedAttributeError{
-				element:   ElementText,
-				attribute: attr.Key,
+			if !isKeyboardElementAttribute(attr.Key) {
+				err = &unexpectedAttributeError{
+					element:   ElementText,
+					attribute: attr.Key,
+				}
 			}
 		}
 

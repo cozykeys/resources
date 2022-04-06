@@ -6,8 +6,28 @@ import (
 	"github.com/beevik/etree"
 )
 
-func unmarshalConstants(e *etree.Element, parent models.KeyboardElement) ([]models.Constant, error) {
-	constants := []models.Constant{}
+func findAndUnmarshalConstants(e *etree.Element, kbElement *models.KeyboardElementBase) error {
+	for _, child := range e.Child {
+		element, ok := child.(*etree.Element)
+		if !ok {
+			continue
+		}
+
+		if element.Tag == ElementConstants {
+			var err error
+			kbElement.Constants, err = unmarshalConstants(element, kbElement)
+			if err != nil {
+				return err
+			}
+			return nil
+		}
+	}
+
+	return nil
+}
+
+func unmarshalConstants(e *etree.Element, parent models.KeyboardElement) (map[string]string, error) {
+	constants := map[string]string{}
 
 	for _, child := range e.Child {
 		element, ok := child.(*etree.Element)
@@ -27,7 +47,7 @@ func unmarshalConstants(e *etree.Element, parent models.KeyboardElement) ([]mode
 			return nil, err
 		}
 
-		constants = append(constants, *constant)
+		constants[constant.Name] = constant.Value
 	}
 
 	return constants, nil
@@ -61,8 +81,13 @@ func (u *constantUnmarshaller) unmarshal() (*models.Constant, error) {
 
 	u.constant = &models.Constant{
 		KeyboardElementBase: models.KeyboardElementBase{
-			Parent: u.parent,
+			Parent:  u.parent,
+			Visible: true,
 		},
+	}
+
+	if err := findAndUnmarshalConstants(u.element, &u.constant.KeyboardElementBase); err != nil {
+		return nil, err
 	}
 
 	err := u.unmarshalAttributes()
@@ -78,21 +103,27 @@ func (u *constantUnmarshaller) unmarshalAttributes() error {
 		required bool
 		found    bool
 	}{
-		AttributeName:  {required: true},
 		AttributeValue: {required: true},
+	}
+
+	constants := u.constant.GetConstants()
+
+	err := unmarshalElementAttributes(u.element, &u.constant.KeyboardElementBase)
+	if err != nil {
+		return err
 	}
 
 	for _, attr := range u.element.Attr {
 		var err error
 		switch attr.Key {
-		case AttributeName:
-			u.constant.Name, err = unmarshalAttributeString(&attr, u.constant.GetConstants())
 		case AttributeValue:
-			u.constant.Value, err = unmarshalAttributeString(&attr, u.constant.GetConstants())
+			u.constant.Value, err = unmarshalAttributeString(&attr, constants)
 		default:
-			err = &unexpectedAttributeError{
-				element:   ElementConstant,
-				attribute: attr.Key,
+			if !isKeyboardElementAttribute(attr.Key) {
+				err = &unexpectedAttributeError{
+					element:   ElementConstant,
+					attribute: attr.Key,
+				}
 			}
 		}
 

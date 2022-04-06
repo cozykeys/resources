@@ -16,11 +16,13 @@ func Test_unmarshalGroup(t *testing.T) {
 		"happy path": {
 			xml: []byte(`<Group Name="ClusterLeft" Rotation="10" XOffset="-93.331" YOffset="-4.815" Visible="true"><Children /></Group>`),
 			expected: &models.Group{
-				Name:     "ClusterLeft",
-				Rotation: 10.0,
-				XOffset:  -93.331,
-				YOffset:  -4.815,
-				Visible:  true,
+				KeyboardElementBase: models.KeyboardElementBase{
+					Name:     "ClusterLeft",
+					Rotation: 10.0,
+					XOffset:  -93.331,
+					YOffset:  -4.815,
+					Visible:  true,
+				},
 				Children: []models.GroupChild{},
 			},
 		},
@@ -49,11 +51,13 @@ func Test_unmarshalGroups(t *testing.T) {
 			xml: []byte(`<Groups><Group Name="ClusterLeft" Rotation="10" XOffset="-93.331" YOffset="-4.815" Visible="true"><Children /></Group></Groups>`),
 			expected: []models.Group{
 				{
-					Name:     "ClusterLeft",
-					Rotation: 10.0,
-					XOffset:  -93.331,
-					YOffset:  -4.815,
-					Visible:  true,
+					KeyboardElementBase: models.KeyboardElementBase{
+						Name:     "ClusterLeft",
+						Rotation: 10.0,
+						XOffset:  -93.331,
+						YOffset:  -4.815,
+						Visible:  true,
+					},
 					Children: []models.GroupChild{},
 				},
 			},

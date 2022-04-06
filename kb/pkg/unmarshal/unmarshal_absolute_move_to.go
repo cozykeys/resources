@@ -34,16 +34,30 @@ func (u *absoluteMoveToUnmarshaller) unmarshal() (*models.AbsoluteMoveTo, error)
 
 	u.absoluteMoveTo = &models.AbsoluteMoveTo{
 		KeyboardElementBase: models.KeyboardElementBase{
-			Parent: u.parent,
+			Parent:  u.parent,
+			Visible: true,
 		},
 	}
 
-	err := u.unmarshalChildElements()
+	if err := findAndUnmarshalConstants(u.element, &u.absoluteMoveTo.KeyboardElementBase); err != nil {
+		return nil, err
+	}
+
+	err := u.unmarshalAttributes()
+	if err != nil {
+		return nil, err
+	}
+
+	err = u.unmarshalChildElements()
 	if err != nil {
 		return nil, err
 	}
 
 	return u.absoluteMoveTo, nil
+}
+
+func (u *absoluteMoveToUnmarshaller) unmarshalAttributes() error {
+	return unmarshalElementAttributes(u.element, &u.absoluteMoveTo.KeyboardElementBase)
 }
 
 func (u *absoluteMoveToUnmarshaller) unmarshalChildElements() error {

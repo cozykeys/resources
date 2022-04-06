@@ -61,8 +61,13 @@ func (u *groupUnmarshaller) unmarshal() (*models.Group, error) {
 
 	u.group = &models.Group{
 		KeyboardElementBase: models.KeyboardElementBase{
-			Parent: u.parent,
+			Parent:  u.parent,
+			Visible: true,
 		},
+	}
+
+	if err := findAndUnmarshalConstants(u.element, &u.group.KeyboardElementBase); err != nil {
+		return nil, err
 	}
 
 	if err := u.unmarshalConstants(); err != nil {
@@ -83,56 +88,7 @@ func (u *groupUnmarshaller) unmarshal() (*models.Group, error) {
 }
 
 func (u *groupUnmarshaller) unmarshalAttributes() error {
-	supportedAttributes := map[string]*struct {
-		required bool
-		found    bool
-	}{
-		AttributeName:     {required: true},
-		AttributeRotation: {required: false},
-		AttributeXOffset:  {required: false},
-		AttributeYOffset:  {required: false},
-		AttributeVisible:  {required: false},
-	}
-
-	for _, attr := range u.element.Attr {
-		var err error
-		switch attr.Key {
-		case AttributeName:
-			u.group.Name, err = unmarshalAttributeString(&attr, u.group.GetConstants())
-		case AttributeRotation:
-			u.group.Rotation, err = unmarshalAttributeFloat64(&attr, u.group.GetConstants())
-		case AttributeXOffset:
-			u.group.XOffset, err = unmarshalAttributeFloat64(&attr, u.group.GetConstants())
-		case AttributeYOffset:
-			u.group.YOffset, err = unmarshalAttributeFloat64(&attr, u.group.GetConstants())
-		case AttributeVisible:
-			u.group.Visible, err = unmarshalAttributeBool(&attr, u.group.GetConstants())
-		default:
-			err = &unexpectedAttributeError{
-				element:   ElementGroup,
-				attribute: attr.Key,
-			}
-		}
-
-		if err != nil {
-			return err
-		}
-
-		if a, ok := supportedAttributes[attr.Key]; ok {
-			a.found = true
-		}
-	}
-
-	for attrKey, attrVal := range supportedAttributes {
-		if attrVal.required && attrVal.found == false {
-			return &missingRequiredAttributeError{
-				element:   ElementGroup,
-				attribute: attrKey,
-			}
-		}
-	}
-
-	return nil
+	return unmarshalElementAttributes(u.element, &u.group.KeyboardElementBase)
 }
 
 func (u *groupUnmarshaller) unmarshalChildElements() error {

@@ -41,8 +41,13 @@ func (u *pointUnmarshaller) unmarshal() (*models.Point, error) {
 
 	u.point = &models.Point{
 		KeyboardElementBase: models.KeyboardElementBase{
-			Parent: u.parent,
+			Parent:  u.parent,
+			Visible: true,
 		},
+	}
+
+	if err := findAndUnmarshalConstants(u.element, &u.point.KeyboardElementBase); err != nil {
+		return nil, err
 	}
 
 	err := u.unmarshalAttributes()
@@ -62,17 +67,26 @@ func (u *pointUnmarshaller) unmarshalAttributes() error {
 		AttributeY: {required: true},
 	}
 
+	constants := u.point.GetConstants()
+
+	err := unmarshalElementAttributes(u.element, &u.point.KeyboardElementBase)
+	if err != nil {
+		return err
+	}
+
 	for _, attr := range u.element.Attr {
 		var err error
 		switch attr.Key {
 		case AttributeX:
-			u.point.X, err = unmarshalAttributeFloat64(&attr, u.point.GetConstants())
+			u.point.X, err = unmarshalAttributeFloat64(&attr, constants)
 		case AttributeY:
-			u.point.Y, err = unmarshalAttributeFloat64(&attr, u.point.GetConstants())
+			u.point.Y, err = unmarshalAttributeFloat64(&attr, constants)
 		default:
-			err = &unexpectedAttributeError{
-				element:   getElementPath(u.element),
-				attribute: attr.Key,
+			if !isKeyboardElementAttribute(attr.Key) {
+				err = &unexpectedAttributeError{
+					element:   getElementPath(u.element),
+					attribute: attr.Key,
+				}
 			}
 		}
 

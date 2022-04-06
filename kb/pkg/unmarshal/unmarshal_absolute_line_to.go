@@ -34,16 +34,30 @@ func (u *absoluteLineToUnmarshaller) unmarshal() (*models.AbsoluteLineTo, error)
 
 	u.absoluteLineTo = &models.AbsoluteLineTo{
 		KeyboardElementBase: models.KeyboardElementBase{
-			Parent: u.parent,
+			Parent:  u.parent,
+			Visible: true,
 		},
 	}
 
-	err := u.unmarshalChildElements()
+	if err := findAndUnmarshalConstants(u.element, &u.absoluteLineTo.KeyboardElementBase); err != nil {
+		return nil, err
+	}
+
+	err := u.unmarshalAttributes()
+	if err != nil {
+		return nil, err
+	}
+
+	err = u.unmarshalChildElements()
 	if err != nil {
 		return nil, err
 	}
 
 	return u.absoluteLineTo, nil
+}
+
+func (u *absoluteLineToUnmarshaller) unmarshalAttributes() error {
+	return unmarshalElementAttributes(u.element, &u.absoluteLineTo.KeyboardElementBase)
 }
 
 func (u *absoluteLineToUnmarshaller) unmarshalChildElements() error {

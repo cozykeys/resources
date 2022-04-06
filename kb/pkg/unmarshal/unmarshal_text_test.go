@@ -22,12 +22,15 @@ func Test_unmarshalText(t *testing.T) {
                             XOffset="1.0"
                             YOffset="2.0" />`),
 			expected: &models.Text{
+				KeyboardElementBase: models.KeyboardElementBase{
+					XOffset: 1.0,
+					YOffset: 2.0,
+					Visible: true,
+				},
 				Content:    "Foo Bar",
 				TextAnchor: "middle",
 				Font:       "3px sans-serif",
 				Fill:       "#ffff00",
-				XOffset:    1.0,
-				YOffset:    2.0,
 			},
 		},
 	}

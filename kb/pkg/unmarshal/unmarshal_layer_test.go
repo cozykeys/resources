@@ -16,11 +16,14 @@ func Test_unmarshalLayer(t *testing.T) {
 		"happy path": {
 			xml: []byte(`<Layer Name="Foo" ZIndex="1" XOffset="1.0" YOffset="2.0"><Groups /></Layer>`),
 			expected: &models.Layer{
-				Name:    "Foo",
-				ZIndex:  1,
-				XOffset: 1.0,
-				YOffset: 2.0,
-				Groups:  []models.Group{},
+				KeyboardElementBase: models.KeyboardElementBase{
+					Name:    "Foo",
+					XOffset: 1.0,
+					YOffset: 2.0,
+					Visible: true,
+				},
+				ZIndex: 1,
+				Groups: []models.Group{},
 			},
 		},
 	}
@@ -48,11 +51,14 @@ func Test_unmarshalLayers(t *testing.T) {
 			xml: []byte(`<Layers><Layer Name="Foo" ZIndex="1" XOffset="1.0" YOffset="2.0"><Groups /></Layer></Layers>`),
 			expected: []models.Layer{
 				{
-					Name:    "Foo",
-					ZIndex:  1,
-					XOffset: 1.0,
-					YOffset: 2.0,
-					Groups:  []models.Group{},
+					KeyboardElementBase: models.KeyboardElementBase{
+						Name:    "Foo",
+						XOffset: 1.0,
+						YOffset: 2.0,
+						Visible: true,
+					},
+					ZIndex: 1,
+					Groups: []models.Group{},
 				},
 			},
 		},

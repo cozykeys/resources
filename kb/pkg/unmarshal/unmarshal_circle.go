@@ -34,8 +34,13 @@ func (u *circleUnmarshaller) unmarshal() (*models.Circle, error) {
 
 	u.circle = &models.Circle{
 		KeyboardElementBase: models.KeyboardElementBase{
-			Parent: u.parent,
+			Parent:  u.parent,
+			Visible: true,
 		},
+	}
+
+	if err := findAndUnmarshalConstants(u.element, &u.circle.KeyboardElementBase); err != nil {
+		return nil, err
 	}
 
 	err := u.unmarshalAttributes()
@@ -52,32 +57,35 @@ func (u *circleUnmarshaller) unmarshalAttributes() error {
 		found    bool
 	}{
 		AttributeSize:        {required: true},
-		AttributeXOffset:     {required: false},
-		AttributeYOffset:     {required: false},
 		AttributeFill:        {required: false},
 		AttributeStroke:      {required: false},
 		AttributeStrokeWidth: {required: false},
+	}
+
+	constants := u.circle.GetConstants()
+
+	err := unmarshalElementAttributes(u.element, &u.circle.KeyboardElementBase)
+	if err != nil {
+		return err
 	}
 
 	for _, attr := range u.element.Attr {
 		var err error
 		switch attr.Key {
 		case AttributeSize:
-			u.circle.Size, err = unmarshalAttributeFloat64(&attr, u.circle.GetConstants())
-		case AttributeXOffset:
-			u.circle.XOffset, err = unmarshalAttributeFloat64(&attr, u.circle.GetConstants())
-		case AttributeYOffset:
-			u.circle.YOffset, err = unmarshalAttributeFloat64(&attr, u.circle.GetConstants())
+			u.circle.Size, err = unmarshalAttributeFloat64(&attr, constants)
 		case AttributeFill:
-			u.circle.Fill, err = unmarshalAttributeString(&attr, u.circle.GetConstants())
+			u.circle.Fill, err = unmarshalAttributeString(&attr, constants)
 		case AttributeStroke:
-			u.circle.Stroke, err = unmarshalAttributeString(&attr, u.circle.GetConstants())
+			u.circle.Stroke, err = unmarshalAttributeString(&attr, constants)
 		case AttributeStrokeWidth:
-			u.circle.StrokeWidth, err = unmarshalAttributeString(&attr, u.circle.GetConstants())
+			u.circle.StrokeWidth, err = unmarshalAttributeString(&attr, constants)
 		default:
-			err = &unexpectedAttributeError{
-				element:   ElementLegend,
-				attribute: attr.Key,
+			if !isKeyboardElementAttribute(attr.Key) {
+				err = &unexpectedAttributeError{
+					element:   ElementLegend,
+					attribute: attr.Key,
+				}
 			}
 		}
 

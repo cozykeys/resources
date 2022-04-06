@@ -39,6 +39,7 @@ const (
 	AttributeColor               = "Color"
 	AttributeColumn              = "Column"
 	AttributeContent             = "Content"
+	AttributeDebug               = "Debug"
 	AttributeFill                = "Fill"
 	AttributeFillOpacity         = "FillOpacity"
 	AttributeFont                = "Font"
@@ -83,7 +84,7 @@ func Unmarshal(bytes []byte) (*models.Keyboard, error) {
 	return keyboard, nil
 }
 
-func unmarshalAttributeString(attr *etree.Attr, constants []models.Constant) (string, error) {
+func unmarshalAttributeString(attr *etree.Attr, constants map[string]string) (string, error) {
 	value, err := expandConstants(attr, constants)
 	if err != nil {
 		return "", err
@@ -91,7 +92,7 @@ func unmarshalAttributeString(attr *etree.Attr, constants []models.Constant) (st
 	return value, nil
 }
 
-func unmarshalAttributeBool(attr *etree.Attr, constants []models.Constant) (bool, error) {
+func unmarshalAttributeBool(attr *etree.Attr, constants map[string]string) (bool, error) {
 	value, err := expandConstants(attr, constants)
 	if err != nil {
 		return false, err
@@ -113,7 +114,7 @@ func unmarshalAttributeBool(attr *etree.Attr, constants []models.Constant) (bool
 	}
 }
 
-func unmarshalAttributeFloat64(attr *etree.Attr, constants []models.Constant) (float64, error) {
+func unmarshalAttributeFloat64(attr *etree.Attr, constants map[string]string) (float64, error) {
 	value, err := expandConstants(attr, constants)
 	if err != nil {
 		return 0.0, err
@@ -130,7 +131,7 @@ func unmarshalAttributeFloat64(attr *etree.Attr, constants []models.Constant) (f
 	return val, nil
 }
 
-func unmarshalAttributeInt(attr *etree.Attr, constants []models.Constant) (int, error) {
+func unmarshalAttributeInt(attr *etree.Attr, constants map[string]string) (int, error) {
 	value, err := expandConstants(attr, constants)
 	if err != nil {
 		return 0, err
@@ -146,7 +147,7 @@ func unmarshalAttributeInt(attr *etree.Attr, constants []models.Constant) (int, 
 	return int(val), nil
 }
 
-func unmarshalAttributeLegendHorizontalAlignment(attr *etree.Attr, constants []models.Constant) (models.LegendHorizontalAlignment, error) {
+func unmarshalAttributeLegendHorizontalAlignment(attr *etree.Attr, constants map[string]string) (models.LegendHorizontalAlignment, error) {
 	value, err := expandConstants(attr, constants)
 	if err != nil {
 		return 0, err
@@ -163,7 +164,7 @@ func unmarshalAttributeLegendHorizontalAlignment(attr *etree.Attr, constants []m
 	return val, nil
 }
 
-func unmarshalAttributeLegendVerticalAlignment(attr *etree.Attr, constants []models.Constant) (models.LegendVerticalAlignment, error) {
+func unmarshalAttributeLegendVerticalAlignment(attr *etree.Attr, constants map[string]string) (models.LegendVerticalAlignment, error) {
 	value, err := expandConstants(attr, constants)
 	if err != nil {
 		return 0, err
@@ -180,7 +181,7 @@ func unmarshalAttributeLegendVerticalAlignment(attr *etree.Attr, constants []mod
 	return val, nil
 }
 
-func unmarshalAttributeStackOrientation(attr *etree.Attr, constants []models.Constant) (models.StackOrientation, error) {
+func unmarshalAttributeStackOrientation(attr *etree.Attr, constants map[string]string) (models.StackOrientation, error) {
 	value, err := expandConstants(attr, constants)
 	if err != nil {
 		return 0, err
@@ -197,7 +198,7 @@ func unmarshalAttributeStackOrientation(attr *etree.Attr, constants []models.Con
 	return val, nil
 }
 
-func expandConstants(attr *etree.Attr, constants []models.Constant) (string, error) {
+func expandConstants(attr *etree.Attr, constants map[string]string) (string, error) {
 	if constants == nil && len(constants) < 1 {
 		return attr.Value, nil
 	}
@@ -208,7 +209,7 @@ func expandConstants(attr *etree.Attr, constants []models.Constant) (string, err
 	expanded := attr.Value
 	for _, c := range constantsFound {
 		constantName := strings.Trim(c, "${}")
-		constant, ok := getConstant(constantName, constants)
+		constant, ok := constants[constantName]
 		if !ok {
 			return "", &undefinedConstantError{
 				element:   getElementPath(attr.Element()),
@@ -216,18 +217,9 @@ func expandConstants(attr *etree.Attr, constants []models.Constant) (string, err
 				constant:  constantName,
 			}
 		}
-		expanded = strings.ReplaceAll(expanded, c, constant.Value)
+		expanded = strings.ReplaceAll(expanded, c, constant)
 	}
 	return expanded, nil
-}
-
-func getConstant(name string, constants []models.Constant) (*models.Constant, bool) {
-	for _, c := range constants {
-		if name == c.Name {
-			return &c, true
-		}
-	}
-	return nil, false
 }
 
 func expandConstants2() {

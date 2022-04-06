@@ -16,10 +16,15 @@ func Test_unmarshalAbsoluteLineTo(t *testing.T) {
 		"happy path": {
 			xml: []byte(`<AbsoluteLineTo><EndPoint X="1.0" Y="2.0" /></AbsoluteLineTo>`),
 			expected: func() *models.AbsoluteLineTo {
-				absoluteLineTo := &models.AbsoluteLineTo{}
+				absoluteLineTo := &models.AbsoluteLineTo{
+					KeyboardElementBase: models.KeyboardElementBase{
+						Visible: true,
+					},
+				}
 				absoluteLineTo.EndPoint = &models.Point{
 					KeyboardElementBase: models.KeyboardElementBase{
-						Parent: absoluteLineTo,
+						Parent:  absoluteLineTo,
+						Visible: true,
 					},
 					X: 1.0,
 					Y: 2.0,

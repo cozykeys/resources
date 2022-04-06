@@ -16,10 +16,15 @@ func Test_unmarshalAbsoluteMoveTo(t *testing.T) {
 		"happy path": {
 			xml: []byte(`<AbsoluteMoveTo><EndPoint X="1.0" Y="2.0" /></AbsoluteMoveTo>`),
 			expected: func() *models.AbsoluteMoveTo {
-				absoluteMoveTo := &models.AbsoluteMoveTo{}
+				absoluteMoveTo := &models.AbsoluteMoveTo{
+					KeyboardElementBase: models.KeyboardElementBase{
+						Visible: true,
+					},
+				}
 				absoluteMoveTo.EndPoint = &models.Point{
 					KeyboardElementBase: models.KeyboardElementBase{
-						Parent: absoluteMoveTo,
+						Parent:  absoluteMoveTo,
+						Visible: true,
 					},
 					X: 1.0,
 					Y: 2.0,

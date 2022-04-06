@@ -34,8 +34,13 @@ func (u *legendUnmarshaller) unmarshal() (*models.Legend, error) {
 
 	u.legend = &models.Legend{
 		KeyboardElementBase: models.KeyboardElementBase{
-			Parent: u.parent,
+			Parent:  u.parent,
+			Visible: true,
 		},
+	}
+
+	if err := findAndUnmarshalConstants(u.element, &u.legend.KeyboardElementBase); err != nil {
+		return nil, err
 	}
 
 	err := u.unmarshalAttributes()
@@ -56,28 +61,34 @@ func (u *legendUnmarshaller) unmarshalAttributes() error {
 		AttributeText:                {required: true},
 		AttributeFontSize:            {required: false},
 		AttributeColor:               {required: false},
-		AttributeYOffset:             {required: false},
+	}
+
+	constants := u.legend.GetConstants()
+
+	err := unmarshalElementAttributes(u.element, &u.legend.KeyboardElementBase)
+	if err != nil {
+		return err
 	}
 
 	for _, attr := range u.element.Attr {
 		var err error
 		switch attr.Key {
 		case AttributeHorizontalAlignment:
-			u.legend.HorizontalAlignment, err = unmarshalAttributeLegendHorizontalAlignment(&attr, u.legend.GetConstants())
+			u.legend.HorizontalAlignment, err = unmarshalAttributeLegendHorizontalAlignment(&attr, constants)
 		case AttributeVerticalAlignment:
-			u.legend.VerticalAlignment, err = unmarshalAttributeLegendVerticalAlignment(&attr, u.legend.GetConstants())
+			u.legend.VerticalAlignment, err = unmarshalAttributeLegendVerticalAlignment(&attr, constants)
 		case AttributeText:
-			u.legend.Text, err = unmarshalAttributeString(&attr, u.legend.GetConstants())
+			u.legend.Text, err = unmarshalAttributeString(&attr, constants)
 		case AttributeFontSize:
-			u.legend.FontSize, err = unmarshalAttributeFloat64(&attr, u.legend.GetConstants())
+			u.legend.FontSize, err = unmarshalAttributeFloat64(&attr, constants)
 		case AttributeColor:
-			u.legend.Color, err = unmarshalAttributeString(&attr, u.legend.GetConstants())
-		case AttributeYOffset:
-			u.legend.YOffset, err = unmarshalAttributeFloat64(&attr, u.legend.GetConstants())
+			u.legend.Color, err = unmarshalAttributeString(&attr, constants)
 		default:
-			err = &unexpectedAttributeError{
-				element:   ElementLegend,
-				attribute: attr.Key,
+			if !isKeyboardElementAttribute(attr.Key) {
+				err = &unexpectedAttributeError{
+					element:   ElementLegend,
+					attribute: attr.Key,
+				}
 			}
 		}
 
