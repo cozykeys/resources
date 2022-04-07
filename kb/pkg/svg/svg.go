@@ -11,6 +11,15 @@ import (
 	"github.com/beevik/etree"
 )
 
+type svgOptions struct {
+	KeycapOverlaysEnabled bool
+}
+
+// TODO: This shouldn't be global
+var options *svgOptions = &svgOptions{
+	KeycapOverlaysEnabled: true,
+}
+
 func GenerateSVG(kb *models.Keyboard, outputDirectory string) error {
 	generator := &generator{
 		keyboard:        kb,
