@@ -1,5 +1,7 @@
 package models
 
+import "strings"
+
 type PathComponent interface {
 	Data() string
 }
@@ -17,7 +19,10 @@ type Path struct {
 	Components  []PathComponent
 }
 
-func (x *Path) Data() string {
-	//string Data => string.Join(" ", Components.Select(component => component.Data));
-	return "NYI"
+func (p *Path) Data() string {
+	componentData := make([]string, len(p.Components))
+	for i, component := range p.Components {
+		componentData[i] = component.Data()
+	}
+	return strings.Join(componentData, " ")
 }

@@ -1,5 +1,7 @@
 package models
 
+import "fmt"
+
 var _ KeyboardElement = &AbsoluteQuadraticCurveTo{}
 var _ PathComponent = &AbsoluteQuadraticCurveTo{}
 
@@ -11,7 +13,6 @@ type AbsoluteQuadraticCurveTo struct {
 	ControlPoint Point
 }
 
-func (x *AbsoluteQuadraticCurveTo) Data() string {
-	//string Data => $"Q {ControlPoint.X} {ControlPoint.Y} {EndPoint.X} {EndPoint.Y}";
-	return "NYI"
+func (c *AbsoluteQuadraticCurveTo) Data() string {
+	return fmt.Sprintf("Q %f %f %f %f", c.ControlPoint.X, c.ControlPoint.Y, c.EndPoint.X, c.EndPoint.Y)
 }

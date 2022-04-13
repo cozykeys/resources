@@ -47,13 +47,13 @@ func (w *groupWriter) write() error {
 		//case *models.Spacer:
 		//	err = writeSpacer(g, v)
 		//case *models.Stack:
-		//	err = writeSpacer(g, v)
-		//case *models.Path:
-		//	err = writeSpacer(g, v)
+		//	err = writeStack(g, v)
+		case *models.Path:
+			err = writePath(g, v)
 		//case *models.Circle:
-		//	err = writeSpacer(g, v)
+		//	err = writeCircle(g, v)
 		//case *models.Text:
-		//	err = writeSpacer(g, v)
+		//	err = writeText(g, v)
 		default:
 			log.Printf("Type not yet implemented %T", v)
 		}

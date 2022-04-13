@@ -1,5 +1,7 @@
 package models
 
+import "fmt"
+
 var _ KeyboardElement = &AbsoluteMoveTo{}
 var _ PathComponent = &AbsoluteMoveTo{}
 
@@ -10,7 +12,6 @@ type AbsoluteMoveTo struct {
 	EndPoint *Point
 }
 
-func (x *AbsoluteMoveTo) Data() string {
-	//string Data => $"M {EndPoint.X} {EndPoint.Y}";
-	return "NYI"
+func (m *AbsoluteMoveTo) Data() string {
+	return fmt.Sprintf("M %f %f", m.EndPoint.X, m.EndPoint.Y)
 }

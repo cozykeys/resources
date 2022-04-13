@@ -41,7 +41,8 @@ func (w *keyWriter) write() error {
 	}
 
 	w.writeSwitchCutoutPath(g)
-	w.writeOverlay(g)
+	w.writeOverlayV1(g)
+	//w.writeOverlayV2(g)
 	w.writeLegends(g)
 
 	return nil
@@ -53,7 +54,48 @@ func (w *keyWriter) writeSwitchCutoutPath(parent *etree.Element) {
 	e.CreateAttr("d", switchCutoutPathData)
 }
 
-func (w *keyWriter) writeOverlay(parent *etree.Element) error {
+func (w *keyWriter) writeOverlayV1(parent *etree.Element) error {
+	if options == nil || !options.KeycapOverlaysEnabled {
+		return nil
+	}
+
+	e := parent.CreateElement("path")
+	e.CreateAttr("id", fmt.Sprintf("%sKeycapOverlayInner", w.key.Name))
+	e.CreateAttr("style", cssStyleString(map[string]string{
+		"fill":         stringOrDefault(w.key.Fill, "#ffffff"),
+		"stroke":       stringOrDefault(w.key.Stroke, "#000000"),
+		"stroke-width": "0.5",
+	}))
+	e.CreateAttr("d", fmt.Sprintf("M -%f,-%f h %f v %f h -%f v -%f h %f",
+		w.key.Width/2,
+		w.key.Height/2,
+		w.key.Width,
+		w.key.Height,
+		w.key.Width,
+		w.key.Height,
+		w.key.Width,
+	))
+
+	/*
+	   // Next we write it with a style that is more visually pleasing
+	   writer.WriteStartElement("path");
+	   writer.WriteAttributeString("id", $"{key.Name}KeycapOverlay");
+	   writer.WriteAttributeString("d", $"M -{w / 2},-{h / 2} h {w} v {h} h -{w} v -{h} h {w}");
+
+	   var styleDictionary = new Dictionary<string, string>
+	   {
+	       { "fill", !string.IsNullOrWhiteSpace(key.Fill) ? key.Fill : "#ffffff" },
+	       { "stroke", !string.IsNullOrWhiteSpace(key.Stroke) ? key.Stroke : "#000000" },
+	       { "stroke-width", "0.5" },
+	   };
+
+	   writer.WriteAttributeString("style", styleDictionary.ToCssStyleString());
+	   writer.WriteEndElement();
+	*/
+	return nil
+}
+
+func (w *keyWriter) writeOverlayV2(parent *etree.Element) error {
 	if options == nil || !options.KeycapOverlaysEnabled {
 		return nil
 	}
