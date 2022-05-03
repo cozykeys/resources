@@ -72,6 +72,16 @@ func stringOrDefault(s, def string) string {
 	return s
 }
 
+type StyleMap map[string]string
+
+func (m StyleMap) String() string {
+	tokens := []string{}
+	for k, v := range m {
+		tokens = append(tokens, fmt.Sprintf("%s:%s", k, v))
+	}
+	return strings.Join(tokens, ";")
+}
+
 func cssStyleString(m map[string]string) string {
 	tokens := []string{}
 	for k, v := range m {

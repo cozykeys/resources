@@ -1,8 +1,10 @@
 package kb
 
 import (
+	"bytes"
 	"fmt"
 	"kb/pkg/models"
+	"os"
 	"strings"
 
 	"github.com/beevik/etree"
@@ -124,4 +126,19 @@ func addChildCircle(parent *etree.Element, circle *models.Circle) {
 	e := g.CreateElement("circle")
 	e.CreateAttr("style", "fill:none;stroke:#000000;stroke-width:0.5")
 	e.CreateAttr("r", "1.0")
+}
+
+func WriteSVGToFile(doc *etree.Document, path string) error {
+	doc.Indent(4)
+	b := &bytes.Buffer{}
+	_, err := doc.WriteTo(b)
+	if err != nil {
+		return err
+	}
+
+	if err := os.WriteFile(path, b.Bytes(), 0644); err != nil {
+		return err
+	}
+
+	return nil
 }
