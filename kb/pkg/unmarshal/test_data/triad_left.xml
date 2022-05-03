@@ -1,0 +1,1120 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Keyboard
+    Name="triad_left"
+    Version="1.0.0">
+    <Constants>
+        <Constant
+            Name="AlphaFillColor"
+            Value="#ffffff" />
+        <Constant
+            Name="AlphaLegendColor"
+            Value="#000000" />
+        <Constant
+            Name="ModFillColor"
+            Value="#cfcfcf" />
+        <Constant
+            Name="ModLegendColor"
+            Value="#000000" />
+        <Constant
+            Name="KeycapBorderColor"
+            Value="#000000" />
+        <Constant
+            Name="M2SpacerSize"
+            Value="3.563" />
+        <Constant
+            Name="M2ScrewSize"
+            Value="2.3" />
+        <Constant
+            Name="KeycapDiameterMm1u"
+            Value="18.1" />
+        <Constant
+            Name="KeyMarginMillimeters"
+            Value="0.475" />
+        <Constant
+            Name="CaseFillColor"
+            Value="#7f7f7f" />
+        <Constant
+            Name="CaseStrokeColor"
+            Value="#000000" />
+        <Constant
+            Name="KeywellFillColor"
+            Value="#5f5f5f" />
+    </Constants>
+    <Layers>
+        <Layer
+            Name="switch"
+            ZIndex="4"
+            XOffset="96.45"
+            YOffset="80"
+            Width="192.9"
+            Height="160">
+            <Groups>
+                <Group
+                    Name="Outer">
+                    <Children>
+                        <Group
+                            Name="PlatePerimeter"
+                            Visible="true">
+                            <Children>
+                                <Path
+                                    Fill="${CaseFillColor}"
+                                    Stroke="${CaseStrokeColor}"
+                                    FillOpacity="1.0">
+                                    <Components>
+                                        <AbsoluteMoveTo>
+                                            <EndPoint
+                                                X="-69.675"
+                                                Y="-54.259" />
+                                        </AbsoluteMoveTo>
+                                        <AbsoluteQuadraticCurveTo>
+                                            <EndPoint
+                                                X="-66.704"
+                                                Y="-57.675" />
+                                            <ControlPoint
+                                                X="-69.675"
+                                                Y="-57.259" />
+                                        </AbsoluteQuadraticCurveTo>
+                                        <AbsoluteLineTo>
+                                            <EndPoint
+                                                X="-12.705"
+                                                Y="-65.234" />
+                                        </AbsoluteLineTo>
+                                        <AbsoluteQuadraticCurveTo>
+                                            <EndPoint
+                                                X="-6.734"
+                                                Y="-65.65" />
+                                            <ControlPoint
+                                                X="-9.734"
+                                                Y="-65.65" />
+                                        </AbsoluteQuadraticCurveTo>
+                                        <AbsoluteLineTo>
+                                            <EndPoint
+                                                X="6.949"
+                                                Y="-65.65" />
+                                        </AbsoluteLineTo>
+                                        <AbsoluteQuadraticCurveTo>
+                                            <EndPoint
+                                                X="12.831"
+                                                Y="-64.818" />
+                                            <ControlPoint
+                                                X="9.949"
+                                                Y="-65.65" />
+                                        </AbsoluteQuadraticCurveTo>
+                                        <AbsoluteLineTo>
+                                            <EndPoint
+                                                X="49.749"
+                                                Y="-54.159" />
+                                        </AbsoluteLineTo>
+                                        <AbsoluteQuadraticCurveTo>
+                                            <EndPoint
+                                                X="53.152"
+                                                Y="-50.373" />
+                                            <ControlPoint
+                                                X="52.631"
+                                                Y="-53.327" />
+                                        </AbsoluteQuadraticCurveTo>
+                                        <AbsoluteLineTo>
+                                            <EndPoint
+                                                X="69.154"
+                                                Y="40.384" />
+                                        </AbsoluteLineTo>
+                                        <AbsoluteQuadraticCurveTo>
+                                            <EndPoint
+                                                X="69.675"
+                                                Y="46.338" />
+                                            <ControlPoint
+                                                X="69.675"
+                                                Y="43.338" />
+                                        </AbsoluteQuadraticCurveTo>
+                                        <AbsoluteLineTo>
+                                            <EndPoint
+                                                X="69.675"
+                                                Y="62.65" />
+                                        </AbsoluteLineTo>
+                                        <AbsoluteQuadraticCurveTo>
+                                            <EndPoint
+                                                X="66.675"
+                                                Y="65.65" />
+                                            <ControlPoint
+                                                X="69.675"
+                                                Y="65.65" />
+                                        </AbsoluteQuadraticCurveTo>
+                                        <AbsoluteLineTo>
+                                            <EndPoint
+                                                X="31.496"
+                                                Y="65.65" />
+                                        </AbsoluteLineTo>
+                                        <AbsoluteQuadraticCurveTo>
+                                            <EndPoint
+                                                X="25.5"
+                                                Y="65.493" />
+                                            <ControlPoint
+                                                X="28.496"
+                                                Y="65.65" />
+                                        </AbsoluteQuadraticCurveTo>
+                                        <AbsoluteLineTo>
+                                            <EndPoint
+                                                X="-25.658"
+                                                Y="62.807" />
+                                        </AbsoluteLineTo>
+                                        <AbsoluteQuadraticCurveTo>
+                                            <EndPoint
+                                                X="-31.654"
+                                                Y="62.65" />
+                                            <ControlPoint
+                                                X="-28.654"
+                                                Y="62.65" />
+                                        </AbsoluteQuadraticCurveTo>
+                                        <AbsoluteLineTo>
+                                            <EndPoint
+                                                X="-66.675"
+                                                Y="62.65" />
+                                        </AbsoluteLineTo>
+                                        <AbsoluteQuadraticCurveTo>
+                                            <EndPoint
+                                                X="-69.675"
+                                                Y="59.65" />
+                                            <ControlPoint
+                                                X="-69.675"
+                                                Y="62.65" />
+                                        </AbsoluteQuadraticCurveTo>
+                                        <AbsoluteLineTo>
+                                            <EndPoint
+                                                X="-69.675"
+                                                Y="-54.259" />
+                                        </AbsoluteLineTo>
+                                    </Components>
+                                </Path>
+                            </Children>
+                        </Group>
+                        <Group
+                            Name="ScrewHoles">
+                            <Children>
+                                <Circle
+                                    Fill="#000000"
+                                    Stroke="#000000"
+                                    Size="${M2ScrewSize}"
+                                    XOffset="-47.625"
+                                    YOffset="-35.6" />
+                                <Circle
+                                    Fill="#000000"
+                                    Stroke="#000000"
+                                    Size="${M2ScrewSize}"
+                                    XOffset="28.575"
+                                    YOffset="-37.6" />
+                                <Circle
+                                    Fill="#000000"
+                                    Stroke="#000000"
+                                    Size="${M2ScrewSize}"
+                                    XOffset="-47.625"
+                                    YOffset="40.6" />
+                                <Circle
+                                    Fill="#000000"
+                                    Stroke="#000000"
+                                    Size="${M2ScrewSize}"
+                                    XOffset="28.575"
+                                    YOffset="38.6" />
+                            </Children>
+                        </Group>
+                        <Stack
+                            Name="Keys"
+                            Orientation="Horizontal">
+                            <Children>
+                                <Stack
+                                    Name="Column00"
+                                    YOffset="2.5"
+                                    Orientation="Vertical">
+                                    <Children>
+                                        <Key
+                                            Name="Column00Key00"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${AlphaFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="F1"
+                                                FontSize="4"
+                                                Color="${AlphaLegendColor}" />
+                                        </Key>
+                                        <Key
+                                            Name="Column00Key01"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${AlphaFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="+"
+                                                FontSize="6"
+                                                Color="${AlphaLegendColor}"
+                                                YOffset="-3" />
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="="
+                                                FontSize="6"
+                                                Color="${AlphaLegendColor}"
+                                                YOffset="3" />
+                                        </Key>
+                                        <Key
+                                            Name="Column00Key02"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${ModFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="TAB"
+                                                FontSize="4" />
+                                        </Key>
+                                        <Key
+                                            Name="Column00Key03"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${ModFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="ESC"
+                                                FontSize="4" />
+                                        </Key>
+                                        <Key
+                                            Name="Column00Key04"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${ModFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="SHFT"
+                                                FontSize="4" />
+                                        </Key>
+                                        <Key
+                                            Name="Column00Key05"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${ModFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="CTRL"
+                                                FontSize="4" />
+                                        </Key>
+                                    </Children>
+                                </Stack>
+                                <Stack
+                                    Name="Column01"
+                                    YOffset="2.5"
+                                    Orientation="Vertical">
+                                    <Children>
+                                        <Key
+                                            Name="Column01Key00"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${AlphaFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="F2"
+                                                FontSize="4" />
+                                        </Key>
+                                        <Key
+                                            Name="Column01Key01"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${AlphaFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="!"
+                                                FontSize="6"
+                                                Color="${AlphaLegendColor}"
+                                                YOffset="-3" />
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="1"
+                                                FontSize="6"
+                                                Color="${AlphaLegendColor}"
+                                                YOffset="3" />
+                                        </Key>
+                                        <Key
+                                            Name="Column01Key02"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${AlphaFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="Q"
+                                                FontSize="6" />
+                                        </Key>
+                                        <Key
+                                            Name="Column01Key03"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${AlphaFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="A"
+                                                FontSize="6" />
+                                        </Key>
+                                        <Key
+                                            Name="Column01Key04"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${AlphaFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="Z"
+                                                FontSize="6" />
+                                        </Key>
+                                        <Key
+                                            Name="Column01Key05"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${ModFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="OS"
+                                                FontSize="4" />
+                                        </Key>
+                                    </Children>
+                                </Stack>
+                                <Stack
+                                    Name="Column02"
+                                    YOffset="-0.5"
+                                    Orientation="Vertical">
+                                    <Children>
+                                        <Key
+                                            Name="Column02Key00"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${AlphaFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="F3"
+                                                FontSize="4" />
+                                        </Key>
+                                        <Key
+                                            Name="Column02Key01"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${AlphaFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="@"
+                                                FontSize="6"
+                                                Color="${AlphaLegendColor}"
+                                                YOffset="-3" />
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="2"
+                                                FontSize="6"
+                                                Color="${AlphaLegendColor}"
+                                                YOffset="3" />
+                                        </Key>
+                                        <Key
+                                            Name="Column02Key02"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${AlphaFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="W"
+                                                FontSize="6" />
+                                        </Key>
+                                        <Key
+                                            Name="Column02Key03"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${AlphaFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="S"
+                                                FontSize="6" />
+                                        </Key>
+                                        <Key
+                                            Name="Column02Key04"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${AlphaFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="X"
+                                                FontSize="6" />
+                                        </Key>
+                                        <Key
+                                            Name="Column02Key05"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${ModFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="ALT"
+                                                FontSize="4" />
+                                        </Key>
+                                    </Children>
+                                </Stack>
+                                <Stack
+                                    Name="Column03"
+                                    YOffset="-5.5"
+                                    Orientation="Vertical">
+                                    <Children>
+                                        <Key
+                                            Name="Column03Key00"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${AlphaFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="F4"
+                                                FontSize="4" />
+                                        </Key>
+                                        <Key
+                                            Name="Column03Key01"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${AlphaFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="#"
+                                                FontSize="6"
+                                                Color="${AlphaLegendColor}"
+                                                YOffset="-3" />
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="3"
+                                                FontSize="6"
+                                                Color="${AlphaLegendColor}"
+                                                YOffset="3" />
+                                        </Key>
+                                        <Key
+                                            Name="Column03Key02"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${AlphaFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="E"
+                                                FontSize="6" />
+                                        </Key>
+                                        <Key
+                                            Name="Column03Key03"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${AlphaFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="D"
+                                                FontSize="6" />
+                                        </Key>
+                                        <Key
+                                            Name="Column03Key04"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${AlphaFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="C"
+                                                FontSize="6" />
+                                        </Key>
+                                        <Key
+                                            Name="Column03Key05"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${AlphaFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="~"
+                                                FontSize="6"
+                                                Color="${AlphaLegendColor}"
+                                                YOffset="-3" />
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="`"
+                                                FontSize="6"
+                                                Color="${AlphaLegendColor}"
+                                                YOffset="3" />
+                                        </Key>
+                                    </Children>
+                                </Stack>
+                                <Stack
+                                    Name="Column04"
+                                    YOffset="0.5"
+                                    Orientation="Vertical">
+                                    <Children>
+                                        <Key
+                                            Name="Column04Key00"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${ModFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="F5"
+                                                FontSize="4" />
+                                        </Key>
+                                        <Key
+                                            Name="Column04Key01"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${AlphaFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="$"
+                                                FontSize="6"
+                                                Color="${AlphaLegendColor}"
+                                                YOffset="-3" />
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="4"
+                                                FontSize="6"
+                                                Color="${AlphaLegendColor}"
+                                                YOffset="3" />
+                                        </Key>
+                                        <Key
+                                            Name="Column04Key02"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${AlphaFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="R"
+                                                FontSize="6" />
+                                        </Key>
+                                        <Key
+                                            Name="Column04Key03"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${AlphaFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="F"
+                                                FontSize="6" />
+                                        </Key>
+                                        <Key
+                                            Name="Column04Key04"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${AlphaFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="V"
+                                                FontSize="6" />
+                                        </Key>
+                                        <Key
+                                            Name="Column04Key05"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${AlphaFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="FN"
+                                                FontSize="4" />
+                                        </Key>
+                                    </Children>
+                                </Stack>
+                                <Stack
+                                    Name="Column05"
+                                    YOffset="5.5"
+                                    Orientation="Vertical">
+                                    <Children>
+                                        <Key
+                                            Name="Column05Key00"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${ModFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="F6"
+                                                FontSize="4" />
+                                        </Key>
+                                        <Key
+                                            Name="Column05Key01"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${AlphaFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="%"
+                                                FontSize="6"
+                                                Color="${AlphaLegendColor}"
+                                                YOffset="-3" />
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="5"
+                                                FontSize="6"
+                                                Color="${AlphaLegendColor}"
+                                                YOffset="3" />
+                                        </Key>
+                                        <Key
+                                            Name="Column05Key02"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${AlphaFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="T"
+                                                FontSize="6" />
+                                        </Key>
+                                        <Key
+                                            Name="Column05Key03"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${AlphaFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="G"
+                                                FontSize="6" />
+                                        </Key>
+                                        <Key
+                                            Name="Column05Key04"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${AlphaFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="B"
+                                                FontSize="6" />
+                                        </Key>
+                                        <Key
+                                            Name="Column05Key05"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${AlphaFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="BKSP"
+                                                FontSize="4" />
+                                        </Key>
+                                    </Children>
+                                </Stack>
+                                <Stack
+                                    Name="Column06"
+                                    YOffset="5.5"
+                                    Orientation="Vertical">
+                                    <Children>
+                                        <Spacer
+                                            Height="95.25"
+                                            Width="19.05" />
+                                        <Key
+                                            Name="Column06Key04"
+                                            Width="${KeycapDiameterMm1u}"
+                                            Height="${KeycapDiameterMm1u}"
+                                            Margin="${KeyMarginMillimeters}"
+                                            Fill="${AlphaFillColor}"
+                                            Stroke="${KeycapBorderColor}">
+                                            <Legend
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Text="DEL"
+                                                FontSize="4" />
+                                        </Key>
+                                    </Children>
+                                </Stack>
+                            </Children>
+                        </Stack>
+                        <Group
+                            Name="PcbEdgeCuts"
+                            Visible="false">
+                            <Children>
+                                <Path
+                                    Fill="#00ff00"
+                                    Stroke="#00ff00"
+                                    FillOpacity="0.5">
+                                    <Components>
+                                        <AbsoluteMoveTo>
+                                            <EndPoint
+                                                X="-66.675"
+                                                Y="-54.65" />
+                                        </AbsoluteMoveTo>
+                                        <AbsoluteLineTo>
+                                            <EndPoint
+                                                X="-9.525"
+                                                Y="-62.65" />
+                                        </AbsoluteLineTo>
+                                        <AbsoluteLineTo>
+                                            <EndPoint
+                                                X="9.525"
+                                                Y="-62.65" />
+                                        </AbsoluteLineTo>
+                                        <AbsoluteLineTo>
+                                            <EndPoint
+                                                X="50.001"
+                                                Y="-50.964" />
+                                        </AbsoluteLineTo>
+                                        <AbsoluteLineTo>
+                                            <EndPoint
+                                                X="66.675"
+                                                Y="43.6" />
+                                        </AbsoluteLineTo>
+                                        <AbsoluteLineTo>
+                                            <EndPoint
+                                                X="66.675"
+                                                Y="62.65" />
+                                        </AbsoluteLineTo>
+                                        <AbsoluteLineTo>
+                                            <EndPoint
+                                                X="28.575"
+                                                Y="62.65" />
+                                        </AbsoluteLineTo>
+                                        <AbsoluteLineTo>
+                                            <EndPoint
+                                                X="-28.575"
+                                                Y="59.65" />
+                                        </AbsoluteLineTo>
+                                        <AbsoluteLineTo>
+                                            <EndPoint
+                                                X="-66.675"
+                                                Y="59.65" />
+                                        </AbsoluteLineTo>
+                                        <AbsoluteLineTo>
+                                            <EndPoint
+                                                X="-66.675"
+                                                Y="-54.65" />
+                                        </AbsoluteLineTo>
+                                    </Components>
+                                </Path>
+                            </Children>
+                        </Group>
+                    </Children>
+                </Group>
+            </Groups>
+        </Layer>
+        <Layer
+            Name="bottom"
+            ZIndex="4"
+            XOffset="96.45"
+            YOffset="80"
+            Width="192.9"
+            Height="160">
+            <Groups>
+                <Group
+                    Name="Outer">
+                    <Children>
+                        <Group
+                            Name="PlatePerimeter"
+                            Visible="true">
+                            <Children>
+                                <Path
+                                    Fill="${CaseFillColor}"
+                                    Stroke="${CaseStrokeColor}"
+                                    FillOpacity="1.0">
+                                    <Components>
+                                        <AbsoluteMoveTo>
+                                            <EndPoint
+                                                X="-69.675"
+                                                Y="-54.259" />
+                                        </AbsoluteMoveTo>
+                                        <AbsoluteQuadraticCurveTo>
+                                            <EndPoint
+                                                X="-66.704"
+                                                Y="-57.675" />
+                                            <ControlPoint
+                                                X="-69.675"
+                                                Y="-57.259" />
+                                        </AbsoluteQuadraticCurveTo>
+                                        <AbsoluteLineTo>
+                                            <EndPoint
+                                                X="-12.705"
+                                                Y="-65.234" />
+                                        </AbsoluteLineTo>
+                                        <AbsoluteQuadraticCurveTo>
+                                            <EndPoint
+                                                X="-6.734"
+                                                Y="-65.65" />
+                                            <ControlPoint
+                                                X="-9.734"
+                                                Y="-65.65" />
+                                        </AbsoluteQuadraticCurveTo>
+                                        <AbsoluteLineTo>
+                                            <EndPoint
+                                                X="6.949"
+                                                Y="-65.65" />
+                                        </AbsoluteLineTo>
+                                        <AbsoluteQuadraticCurveTo>
+                                            <EndPoint
+                                                X="12.831"
+                                                Y="-64.818" />
+                                            <ControlPoint
+                                                X="9.949"
+                                                Y="-65.65" />
+                                        </AbsoluteQuadraticCurveTo>
+                                        <AbsoluteLineTo>
+                                            <EndPoint
+                                                X="49.749"
+                                                Y="-54.159" />
+                                        </AbsoluteLineTo>
+                                        <AbsoluteQuadraticCurveTo>
+                                            <EndPoint
+                                                X="53.152"
+                                                Y="-50.373" />
+                                            <ControlPoint
+                                                X="52.631"
+                                                Y="-53.327" />
+                                        </AbsoluteQuadraticCurveTo>
+                                        <AbsoluteLineTo>
+                                            <EndPoint
+                                                X="65.586"
+                                                Y="20.146" />
+                                        </AbsoluteLineTo>
+                                        <AbsoluteLineTo>
+                                            <EndPoint
+                                                X="55.492"
+                                                Y="21.926" />
+                                        </AbsoluteLineTo>
+                                        <AbsoluteLineTo>
+                                            <EndPoint
+                                                X="58.617"
+                                                Y="39.652" />
+                                        </AbsoluteLineTo>
+                                        <AbsoluteLineTo>
+                                            <EndPoint
+                                                X="68.711"
+                                                Y="37.872" />
+                                        </AbsoluteLineTo>
+                                        <AbsoluteLineTo>
+                                            <EndPoint
+                                                X="69.154"
+                                                Y="40.384" />
+                                        </AbsoluteLineTo>
+                                        <AbsoluteQuadraticCurveTo>
+                                            <EndPoint
+                                                X="69.675"
+                                                Y="46.338" />
+                                            <ControlPoint
+                                                X="69.675"
+                                                Y="43.338" />
+                                        </AbsoluteQuadraticCurveTo>
+                                        <AbsoluteLineTo>
+                                            <EndPoint
+                                                X="69.675"
+                                                Y="62.65" />
+                                        </AbsoluteLineTo>
+                                        <AbsoluteQuadraticCurveTo>
+                                            <EndPoint
+                                                X="66.675"
+                                                Y="65.65" />
+                                            <ControlPoint
+                                                X="69.675"
+                                                Y="65.65" />
+                                        </AbsoluteQuadraticCurveTo>
+                                        <AbsoluteLineTo>
+                                            <EndPoint
+                                                X="31.496"
+                                                Y="65.65" />
+                                        </AbsoluteLineTo>
+                                        <AbsoluteQuadraticCurveTo>
+                                            <EndPoint
+                                                X="25.5"
+                                                Y="65.493" />
+                                            <ControlPoint
+                                                X="28.496"
+                                                Y="65.65" />
+                                        </AbsoluteQuadraticCurveTo>
+                                        <AbsoluteLineTo>
+                                            <EndPoint
+                                                X="-25.658"
+                                                Y="62.807" />
+                                        </AbsoluteLineTo>
+                                        <AbsoluteQuadraticCurveTo>
+                                            <EndPoint
+                                                X="-31.654"
+                                                Y="62.65" />
+                                            <ControlPoint
+                                                X="-28.654"
+                                                Y="62.65" />
+                                        </AbsoluteQuadraticCurveTo>
+                                        <AbsoluteLineTo>
+                                            <EndPoint
+                                                X="-66.675"
+                                                Y="62.65" />
+                                        </AbsoluteLineTo>
+                                        <AbsoluteQuadraticCurveTo>
+                                            <EndPoint
+                                                X="-69.675"
+                                                Y="59.65" />
+                                            <ControlPoint
+                                                X="-69.675"
+                                                Y="62.65" />
+                                        </AbsoluteQuadraticCurveTo>
+                                        <AbsoluteLineTo>
+                                            <EndPoint
+                                                X="-69.675"
+                                                Y="-54.259" />
+                                        </AbsoluteLineTo>
+                                    </Components>
+                                </Path>
+                            </Children>
+                        </Group>
+                        <Group
+                            Name="ScrewHoles">
+                            <Children>
+                                <Circle
+                                    Fill="#000000"
+                                    Stroke="#000000"
+                                    Size="${M2ScrewSize}"
+                                    XOffset="-47.625"
+                                    YOffset="-35.6" />
+                                <Circle
+                                    Fill="#000000"
+                                    Stroke="#000000"
+                                    Size="${M2ScrewSize}"
+                                    XOffset="28.575"
+                                    YOffset="-37.6" />
+                                <Circle
+                                    Fill="#000000"
+                                    Stroke="#000000"
+                                    Size="${M2ScrewSize}"
+                                    XOffset="-47.625"
+                                    YOffset="40.6" />
+                                <Circle
+                                    Fill="#000000"
+                                    Stroke="#000000"
+                                    Size="${M2ScrewSize}"
+                                    XOffset="28.575"
+                                    YOffset="38.6" />
+                            </Children>
+                        </Group>
+                        <Group
+                            Name="TentingHoles"
+                            XOffset="-96.45"
+                            YOffset="-80">
+                            <Children>
+                                <Circle
+                                    Fill="#000000"
+                                    Stroke="#000000"
+                                    Size="${M2ScrewSize}"
+                                    XOffset="48.825"
+                                    YOffset="34.875" />
+                                <Circle
+                                    Fill="#000000"
+                                    Stroke="#000000"
+                                    Size="${M2ScrewSize}"
+                                    XOffset="48.825"
+                                    YOffset="130.125" />
+                                <Circle
+                                    Fill="#000000"
+                                    Stroke="#000000"
+                                    Size="${M2ScrewSize}"
+                                    XOffset="144.075"
+                                    YOffset="34.875" />
+                                <Circle
+                                    Fill="#000000"
+                                    Stroke="#000000"
+                                    Size="${M2ScrewSize}"
+                                    XOffset="144.075"
+                                    YOffset="130.125" />
+                            </Children>
+                        </Group>
+                    </Children>
+                </Group>
+            </Groups>
+        </Layer>
+    </Layers>
+</Keyboard>

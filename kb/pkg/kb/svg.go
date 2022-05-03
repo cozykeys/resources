@@ -1,7 +1,10 @@
 package kb
 
 import (
+	"bytes"
 	"fmt"
+	"kb/pkg/models"
+	"os"
 	"strings"
 
 	"github.com/beevik/etree"
@@ -58,7 +61,7 @@ var keycapPathDataInner string = strings.Join([]string{
 	"L     0 -8.05",
 }, " ")
 
-func (kb *Keyboard) ToSvg(tags []string) (string, error) {
+func KeyboardToSvg(kb *models.Keyboard, tags []string) (string, error) {
 	w := int32(kb.Width + 10)
 	h := int32(kb.Height + 10)
 
@@ -71,9 +74,11 @@ func (kb *Keyboard) ToSvg(tags []string) (string, error) {
 	root.CreateAttr("viewBox", fmt.Sprintf("0 0 %d %d", w, h))
 	root.CreateAttr("xmlns", "http://www.w3.org/2000/svg")
 
-	for _, cmp := range kb.Components {
-		addChildComponent(root, cmp)
-	}
+	/*
+		for _, cmp := range kb.Components {
+			addChildComponent(root, cmp)
+		}
+	*/
 
 	doc.Indent(2)
 
@@ -82,18 +87,20 @@ func (kb *Keyboard) ToSvg(tags []string) (string, error) {
 	return b.String(), nil
 }
 
-func addChildComponent(parent *etree.Element, cmp Component) {
+/*
+func addChildComponent(parent *etree.Element, cmp models.Component) {
 	switch cmp := cmp.(type) {
-	case *Key:
+	case *models.Key:
 		addChildKey(parent, cmp)
-	case *Circle:
+	case *models.Circle:
 		addChildCircle(parent, cmp)
 	default:
 		panic(fmt.Sprintf("Unknown type %T", cmp))
 	}
 }
+*/
 
-func addChildKey(parent *etree.Element, key *Key) {
+func addChildKey(parent *etree.Element, key *models.Key) {
 	g := parent.CreateElement("g")
 	g.CreateAttr("id", key.Name)
 	g.CreateAttr("transform", fmt.Sprintf("translate(%.3f,%.3f)", key.XOffset, key.YOffset))
@@ -111,7 +118,7 @@ func addChildKey(parent *etree.Element, key *Key) {
 	t2.CreateAttr("d", keycapPathDataInner)
 }
 
-func addChildCircle(parent *etree.Element, circle *Circle) {
+func addChildCircle(parent *etree.Element, circle *models.Circle) {
 	g := parent.CreateElement("g")
 	g.CreateAttr("id", circle.Name)
 	g.CreateAttr("transform", fmt.Sprintf("translate(%.3f,%.3f)", circle.XOffset, circle.YOffset))
@@ -119,4 +126,19 @@ func addChildCircle(parent *etree.Element, circle *Circle) {
 	e := g.CreateElement("circle")
 	e.CreateAttr("style", "fill:none;stroke:#000000;stroke-width:0.5")
 	e.CreateAttr("r", "1.0")
+}
+
+func WriteSVGToFile(doc *etree.Document, path string) error {
+	doc.Indent(4)
+	b := &bytes.Buffer{}
+	_, err := doc.WriteTo(b)
+	if err != nil {
+		return err
+	}
+
+	if err := os.WriteFile(path, b.Bytes(), 0644); err != nil {
+		return err
+	}
+
+	return nil
 }
