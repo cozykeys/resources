@@ -158,32 +158,32 @@ func (u *pathUnmarshaller) unmarshalPathComponents(e *etree.Element) ([]models.P
 			pathComponent, err = unmarshalAbsoluteMoveTo(element, u.path)
 		case ElementAbsoluteLineTo:
 			pathComponent, err = unmarshalAbsoluteLineTo(element, u.path)
+		case ElementAbsoluteQuadraticCurveTo:
+			pathComponent, err = unmarshalAbsoluteQuadraticCurveTo(element, u.path)
 			// TODO: Implement the other path components
 			/*
 				case ElementAbsoluteCubicCurveTo:
-					pathComponent, err = unmarshalFoo(element)
+					pathComponent, err = unmarshalAbsoluteCubicCurveTo(element, u.path)
 				case ElementAbsoluteHorizontalLineTo:
-					pathComponent, err = unmarshalFoo(element)
-				case ElementAbsoluteQuadraticCurveTo:
-					pathComponent, err = unmarshalFoo(element)
+					pathComponent, err = unmarshalAbsoluteHorizontalLineTo(element, u.path)
 				case ElementAbsoluteVerticalLineTo:
-					pathComponent, err = unmarshalFoo(element)
+					pathComponent, err = unmarshalAbsoluteVerticalLineTo(element, u.path)
 				case ElementRelativeCubicCurveTo:
-					pathComponent, err = unmarshalFoo(element)
+					pathComponent, err = unmarshalRelativeCubicCurveTo(element, u.path)
 				case ElementRelativeHorizontalLineTo:
-					pathComponent, err = unmarshalFoo(element)
+					pathComponent, err = unmarshalRelativeHorizontalLineTo(element, u.path)
 				case ElementRelativeLineTo:
-					pathComponent, err = unmarshalFoo(element)
+					pathComponent, err = unmarshalRelativeLineTo(element, u.path)
 				case ElementRelativeMoveTo:
-					pathComponent, err = unmarshalFoo(element)
+					pathComponent, err = unmarshalRelativeMoveTo(element, u.path)
 				case ElementRelativeQuadraticCurveTo:
-					pathComponent, err = unmarshalFoo(element)
+					pathComponent, err = unmarshalRelativeQuadraticCurveTo(element, u.path)
 				case ElementRelativeVerticalLineTo:
-					pathComponent, err = unmarshalFoo(element)
+					pathComponent, err = unmarshalRelativeVerticalLineTo(element, u.path)
 			*/
 		default:
 			return nil, &invalidChildElementError{
-				element: ElementGroups,
+				element: e.Tag,
 				child:   element.Tag,
 			}
 		}

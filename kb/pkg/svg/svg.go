@@ -1,128 +1,110 @@
 package svg
 
 import (
-	"bytes"
+	"errors"
 	"fmt"
 	"kb/pkg/models"
+	"log"
 	"os"
 	"path"
 	"strings"
-
-	"github.com/beevik/etree"
 )
 
-type svgOptions struct {
-	KeycapOverlaysEnabled bool
+const (
+	DefaultSVGWidth  = 500
+	DefaultSVGHeight = 500
+
+	// TODO: Make this configurable in options? Or move to globals?
+	DefaultSVGMarginHorizontal = 10
+	DefaultSVGMarginVertical   = 10
+)
+
+type Options struct {
+	EnableKeycapOverlays      bool
+	EnableLegends             bool
+	EnableVisualSwitchCutouts bool
+	IndentString              string
+	SquashLayers              bool
 }
 
-// TODO: This shouldn't be global
-var options *svgOptions = &svgOptions{
-	KeycapOverlaysEnabled: true,
+func temp() error {
+	stack := &models.Stack{}
+	width := stack.GetWidth()
+	height := stack.GetWidth()
+	log.Print(fmt.Sprintf("%f x %f", width, height))
+	return nil
 }
 
-func GenerateSVG(kb *models.Keyboard, outputDirectory string) error {
-	generator := &generator{
-		keyboard:        kb,
-		outputDirectory: outputDirectory,
+func Generate(kb *models.Keyboard, outDir string, opts *Options) error {
+	xmlIndentString := "  "
+	if opts.IndentString != "" {
+		xmlIndentString = opts.IndentString
 	}
-	return generator.generate()
-}
 
-type generator struct {
-	keyboard        *models.Keyboard
-	outputDirectory string
-}
+	xmlSettings := &xmlWriterSettings{
+		Indent:              true,
+		IndentChars:         xmlIndentString,
+		NewLineOnAttributes: true,
+	}
 
-/*
-   public static void GenerateSvg(Keyboard keyboard, string outputDirectory, SvgGenerationOptions options = null)
-   {
-       var settings = new XmlWriterSettings
-       {
-           Indent = true,
-           IndentChars = options?.IndentString ?? "  ",
-           NewLineOnAttributes = true
-       };
-
-       Directory.CreateDirectory(outputDirectory);
-
-       if (options != null && options.SquashLayers)
-       {
-           GenerateLayersSquashed(keyboard, outputDirectory, options, settings);
-       }
-       else
-       {
-           GenerateLayers(keyboard, outputDirectory, options, settings);
-       }
-   }
-*/
-func (g *generator) generate() error {
 	// Create output directory
-	err := os.MkdirAll(g.outputDirectory, 0755)
+	err := os.MkdirAll(outDir, 0755)
 	if err != nil {
 		return err
 	}
 
-	return g.generateLayers()
+	if opts.SquashLayers {
+		return generateLayersSquashed(kb, outDir, opts, xmlSettings)
+	} else {
+		return generateLayers(kb, outDir, opts, xmlSettings)
+	}
 }
 
-/*
-   private static void GenerateLayers(Keyboard keyboard, string outputDirectory, SvgGenerationOptions options, XmlWriterSettings settings)
-   {
-       foreach (var layer in keyboard.Layers)
-       {
-           string path = System.IO.Path.Combine(outputDirectory, $"{keyboard.Name}_{layer.Name}.svg");
+func generateLayersSquashed(kb *models.Keyboard, outDir string, opts *Options, xmlSettings *xmlWriterSettings) error {
+	// TODO: Implement this
+	return errors.New("not yet implemented: generateLayersSquashed")
+}
 
-           using (FileStream stream = File.Open(path, FileMode.Create))
-           using (XmlWriter writer = XmlWriter.Create(stream, settings))
-           {
-               WriteSvgOpenTag(writer, (int)layer.Width, (int)layer.Height);
+func generateLayers(kb *models.Keyboard, outDir string, opts *Options, xmlSettings *xmlWriterSettings) error {
+	for _, layer := range kb.Layers {
+		outFile := path.Join(outDir,
+			fmt.Sprintf("%s_%s.svg", strings.ToLower(kb.Name), strings.ToLower(layer.Name)))
 
-               var layerWriter = new LayerWriter { GenerationOptions = options };
-               layerWriter.Write(writer, layer);
+		w := CreateXMLWriter(xmlSettings)
 
-               WriteSvgCloseTag(writer);
-           }
-       }
-   }
-*/
-func (g *generator) generateLayers() error {
-	for _, layer := range g.keyboard.Layers {
-		filename := fmt.Sprintf("%s_%s.svg",
-			strings.ToLower(g.keyboard.Name), strings.ToLower(layer.Name))
-		outputFile := path.Join(g.outputDirectory, filename)
+		writeSVGOpenTag(w, int(layer.GetWidth()), int(layer.Height))
 
-		// Create XML Document
-		doc := etree.NewDocument()
-		doc.CreateProcInst("xml", `version="1.0" encoding="UTF-8"`)
+		lw := &layerWriter{options: opts}
+		lw.write(w, &layer)
 
-		// Set up the root SVG element
-		w := int32(g.keyboard.Width + 10)  // TODO
-		h := int32(g.keyboard.Height + 10) // TODO
-		root := doc.CreateElement("svg")
-		root.CreateAttr("width", fmt.Sprintf("%dmm", w))
-		root.CreateAttr("height", fmt.Sprintf("%dmm", h))
-		root.CreateAttr("viewBox", fmt.Sprintf("0 0 %d %d", w, h))
-		root.CreateAttr("xmlns", "http://www.w3.org/2000/svg")
+		writeSVGCloseTag(w)
 
-		err := writeLayer(root, &layer)
-		if err != nil {
-			//return err
-		}
-
-		/*
-			for _, cmp := range kb.Components {
-				addChildComponent(root, cmp)
-			}
-		*/
-
-		doc.Indent(4)
-		b := &bytes.Buffer{}
-		doc.WriteTo(b)
-
-		os.WriteFile(outputFile, b.Bytes(), 0644)
+		w.writeToFile(outFile)
 	}
 
 	return nil
+}
+
+func writeSVGOpenTag(w *xmlWriter, width int, height int) {
+	if width == 0 {
+		width = DefaultSVGWidth
+	}
+	if height == 0 {
+		height = DefaultSVGHeight
+	}
+
+	width += DefaultSVGMarginHorizontal
+	height += DefaultSVGMarginVertical
+
+	w.writeStartElement("svg")
+	w.writeAttributeString("xmlns", "http://www.w3.org/2000/svg")
+	w.writeAttributeString("width", fmt.Sprintf("%dmm", width))
+	w.writeAttributeString("height", fmt.Sprintf("%dmm", height))
+	w.writeAttributeString("viewBox", fmt.Sprintf("0 0 %d %d", width, height))
+}
+
+func writeSVGCloseTag(w *xmlWriter) {
+	w.writeEndElement()
 }
 
 /*
@@ -136,7 +118,6 @@ func addChildComponent(parent *etree.Element, cmp models.Component) {
 		panic(fmt.Sprintf("Unknown type %T", cmp))
 	}
 }
-*/
 
 func addChildKey(parent *etree.Element, key *models.Key) {
 	g := parent.CreateElement("g")
@@ -165,3 +146,4 @@ func addChildCircle(parent *etree.Element, circle *models.Circle) {
 	e.CreateAttr("style", "fill:none;stroke:#000000;stroke-width:0.5")
 	e.CreateAttr("r", "1.0")
 }
+*/

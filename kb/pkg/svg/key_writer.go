@@ -3,107 +3,85 @@ package svg
 import (
 	"fmt"
 	"kb/pkg/models"
-	"log"
 	"strings"
-
-	"github.com/beevik/etree"
 )
 
-func writeKey(parent *etree.Element, key *models.Key) error {
-	writer := &keyWriter{
-		parent: parent,
-		key:    key,
-	}
-
-	return writer.write()
-}
-
 type keyWriter struct {
-	parent *etree.Element
-	key    *models.Key
+	options *Options
 }
 
-func (w *keyWriter) write() error {
-	if !w.key.Visible {
-		return nil
-	}
-
-	g := w.parent.CreateElement("g")
-
-	// Attributes
-	g.CreateAttr("id", w.key.Name)
-	writeTransform(g, w.key)
-
-	// Elements
-	if w.key.Debug {
-		log.Printf("Writing debug overlay...")
-		writeDebugOverlay(g, w.key)
-	}
-
-	w.writeSwitchCutoutPath(g)
-	w.writeOverlayV1(g)
-	//w.writeOverlayV2(g)
-	w.writeLegends(g)
-
-	return nil
+func newKeyWriter(options *Options) *keyWriter {
+	return &keyWriter{options: options}
 }
 
-func (w *keyWriter) writeSwitchCutoutPath(parent *etree.Element) {
-	e := parent.CreateElement("path")
-	e.CreateAttr("style", "fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.5")
-	e.CreateAttr("d", switchCutoutPathData)
-}
-
-func (w *keyWriter) writeOverlayV1(parent *etree.Element) error {
-	if options == nil || !options.KeycapOverlaysEnabled {
-		return nil
+func (kw *keyWriter) write(w *xmlWriter, key *models.Key) {
+	if !key.GetVisible() {
+		return
 	}
 
-	e := parent.CreateElement("path")
-	e.CreateAttr("id", fmt.Sprintf("%sKeycapOverlayInner", w.key.Name))
-	e.CreateAttr("style", cssStyleString(map[string]string{
-		"fill":         stringOrDefault(w.key.Fill, "#ffffff"),
-		"stroke":       stringOrDefault(w.key.Stroke, "#000000"),
+	w.writeStartElement("g")
+
+	_elementWriter := newElementWriter(kw.options)
+
+	_elementWriter.writeAttributes(w, key)
+	kw.writeAttributes(w, key)
+
+	_elementWriter.writeSubElements(w, key)
+	kw.writeSubElements(w, key)
+
+	w.writeEndElement()
+}
+
+func (kw *keyWriter) writeAttributes(w *xmlWriter, key *models.Key) {
+}
+
+func (kw *keyWriter) writeSubElements(w *xmlWriter, key *models.Key) {
+	kw.writeSwitchCutoutPath(w, key)
+	kw.writeKeycapOverlay(w, key)
+	//kw.writeOverlayV1(w, key)
+	//w.writeOverlayV2(w, key)
+	kw.writeLegends(w, key)
+}
+
+func (kw *keyWriter) writeSwitchCutoutPath(w *xmlWriter, key *models.Key) {
+	_pathWriter := newPathWriter(kw.options)
+	_pathWriter.write(w, switchPath)
+}
+
+func (kw *keyWriter) writeOverlayV1(w *xmlWriter, key *models.Key) {
+	if !kw.options.EnableKeycapOverlays {
+		return
+	}
+
+	// TODO: Use path writer
+	w.writeStartElement("path")
+	w.writeAttributeString("id", fmt.Sprintf("%sKeycapOverlayInner", key.GetName()))
+	w.writeAttributeString("style", cssStyleString(map[string]string{
+		"fill":         stringOrDefault(key.Fill, "#ffffff"),
+		"stroke":       stringOrDefault(key.Stroke, "#000000"),
 		"stroke-width": "0.5",
 	}))
-	e.CreateAttr("d", fmt.Sprintf("M -%f,-%f h %f v %f h -%f v -%f h %f",
-		w.key.Width/2,
-		w.key.Height/2,
-		w.key.Width,
-		w.key.Height,
-		w.key.Width,
-		w.key.Height,
-		w.key.Width,
+	w.writeAttributeString("d", fmt.Sprintf("M -%f,-%f h %f v %f h -%f v -%f h %f",
+		key.GetWidth()/2,
+		key.GetHeight()/2,
+		key.GetWidth(),
+		key.GetHeight(),
+		key.GetWidth(),
+		key.GetHeight(),
+		key.GetWidth(),
 	))
-
-	/*
-	   // Next we write it with a style that is more visually pleasing
-	   writer.WriteStartElement("path");
-	   writer.WriteAttributeString("id", $"{key.Name}KeycapOverlay");
-	   writer.WriteAttributeString("d", $"M -{w / 2},-{h / 2} h {w} v {h} h -{w} v -{h} h {w}");
-
-	   var styleDictionary = new Dictionary<string, string>
-	   {
-	       { "fill", !string.IsNullOrWhiteSpace(key.Fill) ? key.Fill : "#ffffff" },
-	       { "stroke", !string.IsNullOrWhiteSpace(key.Stroke) ? key.Stroke : "#000000" },
-	       { "stroke-width", "0.5" },
-	   };
-
-	   writer.WriteAttributeString("style", styleDictionary.ToCssStyleString());
-	   writer.WriteEndElement();
-	*/
-	return nil
+	w.writeEndElement()
 }
 
-func (w *keyWriter) writeOverlayV2(parent *etree.Element) error {
-	if options == nil || !options.KeycapOverlaysEnabled {
-		return nil
+func (kw *keyWriter) writeOverlayV2(w *xmlWriter, key *models.Key) {
+	if !kw.options.EnableKeycapOverlays {
+		return
 	}
 
 	{
-		fill, err := parseColor(stringOrDefault(w.key.Fill, "#ffffff"))
+		fill, err := parseColor(stringOrDefault(key.Fill, "#ffffff"))
 		if err != nil {
-			return err
+			panic("failed to parse color")
 		}
 
 		// Make the outer overlay slightly darker
@@ -111,64 +89,82 @@ func (w *keyWriter) writeOverlayV2(parent *etree.Element) error {
 		fill.G = fill.G - (fill.G / 5)
 		fill.B = fill.B - (fill.B / 5)
 
-		e := parent.CreateElement("path")
-		e.CreateAttr("id", fmt.Sprintf("%sKeycapOverlayOuter", w.key.Name))
-		e.CreateAttr("d", keycapPathDataOuter)
-		e.CreateAttr("style", cssStyleString(map[string]string{
+		w.writeStartElement("path")
+		w.writeAttributeString("id", fmt.Sprintf("%sKeycapOverlayOuter", key.GetName()))
+		w.writeAttributeString("d", keycapPathDataOuter)
+		w.writeAttributeString("style", cssStyleString(map[string]string{
 			"fill":         formatColorHex(fill),
-			"stroke":       stringOrDefault(w.key.Stroke, "#000000"),
+			"stroke":       stringOrDefault(key.Stroke, "#000000"),
 			"stroke-width": "0.5",
 		}))
+		w.writeEndElement()
 	}
 
 	{
-		e := parent.CreateElement("path")
-		e.CreateAttr("id", fmt.Sprintf("%sKeycapOverlayInner", w.key.Name))
-		e.CreateAttr("d", keycapPathDataInner)
-		e.CreateAttr("style", cssStyleString(map[string]string{
-			"fill":         stringOrDefault(w.key.Fill, "#ffffff"),
-			"stroke":       stringOrDefault(w.key.Stroke, "#000000"),
+		w.writeStartElement("path")
+		w.writeAttributeString("id", fmt.Sprintf("%sKeycapOverlayInner", key.GetName()))
+		w.writeAttributeString("d", keycapPathDataInner)
+		w.writeAttributeString("style", cssStyleString(map[string]string{
+			"fill":         stringOrDefault(key.Fill, "#ffffff"),
+			"stroke":       stringOrDefault(key.Stroke, "#000000"),
 			"stroke-width": "0.5",
 		}))
+		w.writeEndElement()
 	}
-
-	return nil
 }
 
-func (w *keyWriter) writeLegends(parent *etree.Element) error {
-	if options == nil || !options.KeycapOverlaysEnabled {
-		return nil
+func (kw *keyWriter) writeKeycapOverlay(w *xmlWriter, key *models.Key) {
+	if !kw.options.EnableKeycapOverlays {
+		return
+	}
+
+	width := key.GetWidth()
+	height := key.GetHeight()
+
+	// TODO: Make a models.Path and use pathWriter instead
+	w.writeStartElement("path")
+	w.writeAttributeString("id", fmt.Sprintf("%sKeycapOverlay", key.GetName()))
+	w.writeAttributeString("d", fmt.Sprintf("M -%f,-%f h %f v %f h -%f v -%f h %f", width/2, height/2, width, height, width, height, width))
+	w.writeAttributeString("style", cssStyleString(map[string]string{
+		"fill":         stringOrDefault(key.Fill, "#ffffff"),
+		"stroke":       stringOrDefault(key.Stroke, "#000000"),
+		"stroke-width": "0.5",
+	}))
+	w.writeEndElement()
+}
+
+func (kw *keyWriter) writeLegends(w *xmlWriter, key *models.Key) {
+	if !kw.options.EnableKeycapOverlays {
+		return
 	}
 
 	legendIndex := 0
-	for _, legend := range w.key.Legends {
-		legend.Name = fmt.Sprintf("%sLegend%d", w.key.Name, legendIndex)
-		err := writeLegend(parent, &legend)
-		if err != nil {
-			return err
-		}
+	for _, legend := range key.Legends {
+		legend.Name = fmt.Sprintf("%sLegend%d", key.GetName(), legendIndex)
+		_legendWriter := newLegendWriter(kw.options)
+		_legendWriter.write(w, &legend)
 		legendIndex++
 	}
-
-	return nil
 }
 
-var switchCutoutPathData string = reduceSpaces(strings.Join([]string{
-	"M  0.0 -7.0",
-	"L  7.0 -7.0",
-	"L  7.0 -6.0",
-	"L  7.8 -6.0",
-	"L  7.8  6.0",
-	"L  7.0  6.0",
-	"L  7.0  7.0",
-	"L -7.0  7.0",
-	"L -7.0  6.0",
-	"L -7.8  6.0",
-	"L -7.8 -6.0",
-	"L -7.0 -6.0",
-	"L -7.0 -7.0",
-	"L  0.0 -7.0",
-}, " "))
+var switchPath *models.Path = &models.Path{
+	Components: []models.PathComponent{
+		&models.AbsoluteMoveTo{EndPoint: &models.Point{X: 0.0, Y: -7.0}},
+		&models.AbsoluteLineTo{EndPoint: &models.Point{X: 7.0, Y: -7.0}},
+		&models.AbsoluteLineTo{EndPoint: &models.Point{X: 7.0, Y: -6.0}},
+		&models.AbsoluteLineTo{EndPoint: &models.Point{X: 7.8, Y: -6.0}},
+		&models.AbsoluteLineTo{EndPoint: &models.Point{X: 7.8, Y: 6.0}},
+		&models.AbsoluteLineTo{EndPoint: &models.Point{X: 7.0, Y: 6.0}},
+		&models.AbsoluteLineTo{EndPoint: &models.Point{X: 7.0, Y: 7.0}},
+		&models.AbsoluteLineTo{EndPoint: &models.Point{X: -7.0, Y: 7.0}},
+		&models.AbsoluteLineTo{EndPoint: &models.Point{X: -7.0, Y: 6.0}},
+		&models.AbsoluteLineTo{EndPoint: &models.Point{X: -7.8, Y: 6.0}},
+		&models.AbsoluteLineTo{EndPoint: &models.Point{X: -7.8, Y: -6.0}},
+		&models.AbsoluteLineTo{EndPoint: &models.Point{X: -7.0, Y: -6.0}},
+		&models.AbsoluteLineTo{EndPoint: &models.Point{X: -7.0, Y: -7.0}},
+		&models.AbsoluteLineTo{EndPoint: &models.Point{X: 0.0, Y: -7.0}},
+	},
+}
 
 var keycapPathDataOuter string = reduceSpaces(strings.Join([]string{
 	"M  0.0  -9.05",

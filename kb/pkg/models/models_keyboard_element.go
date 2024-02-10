@@ -52,12 +52,22 @@ func (e *KeyboardElementBase) GetRotation() float64 {
 
 // GetHeight TODO
 func (e *KeyboardElementBase) GetHeight() float64 {
+	//stack, ok := e.Ref.(*Stack)
+	//if ok {
+	//return stack.GetStackHeight()
+	//} else {
 	return e.Height
+	//}
 }
 
 // GetWidth TODO
 func (e *KeyboardElementBase) GetWidth() float64 {
+	//stack, ok := e.Ref.(*Stack)
+	//if ok {
+	//return stack.GetStackWidth()
+	//} else {
 	return e.Width
+	//}
 }
 
 // GetMargin TODO
@@ -90,6 +100,10 @@ func (e *KeyboardElementBase) GetConstants() map[string]string {
 		parent = parent.GetParent()
 	}
 	return constants
+}
+
+func (e *KeyboardElementBase) GetBase() *KeyboardElementBase {
+	return e
 }
 
 var _ KeyboardElement = &KeyboardElementBase{}

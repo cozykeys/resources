@@ -2,9 +2,6 @@ package svg
 
 import (
 	"kb/pkg/models"
-	"log"
-
-	"github.com/beevik/etree"
 )
 
 const (
@@ -14,45 +11,43 @@ const (
 	DefaultPathStrokeWidth = "0.5"
 )
 
-func writePath(parent *etree.Element, path *models.Path) error {
-	writer := &pathWriter{
-		parent: parent,
-		path:   path,
-	}
-
-	return writer.write()
-}
-
 type pathWriter struct {
-	parent *etree.Element
-	path   *models.Path
+	options *Options
 }
 
-func (w *pathWriter) write() error {
-	if !w.path.Visible {
-		return nil
+func newPathWriter(options *Options) *pathWriter {
+	return &pathWriter{options: options}
+}
+
+func (pw *pathWriter) write(w *xmlWriter, path *models.Path) {
+	if !path.Visible {
+		return
 	}
 
-	g := w.parent.CreateElement("g")
+	w.writeStartElement("g")
 
-	// Attributes
-	g.CreateAttr("id", w.path.Name)
-	writeTransform(g, w.path)
+	_elementWriter := newElementWriter(pw.options)
 
-	// Elements
-	if w.path.Debug {
-		log.Printf("Writing debug overlay...")
-		writeDebugOverlay(g, w.path)
-	}
+	_elementWriter.writeAttributes(w, path)
+	pw.writeAttributes(w, path)
 
-	path := w.parent.CreateElement("path")
-	path.CreateAttr("style", cssStyleString(map[string]string{
-		"fill":         stringOrDefault(w.path.Fill, "none"),
-		"fill-opacity": stringOrDefault(w.path.FillOpacity, "1"),
-		"stroke":       stringOrDefault(w.path.Stroke, "#000000"),
-		"stroke-width": stringOrDefault(w.path.StrokeWidth, "0.5"),
+	_elementWriter.writeSubElements(w, path)
+	pw.writeSubElements(w, path)
+
+	w.writeEndElement()
+}
+
+func (pw *pathWriter) writeAttributes(w *xmlWriter, path *models.Path) {
+}
+
+func (pw *pathWriter) writeSubElements(w *xmlWriter, path *models.Path) {
+	w.writeStartElement("path")
+	w.writeAttributeString("style", cssStyleString(map[string]string{
+		"fill":         stringOrDefault(path.Fill, DefaultPathFill),
+		"fill-opacity": stringOrDefault(path.FillOpacity, DefaultPathFillOpacity),
+		"stroke":       stringOrDefault(path.Stroke, DefaultPathStroke),
+		"stroke-width": stringOrDefault(path.StrokeWidth, DefaultPathStrokeWidth),
 	}))
-	path.CreateAttr("d", w.path.Data())
-
-	return nil
+	w.writeAttributeString("d", path.Data())
+	w.writeEndElement()
 }

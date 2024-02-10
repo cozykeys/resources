@@ -11,3 +11,7 @@ type Circle struct {
 	Stroke      string
 	StrokeWidth string
 }
+
+func (p *Circle) Data() string {
+	return "TODO"
+}

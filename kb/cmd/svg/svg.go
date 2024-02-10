@@ -50,7 +50,11 @@ func svgFunc(cmd *cobra.Command, args []string) {
 		log.Fatalf("failed to unmarshal input file: %v\n", err)
 	}
 
-	err = svg.GenerateSVG(keyboard, cfg.outputDir)
+	options := &svg.Options{
+		EnableKeycapOverlays: true,
+	}
+
+	err = svg.Generate(keyboard, cfg.outputDir, options)
 	if err != nil {
 		log.Fatalf("failed to generate svg: %v\n", err)
 	}

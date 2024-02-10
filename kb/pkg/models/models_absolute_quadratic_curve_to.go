@@ -9,8 +9,8 @@ var _ PathComponent = &AbsoluteQuadraticCurveTo{}
 type AbsoluteQuadraticCurveTo struct {
 	KeyboardElementBase
 
-	EndPoint     Point
-	ControlPoint Point
+	EndPoint     *Point
+	ControlPoint *Point
 }
 
 func (c *AbsoluteQuadraticCurveTo) Data() string {

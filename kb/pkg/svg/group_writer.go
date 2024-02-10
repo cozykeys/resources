@@ -3,65 +3,63 @@ package svg
 import (
 	"kb/pkg/models"
 	"log"
-
-	"github.com/beevik/etree"
 )
 
-func writeGroup(parent *etree.Element, group *models.Group) error {
-	writer := &groupWriter{
-		parent: parent,
-		group:  group,
-	}
-
-	return writer.write()
-}
-
 type groupWriter struct {
-	parent *etree.Element
-	group  *models.Group
+	options *Options
 }
 
-func (w *groupWriter) write() error {
-	if !w.group.Visible {
-		return nil
+func newGroupWriter(options *Options) *groupWriter {
+	return &groupWriter{options: options}
+}
+
+func (gw *groupWriter) write(w *xmlWriter, group models.IGroup) {
+	if !group.GetElement().GetVisible() {
+		return
 	}
 
-	g := w.parent.CreateElement("g")
+	w.writeStartElement("g")
 
-	// Attributes
-	g.CreateAttr("id", w.group.Name)
-	writeTransform(g, w.group)
+	_elementWriter := newElementWriter(gw.options)
 
-	// Child Elements
-	if w.group.Debug {
-		writeDebugOverlay(g, w.group)
-	}
+	_elementWriter.writeAttributes(w, group.GetElement())
+	gw.writeAttributes(w, group)
 
-	for _, child := range w.group.Children {
-		var err error
+	_elementWriter.writeSubElements(w, group.GetElement())
+	gw.writeSubElements(w, group)
+
+	w.writeEndElement()
+}
+
+func (gw *groupWriter) writeAttributes(w *xmlWriter, group models.IGroup) {
+}
+
+func (gw *groupWriter) writeSubElements(w *xmlWriter, group models.IGroup) {
+	for _, child := range group.GetChildren() {
 		switch v := child.(type) {
-		case *models.Key:
-			err = writeKey(g, v)
+		case *models.Circle:
+			_circleWriter := newCircleWriter(gw.options)
+			_circleWriter.write(w, v)
 		case *models.Group:
-			err = writeGroup(g, v)
-		//case *models.Spacer:
-		//	err = writeSpacer(g, v)
-		//case *models.Stack:
-		//	err = writeStack(g, v)
+			_groupWriter := newGroupWriter(gw.options)
+			_groupWriter.write(w, v)
+		case *models.Key:
+			_keyWriter := newKeyWriter(gw.options)
+			_keyWriter.write(w, v)
 		case *models.Path:
-			err = writePath(g, v)
-		//case *models.Circle:
-		//	err = writeCircle(g, v)
-		//case *models.Text:
-		//	err = writeText(g, v)
+			_pathWriter := newPathWriter(gw.options)
+			_pathWriter.write(w, v)
+		case *models.Spacer:
+			_spacerWriter := newSpacerWriter(gw.options)
+			_spacerWriter.write(w, v)
+		case *models.Stack:
+			_stackWriter := newStackWriter(gw.options)
+			_stackWriter.write(w, v)
+		case *models.Text:
+			_textWriter := newTextWriter(gw.options)
+			_textWriter.write(w, v)
 		default:
 			log.Printf("Type not yet implemented %T", v)
 		}
-
-		if err != nil {
-			return err
-		}
 	}
-
-	return nil
 }

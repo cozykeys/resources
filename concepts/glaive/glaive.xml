@@ -1,0 +1,1317 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- vim: set autoindent smartindent smarttab shiftwidth=2 softtabstop=2 tabstop=2 expandtab : -->
+<Keyboard Name="glaive" Version="1.0.0">
+  <Constants>
+    <Constant Name="AlphaFillColor" Value="#ffffff" />
+    <Constant Name="AlphaLegendColor" Value="#000000" />
+    <Constant Name="ModFillColor" Value="#cfcfcf" />
+    <Constant Name="ModLegendColor" Value="#000000" />
+    <Constant Name="KeycapBorderColor" Value="#000000" />
+    <Constant Name="M2SpacerSize" Value="3.563" />
+    <Constant Name="M2ScrewSize" Value="2.3" />
+    <Constant Name="KeycapDiameterMm1u" Value="18.1" />
+    <Constant Name="KeyMarginMillimeters" Value="0.475" />
+    <Constant Name="CaseFillColor" Value="#7f7f7f" />
+    <Constant Name="CaseStrokeColor" Value="#000000" />
+    <Constant Name="KeywellFillColor" Value="#5f5f5f" />
+  </Constants>
+  <Layers>
+    <Layer Name="switch" ZIndex="3" XOffset="172.9725" YOffset="77.259" Width="345.945" Height="154.518">
+      <Groups>
+        <Group Name="root">
+          <Children>
+            <Group Name="left" Rotation="10" XOffset="-100" Visible="true">
+              <Children>
+                <Stack Name="Columns">
+                  <Children>
+                    <Stack Name="Column00" YOffset="2.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column00Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F1" FontSize="4" />
+                        </Key>
+                        <Key Name="Column00Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="+" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="=" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column00Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="TAB" FontSize="4" />
+                        </Key>
+                        <Key Name="Column00Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="ESC" FontSize="4" />
+                        </Key>
+                        <Key Name="Column00Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="SHFT" FontSize="4" />
+                        </Key>
+                        <Key Name="Column00Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="CTRL" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column01" YOffset="2.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column01Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F2" FontSize="4" />
+                        </Key>
+                        <Key Name="Column01Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="!" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="1" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column01Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="Q" FontSize="6" />
+                        </Key>
+                        <Key Name="Column01Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="A" FontSize="6" />
+                        </Key>
+                        <Key Name="Column01Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="Z" FontSize="6" />
+                        </Key>
+                        <Key Name="Column01Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="OS" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column02" YOffset="-0.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column02Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F3" FontSize="4" />
+                        </Key>
+                        <Key Name="Column02Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="@" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="2" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column02Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="W" FontSize="6" />
+                        </Key>
+                        <Key Name="Column02Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="S" FontSize="6" />
+                        </Key>
+                        <Key Name="Column02Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="X" FontSize="6" />
+                        </Key>
+                        <Key Name="Column02Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="ALT" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column03" YOffset="-5.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column03Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F4" FontSize="4" />
+                        </Key>
+                        <Key Name="Column03Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="#" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="3" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column03Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="E" FontSize="6" />
+                        </Key>
+                        <Key Name="Column03Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="D" FontSize="6" />
+                        </Key>
+                        <Key Name="Column03Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="C" FontSize="6" />
+                        </Key>
+                        <Key Name="Column03Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="~" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="`" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column04" YOffset="0.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column04Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F5" FontSize="4" />
+                        </Key>
+                        <Key Name="Column04Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="$" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="4" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column04Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="R" FontSize="6" />
+                        </Key>
+                        <Key Name="Column04Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F" FontSize="6" />
+                        </Key>
+                        <Key Name="Column04Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="V" FontSize="6" />
+                        </Key>
+                        <Key Name="Column04Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="FN" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column05" YOffset="5.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column05Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F6" FontSize="4" />
+                        </Key>
+                        <Key Name="Column05Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="%" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="5" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column05Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="T" FontSize="6" />
+                        </Key>
+                        <Key Name="Column05Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="G" FontSize="6" />
+                        </Key>
+                        <Key Name="Column05Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="B" FontSize="6" />
+                        </Key>
+                        <Key Name="Column05Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="BKSP" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column06" YOffset="5.5" Orientation="Vertical">
+                      <Children>
+                      <!--<Spacer Height="38.1" Width="19.05" />-->
+
+                        <Key Name="Column07Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="PrSc" FontSize="4" />
+                        </Key>
+                        <Key Name="Column07Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="Ins" FontSize="4" />
+                        </Key>
+                        <Key Name="Column06Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="PgUp" FontSize="4" />
+                        </Key>
+                        <Key Name="Column06Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="PgDn" FontSize="4" />
+                        </Key>
+                        <Key Name="Column06Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="{" FontSize="4" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="[" FontSize="4" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column06Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="DEL" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                  </Children>
+                </Stack>
+              </Children>
+            </Group>
+            <Group Name="center" YOffset="50" Visible="true">
+              <Children>
+                <Stack Name="Columns">
+                  <Children>
+                    <Stack Name="Column06" Orientation="Vertical">
+                    <Children>
+                        <Spacer Height="19.05" Width="19.05" />
+                        <Key Name="Column06Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="LEFT" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column07" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column07Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="UP" FontSize="4" />
+                        </Key>
+                        <Key Name="Column07Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="DOWN" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column08" Orientation="Vertical">
+                    <Children>
+                        <Spacer Height="19.05" Width="19.05" />
+                        <Key Name="Column08Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="RGHT" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                  </Children>
+                </Stack>
+              </Children>
+            </Group>
+            <Group Name="right" Rotation="-10" XOffset="100" Visible="true">
+              <Children>
+                <Stack Name="Columns">
+                  <Children>
+                    <Stack Name="Column08" YOffset="5.5" Orientation="Vertical">
+                      <Children>
+                      <!--<Spacer Height="38.1" Width="19.05" />-->
+
+                        <Key Name="Column07Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="ScLk" FontSize="4" />
+                        </Key>
+                        <Key Name="Column07Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="Paus" FontSize="4" />
+                        </Key>
+                        <Key Name="Column08Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="Home" FontSize="4" />
+                        </Key>
+                        <Key Name="Column08Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="End" FontSize="4" />
+                        </Key>
+                        <Key Name="Column08Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="}" FontSize="4" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="]" FontSize="4" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column08Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="ENT" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column09" YOffset="5.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column09Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F7" FontSize="4" />
+                        </Key>
+                        <Key Name="Column09Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="^" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="6" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column09Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="Y" FontSize="6" />
+                        </Key>
+                        <Key Name="Column09Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="H" FontSize="6" />
+                        </Key>
+                        <Key Name="Column09Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="N" FontSize="6" />
+                        </Key>
+                        <Key Name="Column09Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="SPC" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column10" YOffset="0.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column10Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F8" FontSize="4" />
+                        </Key>
+                        <Key Name="Column10Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="&amp;" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="7" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column10Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="U" FontSize="6" />
+                        </Key>
+                        <Key Name="Column10Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="J" FontSize="6" />
+                        </Key>
+                        <Key Name="Column10Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="M" FontSize="6" />
+                        </Key>
+                        <Key Name="Column10Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                            <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="{" FontSize="4" Color="${AlphaLegendColor}" YOffset="-3" />
+                            <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="[" FontSize="4" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column11" YOffset="-5.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column11Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F9" FontSize="4" />
+                        </Key>
+                        <Key Name="Column11Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="*" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="8" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column11Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="I" FontSize="6" />
+                        </Key>
+                        <Key Name="Column11Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="K" FontSize="6" />
+                        </Key>
+                        <Key Name="Column11Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="&lt;" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="," FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column11Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                            <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="}" FontSize="4" Color="${AlphaLegendColor}" YOffset="-3" />
+                            <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="]" FontSize="4" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column12" YOffset="-0.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column12Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F10" FontSize="4" />
+                        </Key>
+                        <Key Name="Column12Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="(" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="9" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column12Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="O" FontSize="6" />
+                        </Key>
+                        <Key Name="Column12Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="L" FontSize="6" />
+                        </Key>
+                        <Key Name="Column12Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="&gt;" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="." FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column12Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="ALT" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column13" YOffset="2.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column13Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F11" FontSize="4" />
+                        </Key>
+                        <Key Name="Column13Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text=")" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="0" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column13Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="P" FontSize="6" />
+                        </Key>
+                        <Key Name="Column13Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text=":" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text=";" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column13Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="?" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="/" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column13Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="OS" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column14" YOffset="2.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column14Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F12" FontSize="4" />
+                        </Key>
+                        <Key Name="Column14Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="_" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="-" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column14Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="|" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="\" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column14Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="&quot;" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="'" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column14Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="SHFT" FontSize="4" />
+                        </Key>
+                        <Key Name="Column14Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="CTRL" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                  </Children>
+                </Stack>
+              </Children>
+            </Group>
+          </Children>
+        </Group>
+      </Groups>
+      </Layer>
+    <Layer Name="tkl" ZIndex="3" XOffset="172.9725" YOffset="77.259" Width="345.945" Height="154.518">
+      <Groups>
+        <Group Name="root">
+          <Children>
+            <Group Name="left" Rotation="10" XOffset="-100" Visible="true">
+              <Children>
+                <Stack Name="Columns">
+                  <Children>
+                    <Stack Name="Column00" YOffset="2.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column00Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F1" FontSize="4" />
+                        </Key>
+                        <Key Name="Column00Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="+" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="=" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column00Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="TAB" FontSize="4" />
+                        </Key>
+                        <Key Name="Column00Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="ESC" FontSize="4" />
+                        </Key>
+                        <Key Name="Column00Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="SHFT" FontSize="4" />
+                        </Key>
+                        <Key Name="Column00Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="CTRL" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column01" YOffset="2.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column01Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F2" FontSize="4" />
+                        </Key>
+                        <Key Name="Column01Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="!" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="1" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column01Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="Q" FontSize="6" />
+                        </Key>
+                        <Key Name="Column01Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="A" FontSize="6" />
+                        </Key>
+                        <Key Name="Column01Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="Z" FontSize="6" />
+                        </Key>
+                        <Key Name="Column01Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="OS" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column02" YOffset="-0.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column02Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F3" FontSize="4" />
+                        </Key>
+                        <Key Name="Column02Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="@" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="2" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column02Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="W" FontSize="6" />
+                        </Key>
+                        <Key Name="Column02Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="S" FontSize="6" />
+                        </Key>
+                        <Key Name="Column02Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="X" FontSize="6" />
+                        </Key>
+                        <Key Name="Column02Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="ALT" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column03" YOffset="-5.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column03Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F4" FontSize="4" />
+                        </Key>
+                        <Key Name="Column03Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="#" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="3" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column03Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="E" FontSize="6" />
+                        </Key>
+                        <Key Name="Column03Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="D" FontSize="6" />
+                        </Key>
+                        <Key Name="Column03Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="C" FontSize="6" />
+                        </Key>
+                        <Key Name="Column03Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="~" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="`" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column04" YOffset="0.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column04Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F5" FontSize="4" />
+                        </Key>
+                        <Key Name="Column04Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="$" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="4" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column04Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="R" FontSize="6" />
+                        </Key>
+                        <Key Name="Column04Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F" FontSize="6" />
+                        </Key>
+                        <Key Name="Column04Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="V" FontSize="6" />
+                        </Key>
+                        <Key Name="Column04Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="FN" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column05" YOffset="5.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column05Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F6" FontSize="4" />
+                        </Key>
+                        <Key Name="Column05Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="%" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="5" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column05Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="T" FontSize="6" />
+                        </Key>
+                        <Key Name="Column05Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="G" FontSize="6" />
+                        </Key>
+                        <Key Name="Column05Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="B" FontSize="6" />
+                        </Key>
+                        <Key Name="Column05Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="BKSP" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column06" YOffset="5.5" Orientation="Vertical">
+                      <Children>
+                        <Spacer Height="95.25" Width="19.05" />
+                        <Key Name="Column06Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="DEL" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                  </Children>
+                </Stack>
+              </Children>
+            </Group>
+            <Group Name="center" YOffset="25" Visible="true">
+              <Children>
+                <Stack Name="Columns">
+                  <Children>
+                    <Stack Name="Column06" Orientation="Vertical">
+                    <Children>
+                        <Key Name="Column06Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="PrSc" FontSize="4" />
+                        </Key>
+                        <Key Name="Column06Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="Ins" FontSize="4" />
+                        </Key>
+                        <Key Name="Column06Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="Del" FontSize="4" />
+                        </Key>
+                        <Spacer Height="19.05" Width="19.05" />
+                        <Key Name="Column06Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="LEFT" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column07" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column07Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="ScLk" FontSize="4" />
+                        </Key>
+                        <Key Name="Column07Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="Home" FontSize="4" />
+                        </Key>
+                        <Key Name="Column07Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="End" FontSize="4" />
+                        </Key>
+                        <Key Name="Column07Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="UP" FontSize="4" />
+                        </Key>
+                        <Key Name="Column07Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="DOWN" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column08" Orientation="Vertical">
+                    <Children>
+                        <Key Name="Column08Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="Paus" FontSize="4" />
+                        </Key>
+                        <Key Name="Column08Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="PgUp" FontSize="4" />
+                        </Key>
+                        <Key Name="Column08Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="PgDn" FontSize="4" />
+                        </Key>
+                        <Spacer Height="19.05" Width="19.05" />
+                        <Key Name="Column08Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="RGHT" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                  </Children>
+                </Stack>
+              </Children>
+            </Group>
+            <Group Name="right" Rotation="-10" XOffset="100" Visible="true">
+              <Children>
+                <Stack Name="Columns">
+                  <Children>
+                    <Stack Name="Column08" YOffset="5.5" Orientation="Vertical">
+                      <Children>
+                        <Spacer Height="95.25" Width="19.05" />
+                        <Key Name="Column08Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="ENT" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column09" YOffset="5.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column09Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F7" FontSize="4" />
+                        </Key>
+                        <Key Name="Column09Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="^" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="6" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column09Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="Y" FontSize="6" />
+                        </Key>
+                        <Key Name="Column09Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="H" FontSize="6" />
+                        </Key>
+                        <Key Name="Column09Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="N" FontSize="6" />
+                        </Key>
+                        <Key Name="Column09Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="SPC" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column10" YOffset="0.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column10Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F8" FontSize="4" />
+                        </Key>
+                        <Key Name="Column10Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="&amp;" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="7" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column10Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="U" FontSize="6" />
+                        </Key>
+                        <Key Name="Column10Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="J" FontSize="6" />
+                        </Key>
+                        <Key Name="Column10Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="M" FontSize="6" />
+                        </Key>
+                        <Key Name="Column10Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                            <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="{" FontSize="4" Color="${AlphaLegendColor}" YOffset="-3" />
+                            <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="[" FontSize="4" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column11" YOffset="-5.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column11Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F9" FontSize="4" />
+                        </Key>
+                        <Key Name="Column11Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="*" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="8" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column11Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="I" FontSize="6" />
+                        </Key>
+                        <Key Name="Column11Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="K" FontSize="6" />
+                        </Key>
+                        <Key Name="Column11Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="&lt;" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="," FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column11Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                            <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="}" FontSize="4" Color="${AlphaLegendColor}" YOffset="-3" />
+                            <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="]" FontSize="4" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column12" YOffset="-0.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column12Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F10" FontSize="4" />
+                        </Key>
+                        <Key Name="Column12Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="(" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="9" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column12Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="O" FontSize="6" />
+                        </Key>
+                        <Key Name="Column12Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="L" FontSize="6" />
+                        </Key>
+                        <Key Name="Column12Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="&gt;" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="." FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column12Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="ALT" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column13" YOffset="2.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column13Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F11" FontSize="4" />
+                        </Key>
+                        <Key Name="Column13Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text=")" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="0" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column13Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="P" FontSize="6" />
+                        </Key>
+                        <Key Name="Column13Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text=":" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text=";" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column13Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="?" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="/" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column13Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="OS" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column14" YOffset="2.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column14Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F12" FontSize="4" />
+                        </Key>
+                        <Key Name="Column14Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="_" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="-" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column14Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="|" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="\" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column14Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="&quot;" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="'" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column14Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="SHFT" FontSize="4" />
+                        </Key>
+                        <Key Name="Column14Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="CTRL" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                  </Children>
+                </Stack>
+              </Children>
+            </Group>
+          </Children>
+        </Group>
+      </Groups>
+    </Layer>
+    <Layer Name="b3" ZIndex="3" XOffset="172.9725" YOffset="77.259" Width="345.945" Height="154.518">
+      <Groups>
+        <Group Name="Elite-C" YOffset="-40">
+          <Constants>
+            <Constant Name="X01"  Value="-8.89" />
+            <Constant Name="X02"  Value="8.89" />
+            <Constant Name="Y01"  Value="15.24" />
+            <Constant Name="Y02"  Value="-17.78" />
+          </Constants>
+          <Children>
+            <Path Fill="#ff0000" Stroke="#ff0000" FillOpacity="0.5">
+              <Components>
+                <AbsoluteMoveTo> <EndPoint X="${X01}" Y="${Y01}" /> </AbsoluteMoveTo>
+                <AbsoluteLineTo> <EndPoint X="${X02}" Y="${Y01}" /> </AbsoluteLineTo>
+                <AbsoluteLineTo> <EndPoint X="${X02}" Y="${Y02}" /> </AbsoluteLineTo>
+                <AbsoluteLineTo> <EndPoint X="${X01}" Y="${Y02}" /> </AbsoluteLineTo>
+                <AbsoluteLineTo> <EndPoint X="${X01}" Y="${Y01}" /> </AbsoluteLineTo>
+              </Components>
+            </Path>
+          </Children>
+        </Group>
+        <Group Name="keywell-01" YOffset="7">
+          <Children>
+            <Path Fill="#ff0000" Stroke="#ff0000" FillOpacity="0.5">
+              <Components>
+                <AbsoluteMoveTo> <EndPoint X="0.0" Y="-19.05" /> </AbsoluteMoveTo>
+                <AbsoluteLineTo> <EndPoint X="19.05"  Y="-19.05" /> </AbsoluteLineTo>
+                <AbsoluteLineTo> <EndPoint X="19.05"  Y="19.05" /> </AbsoluteLineTo>
+                <AbsoluteLineTo> <EndPoint X="-19.05" Y="19.05" /> </AbsoluteLineTo>
+                <AbsoluteLineTo> <EndPoint X="-19.05" Y="-19.05" /> </AbsoluteLineTo>
+                <AbsoluteLineTo> <EndPoint X="-0.0" Y="-19.05" /> </AbsoluteLineTo>
+              </Components>
+            </Path>
+          </Children>
+        </Group>
+        <Group Name="keywell-02" YOffset="55">
+          <Children>
+            <Path Fill="#ff0000" Stroke="#ff0000" FillOpacity="0.5">
+              <Components>
+                <AbsoluteMoveTo> <EndPoint X="0.0" Y="-19.05" /> </AbsoluteMoveTo>
+                <AbsoluteLineTo> <EndPoint X="9.525"  Y="-19.05" /> </AbsoluteLineTo>
+                <AbsoluteLineTo> <EndPoint X="9.525"  Y="0.0" /> </AbsoluteLineTo>
+                <AbsoluteLineTo> <EndPoint X="28.575" Y="0.0" /> </AbsoluteLineTo>
+                <AbsoluteLineTo> <EndPoint X="28.575" Y="19.05" /> </AbsoluteLineTo>
+                <AbsoluteLineTo> <EndPoint X="-28.575" Y="19.05" /> </AbsoluteLineTo>
+                <AbsoluteLineTo> <EndPoint X="-28.575" Y="0.0" /> </AbsoluteLineTo>
+                <AbsoluteLineTo> <EndPoint X="-9.525"  Y="0.0" /> </AbsoluteLineTo>
+                <AbsoluteLineTo> <EndPoint X="-9.525"  Y="-19.05" /> </AbsoluteLineTo>
+                <AbsoluteLineTo> <EndPoint X="0.0" Y="-19.05" /> </AbsoluteMoveTo>
+              </Components>
+            </Path>
+          </Children>
+        </Group>
+        <Group Name="root">
+          <Children>
+            <Group Name="left" Rotation="10" XOffset="-100" Visible="true">
+              <Children>
+                <Stack Name="Columns">
+                  <Children>
+                    <Stack Name="Column00" YOffset="2.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column00Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F1" FontSize="4" />
+                        </Key>
+                        <Key Name="Column00Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="+" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="=" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column00Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="TAB" FontSize="4" />
+                        </Key>
+                        <Key Name="Column00Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="ESC" FontSize="4" />
+                        </Key>
+                        <Key Name="Column00Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="SHFT" FontSize="4" />
+                        </Key>
+                        <Key Name="Column00Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="CTRL" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column01" YOffset="2.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column01Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F2" FontSize="4" />
+                        </Key>
+                        <Key Name="Column01Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="!" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="1" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column01Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="Q" FontSize="6" />
+                        </Key>
+                        <Key Name="Column01Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="A" FontSize="6" />
+                        </Key>
+                        <Key Name="Column01Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="Z" FontSize="6" />
+                        </Key>
+                        <Key Name="Column01Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="OS" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column02" YOffset="-0.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column02Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F3" FontSize="4" />
+                        </Key>
+                        <Key Name="Column02Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="@" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="2" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column02Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="W" FontSize="6" />
+                        </Key>
+                        <Key Name="Column02Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="S" FontSize="6" />
+                        </Key>
+                        <Key Name="Column02Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="X" FontSize="6" />
+                        </Key>
+                        <Key Name="Column02Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="ALT" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column03" YOffset="-5.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column03Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F4" FontSize="4" />
+                        </Key>
+                        <Key Name="Column03Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="#" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="3" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column03Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="E" FontSize="6" />
+                        </Key>
+                        <Key Name="Column03Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="D" FontSize="6" />
+                        </Key>
+                        <Key Name="Column03Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="C" FontSize="6" />
+                        </Key>
+                        <Key Name="Column03Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="~" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="`" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column04" YOffset="0.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column04Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F5" FontSize="4" />
+                        </Key>
+                        <Key Name="Column04Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="$" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="4" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column04Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="R" FontSize="6" />
+                        </Key>
+                        <Key Name="Column04Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F" FontSize="6" />
+                        </Key>
+                        <Key Name="Column04Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="V" FontSize="6" />
+                        </Key>
+                        <Key Name="Column04Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="FN" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column05" YOffset="5.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column05Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F6" FontSize="4" />
+                        </Key>
+                        <Key Name="Column05Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="%" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="5" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column05Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="T" FontSize="6" />
+                        </Key>
+                        <Key Name="Column05Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="G" FontSize="6" />
+                        </Key>
+                        <Key Name="Column05Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="B" FontSize="6" />
+                        </Key>
+                        <Key Name="Column05Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="BKSP" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column06" YOffset="5.5" Orientation="Vertical">
+                      <Children>
+                        <Spacer Height="19.05" Width="19.05" />
+                        <Key Name="Column06Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="Ins" FontSize="4" />
+                        </Key>
+                        <Key Name="Column06Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="PgUp" FontSize="4" />
+                        </Key>
+                        <Key Name="Column06Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="PgDn" FontSize="4" />
+                        </Key>
+                        <Key Name="Column06Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="{" FontSize="4" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="[" FontSize="4" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column06Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="DEL" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                  </Children>
+                </Stack>
+              </Children>
+            </Group>
+            <Stack Name="center" YOffset="78.575" Orientation="Vertical">
+              <Children>
+                <Stack Name="center-top-columns" Orientation="Horizontal">
+                  <Children>
+                    <Stack Name="center-top-column-00" Orientation="Vertical">
+                      <Children>
+                        <Key Name="key-todo-rename-0001" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="RGBT" FontSize="4" />
+                        </Key>
+                        <Key Name="key-todo-rename-0002" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="ScLk" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="center-top-column-01" Orientation="Vertical">
+                      <Children>
+                        <Key Name="key-todo-rename-0003" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="RGBN" FontSize="4" />
+                        </Key>
+                        <Key Name="key-todo-rename-0004" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="Paus" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                  </Children>
+                </Stack>
+                <Spacer Height="9.525" Width="19.05" />
+                <Stack Name="center-bottom-columns" Orientation="Horizontal">
+                  <Children>
+                    <Stack Name="center-bottom-column-00" Orientation="Vertical">
+                      <Children>
+                        <Spacer Height="19.05" Width="19.05" />
+                        <Key Name="key-todo-rename-0005" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="LEFT" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="center-bottom-column-01" Orientation="Vertical">
+                      <Children>
+                        <Key Name="key-todo-rename-0007" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="UP" FontSize="4" />
+                        </Key>
+                        <Key Name="key-todo-rename-0008" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="DOWN" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="center-bottom-column-02" Orientation="Vertical">
+                      <Children>
+                        <Spacer Height="19.05" Width="19.05" />
+                        <Key Name="key-todo-rename-0009" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="RGHT" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                  </Children>
+                </Stack>
+                <Stack Name="Columns" Visible="false">
+                  <Children>
+                    <Stack Name="Column06" Orientation="Vertical">
+                    <Children>
+                        <Key Name="Column06Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="PrSc" FontSize="4" />
+                        </Key>
+                        <Key Name="Column06Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="Ins" FontSize="4" />
+                        </Key>
+                        <Key Name="Column06Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="Del" FontSize="4" />
+                        </Key>
+                        <Spacer Height="19.05" Width="19.05" />
+                        <Key Name="Column06Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="LEFT" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column07" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column07Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="ScLk" FontSize="4" />
+                        </Key>
+                        <Key Name="Column07Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="Home" FontSize="4" />
+                        </Key>
+                        <Key Name="Column07Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="End" FontSize="4" />
+                        </Key>
+                        <Key Name="Column07Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="UP" FontSize="4" />
+                        </Key>
+                        <Key Name="Column07Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="DOWN" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column08" Orientation="Vertical">
+                    <Children>
+                        <Key Name="Column08Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="Paus" FontSize="4" />
+                        </Key>
+                        <Key Name="Column08Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="PgUp" FontSize="4" />
+                        </Key>
+                        <Key Name="Column08Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="PgDn" FontSize="4" />
+                        </Key>
+                        <Spacer Height="19.05" Width="19.05" />
+                        <Key Name="Column08Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="RGHT" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                  </Children>
+                </Stack>
+              </Children>
+            </Stack>
+            <Group Name="right" Rotation="-10" XOffset="100" Visible="true">
+              <Children>
+                <Stack Name="Columns">
+                  <Children>
+                    <Stack Name="Column08" YOffset="5.5" Orientation="Vertical">
+                      <Children>
+                        <Spacer Height="19.05" Width="19.05" />
+                        <Key Name="Column08Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="PrSc" FontSize="4" />
+                        </Key>
+                        <Key Name="Column08Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="Home" FontSize="4" />
+                        </Key>
+                        <Key Name="Column08Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="End" FontSize="4" />
+                        </Key>
+                        <Key Name="Column08Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="}" FontSize="4" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="]" FontSize="4" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column08Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="ENT" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column09" YOffset="5.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column09Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F7" FontSize="4" />
+                        </Key>
+                        <Key Name="Column09Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="^" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="6" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column09Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="Y" FontSize="6" />
+                        </Key>
+                        <Key Name="Column09Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="H" FontSize="6" />
+                        </Key>
+                        <Key Name="Column09Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="N" FontSize="6" />
+                        </Key>
+                        <Key Name="Column09Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="SPC" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column10" YOffset="0.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column10Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F8" FontSize="4" />
+                        </Key>
+                        <Key Name="Column10Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="&amp;" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="7" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column10Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="U" FontSize="6" />
+                        </Key>
+                        <Key Name="Column10Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="J" FontSize="6" />
+                        </Key>
+                        <Key Name="Column10Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="M" FontSize="6" />
+                        </Key>
+                        <Key Name="Column10Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                            <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="{" FontSize="4" Color="${AlphaLegendColor}" YOffset="-3" />
+                            <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="[" FontSize="4" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column11" YOffset="-5.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column11Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F9" FontSize="4" />
+                        </Key>
+                        <Key Name="Column11Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="*" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="8" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column11Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="I" FontSize="6" />
+                        </Key>
+                        <Key Name="Column11Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="K" FontSize="6" />
+                        </Key>
+                        <Key Name="Column11Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="&lt;" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="," FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column11Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                            <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="}" FontSize="4" Color="${AlphaLegendColor}" YOffset="-3" />
+                            <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="]" FontSize="4" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column12" YOffset="-0.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column12Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F10" FontSize="4" />
+                        </Key>
+                        <Key Name="Column12Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="(" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="9" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column12Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="O" FontSize="6" />
+                        </Key>
+                        <Key Name="Column12Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="L" FontSize="6" />
+                        </Key>
+                        <Key Name="Column12Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="&gt;" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="." FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column12Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="ALT" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column13" YOffset="2.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column13Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F11" FontSize="4" />
+                        </Key>
+                        <Key Name="Column13Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text=")" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="0" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column13Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="P" FontSize="6" />
+                        </Key>
+                        <Key Name="Column13Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text=":" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text=";" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column13Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="?" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="/" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column13Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="OS" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                    <Stack Name="Column14" YOffset="2.5" Orientation="Vertical">
+                      <Children>
+                        <Key Name="Column14Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="F12" FontSize="4" />
+                        </Key>
+                        <Key Name="Column14Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="_" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="-" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column14Key02" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="|" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="\" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column14Key03" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="&quot;" FontSize="6" Color="${AlphaLegendColor}" YOffset="-3" />
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="'" FontSize="6" Color="${AlphaLegendColor}" YOffset="3" />
+                        </Key>
+                        <Key Name="Column14Key04" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="SHFT" FontSize="4" />
+                        </Key>
+                        <Key Name="Column14Key05" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                          <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="CTRL" FontSize="4" />
+                        </Key>
+                      </Children>
+                    </Stack>
+                  </Children>
+                </Stack>
+              </Children>
+            </Group>
+          </Children>
+        </Group>
+      </Groups>
+    </Layer>
+  </Layers>
+</Keyboard>

@@ -4,6 +4,9 @@ import (
 	"errors"
 	"fmt"
 	"image/color"
+	"kb/pkg/models"
+	"log"
+	"math"
 	"regexp"
 	"strconv"
 	"strings"
@@ -88,4 +91,70 @@ func cssStyleString(m map[string]string) string {
 		tokens = append(tokens, fmt.Sprintf("%s:%s", k, v))
 	}
 	return strings.Join(tokens, ";")
+}
+
+func getOffsetInStack(stack *models.Stack, element models.KeyboardElement) float64 {
+	if stack.Orientation == models.StackOrientationVertical {
+		log.Print("getOffsetInStack() - vertical")
+
+		stackHeight := 0.0
+		dy := math.MaxFloat64
+
+		for _, child := range stack.GetChildren() {
+			childHeight := getTotalHeight(child)
+			if child == element {
+				dy = stackHeight + childHeight/2
+			}
+			stackHeight += childHeight
+		}
+
+		log.Print(fmt.Sprintf("Stack height = %f", stackHeight))
+
+		return -(stackHeight/2 - dy)
+	}
+
+	if stack.Orientation == models.StackOrientationHorizontal {
+		log.Print("getOffsetInStack() - horizontal")
+
+		stackWidth := 0.0
+		dx := math.MaxFloat64
+
+		for _, child := range stack.GetChildren() {
+			childWidth := getTotalWidth(child)
+			if child == element {
+				dx = stackWidth + childWidth/2
+			}
+			stackWidth += childWidth
+		}
+
+		log.Print(fmt.Sprintf("Stack width = %f", stackWidth))
+
+		return -(stackWidth/2 - dx)
+	}
+
+	panic("unknown stack orientation")
+}
+
+func getTotalWidth(e models.KeyboardElement) float64 {
+	return e.GetWidth() + e.GetMargin()*2
+}
+
+func getTotalHeight(e models.KeyboardElement) float64 {
+	return e.GetHeight() + e.GetMargin()*2
+}
+
+func getMinX(e models.KeyboardElement) float64 {
+	return (-getTotalWidth(e) / 2) + e.GetXOffset()
+}
+
+func getMaxX(e models.KeyboardElement) float64 {
+	return (getTotalWidth(e) / 2) + e.GetXOffset()
+}
+
+func getMinY(e models.KeyboardElement) float64 {
+	return (-getTotalHeight(e) / 2) + e.GetYOffset()
+}
+
+func getMaxY(e models.KeyboardElement) float64 {
+	return (getTotalHeight(e) / 2) + e.GetYOffset()
 }

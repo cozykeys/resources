@@ -2,7 +2,8 @@
 all:
 	mkdir -p ./bin
 	go mod tidy
-	go build -o ./bin/kb ./cmd
+	go build -o ./bin/kb -gcflags "-N -l" ./cmd
+
 
 .PHONY: test
 test:

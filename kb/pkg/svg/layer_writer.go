@@ -2,46 +2,40 @@ package svg
 
 import (
 	"kb/pkg/models"
-
-	"github.com/beevik/etree"
 )
 
-func writeLayer(parent *etree.Element, layer *models.Layer) error {
-	writer := &layerWriter{
-		parent: parent,
-		layer:  layer,
-	}
-
-	return writer.write()
-}
-
 type layerWriter struct {
-	parent *etree.Element
-	layer  *models.Layer
+	options *Options
 }
 
-func (w *layerWriter) write() error {
-	if !w.layer.Visible {
-		return nil
+func (lw *layerWriter) write(w *xmlWriter, layer *models.Layer) {
+	if !layer.Visible {
+		return
 	}
 
-	g := w.parent.CreateElement("g")
+	w.writeStartElement("g")
 
-	// Attributes
-	g.CreateAttr("id", w.layer.Name)
-	writeTransform(g, w.layer)
+	ew := &elementWriter{options: lw.options}
 
-	// Child Elements
-	if w.layer.Debug {
-		writeDebugOverlay(g, w.layer)
+	ew.writeAttributes(w, layer)
+	lw.writeAttributes(w, layer)
+
+	ew.writeSubElements(w, layer)
+	lw.writeSubElements(w, layer)
+
+	w.writeEndElement()
+}
+
+func (lw *layerWriter) writeAttributes(w *xmlWriter, layer *models.Layer) {
+}
+
+func (lw *layerWriter) writeSubElements(w *xmlWriter, layer *models.Layer) {
+	lw.writeGroups(w, layer)
+}
+
+func (lw *layerWriter) writeGroups(w *xmlWriter, layer *models.Layer) {
+	gw := &groupWriter{options: lw.options}
+	for _, group := range layer.Groups {
+		gw.write(w, &group)
 	}
-
-	for _, group := range w.layer.Groups {
-		err := writeGroup(g, &group)
-		if err != nil {
-			return err
-		}
-	}
-
-	return nil
 }
