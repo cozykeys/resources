@@ -11,9 +11,7 @@ namespace KbUtil.Console.Commands
     
     using Models;
     using Services;
-    using KbUtil.Lib.Geometry2D.Extensions;
     using KbUtil.Lib.Geometry2D.Models;
-    using KbUtil.Lib.Geometry2D.Operations;
 
     using GeometRi;
 
