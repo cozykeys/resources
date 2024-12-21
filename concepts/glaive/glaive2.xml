@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Keyboard Name="glaive" Version="1.0.0">
     <Constants>
         <Constant Name="AlphaFillColor"       Value="#ffffff" />
@@ -18,7 +18,7 @@
         <!-- TODO: Tighten down these dimensions once the layout is finalized -->
         <Layer Name="switch" ZIndex="3" XOffset="200" YOffset="100" Width="500" Height="200">
             <Groups>
-                <Group Name="PcbPerimeter">
+                <Group Name="PcbPerimeter" Visible="false">
                     <Constants>
                         <Constant Name="X00" Value="0.0"      />
                         <Constant Name="X01" Value="18.877"   />
@@ -109,7 +109,7 @@
                         </Path>
                     </Children>
                 </Group>
-                <Group Name="keywell-left" XOffset="-92.9581248590116" Rotation="10">
+                <Group Name="keywell-left" XOffset="-92.9581248590116" Rotation="10" Visible="false">
                     <Constants>
                         <Constant Name="X00" Value="10.05"   />
                         <Constant Name="X01" Value="29.1"    />
@@ -161,7 +161,7 @@
                         </Path>
                     </Children>
                 </Group>
-                <Group Name="keywell-right" XOffset="92.95812" Rotation="-10">
+                <Group Name="keywell-right" XOffset="92.95812" Rotation="-10" Visible="false">
                     <Constants>
                         <Constant Name="X00" Value="-10.05"  />
                         <Constant Name="X01" Value="-29.1"   />
@@ -213,7 +213,7 @@
                         </Path>
                     </Children>
                 </Group>
-                <Group Name="keywell-center-top" YOffset="14.847" Visible="true">
+                <Group Name="keywell-center-top" YOffset="14.847" Visible="true" Visible="false">
                     <Constants>
                         <Constant Name="X01"  Value="19.575" />
                         <Constant Name="X02"  Value="-19.575" />
@@ -233,7 +233,7 @@
                         </Path>
                     </Children>
                 </Group>
-                <Group Name="keywell-center-bottom" YOffset="54.151" Visible="true">
+                <Group Name="keywell-center-bottom" YOffset="54.151" Visible="true" Visible="false">
                     <Children>
                         <Path Fill="#ff0000" Stroke="#ff0000" FillOpacity="0.5">
                             <Components>
@@ -253,7 +253,7 @@
                 </Group>
                 <Group Name="keys">
                   <Children>
-                    <Group Name="keys-left" Rotation="10" XOffset="-92.9581248590116" Visible="true">
+                    <Group Name="keys-left" Rotation="10" XOffset="-85" Visible="true">
                       <Children>
                         <Stack Name="keys-left-columns">
                           <Children>
@@ -398,8 +398,8 @@
                             </Stack>
                             <Stack Name="Column06" YOffset="5.5" Orientation="Vertical">
                               <Children>
-                                <Key Name="Column06Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
-                                  <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="ScLk" FontSize="4" />
+                                <Key Name="Column06Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}" Visible="false" >
+                                  <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="ScLk" FontSize="4" Visible="false" />
                                 </Key>
                                 <Key Name="Column06Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
                                   <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="PrSc" FontSize="4" />
@@ -425,39 +425,19 @@
                     </Group>
                     <Group Name="keys-center">
                       <Children>
-                        <Stack Name="keys-center-top" Orientation="Horizontal" YOffset="14.847">
+                        <Stack Name="keys-center-bottom" Orientation="Vertical" YOffset="40">
                           <Children>
-                            <Key Name="key-todo-rename-0001" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
-                              <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="Foo" FontSize="4" />
-                            </Key>
-                            <Key Name="key-todo-rename-0003" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
-                              <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="Bar" FontSize="4" />
-                            </Key>
-                          </Children>
-                        </Stack>
-                        <Stack Name="keys-center-bottom" Orientation="Horizontal" YOffset="54.151">
-                          <Children>
-                            <Stack Name="center-bottom-column-00" Orientation="Vertical">
-                              <Children>
-                                <Spacer Height="19.05" Width="19.05" />
-                                <Key Name="key-todo-rename-0005" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
-                                  <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="LEFT" FontSize="4" />
-                                </Key>
-                              </Children>
-                            </Stack>
-                            <Stack Name="center-bottom-column-01" Orientation="Vertical">
-                              <Children>
                                 <Key Name="key-todo-rename-0007" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
                                   <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="UP" FontSize="4" />
                                 </Key>
                                 <Key Name="key-todo-rename-0008" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
                                   <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="DOWN" FontSize="4" />
                                 </Key>
-                              </Children>
-                            </Stack>
-                            <Stack Name="center-bottom-column-02" Orientation="Vertical">
+                            <Stack Name="center-bottom-column-02" Orientation="Horizontal">
                               <Children>
-                                <Spacer Height="19.05" Width="19.05" />
+                                <Key Name="key-todo-rename-0005" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
+                                  <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="LEFT" FontSize="4" />
+                                </Key>
                                 <Key Name="key-todo-rename-0009" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${ModFillColor}" Stroke="${KeycapBorderColor}">
                                   <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="RGHT" FontSize="4" />
                                 </Key>
@@ -467,13 +447,13 @@
                         </Stack>
                       </Children>
                     </Group>
-                    <Group Name="keys-right" Rotation="-10" XOffset="92.9581248590116" Visible="true">
+                    <Group Name="keys-right" Rotation="-10" XOffset="85" Visible="true">
                       <Children>
                         <Stack Name="keys-right-columns">
                           <Children>
                             <Stack Name="Column08" YOffset="5.5" Orientation="Vertical">
                               <Children>
-                                <Key Name="Column08Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">
+                                <Key Name="Column08Key00" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}" Visible="false" >
                                   <Legend HorizontalAlignment="Center" VerticalAlignment="Center" Text="Paus" FontSize="4" />
                                 </Key>
                                 <Key Name="Column08Key01" Width="${KeycapDiameterMm1u}" Height="${KeycapDiameterMm1u}" Margin="${KeyMarginMillimeters}" Fill="${AlphaFillColor}" Stroke="${KeycapBorderColor}">

@@ -1,0 +1,72 @@
+<svg><circle transform="translate(30.649,142.35)" r="0.5" stroke="black" stroke-width="0.1" fill="blue" />
+<circle transform="translate(68.17,148.965999)" r="0.5" stroke="black" stroke-width="0.1" fill="blue" />
+<circle transform="translate(123.931001,161.844999)" r="0.5" stroke="black" stroke-width="0.1" fill="blue" />
+<circle transform="translate(161.452001,168.461002)" r="0.5" stroke="black" stroke-width="0.1" fill="blue" />
+<circle transform="translate(171.425,170.295999)" r="0.5" stroke="black" stroke-width="0.1" fill="blue" />
+<circle transform="translate(228.575001,170.296001)" r="0.5" stroke="black" stroke-width="0.1" fill="blue" />
+<circle transform="translate(238.548,168.461002)" r="0.5" stroke="black" stroke-width="0.1" fill="blue" />
+<circle transform="translate(276.069001,161.845)" r="0.5" stroke="black" stroke-width="0.1" fill="blue" />
+<circle transform="translate(331.830001,148.966001)" r="0.5" stroke="black" stroke-width="0.1" fill="blue" />
+<circle transform="translate(369.351001,142.35)" r="0.5" stroke="black" stroke-width="0.1" fill="blue" />
+<circle transform="translate(349.503001,29.788002)" r="0.5" stroke="black" stroke-width="0.1" fill="blue" />
+<circle transform="translate(291.831999,31.833001)" r="0.5" stroke="black" stroke-width="0.1" fill="blue" />
+<circle transform="translate(273.072002,35.141002)" r="0.5" stroke="black" stroke-width="0.1" fill="blue" />
+<circle transform="translate(236.591999,47.665999)" r="0.5" stroke="black" stroke-width="0.1" fill="blue" />
+<circle transform="translate(163.408002,47.666)" r="0.5" stroke="black" stroke-width="0.1" fill="blue" />
+<circle transform="translate(126.928,35.141)" r="0.5" stroke="black" stroke-width="0.1" fill="blue" />
+<circle transform="translate(108.168001,31.833001)" r="0.5" stroke="black" stroke-width="0.1" fill="blue" />
+<circle transform="translate(50.497001,29.788002)" r="0.5" stroke="black" stroke-width="0.1" fill="blue" />
+<path stroke="blue" stroke-width="0.2" fill="black" d="M 30.649,142.35 L 68.17,148.965999" />
+<path stroke="blue" stroke-width="0.2" fill="black" d="M 68.17,148.965999 L 123.931001,161.844999" />
+<path stroke="blue" stroke-width="0.2" fill="black" d="M 123.931001,161.844999 L 161.452001,168.461002" />
+<path stroke="blue" stroke-width="0.2" fill="black" d="M 161.452001,168.461002 L 171.425,170.295999" />
+<path stroke="blue" stroke-width="0.2" fill="black" d="M 171.425,170.295999 L 228.575001,170.296001" />
+<path stroke="blue" stroke-width="0.2" fill="black" d="M 228.575001,170.296001 L 238.548,168.461002" />
+<path stroke="blue" stroke-width="0.2" fill="black" d="M 238.548,168.461002 L 276.069001,161.845" />
+<path stroke="blue" stroke-width="0.2" fill="black" d="M 276.069001,161.845 L 331.830001,148.966001" />
+<path stroke="blue" stroke-width="0.2" fill="black" d="M 331.830001,148.966001 L 369.351001,142.35" />
+<path stroke="blue" stroke-width="0.2" fill="black" d="M 369.351001,142.35 L 349.503001,29.788002" />
+<path stroke="blue" stroke-width="0.2" fill="black" d="M 349.503001,29.788002 L 291.831999,31.833001" />
+<path stroke="blue" stroke-width="0.2" fill="black" d="M 291.831999,31.833001 L 273.072002,35.141002" />
+<path stroke="blue" stroke-width="0.2" fill="black" d="M 273.072002,35.141002 L 236.591999,47.665999" />
+<path stroke="blue" stroke-width="0.2" fill="black" d="M 236.591999,47.665999 L 163.408002,47.666" />
+<path stroke="blue" stroke-width="0.2" fill="black" d="M 163.408002,47.666 L 126.928,35.141" />
+<path stroke="blue" stroke-width="0.2" fill="black" d="M 126.928,35.141 L 108.168001,31.833001" />
+<path stroke="blue" stroke-width="0.2" fill="black" d="M 108.168001,31.833001 L 50.497001,29.788002" />
+<path stroke="blue" stroke-width="0.2" fill="black" d="M 50.497001,29.788002 L 30.649,142.35" />
+<circle transform="translate(36.44129092074182,138.2942086188115)" r="0.5" stroke="black" stroke-width="0.1" fill="purple" />
+<circle transform="translate(69.1674167091803,144.0647375356896)" r="0.5" stroke="black" stroke-width="0.1" fill="purple" />
+<circle transform="translate(124.92841796120362,156.94373759389887)" r="0.5" stroke="black" stroke-width="0.1" fill="purple" />
+<circle transform="translate(162.33853323569176,163.54018851168786)" r="0.5" stroke="black" stroke-width="0.1" fill="purple" />
+<circle transform="translate(171.88116268049882,165.29599901596367)" r="0.5" stroke="black" stroke-width="0.1" fill="purple" />
+<circle transform="translate(228.11883800405013,165.29600098403628)" r="0.5" stroke="black" stroke-width="0.1" fill="purple" />
+<circle transform="translate(237.6614673614868,163.54018858214326)" r="0.5" stroke="black" stroke-width="0.1" fill="purple" />
+<circle transform="translate(275.0715841451694,156.9437385710927)" r="0.5" stroke="black" stroke-width="0.1" fill="purple" />
+<circle transform="translate(330.8325841970658,144.0647395591063)" r="0.5" stroke="black" stroke-width="0.1" fill="purple" />
+<circle transform="translate(363.55871016656965,138.2942088658848)" r="0.5" stroke="black" stroke-width="0.1" fill="purple" />
+<circle transform="translate(345.33413359285134,34.93897146958668)" r="0.5" stroke="black" stroke-width="0.1" fill="purple" />
+<circle transform="translate(292.35726327253025,36.817517759248624)" r="0.5" stroke="black" stroke-width="0.1" fill="purple" />
+<circle transform="translate(274.32559563230916,39.997090473760196)" r="0.5" stroke="black" stroke-width="0.1" fill="purple" />
+<circle transform="translate(237.42643943865812,52.66599898859805)" r="0.5" stroke="black" stroke-width="0.1" fill="purple" />
+<circle transform="translate(162.57356141709118,52.666000011401955)" r="0.5" stroke="black" stroke-width="0.1" fill="purple" />
+<circle transform="translate(125.67440645395807,39.99708853729507)" r="0.5" stroke="black" stroke-width="0.1" fill="purple" />
+<circle transform="translate(107.64273702978197,36.8175177695405)" r="0.5" stroke="black" stroke-width="0.1" fill="purple" />
+<circle transform="translate(54.665868368400886,34.93897147355715)" r="0.5" stroke="black" stroke-width="0.1" fill="purple" />
+<path stroke="purple" stroke-width="0.2" fill="black" d="M 36.44129092074182,138.2942086188115 L 69.1674167091803,144.0647375356896" />
+<path stroke="purple" stroke-width="0.2" fill="black" d="M 69.1674167091803,144.0647375356896 L 124.92841796120362,156.94373759389887" />
+<path stroke="purple" stroke-width="0.2" fill="black" d="M 124.92841796120362,156.94373759389887 L 162.33853323569176,163.54018851168786" />
+<path stroke="purple" stroke-width="0.2" fill="black" d="M 162.33853323569176,163.54018851168786 L 171.88116268049882,165.29599901596367" />
+<path stroke="purple" stroke-width="0.2" fill="black" d="M 171.88116268049882,165.29599901596367 L 228.11883800405013,165.29600098403628" />
+<path stroke="purple" stroke-width="0.2" fill="black" d="M 228.11883800405013,165.29600098403628 L 237.6614673614868,163.54018858214326" />
+<path stroke="purple" stroke-width="0.2" fill="black" d="M 237.6614673614868,163.54018858214326 L 275.0715841451694,156.9437385710927" />
+<path stroke="purple" stroke-width="0.2" fill="black" d="M 275.0715841451694,156.9437385710927 L 330.8325841970658,144.0647395591063" />
+<path stroke="purple" stroke-width="0.2" fill="black" d="M 330.8325841970658,144.0647395591063 L 363.55871016656965,138.2942088658848" />
+<path stroke="purple" stroke-width="0.2" fill="black" d="M 363.55871016656965,138.2942088658848 L 345.33413359285134,34.93897146958668" />
+<path stroke="purple" stroke-width="0.2" fill="black" d="M 345.33413359285134,34.93897146958668 L 292.35726327253025,36.817517759248624" />
+<path stroke="purple" stroke-width="0.2" fill="black" d="M 292.35726327253025,36.817517759248624 L 274.32559563230916,39.997090473760196" />
+<path stroke="purple" stroke-width="0.2" fill="black" d="M 274.32559563230916,39.997090473760196 L 237.42643943865812,52.66599898859805" />
+<path stroke="purple" stroke-width="0.2" fill="black" d="M 237.42643943865812,52.66599898859805 L 162.57356141709118,52.666000011401955" />
+<path stroke="purple" stroke-width="0.2" fill="black" d="M 162.57356141709118,52.666000011401955 L 125.67440645395807,39.99708853729507" />
+<path stroke="purple" stroke-width="0.2" fill="black" d="M 125.67440645395807,39.99708853729507 L 107.64273702978197,36.8175177695405" />
+<path stroke="purple" stroke-width="0.2" fill="black" d="M 107.64273702978197,36.8175177695405 L 54.665868368400886,34.93897147355715" />
+<path stroke="purple" stroke-width="0.2" fill="black" d="M 54.665868368400886,34.93897147355715 L 36.44129092074182,138.2942086188115" /></svg>

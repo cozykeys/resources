@@ -1,0 +1,12 @@
+<svg><circle transform="translate(10,10)" r="0.5" stroke="black" stroke-width="0.1" fill="blue" />
+<circle transform="translate(30,20)" r="0.5" stroke="black" stroke-width="0.1" fill="blue" />
+<circle transform="translate(20,30)" r="0.5" stroke="black" stroke-width="0.1" fill="blue" />
+<path stroke="blue" stroke-width="0.2" fill="black" d="M 10,10 L 30,20" />
+<path stroke="blue" stroke-width="0.2" fill="black" d="M 30,20 L 20,30" />
+<path stroke="blue" stroke-width="0.2" fill="black" d="M 20,30 L 10,10" />
+<circle transform="translate(-1.1803398874989544,-1.1803398874989535)" r="0.5" stroke="black" stroke-width="0.1" fill="purple" />
+<circle transform="translate(38.440825170409965,18.63024264145551)" r="0.5" stroke="black" stroke-width="0.1" fill="purple" />
+<circle transform="translate(18.63024264145551,38.440825170409965)" r="0.5" stroke="black" stroke-width="0.1" fill="purple" />
+<path stroke="purple" stroke-width="0.2" fill="black" d="M -1.1803398874989544,-1.1803398874989535 L 38.440825170409965,18.63024264145551" />
+<path stroke="purple" stroke-width="0.2" fill="black" d="M 38.440825170409965,18.63024264145551 L 18.63024264145551,38.440825170409965" />
+<path stroke="purple" stroke-width="0.2" fill="black" d="M 18.63024264145551,38.440825170409965 L -1.1803398874989544,-1.1803398874989535" /></svg>
